@@ -1,0 +1,2 @@
+@echo Olá
+@echo Oláá
