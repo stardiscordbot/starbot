@@ -50,8 +50,8 @@ exports.run = (client, message, args) => {
         return message.channel.send(":x: | Eu preciso do id do backup!");
     }
     backup.fetch(backupID).then(async () => {
-        message.channel.send(":warning: | Quando o backup for carregado, todos os canais, funções, etc. serão substituídos! Digite `confirm` para confirmar!");
-            await message.channel.awaitMessages(m => (m.author.id === message.author.id) && (m.content === "confirm"), {
+        message.channel.send(":warning: | Quando o backup for carregado, todos os canais, funções, etc. serão substituídos! Digite `confirmar` para confirmar!");
+            await message.channel.awaitMessages(m => (m.author.id === message.author.id) && (m.content === "confirmar"), {
                 max: 1,
                 time: 20000,
                 errors: ["time"]

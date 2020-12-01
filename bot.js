@@ -94,8 +94,6 @@ const comando = new Discord.WebhookClient(config.logID, config.logToken)
 
 client.on("message", async message => {
     // If's
-    if(message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)){
-      return message.channel.send(`<a:Rosa_seta_pg:754374503001358467> Olá, ${message.author}! Meu prefixo atual é \`${prefix}\` para ver meus comandos use \`${prefix}ajuda\``)}
     if (message.author.bot) return;
     if (message.channel.type === "dm") return;
     antilink.findOne({_id:message.guild.id}, (err, anti) => {
@@ -123,6 +121,8 @@ client.on("message", async message => {
     // Custom Prefix
     pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
       let prefix = res ? res.prefix : config.prefix;
+      if(message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)){
+        return message.channel.send(`<a:Rosa_seta_pg:754374503001358467> Olá, ${message.author}! Meu prefixo atual é \`${prefix}\` para ver meus comandos use \`${prefix}ajuda\``)}
     if (!message.content.startsWith(prefix)) return;
     // Deletar Comando
     dc.findOne({_id:message.guild.id}, (err, dc) => {

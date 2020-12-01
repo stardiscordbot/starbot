@@ -9,6 +9,8 @@
     "hookTOKEN": "TOKEN do webhook",
     "logID": "ID DO WEBHOOK/LOGS",
     "logToken": "TOKEN DO WEBHOOK/LOGS",
+    "votosID": "ID VOTOS",
+    "votosTOKEN": "TOKEN VOTOS",
     "fort": "Key API do fortnite",
     "dbl": "token do dblapi"
 }
