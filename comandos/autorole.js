@@ -38,5 +38,5 @@ module.exports.run = async (bot, message, args) => {
 exports.help = {
     name: 'autorole',
     aliases: ['joinrole'],
-    status: 'on'
+    status: 'on',
 }

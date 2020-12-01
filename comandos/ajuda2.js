@@ -27,7 +27,7 @@ exports.run = (client, message, args) => {
             content: new MessageEmbed({
                 title: 'Ajuda | Star:tm:',
                 color: config.color,
-                description: 'Isso aqui é o menu que é exibido no discord caso você esteja com preguiça de ir ao website'
+                description: `${client.commands.map(a => a.help.name)}`
             }),
             reactions: {
                 '◀': 'first'
@@ -44,5 +44,5 @@ exports.run = (client, message, args) => {
 exports.help = { 
   name: 'ajuda2', 
   aliases: ['help2', 'comandos2', 'commands2', 'cmds2'],
-  status: 'off'
+  status: 'on'
 }
