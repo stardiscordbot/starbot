@@ -23,7 +23,7 @@ exports.run = async (client, message, args) => {
             .setImage(json.message)
             .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
 
-            message.channel.send(trump);
+            message.quote(trump);
             m.delete({ timeout: 3000 });
         } catch (e) {
             m.edit(e.message);

@@ -34,7 +34,7 @@ module.exports.run = async (client,message,args) => {
         .setColor('ff0000')
         .setImage(`https://vacefron.nl/api/ejected?name=${a}&impostor=${crew[Math.floor(Math.random() * crew.length).toString(16)]}&crewmate=${eightball[Math.floor(Math.random() * eightball.length).toString(16)]}`)
         .setFooter(`Comando Executado por ${message.author.tag} • ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-        message.channel.send(eject)
+        message.quote(eject)
 });
 } // ${eightball[Math.floor(Math.random() * eightball.length).toString(16)]}
 module.exports.help = {

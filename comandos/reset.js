@@ -6,7 +6,7 @@ const autorole = require('../mongodb/autorole.js')
 
 module.exports.run = async (bot, message, args) => {
   if(!message.member.hasPermission('ADMINISTRATOR')) {
-  return message.channel.send('❌ Você precisa de permissão de ADMINISTRADOR para ultilizar este comando')
+  return message.quote('❌ Você precisa de permissão de ADMINISTRADOR para ultilizar este comando')
   }
 
   if(!args[0]) {
@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
   \`s!reset messagelog\` Reseta as logs de mensagens.
   \`s!reset autorole\` Reseta o cargo automatico do servidor.\ns!reset welcomechannel Reseta o canal de boas vindas`)
   .setColor('GREEN')
-  message.channel.send(argsembed)
+  message.quote(argsembed)
   } else
 if(message.author.bot || message.channel.type === 'dm') {return;}
         let messageinfocontent = message.content.toLowerCase()
@@ -27,7 +27,7 @@ if(message.author.bot || message.channel.type === 'dm') {return;}
         .setTitle('Logs Resetadas')
         .setDescription('O Canal de logs neste servidor foi resetada!')
         .setColor('GREEN')
-        message.channel.send(messagelogembed)
+        message.quote(messagelogembed)
         break;
       case 'autorole':
       autorole.deleteOne({ GuildID: message.guild.id }, (err) => console.log(err))
@@ -35,7 +35,7 @@ if(message.author.bot || message.channel.type === 'dm') {return;}
       .setTitle('Autorole Resetado')
       .setDescription('O Cargo automatico foi resetado!')
       .setColor('GREEN')
-      message.channel.send(autoroleembed)
+      message.quote(autoroleembed)
       break;
       case 'welcomechannel':
       welcomeChannel.deleteOne({ GuildID: message.guild.id }, (err) => console.log(err))
@@ -43,7 +43,7 @@ if(message.author.bot || message.channel.type === 'dm') {return;}
       .setTitle('Welcome Resetado')
       .setDescription('Seu canal de Boas Vindas foi resetado.')
       .setColor('GREEN')
-      message.channel.send(welcomechannelembed)
+      message.quote(welcomechannelembed)
     }
 }
 exports.help = {

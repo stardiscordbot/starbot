@@ -8,9 +8,9 @@ module.exports.run = async(client, message, args) => {
       const noperms = new Discord.MessageEmbed()
         .setTitle(message.author.tag)
         .setDescription(`:x: ${message.author.tag} você precisa especificar um prefixo.`)
-        if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Você precisa ser um `ADMINISTRADOR`` para usar este comando");
+        if(!message.member.hasPermission("ADMINISTRATOR")) return message.quote("Você precisa ser um `ADMINISTRADOR`` para usar este comando");
         let newprefix = args.join(" ");
-        if(!args[0]) return message.channel.send(`:x: ${message.author} você precisa especificar um prefixo.`);
+        if(!args[0]) return message.quote(`:x: ${message.author} você precisa especificar um prefixo.`);
       pre.findOne({name: "prefix", preid: message.guild.id}).then(result => {
         let duck = new pre({
             _id: new mongoose.Types.ObjectId(),
@@ -27,7 +27,7 @@ module.exports.run = async(client, message, args) => {
         .setTimestamp()
         .setColor(config.color)
         .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, client.user.avatarURL)
-        message.channel.send(send);
+        message.quote(send);
         if(!result || result == []) {
           duck.save().catch(console.error);
         }else{

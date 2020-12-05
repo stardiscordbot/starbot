@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => { //estrutura básica de criaçã
     .setAuthor(`🖼️ ${message.guild.name}`) // Título do embed 
     .setDescription(`[Clique Aqui](${avatar}) para baixar a imagem!`)
     .setImage(avatar) // Aqui mostramos seu rostinho lindo
- await message.channel.send(embed); //Enviando o embed no chat
+ await message.quote(embed); //Enviando o embed no chat
 
 }; // cabou!
 exports.help = {

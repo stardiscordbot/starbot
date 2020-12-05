@@ -12,7 +12,7 @@ exports.run = async (client, message, args) => {
         .setDescription(`Se deseja ativar o antilink reaja com ${emoji.correto}`)
         .setColor('GREEN')
         .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-        message.channel.send(confirmar).then(function (msg) {
+        message.quote(confirmar).then(function (msg) {
             msg.react(":concluido:768507087268610079").then(r=>{
             msg.react(":error:768507066859126815"); 
         })
@@ -35,14 +35,14 @@ exports.run = async (client, message, args) => {
                 .setDescription('> O antilink foi ativado nesse servidor')
                 .setColor('GREEN')
                 .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-                message.channel.send(sucesso)
+                message.quote(sucesso)
             } else {
                 const erro = new Discord.MessageEmbed()
                   .setTitle('<:error:768507066859126815> | Erro')
                   .setDescription('> Já estou deletando links nesse servidor')
                   .setColor('RED')
                   .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-                message.channel.send(erro)
+                message.quote(erro)
               }
               if(!anti) {
                 const newdc = new Antilink({
@@ -59,7 +59,7 @@ exports.run = async (client, message, args) => {
                 .setDescription(`> A operação foi cancelada com sucesso`)
                 .setColor('GREEN')
                 .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-                message.channel.send(sucesso)
+                message.quote(sucesso)
             })
         });
         // Fim do Caso on
@@ -71,7 +71,7 @@ exports.run = async (client, message, args) => {
         .setDescription(`> Se deseja desativar o antilink reaja com ${emoji.correto}`)
         .setColor('GREEN')
         .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-        message.channel.send(confirmar).then(function (msg) {
+        message.quote(confirmar).then(function (msg) {
             msg.react(":concluido:768507087268610079").then(r=>{
             msg.react(":error:768507066859126815"); 
         })
@@ -92,14 +92,14 @@ exports.run = async (client, message, args) => {
                     .setDescription('> O AntiLink foi desativado nesse servidor')
                     .setColor('GREEN')
                     .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-                  message.channel.send(dd);
+                  message.quote(dd);
                 } else {
                   const erro = new Discord.MessageEmbed()
                     .setTitle('<:error:768507066859126815> | Erro')
                     .setDescription('> O Antilink não está ativado nesse servidor')
                     .setColor('RED')
                     .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-                  message.channel.send(erro)
+                  message.quote(erro)
                 }
             });
         })
@@ -110,7 +110,7 @@ exports.run = async (client, message, args) => {
             .setTitle(`${emoji.correto} | Sucesso`)
             .setDescription(`> A operação foi cancelada com sucesso`)
             .setColor('GREEN')
-            message.channel.send(sucesso)
+            message.quote(sucesso)
         })
     })
         }

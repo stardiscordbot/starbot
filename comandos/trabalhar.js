@@ -31,7 +31,7 @@ module.exports.run = (client, message, args) => {
     .setTitle('Trabalho Concluido')
     .setDescription(`Você acaba de receber \`${earnedCoins}\` StarCoins!`)
     .setColor('BLUE')
-    message.channel.send(concluido);
+    message.quote(concluido);
     },
 exports.help = {
     name: 'trabalhar',

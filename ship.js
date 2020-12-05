@@ -8,8 +8,8 @@ module.exports.run = async (bot, message, args) => {
   let membro1 = message.mentions.members.first()
     let membro2 = message.mentions.members.last()
   
-  if(!membro1 || !membro2) return message.channel.send('Lembre-se de mencionar dois usuários para shippar')
-    if(membro1 === membro2) return message.channel.send('Mencione duas pessoas diferentes')
+  if(!membro1 || !membro2) return message.quote('Lembre-se de mencionar dois usuários para shippar')
+    if(membro1 === membro2) return message.quote('Mencione duas pessoas diferentes')
   
   const amor = Math.floor(Math.random() * 100);
     const loveIndex = Math.floor(amor / 10);
@@ -70,7 +70,7 @@ let amorEmbed = new Discord.MessageEmbed()
   .attachFiles([amorat]).setImage('attachment://chances-image.png')
 
 
-  message.channel.send('<@'+message.author.id+'> \n'+desc, amorEmbed)
+  message.quote('<@'+message.author.id+'> \n'+desc, amorEmbed)
 
   
 }

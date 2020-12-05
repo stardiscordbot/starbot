@@ -47,9 +47,9 @@ module.exports.run = async (client,message,args) => {
         .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/8-Ball_Pool.svg/1024px-8-Ball_Pool.svg.png")
         .setDescription(`\`${message.author.username}, de acordo com muitos estudos cientificos minha resposta é ${eightball[Math.floor(Math.random() * eightball.length).toString(16)]}\``)
         .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-        message.channel.send(embed)
+        message.quote(embed)
     }
-      else message.channel.send(exemploembed)
+      else message.quote(exemploembed)
     })
 }
 module.exports.help = {

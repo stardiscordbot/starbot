@@ -23,12 +23,16 @@ Promise.all(promises).then(async results => {
     const totalGuilds = results[1].reduce((prev, guildCount) => prev + guildCount, 0);
     const totalCanais = results[2].reduce((prev, channelCount) => prev + channelCount, 0);
 
+  const adg = await client.users.fetch('717766639260532826');
+  const gustavo = await client.users.fetch('664174201220890645');
+  const bonee = await client.users.fetch('672652538880720896');
+  const etinho = await client.users.fetch('422535241211707393');
 
   const botinfo = new Discord.MessageEmbed()
   .setAuthor('Minhas Informações')
   .setThumbnail(client.user.displayAvatarURL())
   .setColor(config.color)
-  .addField('<:botdeveloper:763739544549326899>┃Criadores', `\`ADG#2020, Davi Patricio#0001, BONEE#9999, </Etinho>#5672\``)
+  .addField('<:botdeveloper:763739544549326899>┃Criadores', `\`${adg.tag}, ${gustavo.tag}, ${bonee.tag}, ${etinho.tag}\``)
   .addField(`<:staff:763739862360653864>┃Servidores`,`\`${totalGuilds}\``)
   .addField('<:stafftools:770038834922389524>┃Canais', `\`${totalCanais}\``)
   .addField(`<:panda:754744551176011826>┃Usuários`, `\`${totalUsers}\``)
@@ -38,7 +42,7 @@ Promise.all(promises).then(async results => {
   .addField(`<:discord:770039545067995136>┃Ping`,`\`Latência do Servidor: ${Date.now()-message.createdTimestamp}ms\nLatência da API: ${client.ws.ping}ms\``)
   .addField('<:relogio:763736359822819338>┃Tempo de Atividade', `\`${days.toFixed()} dias ${hours.toFixed()} horas ${minutes.toFixed()} minutos ${seconds.toFixed()} segundos\``)
   .setImage('https://top.gg/api/widget/719524114536333342.png')
-  message.channel.send(botinfo)
+  message.quote(botinfo)
   })
 };
 exports.help = {

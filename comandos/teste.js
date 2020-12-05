@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
     let prefix = res ? res.prefix : config.prefix;
     const embed = new Discord.MessageEmbed()
     .addField(`${client.commands.filter(command => client.commands.help.category === "adg").map(e => `\`${prefix}${e.help.name}\``).join(" **|** ")}`)
-    message.channel.send(embed)
+    message.quote(embed)
 })
 }
 exports.help = { 

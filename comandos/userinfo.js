@@ -51,7 +51,7 @@ module.exports.run = async (client,message,args) => {
             }
         }
 
-        if (!user) return message.channel.send(':x: Utilizador não encontrado!');
+        if (!user) return message.quote(':x: Utilizador não encontrado!');
         bldb.findOne({_id:user.id}, (err, bl) => {
             if(bl) {
               const detectado = new MessageEmbed()
@@ -62,7 +62,7 @@ module.exports.run = async (client,message,args) => {
             } else if(bl.motivo) {
                 detectado.setDescription(`\`${user.tag}\` está banido de ultilizar a Star:tm: por desrespeitar os termos de uso **Motivo:** \`${bl.motivo}\``)
             }
-               return message.channel.send(detectado)
+               return message.quote(detectado)
                 }
         const embed = new MessageEmbed()
             .setColor('RANDOM')
@@ -85,7 +85,7 @@ module.exports.run = async (client,message,args) => {
             }
         }
 
-        return message.channel.send(embed);
+        return message.quote(embed);
     })
 }
 module.exports.help = {

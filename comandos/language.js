@@ -25,17 +25,17 @@ exports.run = async (client, message, args) => {
           case 'pt':  
                 guild.lang = "eng"
                 guild.save().catch(err =>console.log(err));
-                message.channel.send('Language changed.')
+                message.quote('Language changed.')
                 break;
           case 'eng':
                 guild.lang = "pt"
                 guild.save().catch(err =>console.log(err));
-                message.channel.send('Linguagem alterada.')
+                message.quote('Linguagem alterada.')
                 break;
           default:
                 guild.lang = "pt"
                 guild.save().catch(err =>console.log(err));
-                message.channel.send('Linguagem alterada.')
+                message.quote('Linguagem alterada.')
                 break;
       }
 };

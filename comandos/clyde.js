@@ -8,10 +8,10 @@ exports.run = async (client, message, args) => {
     let text = args.join(" ");
 
         if (!text) {
-            return message.reply("indique o que o clyde deve falar.");
+            return message.quote(`${message.author}, indique o que o clyde deve falar.`);
         }
 
-        let m = await message.reply("espere um pouco...");
+        let m = await message.quote(`${message.author}, espere um pouco...`);
         try {
             let res = await fetch(encodeURI(`https://nekobot.xyz/api/imagegen?type=clyde&text=${text}`));
             let json = await res.json();
@@ -21,7 +21,7 @@ exports.run = async (client, message, args) => {
             .setImage(json.message)
             .setColor('ff0000')
             .setFooter(`Comando Executado por ${message.author.tag} • ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-            message.channel.send(clyde);
+            message.quote(clyde);
             m.delete({ timeout: 3000 });
         } catch (e) {
             m.edit(e.message);

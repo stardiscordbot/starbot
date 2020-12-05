@@ -1,4 +1,5 @@
 const { MessageEmbed } = require('discord.js');
+const config = require('../config.json')
 
 module.exports.run = async (client, message, args) => {
 
@@ -76,7 +77,7 @@ module.exports.run = async (client, message, args) => {
                     inline: true
                 }
             )
-        await message.channel.send(embed)
+        await message.quote(embed)
         
     }
 

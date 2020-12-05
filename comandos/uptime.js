@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args) => {
     .setColor("#eceef0")
     .setDescription(`**Estou online há:**\n${uptime}`)
 
-  message.channel.send(embed);
+  message.quote(embed);
 };
 exports.help = {
     name: 'uptime',

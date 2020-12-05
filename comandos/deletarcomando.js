@@ -15,13 +15,13 @@ exports.run = async (client, message, args) => {
                 .setTitle('<:concluido:768507087268610079> | Sucesso')
                 .setDescription('> Não irei mais deletar todos os comandos executados nesse servidor')
                 .setColor('GREEN')
-              message.channel.send(dd);
+              message.quote(dd);
             } else {
               const erro = new Discord.MessageEmbed()
                 .setTitle('<:error:768507066859126815> | Erro')
                 .setDescription('> Não estou deletando comandos nesse servidor')
                 .setColor('RED')
-              message.channel.send(erro)
+              message.quote(erro)
             }
         });
     };
@@ -36,13 +36,13 @@ exports.run = async (client, message, args) => {
                 .setTitle('<:concluido:768507087268610079> | Sucesso')
                 .setDescription('> Irei deletar todos os comandos executados nesse servidor')
                 .setColor('GREEN')
-                message.channel.send(sucesso)
+                message.quote(sucesso)
             } else {
                 const erro = new Discord.MessageEmbed()
                   .setTitle('<:error:768507066859126815> | Erro')
                   .setDescription('> Já estou deletando comandos nesse servidor')
                   .setColor('RED')
-                message.channel.send(erro)
+                message.quote(erro)
               }
             if(!deletar) {
                 const newdc = new Deletar({

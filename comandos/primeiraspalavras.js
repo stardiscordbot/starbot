@@ -20,7 +20,7 @@ exports.run = async (bot, message, args) => {
                             var aguardeMessage = message
                             image.getBuffer(Jimp.MIME_PNG, (err, buffer) => {
                                 const attachment = new Discord.MessageAttachment(buffer, 'primeiraspalavras.png')
-                                message.channel.send('>>> **👶 | PrimeirasPalavras**', attachment).then(message => {
+                                message.quote('>>> **👶 | PrimeirasPalavras**', attachment).then(message => {
                                     aguardeMessage.delete()
                                 })
                             })
@@ -28,7 +28,7 @@ exports.run = async (bot, message, args) => {
                     })
                 })
             } else {
-                message.channel.send('Eu não tenho a permissão necessária para fazer isso. `ATTACH_FILES`')
+                message.quote('Eu não tenho a permissão necessária para fazer isso. `ATTACH_FILES`')
             }
         }
     }

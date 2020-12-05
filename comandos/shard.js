@@ -36,7 +36,7 @@ module.exports.run = async(client, message, args) => {
 
   table.addRow('TOTAL', '-', '~' + Math.round(media) + 'ms', API.bytes(total_mem, 2).value + API.bytes(total_mem, 2).unit, total_servers.toLocaleString('pt-BR'), total_users.toLocaleString('pt-BR'))
 
-  message.channel.send(table.toString(), { code: 'apache' })
+  message.quote(table.toString(), { code: 'apache' })
 
   return table.clearRows()
 

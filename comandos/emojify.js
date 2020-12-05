@@ -24,10 +24,10 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
 });
 
   if (args.length < 1) {
-    message.channel.send('Digite um texto para o **EmojiFy**!');
+    message.quote('Digite um texto para o **EmojiFy**!');
 }
 
-message.channel.send(
+message.quote(
     args.join(' ')
         .split('')
         .map(c => mapping[c] || c)

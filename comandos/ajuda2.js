@@ -44,5 +44,5 @@ exports.run = (client, message, args) => {
 exports.help = { 
   name: 'ajuda2', 
   aliases: ['help2', 'comandos2', 'commands2', 'cmds2'],
-  status: 'on'
+  status: 'off'
 }

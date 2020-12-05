@@ -11,11 +11,11 @@ module.exports.run = async (bot, message, args) => {
   .setColor('RED')
 
   if(!message.member.hasPermission("ADMINISTRATOR")) {
-  return message.channel.send("Você não tem permissão para usar este comando")
+  return message.quote("Você não tem permissão para usar este comando")
   }
 
   if(!channel) {
-  return message.channel.send(argsEmbed)
+  return message.quote(argsEmbed)
   }
 
   logChannel.findOne({ GuildID: message.guild.id},async(err, data) => {
@@ -30,13 +30,13 @@ module.exports.run = async (bot, message, args) => {
   .setDescription(`As logs de mensagem vão ser enviadas para o canal <#${channel.id}>.`)
   .setColor('GREEN')
       newSettings.save()
-    message.channel.send(embed)
+    message.quote(embed)
     } else {
     let existsembed = new Discord.MessageEmbed()
     .setTitle('Log Existente')
     .setDescription('Já existe um canal de logs neste servidor, use \`s!reset\` para mudar de canal!')
     .setColor('RED')
-    message.channel.send(existsembed)
+    message.quote(existsembed)
     }
   })
 }

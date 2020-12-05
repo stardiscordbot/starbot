@@ -13,7 +13,7 @@ exports.run = async (client, message, args) => {
                 image.resize(685, 500)
                 image.print(font, 20, 30, args.join(" "), 700)
                 image.getBuffer(jimp.MIME_PNG, (err, i) => {
-                    message.channel.send('>>> **<:stonks:782669448846639125> | Stonks**', {files: [{ attachment: i, name: "mime_dos_stonks.png"}]})
+                    message.quote('>>> **<:stonks:782669448846639125> | Stonks**', {files: [{ attachment: i, name: "mime_dos_stonks.png"}]})
                     m.delete({ timeout: 3000 });
                 })
             })

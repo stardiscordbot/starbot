@@ -22,7 +22,7 @@ const langs = {
 module.exports.run = (client, message, args) => {
  
   if (!args[0]) {
-    return message.channel.send(`Use dessa forma: s!traduzir <lingua> + <lingua> <mensagem>`)
+    return message.quote(`Use dessa forma: s!traduzir <lingua> + <lingua> <mensagem>`)
   }
   
   let msg = args.slice(2).join(' ');
@@ -35,12 +35,12 @@ module.exports.run = (client, message, args) => {
       .addField('Texto original:', msg)
       .addField(`Texto traduzido:`, res.text)   
     
-    message.channel.send(embed)
+    message.quote(embed)
   
 
   }).catch(err => {
     console.log(err)
-    message.channel.send('Desculpe mas essa lingua não existe.')
+    message.quote('Desculpe mas essa lingua não existe.')
   })
 };
 exports.help = {

@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
     .setColor(config.color)
     .setThumbnail(client.user.displayAvatarURL())
     .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-    message.channel.send(ajuda);
+    message.quote(ajuda);
 
 }
 exports.help = { 

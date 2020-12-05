@@ -7,6 +7,16 @@ exports.run = (client, message, args) => {
 
   pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
     let prefix = res ? res.prefix : config.prefix;
+    
+    if(!message.guild.me.permissions.has("ADMINISTRATOR")) {
+        const erro = new Discord.MessageEmbed()
+        .setTitle('<:db_download:782290025458696192> | Backups')
+        .setDescription(`${message.author} eu necessito da permissão admininstrador para criar backups`)
+        .setThumbnail(client.user.displayAvatarURL({ dynamic: true, size: 2048 }))
+        .setColor(config.color)
+        .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
+        return message.quote(erro)
+      }
 
     const comando = new Discord.MessageEmbed()
     .setTitle('<:db_download:782290025458696192> | Backups')
@@ -15,11 +25,11 @@ exports.run = (client, message, args) => {
     .setThumbnail(client.user.displayAvatarURL({ dynamic: true, size: 2048 }))
     .setColor(config.color)
 
-    if(!args[0]) message.channel.send(comando)
+    if(!args[0]) message.quote(comando)
 
     if(args[0] == 'create') {
       if(!message.member.hasPermission("ADMINISTRATOR")){
-        return message.channel.send(":x: | Você precisa da permissão de Admininstrador para criar backup's!");
+        return message.quote(":x: | Você precisa da permissão de Admininstrador para criar backup's!");
     }
     backup.create(message.guild, {
         jsonBeautify: true
@@ -37,26 +47,26 @@ exports.run = (client, message, args) => {
         .setColor(config.color)
         .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
         message.author.send(sucesso);
-        message.channel.send(criado);
+        message.quote(criado);
     });
     }
 
     if(args[0] == 'load') {
       if(!message.member.hasPermission("ADMINISTRATOR")){
-        return message.channel.send(":x: | Você precisa da permissão de Admininstrador para carregar backup's!");
+        return message.quote(":x: | Você precisa da permissão de Admininstrador para carregar backup's!");
     }
     let backupID = args[1];
     if(!backupID){
-        return message.channel.send(":x: | Eu preciso do id do backup!");
+        return message.quote(":x: | Eu preciso do id do backup!");
     }
     backup.fetch(backupID).then(async () => {
-        message.channel.send(":warning: | Quando o backup for carregado, todos os canais, funções, etc. serão substituídos! Digite `confirmar` para confirmar!");
+        message.quote(":warning: | Quando o backup for carregado, todos os canais, funções, etc. serão substituídos! Digite `confirmar` para confirmar!");
             await message.channel.awaitMessages(m => (m.author.id === message.author.id) && (m.content === "confirmar"), {
                 max: 1,
                 time: 20000,
                 errors: ["time"]
             }).catch((err) => {
-                return message.channel.send(":x: | O Tempo acabou Backup Cancelado!");
+                return message.quote(":x: | O Tempo acabou Backup Cancelado!");
             });
             const carregando = new Discord.MessageEmbed()
             .setTitle('<:db_download:782290025458696192> | Sucesso')
@@ -71,14 +81,14 @@ exports.run = (client, message, args) => {
             });
     }).catch((err) => {
         console.log(err);
-        return message.channel.send(`:x: | Nenhum backup encontrado para \`${backupID}\`!`);
+        return message.quote(`:x: | Nenhum backup encontrado para \`${backupID}\`!`);
     });
     }
 
     if(args[0] == 'info') {
       let backupID = args[1];
         if(!backupID){
-            return message.channel.send(":x: | Eu preciso do id do backup!");
+            return message.quote(":x: | Eu preciso do id do backup!");
         }
         backup.fetch(backupID).then((backupInfos) => {
             const date = new Date(backupInfos.data.createdTimestamp);
@@ -92,9 +102,9 @@ exports.run = (client, message, args) => {
                 .addField("Criado dia", formatedDate, false)
                 .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
                 .setColor(config.color);
-            message.channel.send(embed);
+            message.quote(embed);
         }).catch((err) => {
-            return message.channel.send(`:x: | Nenhum backup encontrado para \`${backupID}\`!`);
+            return message.quote(`:x: | Nenhum backup encontrado para \`${backupID}\`!`);
         });
     }
 

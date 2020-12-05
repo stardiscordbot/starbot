@@ -14,8 +14,8 @@ exports.run = async (client, message, args) => {
   .addField(`:twisted_rightwards_arrows: **Alternativas**`, `\`${c.prefix}beijar\``)
   .setColor('#a67dff')  
 
-    if (!message.mentions.users.first()) return message.channel.send(erro);
-    if (message.mentions.users.first().id === "719524114536333342") return message.channel.send(`Perdão **${message.author.username}**, já estou comprometida :3`);
+    if (!message.mentions.users.first()) return message.quote(erro);
+    if (message.mentions.users.first().id === "719524114536333342") return message.quote(`Perdão **${message.author.username}**, já estou comprometida :3`);
 
     const { body } = await superagent
     .get("https://nekos.life/api/v2/img/kiss");
@@ -26,7 +26,7 @@ exports.run = async (client, message, args) => {
     .setDescription(`${message.author} acaba de beijar ${message.mentions.users.first()}`)
     .setImage(body.url)
     .setThumbnail(avatar) 
-    message.channel.send({embed})
+    message.quote({embed})
 }
 exports.help = {
     name: 'kiss',

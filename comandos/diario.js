@@ -17,7 +17,7 @@ if (talkedRecently.has(message.author.id)) {
             .setTitle('ERRO')
             .setDescription(`Espere 1 dia para pegar seu bonûs diario de novo \`${message.author.tag}\``)
             .setColor('RED')
-            message.channel.send(espere);
+            message.quote(espere);
     } else {
 
            Money.findOne({
@@ -40,7 +40,7 @@ if (talkedRecently.has(message.author.id)) {
         .setTitle('Bonûs Diario!')
         .setDescription(`${message.author.username} Você ganhou seu bonûs diario de ${dailyCoins} StarCoins.`)
         .setColor('00FF7F')
-        message.channel.send(diario);
+        message.quote(diario);
 
         talkedRecently.add(message.author.id);
         setTimeout(() => {

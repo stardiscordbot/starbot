@@ -8,7 +8,7 @@ module.exports.run = async (client,message,args) => {
           .addField(" Top.GG ", "[Clique Aqui!](https://top.gg/bot/719524114536333342/vote)")
           .setColor(`PURPLE`)
           .setFooter('© Star 2020', client.user.displayAvatarURL());
-    message.channel.send(embed)
+    message.quote(embed)
 }
 
 module.exports.help = {

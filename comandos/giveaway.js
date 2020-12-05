@@ -26,12 +26,12 @@ module.exports.run = async(client, message, args) => {
               
             }
           })/*.catch(() => {
-            message.channel.send(`Looks like you're afk try again.`) 
+            message.quote(`Looks like you're afk try again.`) 
           }) */
           })
         }
       })/*.catch(() => {
-        message.channel.send(`Looks like you're afk. Use command again.`) 
+        message.quote(`Looks like you're afk. Use command again.`) 
       }) */
             });
         }

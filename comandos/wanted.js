@@ -8,7 +8,7 @@ module.exports.run = (bot, message, args) =>
 
     if(!GuildMember)
     {
-        return message.channel.send(":no_entry: Mencione um usuário valido :no_entry:");
+        return message.quote(":no_entry: Mencione um usuário valido :no_entry:");
     }
 
     message.channel.startTyping();
@@ -26,7 +26,7 @@ module.exports.run = (bot, message, args) =>
                 console.log("\x1b[31m*\x1b[0m Error creating \x1b[33m(Most Wanted)\x1b[0m meme: \x1b[31m" + err + "\x1b[0m");
             }
 
-            message.channel.send(new Discord.MessageAttachment(buffer, "wanted.png")).then(() => message.channel.stopTyping(true)).catch(() => message.channel.stopTyping(true));
+            message.quote(new Discord.MessageAttachment(buffer, "wanted.png")).then(() => message.channel.stopTyping(true)).catch(() => message.channel.stopTyping(true));
         });
     });
 };

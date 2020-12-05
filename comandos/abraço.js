@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
 
   let avatar = message.author.displayAvatarURL({ dynamic: true, size: 2048 });
 
-    if (!message.mentions.users.first()) return message.channel.send(erro);
+    if (!message.mentions.users.first()) return message.quote(erro);
     const { body } = await superagent
     .get("https://nekos.life/api/v2/img/hug");
     
@@ -28,7 +28,7 @@ exports.run = async (client, message, args) => {
     .setColor(config.color)
     .setImage(body.url) 
     .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-    message.channel.send(embed)
+    message.quote(embed)
 }
 exports.help = {
     name: 'abraço',

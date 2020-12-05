@@ -3,15 +3,15 @@ const Discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
   const motivo = `Comando Executado por: ${message.author.tag} (${message.author.id})`
   if(!message.guild.me.permissions.has("MANAGE_MESSAGES")) {
-    return message.reply("Eu não tenho a permissão necessária!")
+    return message.quote("Eu não tenho a permissão necessária!")
   }
   if (!message.member.permissions.has("MANAGE_MESSAGES"))
-    return message.reply(
+    return message.quote(
       "você é fraco, lhe falta permissão de `Gerenciar Mensagens` para usar esse comando"
     );
   const deleteCount = parseInt(args[0], 10);
   if (!deleteCount || deleteCount < 1 || deleteCount > 99)
-    return message.reply(
+    return message.quote(
       "forneça um número de até **99 mensagens** a serem excluídas"
     );
 

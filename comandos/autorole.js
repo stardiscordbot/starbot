@@ -6,11 +6,11 @@ module.exports.run = async (bot, message, args) => {
   let role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0])
 
     if(!role) {
-      return message.channel.send('Você não especificou um cargo')
+      return message.quote('Você não especificou um cargo')
     }
 
     if(!message.member.hasPermission('ADMINISTRATOR')) {
-      return message.channel.send('Você não tem permissão para usar este comando')
+      return message.quote('Você não tem permissão para usar este comando')
     }
 
     autorole.findOne({ GuildID: message.guild.id }, async (err, data) => {
@@ -25,13 +25,13 @@ module.exports.run = async (bot, message, args) => {
         .setTitle('Autorole Criado!')
         .setDescription(`O Cargo dado quando um usuário entrar será ${role.toString()}.`)
         .setColor('GREEN')
-        message.channel.send(success)
+        message.quote(success)
       } else {
         let exists = new Discord.MessageEmbed()
         .setTitle('Autorole Existente!')
         .setDescription('Ultilize s!reset para resetar o autorole')
         .setColor('RED')
-        message.channel.send(exists)
+        message.quote(exists)
       }
     })
 }

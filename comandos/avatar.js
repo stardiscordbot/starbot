@@ -13,7 +13,34 @@ module.exports.run = async (client, message, args) => {
       .setColor("RANDOM")
       .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
 
-      if(user.id === client.user.id) return message.channel.send(eu)
+      if(user.id === client.user.id) return message.quote(eu)
+
+      const adg = new Discord.MessageEmbed()
+      .setAuthor(`${user.tag}`, avatar)
+      .setDescription(`<:db_download:782290025458696192> __[Clique Aqui](${avatar})__ para Baixar o Avatar\n*<:botdeveloper:763739544549326899> Você sabia que o ADG é meu criador? <:botdeveloper:763739544549326899>*`)
+      .setImage(avatar)
+      .setColor("RANDOM")
+      .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
+
+      if(user.id === '717766639260532826') return message.quote(adg)
+
+      const gustavo = new Discord.MessageEmbed()
+      .setAuthor(`${user.tag}`, avatar)
+      .setDescription(`<:db_download:782290025458696192> __[Clique Aqui](${avatar})__ para Baixar o Avatar\n*<:botdeveloper:763739544549326899> Você sabia que o Gustavo é um dos admininstradores do projeto? <:botdeveloper:763739544549326899>*`)
+      .setImage(avatar)
+      .setColor("RANDOM")
+      .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
+
+      if(user.id === '664174201220890645') return message.quote(gustavo)
+      
+      const welling = new Discord.MessageEmbed()
+      .setAuthor(`${user.tag}`, avatar)
+      .setDescription(`<:db_download:782290025458696192> __[Clique Aqui](${avatar})__ para Baixar o Avatar\n*<:botdeveloper:763739544549326899> Você sabia que o Welling é um dos meus devs? <:botdeveloper:763739544549326899>*`)
+      .setImage(avatar)
+      .setColor("RANDOM")
+      .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
+
+      if(user.id === '422535241211707393') return message.quote(welling)
 
     const embed = new Discord.MessageEmbed()
       .setAuthor(`${user.tag}`, avatar)
@@ -21,7 +48,7 @@ module.exports.run = async (client, message, args) => {
       .setImage(avatar)
       .setColor("RANDOM")
       .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-    message.channel.send(embed)
+    message.quote(embed)
     }
 exports.help = {
     name: 'avatar',

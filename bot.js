@@ -1,3 +1,4 @@
+require('./quote.js')
 require('./mongodb/blacklist.js')
 const Discord = require('discord.js')
 const backup = require('./discord-backup/lib/index.js')
@@ -21,6 +22,7 @@ const moment = require("moment");
 const ms = require('ms');
 const DBL = require("dblapi.js");
 const dbl = new DBL(config.dbl, client);
+
 dbl.on('posted', () => {
   console.log(c.green('[DBL] - Servidores Postados!'));
 })
@@ -67,7 +69,7 @@ client.on('message', message => {
     pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
       let prefix = res ? res.prefix : config.prefix;
     if (message.content.startsWith(prefix)) {
-          message.channel.send(`<a:alerta:763434977412120586> | ${message.author} Você está usando a versão experimental da Star:tm:. Várias funcionalidades podem não funcionar, posso ficar offline a qualquer momento, seu servidor pode explodir e muito mais! Não reporte problemas da versão experimental caso não seja solicitado, obrigada!`).then(msg=> {
+          message.quote(`<a:alerta:763434977412120586> | ${message.author} Você está usando a versão experimental da Star:tm:. Várias funcionalidades podem não funcionar, posso ficar offline a qualquer momento, seu servidor pode explodir e muito mais! Não reporte problemas da versão experimental caso não seja solicitado, obrigada!`).then(msg=> {
             msg.delete({ timeout: 5000, reason: "pq sim" });
             })
     }
@@ -122,7 +124,7 @@ client.on("message", async message => {
     pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
       let prefix = res ? res.prefix : config.prefix;
       if(message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)){
-        return message.channel.send(`<a:Rosa_seta_pg:754374503001358467> Olá, ${message.author}! Meu prefixo atual é \`${prefix}\` para ver meus comandos use \`${prefix}ajuda\``)}
+        return message.quote(`<a:Rosa_seta_pg:754374503001358467> Olá, ${message.author}! Meu prefixo atual é \`${prefix}\` para ver meus comandos use \`${prefix}ajuda\``)}
     if (!message.content.startsWith(prefix)) return;
     // Deletar Comando
     dc.findOne({_id:message.guild.id}, (err, dc) => {
@@ -141,7 +143,7 @@ client.on("message", async message => {
       } else if(bl.motivo) {
         detectado.setDescription(`Você foi banido de ultilizar a Star:tm: por desrespeitar os termos de uso, caso ache que isto é um engano contate nosso [suporte](https://discord.gg/2pFH6Yy) e tentaremos resolver\n\n**Motivo:** \`${bl.motivo} - Punido por: ${bl.autorTag}\`\n**Apelação:** \`Você pode enviar uma apelação para seu unban: https://bit.ly/star-unban\``)
       }
-         return message.channel.send(detectado)
+         return message.quote(detectado)
           }
     // Alguns Args
     var args = message.content.substring(prefix.length).split(" ");
@@ -149,10 +151,10 @@ client.on("message", async message => {
     if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot) return;
     let command =client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
     if(command.help.status === 'off') return message.reply('sinto muito, esse comando está desabilitado, aguarde');
-    if (command) {
+    try {
       command.run(client, message, args);
-    } else {
-      console.log(`${message.author} Usou o comando inexistente ${message.content}`);
+    } catch (err) {
+     console.log(err);
     }
   });
 })
@@ -264,15 +266,6 @@ client.on("guildDelete", guild => {
   .setTimestamp()
   .setColor('RANDOM')
   removida.send(embed);
-});
-
-client.on("guildMemberAdd", async member => {
-  const timeAccount = moment(new Date()).diff(member.user.createdAt, "days");
-  const minimumDays = 30;
-
-  if (timeAccount < minimumDays) {
-    await member.kick();
-  }
 });
 
   // Logs de Mensagem

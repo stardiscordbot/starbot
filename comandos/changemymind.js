@@ -8,11 +8,11 @@ exports.run = async (client, message, args) => {
     let text = args.join(" ");
 
         if (!text) {
-            return message.reply("indique o que o changemymind.");
+            return message.quote(`${message.author}, indique o changemymind.`);
         }
     if (message.length > 4) {
-return message.reply("sua mensagem é muito longa")}
-        let m = await message.reply("espere um pouco...");
+return message.quote(`${message.author}, sua mensagem é muito longa`)}
+        let m = await message.quote(`${message.author}, espere um pouco...`);
         try {
             let res = await fetch(encodeURI(`https://nekobot.xyz/api/imagegen?type=changemymind&text=${text}`));
             let json = await res.json();
@@ -22,7 +22,7 @@ return message.reply("sua mensagem é muito longa")}
             .setColor('ff0000')
             .setImage(json.message)
             .setFooter(`Comando Executado por ${message.author.tag} • ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-            message.channel.send(cmm);
+            message.quote(cmm);
             m.delete({ timeout: 3000 });
         } catch (e) {
             m.edit(e.message);
@@ -31,5 +31,6 @@ return message.reply("sua mensagem é muito longa")}
   }
   exports.help = {
     name: "changemymind",
-    aliases: ['cmm']
+    aliases: ['cmm'],
+    status: 'on'
 }

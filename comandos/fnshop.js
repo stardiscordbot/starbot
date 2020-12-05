@@ -36,7 +36,7 @@ exports.run = async (client, message, args) => {
                         embed.addField(`**${item.name}**`, `**Raridade:** ${item.rarity}\n**Preço:** ${item.vbucks} vbucks\n**Imagem:** [[Clique Aqui]](${item.image})`, true);
                     }
 
-                    await message.channel.send(embed);
+                    await message.quote(embed);
                     i++;
                 }
             });

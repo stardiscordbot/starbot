@@ -4,7 +4,7 @@ exports.run = async (client, message, args) => {
 
     let mensg = args.join(' ')
     if (!mensg) {
-        message.channel.send(`${message.author}, digite uma sugestão. :mailbox_with_no_mail:`)
+        message.quote(`${message.author}, digite uma sugestão. :mailbox_with_no_mail:`)
         return undefined;
     }
 
@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
         .then(function (msg) {
             msg.react("a:sim:753735844812161034");
             msg.react("a:nao:753735889783357560"); 
-            message.channel.send(`**Sua sugestão foi enviada! :mailbox_with_no_mail:**`)
+            message.quote(`**Sua sugestão foi enviada! :mailbox_with_no_mail:**`)
         }).catch(function (error) {
             console.log(error);
         });

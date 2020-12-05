@@ -76,7 +76,7 @@ module.exports.run = (client, message, args) => {
                 }
             })
         } catch (err) {
-            message.channel.send(`Occoreu um erro: \`${err}\``)
+            message.quote(`Occoreu um erro: \`${err}\``)
         }
     }
 }

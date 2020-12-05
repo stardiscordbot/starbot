@@ -6,9 +6,9 @@ module.exports.run = async (client, message, args) => {
         let img = jimp.read("https://media.discordapp.net/attachments/510871777728135201/777618213331796029/laranjo-meme-star.jpg?width=627&height=452")
         if (!args[0]) return message.reply("indique que o laranjo deve falar.")
         if(args[0].length > 50) {
-            return message.reply('você ultrapassou o limite de 50 caracteres.')
+            return message.quote(`${message.author}, você ultrapassou o limite de 50 caracteres.`)
             }
-        let m = await message.reply("espere um pouco...");
+        let m = await message.quote(`${message.author}, espere um pouco...`);
         img.then(image => {
             jimp.loadFont(jimp.FONT_SANS_32_BLACK).then(font => {
                 image.resize(685, 494)
@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args) => {
                 .setTitle('<:stonks:782669448846639125> | Stonks')
                 .setImage({files: [{ attachment: i, name: "laranjo.png"}]})
                 .setColor('ff0000')
-                    message.channel.send(`>>> **<:Laranja:782671789569474610> | Laranjo**`, {files: [{ attachment: i, name: "laranjo.png"}]})
+                    message.quote(`>>> **<:Laranja:782671789569474610> | Laranjo**`, {files: [{ attachment: i, name: "laranjo.png"}]})
                     m.delete({ timeout: 3000 });
                 })
             })

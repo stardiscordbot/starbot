@@ -22,7 +22,7 @@ module.exports.run = async (client, message, args, prefix) =>{
             let invite = await tChannel.createInvite({ maxAge : "0" }).catch((err) => {
                 return message.reply("ocorreu um erro!");
             });
-            message.channel.send(invite.url);
+            message.quote(invite.url);
         } else {
             return message.reply("não econtrei o servidor")
         }

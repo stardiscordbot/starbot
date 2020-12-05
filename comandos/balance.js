@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
     .setTitle('ERRO')
     .setDescription('BOT não pode ter conta em meu banco')
     .setColor(config.color)
-    if(target.user.bot) return message.channel.send(bot);
+    if(target.user.bot) return message.quote(bot);
 
     Money.findOne({
         userID: target.user.id,
@@ -31,7 +31,7 @@ module.exports.run = async (client, message, args) => {
             balanceEmbed.setDescription(`Usuário: **${target.user.tag}**\nSaldo: **${money.coins.toLocaleString()}**`)
         }
 
-        message.channel.send(balanceEmbed);
+        message.quote(balanceEmbed);
     });
     },
 
