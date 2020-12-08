@@ -26,6 +26,6 @@ const comando = new Discord.WebhookClient(config.logID, config.logToken)
                 .setThumbnail(message.guild.iconURL())
                 .setDescription(`**Usuário:** \`${message.author.tag}\` \n **ID:** \`${message.author.id}\` \n **Comando:** \`${message.content}\` \n**URL:** [Clique Aqui](${message.url}) \n\n **🔍 • Dados do servidor!**\n \n **Nome:** \`${message.guild.name}\` \n **ID:** \`${message.guild.id}\` \n**Membros:** \`${message.guild.memberCount}\` \n **Canais:** \`${message.guild.channels.cache.size}\``)
                 comando.send(embeddiretor);
-    console.log(c.brightMagenta(`[LOG DE COMANDOS]\nUsuário: ${message.author.tag}\nID: ${message.author.id}\nComando: ${message.content}\n\n[DADOS SERVIDOR]\nNome: ${message.guild.name}\nID: ${message.guild.id}\nMembros: ${message.guild.memberCount}\nCanais: ${message.guild.channels.cache.size}`))
+    console.log(c.brightMagenta(`-----------------------LOG-----------------------\n[LOG DE COMANDOS]\nUsuário: ${message.author.tag}\nID: ${message.author.id}\nComando: ${message.content}\n\n[DADOS SERVIDOR]\nNome: ${message.guild.name}\nID: ${message.guild.id}\nMembros: ${message.guild.memberCount}\nCanais: ${message.guild.channels.cache.size}\n-----------------------LOG-----------------------`))
             });
           })
