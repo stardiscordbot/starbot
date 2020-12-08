@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const config = require('../config.json')
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, prefix) => {
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.quote(`${message.author}, você não possui permissão para executar esse comando.`).then(msg=> msg.delete(8000))
     
     let mensg = args.join(' ')

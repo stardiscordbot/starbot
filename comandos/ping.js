@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, prefix) => {
   
   let ping = await client.shard.fetchClientValues('ws.ping')
   let ping_media = ping.reduce((prev, val) => prev + val)

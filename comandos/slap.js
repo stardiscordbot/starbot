@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const superagent = require('superagent');
 const c = require('../config.json');
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, prefix) => {
 
     if (!message.mentions.users.first()) return message.quote(`🍒 **»** **${message.author}**, você precisa mencionar um membro.`);
     if (message.mentions.users.first().id === "719524114536333342") return message.reply('Por que deseja me bater? O que eu te fiz?!');

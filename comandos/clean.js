@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, prefix) => {
   const motivo = `Comando Executado por: ${message.author.tag} (${message.author.id})`
   if(!message.guild.me.permissions.has("MANAGE_MESSAGES")) {
     return message.quote("Eu não tenho a permissão necessária!")

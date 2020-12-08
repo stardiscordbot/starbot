@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const config = require('../config.json')
 const db = require("../mongodb/blacklist.js");
 
-exports.run = (client, message, args) => {
+exports.run = (client, message, args, prefix) => {
     if (!['422535241211707393', '717766639260532826' , '742798447253651506', '485922669208797226'].some(a => message.author.id === a)) return message.quote('Apenas desenvolvedores / moderadores do bot podem utilizar este comando!')
   const id = args[0]
   const user = client.users.cache.find(a => a.id === id)
@@ -30,5 +30,6 @@ exports.run = (client, message, args) => {
 }
 exports.help = {
     name: 'rbl',
-    aliases: ['starunban', 'botunban', 'bub']
+    aliases: ['starunban', 'botunban', 'bub'],
+    category: 'dev'
 }

@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const config = require('../config.json');
 
   
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, prefix) => {
         try {
             if (!config.dev.some(a => message.author.id === a)) return message.quote('Apenas desenvolvedores do bot podem utilizar este comando!')
             if(!args.join(' ')) return message.quote('Escreva o código')
@@ -21,5 +21,6 @@ module.exports.run = async (client, message, args) => {
 exports.help = {
     name: 'eval',
     aliases: ['evaluate', 'ev', 'e'],
-    status: 'on'
+    status: 'on',
+    category: 'dev'
 }

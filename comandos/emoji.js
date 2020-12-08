@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const { parse } = require('twemoji-parser')
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, prefix) => {
 
    const emoji = args[0];
    if (!emoji) return message.quote("Nenhum emoji foi disponibilizado");

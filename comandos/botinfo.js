@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const os = require("os");
 const config = require('../config.json')
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, prefix) => {
 
   let totalSeconds = client.uptime / 1000;
   let days = Math.floor(totalSeconds / 86400);

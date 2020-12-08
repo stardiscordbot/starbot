@@ -1,10 +1,19 @@
 const {client} = require("../bot.js");
 const config = require("../config.json");
+const Discord = require('discord.js')
 const c = require('colors')
-const autorole = require('../mongodb/autorole')
-const welcomeChannel = require('../mongodb/WelcomeChannel')
-
-client.on('guildMemberAdd', member => {
+// Arquivos
+const bldb = require("../mongodb/blacklist.js");
+const dc = require('../mongodb/dc.js')
+const pr = require("../mongodb/prefix");
+const autorole = require('../mongodb/autorole.js');
+const welcomeChannel = require('../mongodb/WelcomeChannel.js');
+const votosZuraaa = require('../votosZuraaa.js');
+const logChannel = require('../mongodb/messagelog.js');
+const Money = require("../mongodb/money.js");
+const antilink = require('../mongodb/antilink');
+// Inicio do Code
+client.on('guildMemberAdd', async member => {
 // Carinha
 let guild = await client.guilds.cache.get("714930300924461057");
 let channel = await client.channels.cache.get("755277456969302057");

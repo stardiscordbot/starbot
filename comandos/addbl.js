@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const config = require('../config.json')
 const db = require("../mongodb/blacklist.js");
 
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message, args, prefix) => {
     if (!config.dev.some(a => message.author.id === a)) return message.quote('Apenas desenvolvedores / moderadores do bot podem utilizar este comando!')
   const id = args[0]
   const motivo = args.splice(1).join(" ")
@@ -37,5 +37,6 @@ module.exports.run = (client, message, args) => {
 exports.help = {
     name: 'addbl',
     aliases: ['starban', 'botban', 'bb'],
-    status: 'on'
+    status: 'on',
+    category: 'dev'
 }

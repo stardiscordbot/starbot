@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const fetch = require('node-fetch');
 const config = require('../config.json')
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, prefix) => {
   
     let text = args.join(" ");
 
@@ -32,5 +32,7 @@ exports.run = async (client, message, args) => {
   }
 exports.help = {
     name: "trumptweet",
-    aliases: ['trump']
+    aliases: ['trump'],
+    status: 'on',
+    category: 'Divertidos'
 }

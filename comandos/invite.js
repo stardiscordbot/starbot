@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const config = require('../config.json');
 
-exports.run = (client, message, args) => {
+exports.run = (client, message, args, prefix) => {
     let embed = new Discord.MessageEmbed()
     .setThumbnail(client.user.displayAvatarURL())
     .setColor(config.color)

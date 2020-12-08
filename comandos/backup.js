@@ -3,7 +3,7 @@ const config = require('../config.json');
 const backup = require('../discord-backup/lib/index.js')
 const pr = require('../mongodb/prefix')
 
-exports.run = (client, message, args) => {
+exports.run = (client, message, args, prefix) => {
 
   pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
     let prefix = res ? res.prefix : config.prefix;

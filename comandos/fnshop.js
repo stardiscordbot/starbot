@@ -3,7 +3,7 @@ const Fortnite = require("fortnite");
 const config = require('../config.json')
 const ft = new Fortnite(config.fort);
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, prefix) => {
         try
         {
             await ft.store().then(async data=>

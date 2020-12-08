@@ -2,7 +2,7 @@
 const jimp = require("jimp")
 const Discord = require('discord.js')
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, prefix) => {
         let img = jimp.read("https://media.discordapp.net/attachments/510871777728135201/777618213331796029/laranjo-meme-star.jpg?width=627&height=452")
         if (!args[0]) return message.reply("indique que o laranjo deve falar.")
         if(args[0].length > 50) {

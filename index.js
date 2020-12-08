@@ -7,7 +7,7 @@ const shard = new ShardingManager('./bot.js', {
     respawn: true, 
 });
 shard.on('shardCreate', shard => {
-    console.log(`[SHARD] - Iniciando shard ${shard.id}`.brightCyan)
+    console.log(`-----------------------SHARDS-----------------------\n[SHARD] - Iniciando shard ${shard.id}\n-----------------------SHARDS-----------------------`.brightCyan)
     hook.send(`<:online:769404416649461761> Shard ${shard.id} iniciada <:online:769404416649461761>`)
 });
 shard.spawn();

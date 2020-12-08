@@ -4,7 +4,7 @@ const { Menu } = require('discord.js-menu')
 const { Client, MessageEmbed } = require('discord.js')
 
 
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message, args, prefix) => {
  if (!args[0]) {
         return message.reply('Você precisa inserir uma localidade para isso. Exemplo: `s.clima Alvorada do Sul`')
     } else {

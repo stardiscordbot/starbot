@@ -9,7 +9,7 @@ mongoose.connect(dbUrl, {
 
 const Money = require("../mongodb/money.js");
 
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message, args, prefix) => {
         let earnedCoins = Math.floor(Math.random() * 100) + 1;
     Money.findOne({
         userID: message.author.id

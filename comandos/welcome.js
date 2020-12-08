@@ -4,7 +4,7 @@ const config = require('../config.json')
 const mongoose = require('mongoose')
 const welcomeChannel = require('../mongodb/WelcomeChannel.js')
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, prefix) => {
   let channel = message.mentions.channels.first() || client.channels.cache.get(args[0])
 
   if(!message.member.hasPermission('ADMINISTRATOR')) {

@@ -1,6 +1,6 @@
 const Discord = require("discord.js"); //Conexão com a livraria discord.js
 
-exports.run = async (client, message, args) => { //estrutura básica de criação de um comando
+exports.run = async (client, message, args, prefix) => { //estrutura básica de criação de um comando
 
   
  let avatar = message.guild.iconURL({ dynamic: true, format: 'png', size: 1024 });

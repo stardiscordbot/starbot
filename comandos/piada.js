@@ -2,7 +2,7 @@ const piadasLib = require('piadas-library')
 const Discord = require("discord.js")
 
 
-module.exports.run = async(client, message, args) => {
+module.exports.run = async(client, message, args, prefix) => {
     const PiadasClient = new piadasLib();
     const piada = await PiadasClient.randomPiada()
     const pobre = new Discord.MessageEmbed()

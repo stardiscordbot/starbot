@@ -19,7 +19,7 @@ const langs = {
     "es": "Espanhol"
 }
 
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message, args, prefix) => {
  
   if (!args[0]) {
     return message.quote(`Use dessa forma: s!traduzir <lingua> + <lingua> <mensagem>`)

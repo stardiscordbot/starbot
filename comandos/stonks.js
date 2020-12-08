@@ -1,7 +1,7 @@
 // Adapte para seu bot, isso é a base! By: Rafa
 const jimp = require("jimp")
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, prefix) => {
         let img = jimp.read("https://media.discordapp.net/attachments/723135289320538152/733670552622989352/stonks-meme.png")
         if (!args[0]) return message.reply("Você precisa escrever algo pra fazer stonks.")
         if(args[0].length > 50) {

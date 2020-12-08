@@ -20,7 +20,7 @@ var eightball = [
         "tu que deixa",
 ]
 
-module.exports.run = async (client,message,args) => {
+module.exports.run = async (client,message,args,prefix) => {
         // Coisas de Exemplo
     const comando = '8ball'
     const ultilização = '[sua pergunta]'

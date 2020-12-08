@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const pr = require("../mongodb/prefix");
 const ms = require("ms");
 
-module.exports.run = async(client, message, args) => {
+module.exports.run = async(client, message, args, prefix) => {
     pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
     let prefix = res ? res.prefix : config.prefix;
   if(!args[0]) return message.reply(`ultilize, \`${prefix}giveaway start\`!`);

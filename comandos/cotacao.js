@@ -4,7 +4,7 @@ const config = require('../config.json');
 const pr = require('../mongodb/prefix.js');
 const Guild = require('../mongodb/guild.js');
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, prefix) => {
     const apiTotal = `https://economia.awesomeapi.com.br/json/all/USD-BRL,EUR-BRL,BTC-BRL,CAD-BRL`;
 
     const {

@@ -2,7 +2,7 @@ const API = require("../shardconfig")
 const AsciiTable = require('ascii-table')
 table = new AsciiTable('Star™️ - Shards')
 
-module.exports.run = async(client, message, args) => {
+module.exports.run = async(client, message, args, prefix) => {
 
   table.setHeading('SID', 'UpTime', 'Ping', 'Usage', 'Guilds', 'Users')
 

@@ -8,7 +8,7 @@ mongoose.connect(config.mongo, {
     useNewUrlParser: true
 });
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, prefix) => {
         let target = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
     const bot = new Discord.MessageEmbed()
     .setTitle('ERRO')

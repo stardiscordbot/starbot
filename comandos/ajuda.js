@@ -1,7 +1,27 @@
 const Discord = require("discord.js");   
 const config = require('../config.json');
+let n = '`';
 
-exports.run = (client, message, args) => {
+exports.run = (client, message, args, prefix) => {
+
+  if(args[0] === 'discord') {
+    // Ajuda
+  let divertidos = client.commands.filter(command => command.help.category === "Divertidos").map(e => `${n}${e.help.name}${n}`).join(" **|** ");
+  let devs = client.commands.filter(command => command.help.category === "dev").map(e => `${n}${e.help.name}${n}`).join(" **|** ");
+    // Size
+  let divertidosSize = client.commands.filter(command => command.help.category === "Divertidos").size;
+  let devsSize = client.commands.filter(command => command.help.category === "dev").size;
+    // Stop
+  const discord = new Discord.MessageEmbed()
+  .setAuthor(`Ajuda | ${client.user.username}`, client.user.displayAvatarURL({ dynamic: true }))
+  .setDescription('**Links:**\n<a:Rosa_seta_pg:754374503001358467> Meu Website: [Clique Aqui](https://starbot-website.yadg.repl.co/)\n<a:Rosa_seta_pg:754374503001358467> Me Adicione: [Clique Aqui](https://discord.com/oauth2/authorize?client_id=719524114536333342&permissions=8&scope=bot)\n<a:Rosa_seta_pg:754374503001358467> Servidor de Suporte: [Clique Aqui](https://discord.gg/2pFH6Yy)')
+  .addField(`Diversão [${divertidosSize}]`, `${divertidos}`)
+  .addField(`Devs [${devsSize}]`, `${devs}`)
+  .setColor(config.color)
+  .setThumbnail(client.user.displayAvatarURL())
+  .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
+  message.quote(discord)
+  }
 
     const ajuda = new Discord.MessageEmbed()
     .setTitle('Ajuda | Star:tm:')
@@ -10,7 +30,6 @@ exports.run = (client, message, args) => {
     .setThumbnail(client.user.displayAvatarURL())
     .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
     message.quote(ajuda);
-
 }
 exports.help = { 
   name: 'ajuda', 

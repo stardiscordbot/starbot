@@ -2,7 +2,7 @@ const emoji = require('../jsons/emojis.json')
 const config = require('../config.json')
 const Discord = require('discord.js')
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, prefix) => {
     // Caso o user não tenha perm
     if(!message.guild.me.permissions.has("BAN_MEMBERS")) {
         return message.quote("Eu não tenho a permissão necessária!")

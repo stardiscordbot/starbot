@@ -4,7 +4,7 @@ const Antilink = require('../mongodb/antilink');
 const config = require('../config.json');
 const c = require('colors');
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, prefix) => {
     // Caso o Antilink seja ligado
     if(args[0] == "on") {
         const confirmar = new Discord.MessageEmbed()

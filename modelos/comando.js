@@ -3,7 +3,7 @@ const config = require('../config.json');
 const pr = require('../mongodb/prefix.js');
 const Guild = require('../mongodb/guild.js');
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, prefix) => {
     // Coisas de Exemplo
     const comando = 'NOME DO COMANDO'
     const aliases = 'ALIASES DO COMANDO'
@@ -23,7 +23,7 @@ exports.run = async (client, message, args) => {
   .setColor(config.color)
   .setImage(`${exemploFoto}`)
   if(args[0]) {
-      message.quote(exemploembed)
+      message.channel.send(exemploembed)
   }
 // Código Aqui
 

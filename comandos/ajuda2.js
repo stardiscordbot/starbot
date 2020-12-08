@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 const config = require('../config.json');
 const { Menu } = require('discord.js-menu');
 
-exports.run = (client, message, args) => {
+exports.run = (client, message, args, prefix) => {
 
     let helpMenu = new Menu(message.channel, message.author.id, [
         // Each object in this array is a unique page.

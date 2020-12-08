@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const mongoose = require('mongoose');
 const Guild = require('../mongodb/guild');
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, prefix) => {
   
     const guild = await Guild.findOne({ 
         guildID: message.guild.id

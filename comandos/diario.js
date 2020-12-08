@@ -9,7 +9,7 @@ mongoose.connect(dbUrl, {
 });
 const Money = require("../mongodb/money.js");
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, prefix) => {
 
         let dailyCoins = 250;
 if (talkedRecently.has(message.author.id)) {

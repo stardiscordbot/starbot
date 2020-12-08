@@ -3,7 +3,7 @@ const cooldowns = {}
 const ms = require("ms")
 const config = require('../config.json');
 const { MessageEmbed } = require('discord.js');
-module.exports.run = async(client, message, args) => {
+module.exports.run = async(client, message, args, prefix) => {
 if (!args.length) return message.reply(`use: ${config.prefix}calc <calculo>`);
 
 const math = create(all);

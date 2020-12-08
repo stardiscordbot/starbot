@@ -1,5 +1,6 @@
 require('./quote.js')
 require('./mongodb/blacklist.js')
+const {Player} = require('./musica/index.js')
 const Discord = require('discord.js')
 const backup = require('./discord-backup/lib/index.js')
 const config = require('./config.json')
@@ -21,6 +22,7 @@ const antilink = require('./mongodb/antilink');
 const moment = require("moment");
 const ms = require('ms');
 const DBL = require("dblapi.js");
+const Levels = require('discord-xp');
 const dbl = new DBL(config.dbl, client);
 
 dbl.on('posted', () => {
@@ -31,6 +33,8 @@ dbl.on('error', e => {
  console.log(c.red(`[DBL] - ${e}`));
 })
 
+Levels.setURL(config.mongo)
+
 mongoose.connect(config.mongo, { 
   
     useNewUrlParser: true,
@@ -40,6 +44,14 @@ mongoose.connect(config.mongo, {
   }).catch (function () {
     console.log(c.brightRed("[BANCO DE DADOS] - Banco de dados desligado por erro"))
   });
+
+  const player = new Player(client, {
+    leaveOnEnd: true,
+	  leaveOnEmpty: true,
+    quality: 'high',
+  })
+
+  client.player = player
 
   const webvotos = new Discord.WebhookClient(config.votosID, config.votosTOKEN)
   client.on('message', message => {
@@ -78,7 +90,7 @@ client.on('message', message => {
 */
 
 const comando = new Discord.WebhookClient(config.logID, config.logToken)
- client.on('message', message => {
+ client.on('message', async message => {
    if (message.author.bot) return;
    if (message.channel.type == 'dm') return;
    pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
@@ -94,7 +106,7 @@ const comando = new Discord.WebhookClient(config.logID, config.logToken)
             });
           })
 
-client.on("message", async message => {
+client.on("message", message => {
     // If's
     if (message.author.bot) return;
     if (message.channel.type === "dm") return;
@@ -152,7 +164,10 @@ client.on("message", async message => {
     let command =client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
     if(command.help.status === 'off') return message.reply('sinto muito, esse comando está desabilitado, aguarde');
     if (command) {
-      command.run(client, message, args);
+      pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
+          let prefix = res ? res.prefix : config.prefix
+      command.run(client, message, args, prefix);
+      })
     } else {
       console.log(`${message.author} Usou o comando inexistente ${message.content}`);
     }
@@ -286,9 +301,18 @@ client.on('messageDelete', async (message) => {
     });
   });
 
-//Console
-client.on('error', e => {
-  console.log(c.red(`${e}`));
-})
+// Handler de Eventos
+fs.readdir("./eventos/", (err, files) => {
+  if(err)
+      console.error(err);
+  const eventsFiles = files.filter(file => file.split(".").pop() == "js");
+  if(eventsFiles.length <= 0)
+      return console.warn(c.brightRed("-----------------------EVENTOS-----------------------\n[EVENTOS] - Não existem eventos para ser carregado\n-----------------------EVENTOS-----------------------"));
+  eventsFiles.forEach((file, i) => {
+      require("./eventos/" + file);
+  })
+  console.log(c.brightCyan("-----------------------EVENTOS-----------------------\n[EVENTOS] - Carregados com sucesso\n-----------------------EVENTOS-----------------------"))
+});
 
 client.login(config.token)
+module.exports = { client }

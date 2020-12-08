@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const config = require('../config.json');
 const superagent = require('superagent');
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, prefix) => {
 
   let erro = new Discord.MessageEmbed()
 

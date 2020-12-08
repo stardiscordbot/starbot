@@ -1,6 +1,6 @@
 const Discord = require("discord.js") 
 
-module.exports.run = async (client, message, args) => { 
+module.exports.run = async (client, message, args, prefix) => { 
 this.emoji = args[0]
 if(!this.emoji) return message.quote("coloque um emoji")
 const emoji = client.emojis.cache.filter(c => c.name === this.emoji || c.name.toLowerCase() === this.emoji)

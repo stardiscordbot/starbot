@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const Deletar = require('../mongodb/dc.js');
 const mongoose = require("mongoose");
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, prefix) => {
     if (!message.member.hasPermission("MANAGE_GUILD")) return message.reply("você não tem permissão para usar esse comando, você necessita da permissão `Gerenciar Servidor`, contate algum admininstrador e tente novamente");
     if(!args[0]) return message.reply('você precisa escolher entre `on` e `off`')
     // Se off
