@@ -6,7 +6,7 @@ const { Client, MessageEmbed } = require('discord.js')
 
 module.exports.run = (client, message, args, prefix) => {
  if (!args[0]) {
-        return message.reply('Você precisa inserir uma localidade para isso. Exemplo: `s.clima Alvorada do Sul`')
+        return message.quote(`você precisa inserir uma localidade para isso. Exemplo: \`${prefix}clima Alvorada do Sul\``)
     } else {
         try {
             weather.find({ search: args.join(' '), degreeType: 'C' }, function (err, result) {

@@ -4,7 +4,7 @@ Olá meu nome é Star sou focada em Comandos Variados! Me Adicione! E Veja do qu
 
 
 ### Créditos
-[Discord.js](https://www.npmjs.com/package/discord.js)
+[discord.js](https://www.npmjs.com/package/discord.js)
 
 ## Como usar?
 

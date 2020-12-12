@@ -29,6 +29,7 @@ if (guild != member.guild) {
     welcomeChannel.findOne({ GuildID: member.guild.id }, async (err, data) => {
       if(!data) return;
 let welcomechanneldata = client.channels.cache.get(data.WelcomeChannelID)
+if(!welcomechanneldata) return;
   let join = new Discord.MessageEmbed()
   .setTitle(`${member.guild.name}`)
   .setDescription(`Olá ${member.user} seja bem-vindo ao servidor\n Atualmente estamos com **${member.guild.memberCount} membros**, divirta-se conosco! :heart:`)

@@ -18,16 +18,16 @@ exports.run = async (client, message, args, prefix) => {
         member = await client.users.fetch(args[0]).then(info => info).catch(() => { return; });
     } else member = message.mentions.users.first();
     // Banindo
-    // Motivo
-    let banReason = args.splice(1).join(" ");
-    if (!banReason) {
-    banReason = "Não Definido"
-    }
     const banido = new Discord.MessageEmbed()
     .setTitle(`${emoji.erro} | Banido`)
     .setDescription(`Olá, \`${member.tag}\`, você acabou de ser banido do Servidor ${message.guild.name} para mais informações procure ${message.author.tag}, tenha um bom dia :)`)
     .setColor(config.color)
     member.send(banido)
+    // Motivo
+    let banReason = args.splice(1).join(" ");
+    if (!banReason) {
+    banReason = "Não Definido"
+    }
     message.guild.members.ban(member, { reason: `Punido por: ${message.author.tag} - Motivo: ${banReason}`, }).catch(err => {
         console.log(`${message.author.tag}, eu não posso banir esse usuário.\nErro: ${err}`);
       });

@@ -1,8 +1,8 @@
 // Coisas Importantes
-require('./quote.js')
+require('./utils/quote.js')
 require('./mongodb/blacklist.js')
 // Dep}endencias
-const {Player} = require('./musica/index.js')
+const {Player} = require("discord-music-player");
 const Discord = require('discord.js')
 const backup = require('./discord-backup/lib/index.js')
 const config = require('./config.json')
@@ -48,29 +48,6 @@ mongoose.connect(config.mongo, {
   }).catch (function () {
     console.log(c.brightRed("-----------------------MONGOOSE-----------------------\n[BANCO DE DADOS] - Banco de dados desligado por erro\n-----------------------MONGOOSE-----------------------"))
   });
-  // Api de Votos Zuraaa
-  const webvotos = new Discord.WebhookClient(config.votosID, config.votosTOKEN)
-  client.on('message', message => {
-    // Quantidade de dinheiro adicionada ao votante
-    let dailyCoins = 250;
-    // Puxando o VerificaVotos
-    votosZuraaa.verificaVotos(message, function(user){
-      // Embed do user
-        const obrigado = new Discord.MessageEmbed()
-        .setTitle('🎉 Obrigado pelo seu Voto!')
-        .setDescription(`Obrigada por votar em mim, cada voto me ajuda a crescer!`)
-        .setColor(config.color)
-        user.send(obrigado);
-        // Embed do webhook
-        const voted = new Discord.MessageEmbed()
-        .setTitle('🥳 Obrigado pelo seu Voto!')
-        .setDescription(`\`${user.tag}\` votou em mim! Vote você também e seja uma pessoa incrível!\nhttps://zuraaa.com/bots/719524114536333342/votar`)
-        .setColor(config.color)
-        webvotos.send(voted)
-      // Fim
-        });
-    });
-
 /*
 client.on('message', message => {
     if (message.author.bot) return;

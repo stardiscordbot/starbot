@@ -28,5 +28,5 @@ client.on("ready", () => {
     client.user
           .setStatus("online")
           .catch(console.error);
-    console.log(c.brightGreen('-----------------------READY-----------------------\n[LOGIN] - Estou Online!\n-----------------------READY-----------------------'))
+    console.log(c.brightGreen(`-----------------------READY-----------------------\n[LOGIN] - Estou Online!\n[BOT] - ${client.user.username}\n[SERVIDORES] - ${client.guilds.cache.size}\n[SHARD] - ${client.shard.ids}\n-----------------------READY-----------------------`))
 });
