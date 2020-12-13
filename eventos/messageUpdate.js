@@ -18,7 +18,7 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
     if(!data53) return;
     if(newMessage.author.bot) return;
     let messageChannel2 = client.channels.cache.get(data53.MessageLogChannel)
-    if(!messageChannel2) return;
+    if(!messageChannel2) return console.log('[CANAL] - Canal de logs inexistente :)'.america)
     let messageUpdateEmbed = new Discord.MessageEmbed()
     .setAuthor('Mensagem Editada', 'https://media.discordapp.net/attachments/506838906872922145/603643138854354944/messageupdate.png')
     .setDescription(`**Usuário**\: <@${oldMessage.author.id}>

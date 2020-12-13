@@ -18,6 +18,7 @@ client.on('guildMemberAdd', async member => {
 let guild = await client.guilds.cache.get("714930300924461057");
 let channel = await client.channels.cache.get("755277456969302057");
 let emoji = await member.guild.emojis.cache.find(emoji => emoji.name === "nomedoemoji");
+if(!channel) return console.log('[CANAL] - Canal de boas-vindas inexistente :)'.america)
 if (guild != member.guild) {
   return
  } else {
@@ -29,7 +30,7 @@ if (guild != member.guild) {
     welcomeChannel.findOne({ GuildID: member.guild.id }, async (err, data) => {
       if(!data) return;
 let welcomechanneldata = client.channels.cache.get(data.WelcomeChannelID)
-if(!welcomechanneldata) return;
+if(!welcomechanneldata) return console.log('[CANAL] - Canal de boas-vindas inexistente :)'.america)
   let join = new Discord.MessageEmbed()
   .setTitle(`${member.guild.name}`)
   .setDescription(`Olá ${member.user} seja bem-vindo ao servidor\n Atualmente estamos com **${member.guild.memberCount} membros**, divirta-se conosco! :heart:`)
@@ -40,7 +41,8 @@ if(!welcomechanneldata) return;
     autorole.findOne({ GuildID: member.guild.id }, async (err, data432) => {
         if(!data432) return;
         let autorolerole = member.guild.roles.cache.get(data432.RoleID)
+        if(!autorolerole) return console.log('[ROLE] - Canal de boas-vindas inexistente :)'.america)
         member.roles.add(autorolerole)
       })
     // Fim
-})
+}) // Nzg3Mzk3OTk3Mjk3NDAxODY2.X9UXhw.BEBHPEQwFILKXj31kSBIlOBw0GU

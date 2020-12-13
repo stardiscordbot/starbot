@@ -1,4 +1,4 @@
-# Starbot
+# StarBot
 
 Olá meu nome é Star sou focada em Comandos Variados! Me Adicione! E Veja do que sou capaz!
 

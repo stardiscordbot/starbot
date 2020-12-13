@@ -1,7 +1,7 @@
 // Coisas Importantes
 require('./utils/quote.js')
 require('./mongodb/blacklist.js')
-// Dep}endencias
+// Dependencias
 const {Player} = require("discord-music-player");
 const Discord = require('discord.js')
 const backup = require('./discord-backup/lib/index.js')

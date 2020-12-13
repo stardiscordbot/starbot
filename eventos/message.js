@@ -13,6 +13,7 @@ const votosZuraaa = require('../votosZuraaa.js');
 const logChannel = require('../mongodb/messagelog.js');
 const Money = require("../mongodb/money.js");
 const antilink = require('../mongodb/antilink');
+const barrar = new Set();
 // Inicio do Code
 const comando = new Discord.WebhookClient(config.logID, config.logToken)
 client.on("message", message => {
@@ -53,6 +54,9 @@ client.on("message", message => {
       message.delete()
     }
   })
+  if (barrar.has(message.author.id)) {
+    return message.reply("Se você está recebendo está mensagem significa que você não concluiu o processo de exclusão de dados do meu banco de dados, finalize o processo ou espere o tempo de 30 segundos após a execução do comando.")
+  }
   // Caso o user esteja banido
   bldb.findOne({_id:message.author.id}, (err, bl) => {
     if(bl) {
@@ -76,7 +80,7 @@ client.on("message", message => {
   if (command) {
     pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
         let prefix = res ? res.prefix : config.prefix
-    command.run(client, message, args, prefix);
+    command.run(client, message, args, prefix, barrar);
     })
   } else {
     console.log();

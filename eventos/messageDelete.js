@@ -18,7 +18,7 @@ client.on('messageDelete', async (message) => {
     if(!data12) return;
     if(message.author.bot) return;
     let messageChannel = client.channels.cache.get(data12.MessageLogChannel)
-    if(!messageChannel) return;
+    if(!messageChannel) return console.log('[CANAL] - Canal de logs inexistente :)'.america)
     let messageDeleteEmbed = new Discord.MessageEmbed()
     .setAuthor('Mensagem Deletada', 'https://media.discordapp.net/attachments/506838906872922145/603642595419357190/messagedelete.png')
     .setDescription(`**Usuário**\: <@${message.author.id}>

@@ -42,6 +42,7 @@
     "quick.db": "^7.1.3",
     "salvage.db": "^1.2.4",
     "scrape-yt": "^1.4.6",
+    "string-similarity": "^4.0.3",
     "superagent": "^6.1.0",
     "twemoji-parser": "^13.0.0",
     "weather-js": "^2.0.0",
