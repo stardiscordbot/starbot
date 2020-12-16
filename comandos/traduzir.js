@@ -1,23 +1,4 @@
 const translate = require('@vitalets/google-translate-api');
-const langs = {
-    "auto": "Automatic",
-    "ar": "Arabe",
-    "nl": "Holandes",
-    "eng": "Inglês",
-    "en": "Inglês",
-    "fr": "Frances",
-    "de": "Alemão",
-    "el": "Grego",
-    "it": "Italiano",
-    "ja": "Japones",
-    "jw": "Javanes",
-    "kn": "Kannada",
-    "ko": "Coreano",
-    "pt": "Portugues",
-    "ro": "Romano",
-    "ru": "Russo",
-    "es": "Espanhol"
-}
 
 module.exports.run = (client, message, args, prefix) => {
  
@@ -45,5 +26,6 @@ module.exports.run = (client, message, args, prefix) => {
 };
 exports.help = {
     name: 'traduzir',
-    aliases: ['translate']
+    aliases: ['translate'],
+    status: "on"
 }

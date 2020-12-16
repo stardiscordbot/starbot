@@ -45,4 +45,4 @@ if(!welcomechanneldata) return console.log('[CANAL] - Canal de boas-vindas inexi
         member.roles.add(autorolerole)
       })
     // Fim
-}) // Nzg3Mzk3OTk3Mjk3NDAxODY2.X9UXhw.BEBHPEQwFILKXj31kSBIlOBw0GU
+})

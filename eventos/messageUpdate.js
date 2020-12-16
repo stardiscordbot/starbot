@@ -13,9 +13,13 @@ const logChannel = require('../mongodb/messagelog.js');
 const Money = require("../mongodb/money.js");
 const antilink = require('../mongodb/antilink');
 // Inicio do Code
-client.on('messageUpdate', async (oldMessage, newMessage) => {
+client.on('messageUpdate', async (oldMessage, newMessage, message) => {
+  if (oldMessage.channel.type === "dm") return;
     logChannel.findOne({ GuildID: oldMessage.guild.id }, async (err, data53) => {
+    if(!oldMessage.guild.id) return;
     if(!data53) return;
+    if(newMessage.channel.type === "dm") return;
+    if(oldMessage.channel.type === "dm") return;
     if(newMessage.author.bot) return;
     let messageChannel2 = client.channels.cache.get(data53.MessageLogChannel)
     if(!messageChannel2) return console.log('[CANAL] - Canal de logs inexistente :)'.america)

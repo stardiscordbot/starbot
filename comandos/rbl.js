@@ -1,32 +1,39 @@
 const Discord = require("discord.js");
-const config = require('../config.json')
+const config = require('../config.json');
+const emoji = require('../jsons/emojis.json')
 const db = require("../mongodb/blacklist.js");
+const mod = require('../mongodb/modperm.js')
 
 exports.run = async (client, message, args, prefix) => {
-    if (!['422535241211707393', '717766639260532826' , '742798447253651506', '485922669208797226'].some(a => message.author.id === a)) return message.quote('Apenas desenvolvedores / moderadores do bot podem utilizar este comando!')
+  mod.findOne({_id:message.author.id}, async (err, moddb) => {
+    if(!moddb) {
+        message.quote(`${emoji.nao} ${message.author}, apenas moderadores do bot podem usar este comando`)
+      }
+    if(moddb) {
   const id = args[0]
-  const user = await client.users.fetch(id)
-  if(!id) return message.quote("Você precisa adicionar o ID do usuário")
-    if(isNaN(id)) return message.quote(`Você sabia que o ID do usuário é somente números? Então por que colocou: "${id}"?`)
-      if(id.length < 18 || id.length > 18) return message.quote("Um ID contém 18 caracteres.")
+  if(!id) return message.quote(`${emoji.nao} ${message.author}, Você precisa adicionar o ID do usuário`)
+    if(isNaN(id)) return message.quote(`${emoji.nao} ${message.author}, Você sabia que o ID do usuário é somente números? Então por que colocou: **"${id}"**?`)
+      if(id.length < 18 || id.length > 18) return message.quote(`${emoji.nao} ${message.author}, Um ID contém 18 caracteres.`)
+      const user = await client.users.fetch(id)
     db.findOneAndDelete({_id:id}, (err, a) => {
       if(a) {
         const dd = new Discord.MessageEmbed()
         .setTitle("Blacklist | Sucesso")
         .setColor("00ff08")
-        .setDescription(`**O usuário \`${user.tag}\` foi desbanido**`)
+        .setDescription(`${emoji.sim} **O usuário \`${user.tag}\` foi desbanido**`)
         .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
         return message.quote(dd);
       } else {
-
         const erro = new Discord.MessageEmbed()
-        .setTitle("BlackList | erro")
+        .setTitle("BlackList | Erro")
         .setColor("ff0000")
-        .setDescription(`**O usuário ${user.tag} não está banido**`)
+        .setDescription(`${emoji.nao} **O usuário ${user.tag} não está banido**`)
         .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
         return message.quote(erro)
-      }
-    })
+        }
+      })
+    }
+  })
 }
 exports.help = {
     name: 'rbl',

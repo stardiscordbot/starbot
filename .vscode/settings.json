@@ -6,5 +6,6 @@
     "discord.lowerDetailsNotFound": "Sem Diretório",
     "discord.detailsDebugging": "🐛 Debug: {filename}",
     "discord.detailsEditing": "📝 Editando: {filename}",
-    "discord.smallImage": "💻 {appname}"
+    "discord.smallImage": "💻 {appname}",
+    "powermode.enabled": true
 }

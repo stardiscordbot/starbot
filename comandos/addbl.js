@@ -1,16 +1,22 @@
 const Discord = require("discord.js");
 const config = require('../config.json')
+const emoji = require('../jsons/emojis.json')
 const db = require("../mongodb/blacklist.js");
+const mod = require('../mongodb/modperm.js')
 
 module.exports.run = async (client, message, args, prefix) => {
-    if (!config.dev.some(a => message.author.id === a)) return message.quote('Apenas desenvolvedores / moderadores do bot podem utilizar este comando!')
+  mod.findOne({_id:message.author.id}, async (err, moddb) => {
+  if(!moddb) {
+      message.quote(`${emoji.nao} ${message.author}, apenas moderadores do bot podem usar este comando`)
+    }
+  if(moddb) {
   const id = args[0]
-  const user = await client.users.fetch(id)
   const motivo = args.splice(1).join(" ")
-  if(!id) return message.quote("Você precisa adicionar o ID do usuário")
-  if(isNaN(id)) return message.quote(`Você sabia que o ID do usuário é somente números? Então por que colocou: "${id}"?`)
-      if(id.length < 18 || id.length > 18) return message.quote("Um ID contém 18 caracteres.")
-  if(id == "422535241211707393" || id == "717766639260532826" || id == "672652538880720896") return message.quote(`Desculpe ${message.author.tag}, mas você sabe com certeza que ${user.tag} é um dos meus desenvolvedores, então por que eu iria bloquear ele?`)
+  if(!args[0]) return message.quote(`${emoji.nao} ${message.author}, Você precisa adicionar o ID do usuário`)
+  if(isNaN(id)) return message.quote(`${emoji.nao} ${message.author}, Você sabia que o ID do usuário é somente números? Então por que colocou: **"${id}"**?`)
+      if(id.length < 18 || id.length > 18) return message.quote(`${emoji.nao} ${message.author}Um ID contém 18 caracteres.`)
+      const user = await client.users.fetch(id)
+      if(id == "422535241211707393" || id == "717766639260532826" || id == "672652538880720896") return message.quote(`Desculpe ${message.author.tag}, mas você sabe com certeza que ${user.tag} é um dos meus desenvolvedores, então por que eu iria bloquear ele?`)
     db.findOne({_id:id}, (err, a) => {
       if(a) {
         const dd = new Discord.MessageEmbed()
@@ -33,6 +39,8 @@ module.exports.run = async (client, message, args, prefix) => {
         return message.quote(sucesso)
       }
     })
+    }
+  })
 };
 exports.help = {
     name: 'addbl',

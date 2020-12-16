@@ -1,10 +1,16 @@
 const Discord = require('discord.js');
 const config = require('../config.json');
-
+const dev = require('../mongodb/devperm.js')
   
 module.exports.run = async (client, message, args, prefix) => {
-        try {
-            if (!config.dev.some(a => message.author.id === a)) return message.quote('Apenas desenvolvedores do bot podem utilizar este comando!')
+    dev.findOne({_id:message.author.id}, async (err, db) => {
+        // Caso não tenha perm
+        if(!db) {
+            message.quote(`<a:nao:753735889783357560> ${message.author}, você não tem permissão para usar meu eval`)
+        }
+        // Se o User for dev
+        if(db) {
+            try {
             if(!args.join(' ')) return message.quote('Escreva o código')
             let code = await eval(args.join(" "));
             if (typeof code !== 'string') code = await require('util').inspect(code, { depth: 0 });
@@ -17,7 +23,10 @@ module.exports.run = async (client, message, args, prefix) => {
         } catch(err) {
             message.quote(`\`\`\`js\n${err}\n\`\`\``);
         }
-}
+    }   
+        // Fim
+        })
+    }
 exports.help = {
     name: 'eval',
     aliases: ['evaluate', 'ev', 'e'],
