@@ -1,0 +1,14 @@
+{
+    "log": {
+        "token": "token",
+        "id": "id"
+    },
+    "votos": {
+        "token": "token",
+        "id": "id"
+    },
+    "shard": {
+        "token": "token",
+        "id": "id"
+    }
+}
