@@ -13,6 +13,7 @@ const votosZuraaa = require('../votosZuraaa.js');
 const logChannel = require('../mongodb/messagelog.js');
 const Money = require("../mongodb/money.js");
 const antilink = require('../mongodb/antilink');
+const user = require('../mongodb/user.js')
 const barrar = new Set();
 // Inicio do Code
 const comando = new Discord.WebhookClient(config.logID, config.logToken)
@@ -24,7 +25,7 @@ client.on("message", message => {
     if(anti){
       if (message.author.bot) return;
       if (message.channel.type === "dm") return;
-      if (message.member.permissions.has("ADMINISTRATOR")) return;
+      if (message.member.permissions.has("MANAGE_GUILD")) return;
       if (message.content.toLowerCase().includes("https://")){
       console.log(c.bold(`[ANTILINK] - Antilink: ${message.guild.name}`))
       message.delete()
@@ -48,6 +49,18 @@ client.on("message", message => {
     if(message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)){
       return message.quote(`<a:Rosa_seta_pg:754374503001358467> Olá, ${message.author}! Meu prefixo atual é \`${prefix}\` para ver meus comandos use \`${prefix}ajuda\``)}
   if (!message.content.startsWith(prefix)) return;
+  user.findOne({id:message.author.id}, (err, db) => {
+    if(db) return;
+    if(!db) {
+      new user({
+        id:message.author.id,
+        sobre:`Eu Amo a star, você pode alterar isso com s!sobremim`,
+        votos:'0',
+        perfil:'https://media.discordapp.net/attachments/723135372737118349/727278263784964217/unknown.png?width=1004&height=564'
+      }).save().catch(console.error);
+      message.quote(`<a:Rosa_seta_pg:754374503001358467> ${message.author}, aparentemente você não tinha uma conta em meu banco de dados, acabei de criar uma, caso queira deletar ultilize: \`${prefix}removerconta\`, ultilize o comando: \`${message.content}\` novamente!`)
+    }
+  })
   // Deletar Comando
   dc.findOne({_id:message.guild.id}, (err, dc) => {
     if(dc){

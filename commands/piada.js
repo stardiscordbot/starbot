@@ -1,6 +1,6 @@
 const piadasLib = require('piadas-library')
 const Discord = require("discord.js")
-
+const color = 'ff0000'
 
 module.exports.run = async(client, message, args, prefix) => {
     const PiadasClient = new piadasLib();
@@ -9,7 +9,8 @@ module.exports.run = async(client, message, args, prefix) => {
     .setAuthor('Cachorro', 'https://media.discordapp.net/attachments/754461904575135815/773275095430856744/tenor.gif')
     .setDescription(`**P:** ${piada.question}\n**R:** ${piada.answer}`)
     .setFooter('Já que não tenho permissão de gerenciar webhooks mandei a mensagem no modo de pobre :(')
-      if(!message.guild.me.hasPermission("MANAGE_WEBHOOKS","ADMINISTRATOR")) return message.quote(pobre)
+    .setColor(color)
+      if(!message.guild.me.hasPermission("MANAGE_WEBHOOKS")) return message.quote(pobre)
 
   message.channel.createWebhook("Cachorro", {
       avatar: "https://media.discordapp.net/attachments/754461904575135815/773275095430856744/tenor.gif",

@@ -7,7 +7,7 @@ const welcomeChannel = require('../mongodb/WelcomeChannel.js')
 module.exports.run = async (client, message, args, prefix) => {
   let channel = message.mentions.channels.first() || client.channels.cache.get(args[0])
 
-  if(!message.member.hasPermission('ADMINISTRATOR')) {
+  if(!message.member.hasPermission('MANAGE_GUILD')) {
     return message.quote('Você não tem a permissão de \`admininstrador\` para usar este comando')
   }
 

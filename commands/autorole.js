@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
       return message.quote('Você não especificou um cargo')
     }
 
-    if(!message.member.hasPermission('ADMINISTRATOR')) {
+    if(!message.member.hasPermission('MANAGE_GUILD')) {
       return message.quote('Você não tem permissão para usar este comando')
     }
 

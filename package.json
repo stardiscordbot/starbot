@@ -38,6 +38,7 @@
     "mongoose": "^5.11.4",
     "ms": "^2.1.2",
     "node-fetch": "^2.6.1",
+    "node-superfetch": "^0.1.10",
     "nodemon": "^2.0.6",
     "piadas-library": "^1.2.7",
     "quick.db": "^7.1.3",

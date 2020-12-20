@@ -5,7 +5,7 @@ const welcomeChannel = require('../mongodb/WelcomeChannel.js')
 const autorole = require('../mongodb/autorole.js')
 
 module.exports.run = async (bot, message, args) => {
-  if(!message.member.hasPermission('ADMINISTRATOR')) {
+  if(!message.member.hasPermission('MANAGE_GUILD')) {
   return message.quote('❌ Você precisa de permissão de ADMINISTRADOR para ultilizar este comando')
   }
 

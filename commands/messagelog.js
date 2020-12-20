@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
   .addField('Examplo:', '\`s!messagelog #canal \`')
   .setColor('RED')
 
-  if(!message.member.hasPermission("ADMINISTRATOR")) {
+  if(!message.member.hasPermission("MANAGE_GUILD")) {
   return message.quote("Você não tem permissão para usar este comando")
   }
 

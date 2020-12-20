@@ -40,5 +40,5 @@ module.exports.run = async (client,message,args) => {
 module.exports.help = {
     name: "eject",
     aliases: ['ejetar'],
-    status: 'on'
+    status: 'off'
 }

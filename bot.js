@@ -54,9 +54,7 @@ client.on('message', message => {
     pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
       let prefix = res ? res.prefix : config.prefix;
     if (message.content.startsWith(prefix)) {
-          message.quote(`<a:alerta:763434977412120586> | ${message.author} Você está usando a versão experimental da Star:tm:. Várias funcionalidades podem não funcionar, posso ficar offline a qualquer momento, seu servidor pode explodir e muito mais! Não reporte problemas da versão experimental caso não seja solicitado, obrigada!`).then(msg=> {
-            msg.delete({ timeout: 5000, reason: "pq sim" });
-            })
+          message.quote(`<a:alerta:763434977412120586> | ${message.author} Você está usando a versão experimental da Star:tm:. Várias funcionalidades podem não funcionar, posso ficar offline a qualquer momento, seu servidor pode explodir e muito mais! Não reporte problemas da versão experimental caso não seja solicitado, obrigada!`)
     }
   })
 });

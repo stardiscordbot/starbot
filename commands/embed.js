@@ -1,11 +1,12 @@
 const Discord = require('discord.js')
 const config = require('../config.json')
+const emoji = require('../jsons/emojis.json')
 exports.run = async (client, message, args, prefix) => {
-    if(!message.member.hasPermission("ADMINISTRATOR")) return message.quote(`${message.author}, você não possui permissão para executar esse comando.`).then(msg=> msg.delete(8000))
+    if(!message.member.hasPermission("MANAGE_GUILD")) return message.quote(`${emoji.nao} ${message.author}, Você não tem permissão para usar este comando!`).then(msg=> msg.delete(8000))
     
     let mensg = args.join(' ')
     if(!mensg) {
-        message.quote(`${message.author}, digite uma mensagem para inserir.`)
+        message.quote(`${emoji.nao} ${message.author}, digite uma mensagem para inserir.`)
     return undefined;
     }
 
