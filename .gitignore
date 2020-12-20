@@ -1,6 +1,5 @@
 /node_modules
-/discord-backups
-discord-backup
+/discord-backup
 bots
 .vscode
 config.json
