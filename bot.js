@@ -89,3 +89,6 @@ fs.readdir("./events/", (err, files) => {
 client.login(config.token)
 // Exportando o Client
 module.exports = {client}
+// Ligando a Star Helper
+const bot = require('./bots/starhelper/bot.js');
+const client2 = bot.init(config.token);

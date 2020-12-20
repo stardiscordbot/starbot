@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const emoji = require('../jsons/emojis.json')
 
 exports.run = async (client, message, args, prefix) => {
-    if(!args.join(" ")) return message.channel.send(`${emoji.nao} ${message.author}, eu preciso que você escreva algo após o comando \`${prefix}vaporonda <texto bacana>\``)
+    if(!args.join(" ")) return message.quote(`${emoji.nao} ${message.author}, eu preciso que você escreva algo após o comando \`${prefix}vaporonda <texto bacana>\``)
     const vaporwavefield = args.join(" ").split(" / ")[0].split('').map(char => {
         const code = char.charCodeAt(0);
 

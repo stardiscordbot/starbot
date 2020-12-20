@@ -23,7 +23,7 @@ exports.run = async (client, message, args, prefix) => {
   .setColor(config.color)
   .setImage(`${exemploFoto}`)
   if(args[0]) {
-      message.channel.send(exemploembed)
+      message.quote(exemploembed)
   }
 // Código Aqui
 

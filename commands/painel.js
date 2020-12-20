@@ -36,7 +36,7 @@ exports.run = async (client, message, args) => {
       await embed.addField('<:off:788102362132250715> Welcome', `\`O Welcome está desativado nesse servidor\``)
     }
 })
-    await message.channel.send({embed})
+    await message.quote({embed})
 }
 exports.help = {
     "name": "painel",

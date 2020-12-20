@@ -17,6 +17,7 @@
     "byte-size": "^7.0.0",
     "canvacord": "^5.0.8",
     "canvas": "^2.6.1",
+    "child_process": "^1.0.2",
     "colors": "^1.4.0",
     "dblapi.js": "^2.4.1",
     "discord-music-player": "^6.1.1-fix3",

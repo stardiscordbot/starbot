@@ -1,4 +1,5 @@
 const color = require("colors")
+const child = require('child_process')
 const config = require("./config.json")
 const { ShardingManager, WebhookClient } = require('discord.js');
 const hook = new WebhookClient(config.hookID, config.hookTOKEN);

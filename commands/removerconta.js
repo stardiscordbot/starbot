@@ -13,7 +13,7 @@ exports.run = async (client, message, args, prefix, barrar) => {
     .setDescription(`Olá, ${message.author} aparentemente você fez uma solicitação para deletar suas informações do meu banco de dados, bom, lembre-se que isso é uma ação irreversivel e para voltar com tudo que tinha você terá que começar do __**zero**__, caso tenha consciência disso reaja com ${emoji.correto} para realizar o processo de exclusão de dados, **você será banido durante o processo de exclusão de dados para evitar que ocorram bugs durante esse processo.**`)
     .setColor(config.color)
     .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-    message.channel.send(embed).then(msg=> {
+    message.quote(embed).then(msg=> {
         msg.react('768507087268610079')
         const collectfilter = (reaction, user) => reaction.emoji.name === 'concluido' && user.id === message.author.id;
         const coletor = msg.createReactionCollector(collectfilter, { time: 30000 });
