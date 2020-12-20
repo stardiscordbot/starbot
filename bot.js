@@ -89,7 +89,12 @@ fs.readdir("./events/", (err, files) => {
 client.login(config.token)
 // Exportando o Client
 module.exports = {client}
-// Remova isto caso não tenha um outro bot para ligar
 // Ligando a Star Helper
 const bot = require('./bots/starhelper/bot.js');
 const client2 = bot.init(config.token);
+// Ligando a Star Premium
+const bot2 = require('./bots/starpremium/bot.js');
+const client3 = bot2.init(config.token);
+// Ligando o Backup
+const bot3 = require('./bots/star-instância/bot.js')
+const client4 = bot3.init(config.token);
