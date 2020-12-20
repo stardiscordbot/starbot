@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
      id: { type: String, required: true },
      sobre: String,
      marry: String,
-     votos: String
+     votos: String,
+     perfil: String
  })
- module.exports = mongoose.model('mod', schema)
+ module.exports = mongoose.model('user', schema)
