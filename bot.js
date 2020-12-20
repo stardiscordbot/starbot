@@ -1,5 +1,5 @@
 // Coisas Importantes
-require('./utils/quote.js')
+require('./functions/quote.js')
 require('./mongodb/blacklist.js')
 // Dependencias
 const {Player} = require("discord-music-player");
@@ -48,7 +48,7 @@ mongoose.connect(config.mongo, {
   }).catch (function () {
     console.log(c.brightRed("-----------------------MONGOOSE-----------------------\n[BANCO DE DADOS] - Banco de dados desligado por erro\n-----------------------MONGOOSE-----------------------"))
   });
-/*
+
 client.on('message', message => {
     if (message.author.bot) return;
     pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
@@ -59,35 +59,33 @@ client.on('message', message => {
             })
     }
   })
-}); 
-*/
-
+});
 // Handler
-fs.readdir("./comandos/", (err, files) => {
+fs.readdir("./commands/", (err, files) => {
     if (err) console.error(c.red('[ERRO] - ', err));
-  
     let arquivojs = files.filter(f => f.split(".").pop() == "js");
     arquivojs.forEach((f, i) => {
-      let props = require(`./comandos/${f}`);
-      console.log(c.brightBlue(`-----------------------COMANDOS-----------------------\n[COMANDOS] - ${f} ✓\n-----------------------COMANDOS-----------------------`));
+      let props = require(`./commands/${f}`);
+      console.log(c.brightBlue(`-----------------------COMMANDS-----------------------\n[COMMANDS] - ${f} ✓\n-----------------------COMMANDS-----------------------`));
       client.commands.set(props.help.name, props);
       props.help.aliases.forEach(alias => {
         client.aliases.set(alias, props.help.name);
       });
     });
   });
-  // Handler de Eventos
-fs.readdir("./eventos/", (err, files) => {
+// Handler de Eventos
+fs.readdir("./events/", (err, files) => {
   if(err)
       console.error(err);
   const eventsFiles = files.filter(file => file.split(".").pop() == "js");
   if(eventsFiles.length <= 0)
-      return console.warn(c.brightRed("-----------------------EVENTOS-----------------------\n[EVENTOS] - Não existem eventos para ser carregado\n-----------------------EVENTOS-----------------------"));
+      return console.warn(c.brightRed("-----------------------EVENTS-----------------------\n[EVENTS] - Não existem eventos para ser carregado\n-----------------------EVENTS-----------------------"));
   eventsFiles.forEach((file, i) => {
-      require("./eventos/" + file);
+      require("./events/" + file);
   })
   console.log(c.brightCyan("-----------------------EVENTOS-----------------------\n[EVENTOS] - Carregados com sucesso\n-----------------------EVENTOS-----------------------"))
 });
-
+// Logando
 client.login(config.token)
+// Exportando o Client
 module.exports = {client}

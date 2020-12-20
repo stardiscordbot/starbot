@@ -1,16 +1,16 @@
-const API = require("../shardconfig")
+const API = require("../configs/shardconfig")
 const AsciiTable = require('ascii-table')
 table = new AsciiTable('Star™️ - Shards')
 
-module.exports.run = async(client, message, args, prefix) => {
+module.exports.run = async(client, message, args) => {
 
   table.setHeading('SID', 'UpTime', 'Ping', 'Usage', 'Guilds', 'Users')
 
   table.setAlign(0, AsciiTable.CENTER)
-	table.setAlign(1, AsciiTable.CENTER)
-	table.setAlign(2, AsciiTable.CENTER)
-	table.setAlign(3, AsciiTable.CENTER)
-	table.setAlign(4, AsciiTable.CENTER)
+    table.setAlign(1, AsciiTable.CENTER)
+    table.setAlign(2, AsciiTable.CENTER)
+    table.setAlign(3, AsciiTable.CENTER)
+    table.setAlign(4, AsciiTable.CENTER)
   table.setAlign(5, AsciiTable.CENTER)
   table.setBorder('|', '-', '+', '+')
 
@@ -32,17 +32,17 @@ module.exports.run = async(client, message, args, prefix) => {
   let ping_media = ping.reduce((prev, val) => prev + val)
   let media = ping_media / client.options.shardCount
 
-  table.addRow('______', '______', '______', '______', '______', '______', '______')
+  table.addRow('______', '______', '______', '______', '______', '______')
 
   table.addRow('TOTAL', '-', '~' + Math.round(media) + 'ms', API.bytes(total_mem, 2).value + API.bytes(total_mem, 2).unit, total_servers.toLocaleString('pt-BR'), total_users.toLocaleString('pt-BR'))
 
-  message.quote(table.toString(), { code: 'apache' })
+  message.channel.send(table.toString(), { code: 'apache' })
 
   return table.clearRows()
 
 }
 
 exports.help = {
-    name: 'shard',
-    aliases: ['shards', 'shardinfo']
+    name: 'shards',
+    aliases: ['shard','shardinfo']
 }

@@ -1,11 +1,11 @@
 {
   "name": "star",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "shard.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "devStart": "nodemon index.js"
+    "start": "node shard.js",
+    "devStart": "nodemon shard.js"
   },
   "keywords": [],
   "author": "",
@@ -45,6 +45,7 @@
     "string-similarity": "^4.0.3",
     "superagent": "^6.1.0",
     "twemoji-parser": "^13.0.0",
+    "votos-zuraaa": "^2.0.1",
     "weather-js": "^2.0.0",
     "ytdl-core": "^4.1.2"
   },
