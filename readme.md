@@ -14,4 +14,4 @@
 ## 💁 What if I need help?
 > ```You can enter my support server here:``` [Click Here](https://discord.gg/2pFH6Yy)
 ## 🥳 Convinced me, how do I add?
-> ```If you want to use star on your server, you can ``` [Click Here](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot&permissions=805432446) ``` and join more than 600 servers in the StarDreams family```
+> ```If you want to use star on your server, you can``` [Click Here](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot&permissions=805432446) ``` and join more than 600 servers in the StarDreams family```
