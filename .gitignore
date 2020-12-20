@@ -1,6 +1,7 @@
 /node_modules
 /discord-backup
-bots
+/bots
+starredondas.png
 .vscode
 config.json
 star-dev.zip
