@@ -1,6 +1,7 @@
 /node_modules
 /discord-backup
 /bots
+/.vscode
 starredonda.png
 .vscode
 config.json

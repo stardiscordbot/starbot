@@ -23,7 +23,7 @@ client.on("ready", () => {
       i = 0;
     setInterval( () => client.user.setActivity(`${activities[i++ % activities.length]}`, {
        type: "STREAMING", url: "https://www.twitch.tv/adg_ofc"
-        }), 10000);
+        }), 30000);
     client.user
           .setStatus("online")
           .catch(console.error);

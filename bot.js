@@ -7,7 +7,7 @@ const Discord = require('discord.js')
 const backup = require('./npms/discord-backup/lib/index.js')
 const config = require('./src/config.json')
 // Client
-const client = new Discord.Client({ shardCount: 2});
+const client = new Discord.Client({ shardCount: 2 });
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 // Mais depêndencias
@@ -20,7 +20,6 @@ const dc = require('./src/mongodb/dc.js')
 const pr = require("./src/mongodb/prefix");
 const autorole = require('./src/mongodb/autorole.js');
 const welcomeChannel = require('./src/mongodb/WelcomeChannel.js');
-const votosZuraaa = require('./votosZuraaa.js');
 const logChannel = require('./src/mongodb/messagelog.js');
 const Money = require("./src/mongodb/money.js");
 const antilink = require('./src/mongodb/antilink');
