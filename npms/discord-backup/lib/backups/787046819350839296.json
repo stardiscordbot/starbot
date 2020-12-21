@@ -1,0 +1,1888 @@
+{
+    "name": "🏠 • Bot's Park",
+    "region": "brazil",
+    "verificationLevel": "LOW",
+    "explicitContentFilter": "ALL_MEMBERS",
+    "tantodecanal": 32,
+    "defaultMessageNotifications": "MENTIONS",
+    "afk": null,
+    "widget": {
+        "channel": null
+    },
+    "channels": {
+        "categories": [
+            {
+                "name": "[ VIPS ]",
+                "permissions": [
+                    {
+                        "roleName": "@everyone",
+                        "allow": 0,
+                        "deny": 3072
+                    }
+                ],
+                "children": [
+                    {
+                        "type": "voice",
+                        "name": "》🍬 Criar Chamada Privada",
+                        "bitrate": 64000,
+                        "userLimit": 0,
+                        "parent": "[ VIPS ]",
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 1024,
+                                "deny": 1050624
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "[ BOT'S PARK ]",
+                "permissions": [
+                    {
+                        "roleName": "@everyone",
+                        "allow": 1024,
+                        "deny": 2113
+                    }
+                ],
+                "children": [
+                    {
+                        "type": "text",
+                        "name": "▏📋regras",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ BOT'S PARK ]",
+                        "topic": "→ Leia as regras do servidor para evitar punições e para uma melhor convivência! ←",
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 1024,
+                                "deny": 2113
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "__**→ LEMBRE-SE CASO ALGUMA REGRA NÃO ESTEJA CITADA ACIMA USE O BOM SENSO ←**__",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "__**→ PARA UMA VIVÊNCIA MELHOR LEIA OS TERMOS ACIMA ←**__",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "> __**→ LINKS**__\n\n> **Convite:** https://discord.gg/ZjB9jS6RZq **✓**",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "> __**→ REGRAS BOTLIST**__\n\n> **1.** Obedecer as ToS (Termos de Serviço) **✓**\n> **2.** O BOT deve ficar online durante a verificação **✓**\n> **3.** Comandos copiados de outros bots (seu bot não poderá ser copy and paste) **✓**\n> **4.** Ocultar conteúdo NSFW, seu bot não poderá funcionar comandos NSFW em chats não nsfw **✓**\n> **5.** Seu bot não pode conter emojis epileticos (gifs e emojis) **✓**\n> **6.** Comandos precisam ter lock de permissões (ban, kick, mute e etc...) **✓**",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "🏠 • Bot's House\n\n> __**→ REGRAS GERAIS**__\n\n> **1.** Não seja toxicos com os outros membros. **✓**\n> **2. **Não pode xingar nem falar palavrão. **✓**\n> **3. **Para mexer nas configurações do servidor precisa da autorização da adm. **✓**\n> **4. **Não revele informações pessoais sobre as outras pessoas\n> **5.** Sem brigas se forem brigar vão para o privado. **✓**\n> **6. **Proibido usar avatares contendo: nudez, desrespeito de qualquer ambito, pornografia e etc. (Temos crianças na comunidade e temos que ter respeito com os demais). **✓**\n> **7. **Proibido fazer spam, flood nos chats. **✓**\n> **8. **Desrespeitar os administradores ou moderadores ou qualquer membro da equipe ou do servidor está sujeito Banimento. **✓**",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "",
+                                "embeds": [],
+                                "files": [
+                                    {
+                                        "name": "CELESTE.png",
+                                        "attachment": "https://cdn.discordapp.com/attachments/784478664913584159/786719696719314944/CELESTE.png"
+                                    }
+                                ],
+                                "pinned": false
+                            }
+                        ],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏📚faq",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ BOT'S PARK ]",
+                        "topic": "→ Veja como resolver alguns problemas e algumas informações importantes do servidor! ←",
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 1024,
+                                "deny": 2113
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "username": "Davi Patricio",
+                                "avatar": "https://cdn.discordapp.com/avatars/704468807229505637/a_dce4ce6ec15f3ebae842675059ebc9cc.webp",
+                                "content": "<:Bot:782673065867608104> **Como adicionar seu bot no servidor:**\n- Calma lá! Antes de enviar seu bot, tenha certeza que seu bot cumpre com os requisitos minimos! Veja todos os requisitos em #▏💻requisitos.\n\n> Se seu bot cumpre os requisitos...\n- Em #▏➕addbot execute o comando `b!addbot` e siga as instruções que nosso bot irá te enviar por **mensagem direta**.",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            }
+                        ],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏📡cargos",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ BOT'S PARK ]",
+                        "topic": "→ Pegue tags (cargos) extras relacionados a pings programação e etc! ←",
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 1024,
+                                "deny": 2113
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "username": "Davi Patricio",
+                                "avatar": "https://cdn.discordapp.com/avatars/704468807229505637/a_dce4ce6ec15f3ebae842675059ebc9cc.webp",
+                                "content": "Quais cargos vai ter?",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            }
+                        ],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏📑seja-staff",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ BOT'S PARK ]",
+                        "topic": "→ Faça parte da nossa equipe, entre pra staff! ←",
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 1024,
+                                "deny": 2113
+                            }
+                        ],
+                        "messages": [],
+                        "isNews": false
+                    }
+                ]
+            },
+            {
+                "name": "[ BOTLIST ]",
+                "permissions": [
+                    {
+                        "roleName": "@everyone",
+                        "allow": 1024,
+                        "deny": 2048
+                    }
+                ],
+                "children": [
+                    {
+                        "type": "text",
+                        "name": "▏➕addbot",
+                        "nsfw": false,
+                        "rateLimitPerUser": 300,
+                        "parent": "[ BOTLIST ]",
+                        "topic": "Adicione seu bot na nossa botlist, lembre de checar o <#787024009040625664>",
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 3072,
+                                "deny": 180225
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "ok",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Davi Patricio",
+                                "avatar": "https://cdn.discordapp.com/avatars/704468807229505637/a_dce4ce6ec15f3ebae842675059ebc9cc.webp",
+                                "content": "@​​ADG faz apagar  esse seu bot foi enviado",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": ":white_check_mark: **|** @​​ADG seu bot foi enviado para verificação!",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": ":white_check_mark: **|** @​​ADG seu bot foi enviado para verificação!",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": ":white_check_mark: **|** @​​Welling seu bot foi enviado para verificação!",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": ":white_check_mark: **|** @​​Welling seu bot foi enviado para verificação!",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Davi Patricio",
+                                "avatar": "https://cdn.discordapp.com/avatars/704468807229505637/a_dce4ce6ec15f3ebae842675059ebc9cc.webp",
+                                "content": "<:Bot:782673065867608104> **Como adicionar seu bot no servidor:**\n- Calma lá! Antes de enviar seu bot, tenha certeza que seu bot cumpre com os requisitos minimos! Veja todos os requisitos em #▏💻requisitos.\n\n> Se seu bot cumpre os requisitos...\n- Neste canal, execute o comando `b!addbot` e siga as instruções que nosso bot irá te enviar por **mensagem direta**.\n  + Tenha certeza que você permite mensagens diretas desse servidor.\n  + O Slowmode desse canal é de **10 minutos**.",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": true
+                            }
+                        ],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏💻requisitos",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ BOTLIST ]",
+                        "topic": "→ Veja os requisitos para adicionar seu bot ao servidor ←",
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 1024,
+                                "deny": 2048
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "username": "Davi Patricio",
+                                "avatar": "https://cdn.discordapp.com/avatars/704468807229505637/a_dce4ce6ec15f3ebae842675059ebc9cc.webp",
+                                "content": "👋 **Olá!** Obrigado por escolher a `🏠 | Bot's Park`.\n\n⭐ • Para adicionar seu bot aqui, o bot deve cumprir alguns requisitos definidos por nossa equipe.\n\n> Requisitos **minímos**:\n- Você deve ser um dos donos do bot;\n- Bot estar online na hora da verificação;\n- Seu bot deve ter mais de 7 comandos funcionais;\n- Seu bot deve estar em 5 servidores ou mais;\n- Não deve ter foco exclusivamente em **NSFW**;\n- Seu bot deve seguir os termos de desenvolvedor do Discord;\n- Seu bot **não deve enviar mensagens diretas** quando membros:\n  • Entram no servidor\n  • Saem do servidor\n  • Sobem de nível\n\n> Se seu bot cumpre os requisitos...\n- Vá em #▏➕addbot, execute o comando `b!addbot` e siga as instruções que nosso bot irá te enviar por **mensagem direta**.\n  + Tenha certeza que você permite mensagens diretas desse servidor!\n\n**[REQUISITOS]** `Bot's Park | 2020 - 2021`.",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            }
+                        ],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏📰logs",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ BOTLIST ]",
+                        "topic": "→ Veja todas as logs relacionadas a nossa botlist! ←",
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 1024,
+                                "deny": 2048
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "<:certo:787017583144337448> ┃ @​​ADG aprovou o bot @​​Star™ [s!], enviado por @​​ADG",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "<:certo:787017583144337448> ┃ @​​ADG aprovou o bot @​​GhostFire [gf!], enviado por @​​Welling",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "<:certo:787017583144337448> ┃ @​​ADG aprovou o bot @​​Denky [/], enviado por <@​null>",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "<:certo:787017583144337448> ┃ @​​ADG adicionou o bot @​​Denky [/] para verificação",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "<:certo:787017583144337448> ┃ @​​ADG aprovou o bot @​​Bot's Park, enviado por <@​null>",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "<:certo:787017583144337448> ┃ @​​ADG adicionou o bot @​​Bot's Park para verificação",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "<:certo:787017583144337448> ┃ @​​ADG aprovou o bot @​​GhostFire [gf!], enviado por <@​null>",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "<:certo:787017583144337448> ┃ @​​Welling adicionou o bot <@​> para verificação",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "<:certo:787017583144337448> ┃ @​​Welling adicionou o bot <@​+5185> para verificação",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "<:certo:787017583144337448> ┃ @​​ADG adicionou o bot @​​Bot's Park para verificação",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            }
+                        ],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏🚓mod-logs",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ BOTLIST ]",
+                        "topic": "→ Veja todas as logs relacionadas ao servidor! ←",
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 1024,
+                                "deny": 2048
+                            }
+                        ],
+                        "messages": [],
+                        "isNews": false
+                    }
+                ]
+            },
+            {
+                "name": "[ COMUNIDADE ]",
+                "permissions": [
+                    {
+                        "roleName": "@everyone",
+                        "allow": 3072,
+                        "deny": 180225
+                    }
+                ],
+                "children": [
+                    {
+                        "type": "text",
+                        "name": "▏💬chat-principal",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ COMUNIDADE ]",
+                        "topic": "→ Chat Geral, ultilize para falar com outros membros! ←",
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 3072,
+                                "deny": 180225
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "s!backup create",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Denky",
+                                "avatar": "https://cdn.discordapp.com/avatars/704517722100465746/529e63914933dc76aeb103c4f3704e39.webp",
+                                "content": "<:catthumbsup:787046781418471444> **|** Feito.",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Davi Patricio",
+                                "avatar": "https://cdn.discordapp.com/avatars/704468807229505637/a_dce4ce6ec15f3ebae842675059ebc9cc.webp",
+                                "content": "/addemoji <:catthumbsup:782760897142849556>",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Denky",
+                                "avatar": "https://cdn.discordapp.com/avatars/704517722100465746/529e63914933dc76aeb103c4f3704e39.webp",
+                                "content": "<:j_notlike:787046738400903208> **|** Feito.",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Davi Patricio",
+                                "avatar": "https://cdn.discordapp.com/avatars/704468807229505637/a_dce4ce6ec15f3ebae842675059ebc9cc.webp",
+                                "content": "/addemoji <:j_notlike:785699774116003850>",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "<:ta_isa:787046645245149246>",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "lol",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Denky",
+                                "avatar": "https://cdn.discordapp.com/avatars/704517722100465746/529e63914933dc76aeb103c4f3704e39.webp",
+                                "content": "<:ta_isa:787046645245149246> **|** Feito.",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Davi Patricio",
+                                "avatar": "https://cdn.discordapp.com/avatars/704468807229505637/a_dce4ce6ec15f3ebae842675059ebc9cc.webp",
+                                "content": "/addemoji <:ta_isa:765749578107453471>",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "@​​Davi Patricio acha uns emoji",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            }
+                        ],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏✨mídia",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ COMUNIDADE ]",
+                        "topic": "→ Envie Imagens por aqui, já que temos limitações no chat geral! ←",
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 35840,
+                                "deny": 147457
+                            }
+                        ],
+                        "messages": [],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏⭐starboard",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ COMUNIDADE ]",
+                        "topic": "→ Starboard, veja os melhores momentos do servidor, para entrar aqui **precisa de 5 :star: na mensagem** ←",
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 1024,
+                                "deny": 182337
+                            }
+                        ],
+                        "messages": [],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏💭sugestões",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ COMUNIDADE ]",
+                        "topic": "→ Tem alguma ideia para nosso projeto? Conte pra gente! ←",
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 3072,
+                                "deny": 180225
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "First",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            }
+                        ],
+                        "isNews": false
+                    }
+                ]
+            },
+            {
+                "name": "[ LABORATÓRIO ]",
+                "permissions": [
+                    {
+                        "roleName": "@everyone",
+                        "allow": 1117184,
+                        "deny": 2129985
+                    }
+                ],
+                "children": [
+                    {
+                        "type": "text",
+                        "name": "▏🔌testes-1",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ LABORATÓRIO ]",
+                        "topic": null,
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 1117184,
+                                "deny": 2129985
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": ":white_check_mark: **|** @​​ADG Você aprovou o bot @​​Star™ [s!]!",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "b!aprovar 719524114536333342",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Star™",
+                                "avatar": "https://cdn.discordapp.com/avatars/719524114536333342/389ba16614a2f533e6a24259d3a38591.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": "Ajuda | Star:tm:",
+                                        "type": "rich",
+                                        "description": "Olá, <@717766639260532826> meu nome é Star:tm:, bem vindo ao meu ajuda\n\nA Star tem foco em Comandos de diversão, mas também tenho funções de moderação, ultilidades e (em um futuro proximo) economia\n\n**<a:wumpusgift:760827461217812481> | Lista de Comandos**\nhttps://starbot-website.yadg.repl.co/comandos\n**<:wumpus:754739856436887712> | Tem alguma dúvida? Pergunte em meu Suporte!**\nhttps://starbot-website.yadg.repl.co/redirect/suporte",
+                                        "url": null,
+                                        "timestamp": null,
+                                        "color": 16711874,
+                                        "fields": [],
+                                        "thumbnail": {
+                                            "url": "https://cdn.discordapp.com/avatars/719524114536333342/389ba16614a2f533e6a24259d3a38591.webp",
+                                            "proxyURL": "https://images-ext-2.discordapp.net/external/210UKk8HR2zfWQ_tybMIHEX8NmdfsbLAK3gvtt6Q-qE/https/cdn.discordapp.com/avatars/719524114536333342/389ba16614a2f533e6a24259d3a38591.webp",
+                                            "height": 128,
+                                            "width": 128
+                                        },
+                                        "image": null,
+                                        "author": null,
+                                        "footer": {
+                                            "text": "Comando Executado por ADG#3474 • Versão: Versão [2.0]",
+                                            "icon_url": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp?size=2048"
+                                        }
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "s!ajuda",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": null,
+                                        "type": "rich",
+                                        "description": null,
+                                        "url": null,
+                                        "timestamp": null,
+                                        "color": null,
+                                        "fields": [
+                                            {
+                                                "name": "📩 Entrada",
+                                                "value": "```js\nconst db = require('quick.db')\ndb.set(`pendbot_${client.user.id}`, 0)\ndb.set(`bot_${client.user.id}`, 0)```",
+                                                "inline": false
+                                            },
+                                            {
+                                                "name": "🚩 Saída",
+                                                "value": "```js\n0\n```",
+                                                "inline": false
+                                            }
+                                        ],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": null,
+                                        "footer": null
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "b!eval const db = require('quick.db')\ndb.set(`pendbot_${client.user.id}`, 0)\ndb.set(`bot_${client.user.id}`, 0)",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "🕰️ ┃ Você ja possuí um pedido em andamento em meu privado, cancele ele usando `cancelar` em meu privado ou conclua ele",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": null,
+                                        "type": "rich",
+                                        "description": null,
+                                        "url": null,
+                                        "timestamp": null,
+                                        "color": null,
+                                        "fields": [
+                                            {
+                                                "name": "📩 Entrada",
+                                                "value": "```js\nconst db = require('quick.db')\ndb.set(`pendbot_${client.user.id}`, 0)\ndb.set(`bot_${client.user.id}`, 0)```",
+                                                "inline": false
+                                            },
+                                            {
+                                                "name": "🚩 Saída",
+                                                "value": "```js\n0\n```",
+                                                "inline": false
+                                            }
+                                        ],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": null,
+                                        "footer": null
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "b!eval const db = require('quick.db')\ndb.set(`pendbot_${client.user.id}`, 0)\ndb.set(`bot_${client.user.id}`, 0)",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "uau",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            }
+                        ],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏🔌testes-2",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ LABORATÓRIO ]",
+                        "topic": null,
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 1117184,
+                                "deny": 2129985
+                            }
+                        ],
+                        "messages": [],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏📌fixados",
+                        "nsfw": false,
+                        "rateLimitPerUser": 1800,
+                        "parent": "[ LABORATÓRIO ]",
+                        "topic": null,
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 1117184,
+                                "deny": 2129985
+                            }
+                        ],
+                        "messages": [],
+                        "isNews": false
+                    }
+                ]
+            },
+            {
+                "name": "[ STAFF ]",
+                "permissions": [
+                    {
+                        "roleName": "@everyone",
+                        "allow": 0,
+                        "deny": 1051648
+                    },
+                    {
+                        "roleName": "🛠️ • Moderador",
+                        "allow": 3072,
+                        "deny": 0
+                    },
+                    {
+                        "roleName": "🛡️ • Ajudantes",
+                        "allow": 3072,
+                        "deny": 0
+                    },
+                    {
+                        "roleName": "💁 • Verificadores",
+                        "allow": 3072,
+                        "deny": 0
+                    }
+                ],
+                "children": [
+                    {
+                        "type": "text",
+                        "name": "▏📢anúncios-mods",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ STAFF ]",
+                        "topic": null,
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 0,
+                                "deny": 1051648
+                            },
+                            {
+                                "roleName": "🛠️ • Moderador",
+                                "allow": 1024,
+                                "deny": 2048
+                            },
+                            {
+                                "roleName": "🛡️ • Ajudantes",
+                                "allow": 1024,
+                                "deny": 2048
+                            },
+                            {
+                                "roleName": "💁 • Verificadores",
+                                "allow": 1024,
+                                "deny": 2048
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "username": "Community Updates",
+                                "avatar": "https://cdn.discordapp.com/avatars/669627189624307712/8530249cc2b90d3d9d92ae8bd55cbfce.webp",
+                                "content": "This channel has been set up to receive official Discord announcements for admins and moderators of Community servers. We'll let you know about important updates, such as new moderation features or changes to your server's eligibility for Server Discovery, here.\n\nYou can change which channel these messages are sent to at any time inside Server Settings. We recommend choosing your staff channel, as some information may be sensitive to your server.\n\nThanks for choosing Discord as the place to build your community!",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            }
+                        ],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏👮chat-staff",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ STAFF ]",
+                        "topic": null,
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 0,
+                                "deny": 1051648
+                            },
+                            {
+                                "roleName": "🛠️ • Moderador",
+                                "allow": 3072,
+                                "deny": 0
+                            },
+                            {
+                                "roleName": "🛡️ • Ajudantes",
+                                "allow": 3072,
+                                "deny": 0
+                            },
+                            {
+                                "roleName": "💁 • Verificadores",
+                                "allow": 3072,
+                                "deny": 0
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "\\👎",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "\\👍",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "👍",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "lel",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "será q na discloud dá certo?",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "lel",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "eu só n sei onde irei hospedar o bot",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "Olá, @​​ADG, meu nome é `Bot's Park` e meu prefixo é `b!`",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "@​​Bot's Park",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "@​​Bot's Park",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            }
+                        ],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏🤖comandos-staff",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ STAFF ]",
+                        "topic": null,
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 0,
+                                "deny": 1051648
+                            },
+                            {
+                                "roleName": "🛠️ • Moderador",
+                                "allow": 3072,
+                                "deny": 0
+                            },
+                            {
+                                "roleName": "🛡️ • Ajudantes",
+                                "allow": 3072,
+                                "deny": 0
+                            },
+                            {
+                                "roleName": "💁 • Verificadores",
+                                "allow": 3072,
+                                "deny": 0
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "vou configurar a perm dos bots",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": ":question: **|** Ultilize esse comando apenas em #▏➕addbot",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "hum",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Welling",
+                                "avatar": "https://cdn.discordapp.com/avatars/422535241211707393/e1c57e27286af98511115c2225ebf3a7.webp",
+                                "content": "",
+                                "embeds": [],
+                                "files": [
+                                    {
+                                        "name": "unknown.png",
+                                        "attachment": "https://cdn.discordapp.com/attachments/786727603788578826/787036851277267014/unknown.png"
+                                    }
+                                ],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": ":question: **|** Ultilize esse comando apenas em #▏➕addbot",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Welling",
+                                "avatar": "https://cdn.discordapp.com/avatars/422535241211707393/e1c57e27286af98511115c2225ebf3a7.webp",
+                                "content": "b!addbot",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "k",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "@​​Welling fiz",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": ":question: **|** Ultilize esse comando apenas em #▏➕addbot",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "agr s",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            }
+                        ],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏📰bot-queue",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ STAFF ]",
+                        "topic": "Escolha um bot que irá verificar reagindo com  ✅.",
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 0,
+                                "deny": 1051648
+                            },
+                            {
+                                "roleName": "🛠️ • Moderador",
+                                "allow": 1024,
+                                "deny": 2048
+                            },
+                            {
+                                "roleName": "🛡️ • Ajudantes",
+                                "allow": 1024,
+                                "deny": 2048
+                            },
+                            {
+                                "roleName": "💁 • Verificadores",
+                                "allow": 1024,
+                                "deny": 2048
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": "🤖 BOT APROVADO!",
+                                        "type": "rich",
+                                        "description": "**ADG#3474 aprovou o bot <@719524114536333342>!**\n        **Invite (gerado automaticamente)**: https://discordapp.com/api/oauth2/authorize?client_id=719524114536333342&permissions=0&scope=bot",
+                                        "url": null,
+                                        "timestamp": "2020-12-11T19:41:34.627Z",
+                                        "color": 37578,
+                                        "fields": [],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": {
+                                            "name": "ADG#3474"
+                                        },
+                                        "footer": null
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": ":white_check_mark: **|** @​​ADG Você aprovou o bot @​​GhostFire [gf!]!",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": "🤖 BOT APROVADO!",
+                                        "type": "rich",
+                                        "description": "**ADG#3474 aprovou o bot <@564982530407792641>!**\n        **Invite (gerado automaticamente)**: https://discordapp.com/api/oauth2/authorize?client_id=564982530407792641&permissions=0&scope=bot",
+                                        "url": null,
+                                        "timestamp": "2020-12-11T19:39:30.627Z",
+                                        "color": 37578,
+                                        "fields": [],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": {
+                                            "name": "ADG#3474"
+                                        },
+                                        "footer": null
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "b!aprovar 564982530407792641",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": ":white_check_mark: **|** @​​ADG Você aprovou o bot @​​Denky [/]!",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": "🤖 BOT APROVADO!",
+                                        "type": "rich",
+                                        "description": "**ADG#3474 aprovou o bot <@704517722100465746>!**\n        **Invite (gerado automaticamente)**: https://discordapp.com/api/oauth2/authorize?client_id=704517722100465746&permissions=0&scope=bot",
+                                        "url": null,
+                                        "timestamp": "2020-12-11T19:38:34.829Z",
+                                        "color": 37578,
+                                        "fields": [],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": {
+                                            "name": "ADG#3474"
+                                        },
+                                        "footer": null
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "b!aprovar 704517722100465746",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": "@​💁 • Verificadores",
+                                "embeds": [
+                                    {
+                                        "title": "🤖 NOVO BOT:",
+                                        "type": "rich",
+                                        "description": "<@717766639260532826> enviou um bot!\n        **Nome**: <@704517722100465746> (704517722100465746)\n        **ID**: `704517722100465746`\n        **Prefix**: `/`\n        **Descrição**: `Olá, sou o denky`\n        **Invite (gerado automaticamente)**: https://discordapp.com/api/oauth2/authorize?client_id=704517722100465746&scope=bot&guild_id=784475737477349406&permissions=0",
+                                        "url": null,
+                                        "timestamp": "2020-12-11T19:38:23.543Z",
+                                        "color": 37578,
+                                        "fields": [],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": null,
+                                        "footer": null
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "ADG",
+                                "avatar": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.webp",
+                                "content": "aaaaaaaaa",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Bot's Park",
+                                "avatar": "https://cdn.discordapp.com/avatars/721743585413824532/0245b93166d66370ffc29be42175afdc.webp",
+                                "content": ":question: **|** Ultilize esse comando apenas em #▏➕addbot",
+                                "embeds": [],
+                                "files": [],
+                                "pinned": false
+                            }
+                        ],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏⏰auditoria",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ STAFF ]",
+                        "topic": null,
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 0,
+                                "deny": 1051648
+                            },
+                            {
+                                "roleName": "🛠️ • Moderador",
+                                "allow": 3072,
+                                "deny": 0
+                            },
+                            {
+                                "roleName": "🛡️ • Ajudantes",
+                                "allow": 3072,
+                                "deny": 0
+                            },
+                            {
+                                "roleName": "💁 • Verificadores",
+                                "allow": 3072,
+                                "deny": 0
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "username": "Loritta",
+                                "avatar": "https://cdn.discordapp.com/avatars/786728865325514774/6aa7b9ecf57332675bfd7e77a6e69811.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": null,
+                                        "type": "rich",
+                                        "description": "📝 **Mensagem de texto deletada**\n\n**Canal de texto:** <#786715027897712650>\n\n**Mensagem:**\n\n```oi```",
+                                        "url": null,
+                                        "timestamp": "2020-12-11T19:58:14.694Z",
+                                        "color": 14483456,
+                                        "fields": [],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": {
+                                            "name": "ADG#3474",
+                                            "url": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.png"
+                                        },
+                                        "footer": {
+                                            "text": "ID do usuário: 717766639260532826"
+                                        }
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Loritta",
+                                "avatar": "https://cdn.discordapp.com/avatars/786728865325514774/6aa7b9ecf57332675bfd7e77a6e69811.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": null,
+                                        "type": "rich",
+                                        "description": "📝 **Mensagem de texto deletada**\n\n**Canal de texto:** <#786715027897712650>\n\n**Mensagem:**\n\n```> oi```",
+                                        "url": null,
+                                        "timestamp": "2020-12-11T19:58:13.594Z",
+                                        "color": 14483456,
+                                        "fields": [],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": {
+                                            "name": "ADG#3474",
+                                            "url": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.png"
+                                        },
+                                        "footer": {
+                                            "text": "ID do usuário: 717766639260532826"
+                                        }
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Loritta",
+                                "avatar": "https://cdn.discordapp.com/avatars/786728865325514774/6aa7b9ecf57332675bfd7e77a6e69811.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": null,
+                                        "type": "rich",
+                                        "description": "📝 **Mensagem de texto deletada**\n\n**Canal de texto:** <#786715027897712650>\n\n**Mensagem:**\n\n```oi```",
+                                        "url": null,
+                                        "timestamp": "2020-12-11T19:58:03.606Z",
+                                        "color": 14483456,
+                                        "fields": [],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": {
+                                            "name": "ADG#3474",
+                                            "url": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.png"
+                                        },
+                                        "footer": {
+                                            "text": "ID do usuário: 717766639260532826"
+                                        }
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Loritta",
+                                "avatar": "https://cdn.discordapp.com/avatars/786728865325514774/6aa7b9ecf57332675bfd7e77a6e69811.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": null,
+                                        "type": "rich",
+                                        "description": "👈🎤 **<@717766639260532826> saiu do canal de voz `ADG [Private Room]`**",
+                                        "url": null,
+                                        "timestamp": "2020-12-11T19:39:59.901Z",
+                                        "color": 2347360,
+                                        "fields": [],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": {
+                                            "name": "ADG#3474",
+                                            "url": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.png"
+                                        },
+                                        "footer": {
+                                            "text": "ID do usuário: 717766639260532826"
+                                        }
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Loritta",
+                                "avatar": "https://cdn.discordapp.com/avatars/786728865325514774/6aa7b9ecf57332675bfd7e77a6e69811.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": null,
+                                        "type": "rich",
+                                        "description": "👉🎤 **<@717766639260532826> entrou no canal de voz `ADG [Private Room]`**",
+                                        "url": null,
+                                        "timestamp": "2020-12-11T19:39:56.444Z",
+                                        "color": 2347360,
+                                        "fields": [],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": {
+                                            "name": "ADG#3474",
+                                            "url": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.png"
+                                        },
+                                        "footer": {
+                                            "text": "ID do usuário: 717766639260532826"
+                                        }
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Loritta",
+                                "avatar": "https://cdn.discordapp.com/avatars/786728865325514774/6aa7b9ecf57332675bfd7e77a6e69811.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": null,
+                                        "type": "rich",
+                                        "description": "👈🎤 **<@717766639260532826> saiu do canal de voz `》🍬 Criar Chamada Privada`**",
+                                        "url": null,
+                                        "timestamp": "2020-12-11T19:39:56.444Z",
+                                        "color": 2347360,
+                                        "fields": [],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": {
+                                            "name": "ADG#3474",
+                                            "url": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.png"
+                                        },
+                                        "footer": {
+                                            "text": "ID do usuário: 717766639260532826"
+                                        }
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Loritta",
+                                "avatar": "https://cdn.discordapp.com/avatars/786728865325514774/6aa7b9ecf57332675bfd7e77a6e69811.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": null,
+                                        "type": "rich",
+                                        "description": "👉🎤 **<@717766639260532826> entrou no canal de voz `》🍬 Criar Chamada Privada`**",
+                                        "url": null,
+                                        "timestamp": "2020-12-11T19:39:55.813Z",
+                                        "color": 2347360,
+                                        "fields": [],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": {
+                                            "name": "ADG#3474",
+                                            "url": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.png"
+                                        },
+                                        "footer": {
+                                            "text": "ID do usuário: 717766639260532826"
+                                        }
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Loritta",
+                                "avatar": "https://cdn.discordapp.com/avatars/786728865325514774/6aa7b9ecf57332675bfd7e77a6e69811.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": null,
+                                        "type": "rich",
+                                        "description": "📝 **Mensagem de texto deletada**\n\n**Canal de texto:** <#787018440627453954>\n\n**Mensagem:**\n\n```GLORIA```",
+                                        "url": null,
+                                        "timestamp": "2020-12-11T19:38:42.171Z",
+                                        "color": 14483456,
+                                        "fields": [],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": {
+                                            "name": "ADG#3474",
+                                            "url": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.png"
+                                        },
+                                        "footer": {
+                                            "text": "ID do usuário: 717766639260532826"
+                                        }
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Loritta",
+                                "avatar": "https://cdn.discordapp.com/avatars/786728865325514774/6aa7b9ecf57332675bfd7e77a6e69811.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": null,
+                                        "type": "rich",
+                                        "description": "📝 **Mensagem de texto deletada**\n\n**Canal de texto:** <#787028425361588254>\n\n**Mensagem:**\n\n```b!addbot```",
+                                        "url": null,
+                                        "timestamp": "2020-12-11T19:38:26.074Z",
+                                        "color": 14483456,
+                                        "fields": [],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": {
+                                            "name": "ADG#3474",
+                                            "url": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.png"
+                                        },
+                                        "footer": {
+                                            "text": "ID do usuário: 717766639260532826"
+                                        }
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            },
+                            {
+                                "username": "Loritta",
+                                "avatar": "https://cdn.discordapp.com/avatars/786728865325514774/6aa7b9ecf57332675bfd7e77a6e69811.webp",
+                                "content": "",
+                                "embeds": [
+                                    {
+                                        "title": null,
+                                        "type": "rich",
+                                        "description": "📝 **Mensagem de texto deletada**\n\n**Canal de texto:** <#787018440627453954>\n\n**Mensagem:**\n\n```b!addbot```",
+                                        "url": null,
+                                        "timestamp": "2020-12-11T19:38:15.528Z",
+                                        "color": 14483456,
+                                        "fields": [],
+                                        "thumbnail": null,
+                                        "image": null,
+                                        "author": {
+                                            "name": "ADG#3474",
+                                            "url": "https://cdn.discordapp.com/avatars/717766639260532826/5afe2a9504de4cb923388f31b5dd1904.png"
+                                        },
+                                        "footer": {
+                                            "text": "ID do usuário: 717766639260532826"
+                                        }
+                                    }
+                                ],
+                                "files": [],
+                                "pinned": false
+                            }
+                        ],
+                        "isNews": false
+                    }
+                ]
+            },
+            {
+                "name": "[ VERIFICAÇÃO ]",
+                "permissions": [
+                    {
+                        "roleName": "@everyone",
+                        "allow": 0,
+                        "deny": 1049600
+                    },
+                    {
+                        "roleName": "🛠️ • Moderador",
+                        "allow": 1049600,
+                        "deny": 0
+                    },
+                    {
+                        "roleName": "🛡️ • Ajudantes",
+                        "allow": 1049600,
+                        "deny": 0
+                    },
+                    {
+                        "roleName": "💁 • Verificadores",
+                        "allow": 1049600,
+                        "deny": 0
+                    }
+                ],
+                "children": [
+                    {
+                        "type": "text",
+                        "name": "▏🔍verificação-1",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ VERIFICAÇÃO ]",
+                        "topic": null,
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 0,
+                                "deny": 1049600
+                            },
+                            {
+                                "roleName": "🛠️ • Moderador",
+                                "allow": 1049600,
+                                "deny": 0
+                            },
+                            {
+                                "roleName": "🛡️ • Ajudantes",
+                                "allow": 1049600,
+                                "deny": 0
+                            },
+                            {
+                                "roleName": "💁 • Verificadores",
+                                "allow": 1049600,
+                                "deny": 0
+                            }
+                        ],
+                        "messages": [],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏🔍verificação-2",
+                        "nsfw": false,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ VERIFICAÇÃO ]",
+                        "topic": null,
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 0,
+                                "deny": 1049600
+                            },
+                            {
+                                "roleName": "🛠️ • Moderador",
+                                "allow": 1049600,
+                                "deny": 0
+                            },
+                            {
+                                "roleName": "🛡️ • Ajudantes",
+                                "allow": 1049600,
+                                "deny": 0
+                            },
+                            {
+                                "roleName": "💁 • Verificadores",
+                                "allow": 1049600,
+                                "deny": 0
+                            }
+                        ],
+                        "messages": [],
+                        "isNews": false
+                    },
+                    {
+                        "type": "text",
+                        "name": "▏📛verificação-nsfw",
+                        "nsfw": true,
+                        "rateLimitPerUser": 0,
+                        "parent": "[ VERIFICAÇÃO ]",
+                        "topic": null,
+                        "permissions": [
+                            {
+                                "roleName": "@everyone",
+                                "allow": 0,
+                                "deny": 1049600
+                            },
+                            {
+                                "roleName": "🛠️ • Moderador",
+                                "allow": 1049600,
+                                "deny": 0
+                            },
+                            {
+                                "roleName": "🛡️ • Ajudantes",
+                                "allow": 1049600,
+                                "deny": 0
+                            },
+                            {
+                                "roleName": "💁 • Verificadores",
+                                "allow": 1049600,
+                                "deny": 0
+                            }
+                        ],
+                        "messages": [],
+                        "isNews": false
+                    }
+                ]
+            }
+        ],
+        "others": [
+            {
+                "type": "voice",
+                "name": "🏰 bit.ly/d-botspark 🏰",
+                "bitrate": 64000,
+                "userLimit": 0,
+                "parent": null,
+                "permissions": [
+                    {
+                        "roleName": "@everyone",
+                        "allow": 1024,
+                        "deny": 1048576
+                    }
+                ]
+            }
+        ]
+    },
+    "roles": [
+        {
+            "name": "*",
+            "color": "#000000",
+            "hoist": false,
+            "permissions": 104320585,
+            "mentionable": false,
+            "position": 24
+        },
+        {
+            "name": "</>",
+            "color": "#000000",
+            "hoist": false,
+            "permissions": 104189513,
+            "mentionable": false,
+            "position": 23
+        },
+        {
+            "name": "────────────",
+            "color": "#000000",
+            "hoist": false,
+            "permissions": 104189505,
+            "mentionable": false,
+            "position": 22
+        },
+        {
+            "name": "────────────",
+            "color": "#000000",
+            "hoist": false,
+            "permissions": 104189505,
+            "mentionable": false,
+            "position": 20
+        },
+        {
+            "name": "🚀 • Admininstrador",
+            "color": "#ff0000",
+            "hoist": true,
+            "permissions": 104320585,
+            "mentionable": false,
+            "position": 19
+        },
+        {
+            "name": "🛠️ • Moderador",
+            "color": "#ff7400",
+            "hoist": true,
+            "permissions": 267907031,
+            "mentionable": false,
+            "position": 18
+        },
+        {
+            "name": "💁 • Verificadores",
+            "color": "#8d00ff",
+            "hoist": true,
+            "permissions": 104189537,
+            "mentionable": false,
+            "position": 17
+        },
+        {
+            "name": "🛡️ • Ajudantes",
+            "color": "#00ff4d",
+            "hoist": true,
+            "permissions": 125169347,
+            "mentionable": false,
+            "position": 16
+        },
+        {
+            "name": "────────────",
+            "color": "#000000",
+            "hoist": false,
+            "permissions": 104189505,
+            "mentionable": false,
+            "position": 15
+        },
+        {
+            "name": "💻 • Desenvolvedor",
+            "color": "#ffec00",
+            "hoist": true,
+            "permissions": 104189505,
+            "mentionable": false,
+            "position": 14
+        },
+        {
+            "name": "👩‍💻 • Membros",
+            "color": "#ff008b",
+            "hoist": true,
+            "permissions": 104189505,
+            "mentionable": false,
+            "position": 13
+        },
+        {
+            "name": "────────────",
+            "color": "#000000",
+            "hoist": false,
+            "permissions": 104189505,
+            "mentionable": false,
+            "position": 12
+        },
+        {
+            "name": "⛵ • Bots +",
+            "color": "#e91e63",
+            "hoist": true,
+            "permissions": 104189513,
+            "mentionable": false,
+            "position": 11
+        },
+        {
+            "name": "⛵ • Bots",
+            "color": "#4600ff",
+            "hoist": true,
+            "permissions": 104189505,
+            "mentionable": false,
+            "position": 10
+        },
+        {
+            "name": "✔️ • Verificado",
+            "color": "#000000",
+            "hoist": false,
+            "permissions": 104189505,
+            "mentionable": false,
+            "position": 9
+        },
+        {
+            "name": "❌ • Não Verificado",
+            "color": "#000000",
+            "hoist": false,
+            "permissions": 104189505,
+            "mentionable": false,
+            "position": 8
+        },
+        {
+            "name": "────────────",
+            "color": "#000000",
+            "hoist": false,
+            "permissions": 104189505,
+            "mentionable": false,
+            "position": 7
+        }
+    ],
+    "bans": [],
+    "emojis": [
+        {
+            "name": "certo",
+            "url": "https://cdn.discordapp.com/emojis/787017583144337448.png"
+        },
+        {
+            "name": "errado",
+            "url": "https://cdn.discordapp.com/emojis/787017628212002816.png"
+        },
+        {
+            "name": "ta_isa",
+            "url": "https://cdn.discordapp.com/emojis/787046645245149246.png"
+        },
+        {
+            "name": "j_notlike",
+            "url": "https://cdn.discordapp.com/emojis/787046738400903208.png"
+        },
+        {
+            "name": "catthumbsup",
+            "url": "https://cdn.discordapp.com/emojis/787046781418471444.png"
+        }
+    ],
+    "createdTimestamp": 1607716984355,
+    "guildID": "784475737477349406",
+    "id": "787046819350839296",
+    "iconURL": "https://cdn.discordapp.com/icons/784475737477349406/06b9db58a82106b2024d9c8050144a3f.webp"
+}

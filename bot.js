@@ -1,13 +1,13 @@
 // Coisas Importantes
 require('./functions/quote.js')
-require('./mongodb/blacklist.js')
+require('./src/mongodb/blacklist.js')
 // Dependencias
 const {Player} = require("discord-music-player");
 const Discord = require('discord.js')
-const backup = require('./discord-backup/lib/index.js')
-const config = require('./config.json')
+const backup = require('./npms/discord-backup/lib/index.js')
+const config = require('./src/config.json')
 // Client
-const client = new Discord.Client({ disableMentions: 'everyone'});
+const client = new Discord.Client({ shardCount: 2});
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 // Mais depêndencias
@@ -15,15 +15,15 @@ const fs = require('fs');
 const mongoose = require('mongoose')
 const c = require('colors');
 // Arquivos
-const bldb = require("./mongodb/blacklist.js");
-const dc = require('./mongodb/dc.js')
-const pr = require("./mongodb/prefix");
-const autorole = require('./mongodb/autorole.js');
-const welcomeChannel = require('./mongodb/WelcomeChannel.js');
+const bldb = require("./src/mongodb/blacklist.js");
+const dc = require('./src/mongodb/dc.js')
+const pr = require("./src/mongodb/prefix");
+const autorole = require('./src/mongodb/autorole.js');
+const welcomeChannel = require('./src/mongodb/WelcomeChannel.js');
 const votosZuraaa = require('./votosZuraaa.js');
-const logChannel = require('./mongodb/messagelog.js');
-const Money = require("./mongodb/money.js");
-const antilink = require('./mongodb/antilink');
+const logChannel = require('./src/mongodb/messagelog.js');
+const Money = require("./src/mongodb/money.js");
+const antilink = require('./src/mongodb/antilink');
 // Outras Depêndencias
 const moment = require("moment");
 const ms = require('ms');
@@ -59,11 +59,11 @@ client.on('message', message => {
   })
 });
 // Handler
-fs.readdir("./commands/", (err, files) => {
+fs.readdir("./src/commands/", (err, files) => {
     if (err) console.error(c.red('[ERRO] - ', err));
     let arquivojs = files.filter(f => f.split(".").pop() == "js");
     arquivojs.forEach((f, i) => {
-      let props = require(`./commands/${f}`);
+      let props = require(`./src/commands/${f}`);
       console.log(c.brightBlue(`-----------------------COMMANDS-----------------------\n[COMMANDS] - ${f} ✓\n-----------------------COMMANDS-----------------------`));
       client.commands.set(props.help.name, props);
       props.help.aliases.forEach(alias => {
@@ -72,14 +72,14 @@ fs.readdir("./commands/", (err, files) => {
     });
   });
 // Handler de Eventos
-fs.readdir("./events/", (err, files) => {
+fs.readdir("./src/events/", (err, files) => {
   if(err)
       console.error(err);
   const eventsFiles = files.filter(file => file.split(".").pop() == "js");
   if(eventsFiles.length <= 0)
       return console.warn(c.brightRed("-----------------------EVENTS-----------------------\n[EVENTS] - Não existem eventos para ser carregado\n-----------------------EVENTS-----------------------"));
   eventsFiles.forEach((file, i) => {
-      require("./events/" + file);
+      require("./src/events/" + file);
   })
   console.log(c.brightCyan("-----------------------EVENTOS-----------------------\n[EVENTOS] - Carregados com sucesso\n-----------------------EVENTOS-----------------------"))
 });
