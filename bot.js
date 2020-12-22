@@ -50,6 +50,7 @@ mongoose.connect(config.mongo, {
 
 client.on('message', message => {
     if (message.author.bot) return;
+    if (message.channel.type === "dm") return;
     pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
       let prefix = res ? res.prefix : config.prefix;
     if (message.content.startsWith(prefix)) {

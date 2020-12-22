@@ -12,7 +12,7 @@ exports.run = async (client, message, args, prefix) => {
     // Caso Não tenha nada
     if(!args[0]) message.quote(`${emoji.nao} ${message.author}, Eu preciso da \`Menção ou ID\` do usuário para banir.`)
     // Procurando o User
-    if(!message.mentions.users.first()) {
+    if(!message.mentions.members.first()) {
         member = await client.users.fetch(args[0]).then(info => info).catch(() => { return; });
     } else member = message.mentions.users.first();
     // Banindo
@@ -27,7 +27,7 @@ exports.run = async (client, message, args, prefix) => {
     banReason = "Não Definido"
     }
     message.guild.members.ban(member, { reason: `Punido por: ${message.author.tag} - Motivo: ${banReason}`, }).catch(err => {
-        console.log(`${message.author.tag}, eu não posso banir esse usuário.\nErro: ${err}`);
+        message.quote(`${message.author.tag}, eu não posso banir esse usuário.\nErro: ${err}`);
       });
     // Embed de sucesso
     const sucesso = new Discord.MessageEmbed()
