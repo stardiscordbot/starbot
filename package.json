@@ -4,7 +4,7 @@
   "main": "shard.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node shard.js",
+    "start": "node bot.js",
     "devStart": "nodemon shard.js"
   },
   "keywords": [],
@@ -20,12 +20,14 @@
     "child_process": "^1.0.2",
     "colors": "^1.4.0",
     "dblapi.js": "^2.4.1",
+    "discord-giveaways": "^4.3.0",
     "discord-music-player": "^6.1.1-fix3",
     "discord-xp": "file:discord-xp",
     "discord.js": "^12.5.1",
     "discord.js-menu": "2.2.2",
     "discord.js-self": "^12.0.4",
     "fortnite": "^4.3.2",
+    "glob": "^7.1.6",
     "jimp": "^0.16.1",
     "kurasuta": "^2.2.0",
     "lolis.life": "^4.0.0",

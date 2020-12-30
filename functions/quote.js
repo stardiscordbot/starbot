@@ -15,8 +15,16 @@ Message.prototype.quote = async function (content, options) {
     .resolveData()
     .resolveFiles()
 
-  this.client.api.channels[this.channel.id].messages.post({
+  let msg = await this.client.api.channels[this.channel.id].messages.post({
     data: { ...parsed, message_reference: reference },
     files
   })
+
+  await this.channel.messages.fetch(msg.id)
+            .then(message => msg = message)
+            .catch((err) => {
+                console.log(err.stack)
+            });
+
+  return msg
 }

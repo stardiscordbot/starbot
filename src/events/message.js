@@ -45,7 +45,7 @@ client.on("message", message => {
   // Custom Prefix
   pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
     let prefix = res ? res.prefix : config.prefix;
-    if(message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)){
+    if(message.content.toLowerCase().includes(`<@!${client.user.id}>`) || message.content.toLowerCase().includes(`<@${client.user.id}>`)){
       return message.quote(`<a:Rosa_seta_pg:754374503001358467> Olá, ${message.author}! Meu prefixo atual é \`${prefix}\` para ver meus comandos use \`${prefix}ajuda\``)}
   if (!message.content.startsWith(prefix)) return;
   user.findOne({id:message.author.id}, (err, db) => {
@@ -87,7 +87,7 @@ client.on("message", message => {
   let cmd = args.shift().toLowerCase();
   if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot) return;
   let command =client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
-  if (!command) return console.log(c.america('-----------------------COMANDO-----------------------\n[COMANDO] - COMANDO INEXISTENTE\n-----------------------COMANDO-----------------------'))
+  if (!command) return console.log(c.america('[COMANDO] - COMANDO INEXISTENTE'))
   if(command.help.status === 'off') return message.reply('sinto muito, esse comando está desabilitado, aguarde');
   if (command) {
     pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {

@@ -3,13 +3,37 @@ require('./functions/quote.js')
 require('./src/mongodb/blacklist.js')
 // Dependencias
 const {Player} = require("discord-music-player");
+const { GiveawaysManager } = require('discord-giveaways');
+// Shard
+const GiveawayManagerWithShardSupport = class extends GiveawaysManager {
+  async refreshStorage() {
+      return client.shard.broadcastEval(() => this.giveawaysManager.getAllGiveaways());
+  }
+};
+// Give
 const Discord = require('discord.js')
 const backup = require('./npms/discord-backup/lib/index.js')
 const config = require('./src/config.json')
 // Client
-const client = new Discord.Client({ shardCount: 2 });
+const client = new Discord.Client({
+  shardCount: 2,
+  disableMentions: 'everyone'
+});
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
+// Giveaway
+const manager = new GiveawayManagerWithShardSupport(client, {
+  storage: './src/jsons/giveaways.json',
+  updateCountdownEvery: 10000,
+  default: {
+      botsCanWin: false,
+      exemptPermissions: ['MANAGE_MESSAGES', 'ADMINISTRATOR', 'MANAGE_GUILD'],
+      embedColor: '#FF0000',
+      reaction: '🥳'
+  }
+});
+// Manager
+client.giveawaysManager = manager;
 // Mais depêndencias
 const fs = require('fs');
 const mongoose = require('mongoose')
@@ -27,11 +51,12 @@ const antilink = require('./src/mongodb/antilink');
 const moment = require("moment");
 const ms = require('ms');
 const DBL = require("dblapi.js");
+const glob = require('glob')
 // Dbl Status
 const dbl = new DBL(config.dbl, client);
 
 dbl.on('posted', () => {
-  console.log(c.green('-----------------------DBL-----------------------\n[DBL] - Servidores Postados!\n-----------------------DBL-----------------------'));
+  console.log(c.green('[DBL] - Servidores Postados!'));
 })
 
 dbl.on('error', e => {
@@ -43,9 +68,9 @@ mongoose.connect(config.mongo, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }).then (function () {
-    console.log(c.brightYellow("-----------------------MONGOOSE-----------------------\n[BANCO DE DADOS] - Banco de dados foi ligado\n-----------------------MONGOOSE-----------------------"))
+    console.log(c.brightYellow("[BANCO DE DADOS] - Banco de dados foi ligado"))
   }).catch (function () {
-    console.log(c.brightRed("-----------------------MONGOOSE-----------------------\n[BANCO DE DADOS] - Banco de dados desligado por erro\n-----------------------MONGOOSE-----------------------"))
+    console.log(c.brightRed("[BANCO DE DADOS] - Banco de dados desligado por erro"))
   });
 
 client.on('message', message => {
@@ -54,23 +79,25 @@ client.on('message', message => {
     pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
       let prefix = res ? res.prefix : config.prefix;
     if (message.content.startsWith(prefix)) {
-          message.quote(`<a:alerta:763434977412120586> | ${message.author} Você está usando a versão experimental da Star:tm:. Várias funcionalidades podem não funcionar, posso ficar offline a qualquer momento, seu servidor pode explodir e muito mais! Não reporte problemas da versão experimental caso não seja solicitado, obrigada!`)
+          message.quote(`<a:alerta:763434977412120586> | ${message.author} Você está usando a versão experimental da Star:tm:. Várias funcionalidades podem não funcionar, posso ficar offline a qualquer momento, seu servidor pode explodir e muito mais! Não reporte problemas da versão experimental caso não seja solicitado, obrigada!`).then(msg => {
+            msg.delete({timeout:5000})
+          })
     }
   })
 });
 // Handler
-fs.readdir("./src/commands/", (err, files) => {
-    if (err) console.error(c.red('[ERRO] - ', err));
-    let arquivojs = files.filter(f => f.split(".").pop() == "js");
-    arquivojs.forEach((f, i) => {
-      let props = require(`./src/commands/${f}`);
-      console.log(c.brightBlue(`-----------------------COMMANDS-----------------------\n[COMMANDS] - ${f} ✓\n-----------------------COMMANDS-----------------------`));
-      client.commands.set(props.help.name, props);
-      props.help.aliases.forEach(alias => {
+  glob(__dirname+'/src/commands/*/*.js', function (er, files) {
+    if(er) console.log(er)
+    files.forEach(f => {
+        let props = require(`${f.replace('.js', '')}`)
+        client.commands.set(props.help.name, props);
+        props.help.aliases.forEach(alias => {
         client.aliases.set(alias, props.help.name);
-      });
-    });
-  });
+        });
+        })
+    console.log("[COMANDOS] - Carregados com sucesso".brightCyan)
+})
+
 // Handler de Eventos
 fs.readdir("./src/events/", (err, files) => {
   if(err)

@@ -13,5 +13,5 @@ const Money = require("../mongodb/money.js");
 const antilink = require('../mongodb/antilink');
 // Inicio do Code
 client.on('error', (err) => {
-    console.log(c.red(`-----------------------ERRO-----------------------\n${err.message}\n-----------------------ERRO-----------------------`))
+    console.log(c.red(`${err.message}`))
  });
