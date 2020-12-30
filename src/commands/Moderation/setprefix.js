@@ -42,5 +42,5 @@ exports.help = {
     name: 'prefixo',
     aliases: ['sprefix', 'setprefix', 'prefix'],
     status: 'on',
-    categoty: 'mod'
+    category: 'mod'
 }

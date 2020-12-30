@@ -48,5 +48,5 @@ exports.run = async (client, message, args, prefix) => {
 exports.help = {
     name: 'ban',
     aliases: ['banir', 'hackban', 'forceban'],
-    categoty: 'mod'
+    category: 'mod'
 }

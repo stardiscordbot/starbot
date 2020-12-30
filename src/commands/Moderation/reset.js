@@ -49,5 +49,5 @@ if(message.author.bot || message.channel.type === 'dm') {return;}
 exports.help = {
     name: 'reset',
     aliases: ['resetar'],
-    categoty: 'mod'
+    category: 'mod'
 }

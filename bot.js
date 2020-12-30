@@ -104,11 +104,11 @@ fs.readdir("./src/events/", (err, files) => {
       console.error(err);
   const eventsFiles = files.filter(file => file.split(".").pop() == "js");
   if(eventsFiles.length <= 0)
-      return console.warn(c.brightRed("-----------------------EVENTS-----------------------\n[EVENTS] - Não existem eventos para ser carregado\n-----------------------EVENTS-----------------------"));
+      return console.warn(c.brightRed("[EVENTS] - Não existem eventos para ser carregados"));
   eventsFiles.forEach((file, i) => {
       require("./src/events/" + file);
   })
-  console.log(c.brightCyan("-----------------------EVENTOS-----------------------\n[EVENTOS] - Carregados com sucesso\n-----------------------EVENTOS-----------------------"))
+  console.log(c.brightCyan("[EVENTOS] - Carregados com sucesso"))
 });
 // Logando
 client.login(config.token)

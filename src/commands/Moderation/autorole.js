@@ -39,5 +39,5 @@ exports.help = {
     name: 'autorole',
     aliases: ['joinrole'],
     status: 'on',
-    categoty: 'mod'
+    category: 'mod'
 }

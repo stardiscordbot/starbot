@@ -55,5 +55,5 @@ exports.run = async (client, message, args, prefix) => {
 exports.help = {
     name: 'deletarcomando',
     aliases: ['dc', 'commanddelete', 'deletecommand'],
-    categoty: 'mod'
+    category: 'mod'
 }

@@ -31,5 +31,5 @@ exports.run = async (client, message, args, prefix) => {
 exports.help = {
     name: 'addemoji',
     aliases: ['adicionaremoji'],
-    categoty: 'mod'
+    category: 'mod'
 }

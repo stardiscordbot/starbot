@@ -15,10 +15,10 @@ module.exports.run = async(client, message, args) => {
   table.setBorder('|', '-', '+', '+')
 
 
-  let servidores = await client.shard.fetchClientValues('guilds.cache.size')
-  let usuarios = await client.shard.fetchClientValues('users.cache.size')
+  let servidores = await client.guilds.cache.size
+  let usuarios = await client.users.cache.size
   let memoria = await client.shard.broadcastEval(`process.memoryUsage().rss`)
-  let ping = await client.shard.fetchClientValues('ws.ping')
+  let ping = await client.ws.ping
   let uptime = await client.shard.fetchClientValues('uptime')
 
   for(let i = 0; i < client.options.shardCount; i++) {

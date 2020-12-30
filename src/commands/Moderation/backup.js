@@ -114,5 +114,5 @@ exports.help = {
   name: 'backup', 
   aliases: [],
   status: 'on',
-  categoty: 'mod'
+  category: 'mod'
 }

@@ -41,5 +41,5 @@ exports.run = async (client, message, args) => {
 exports.help = {
     "name": "painel",
     "aliases": ["dash", "dashboard"],
-    categoty: 'mod'
+    category: 'mod'
 }

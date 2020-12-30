@@ -12,5 +12,5 @@ exports.run = async (bot, message, args) => {
 exports.help = {
     name: 'slowmode',
     aliases: ['slow'],
-    categoty: 'mod'
+    category: 'mod'
 }

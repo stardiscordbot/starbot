@@ -56,5 +56,5 @@ exports.help = {
     name: 'giveaway',
     aliases: ['sorteio'],
     status: 'on',
-    categoty: 'mod'
+    category: 'mod'
   }

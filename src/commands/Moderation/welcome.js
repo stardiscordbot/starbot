@@ -41,5 +41,5 @@ exports.help = {
   name: "welcomechannel",
   aliases: ['joinchannel', 'welcome'],
   status: 'on',
-  categoty: 'mod'
+  category: 'mod'
 }

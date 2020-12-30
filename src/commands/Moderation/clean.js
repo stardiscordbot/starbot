@@ -22,5 +22,5 @@ exports.help = {
     name: 'clean',
     aliases: ['clear', 'limpar'],
     status: 'on',
-    categoty: 'mod'
+    category: 'mod'
 }
