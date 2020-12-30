@@ -49,5 +49,6 @@ exports.run = async (client, message, args, prefix) => {
     exports.help = {
         name: 'fnstore',
         aliases: ['fnshop'],
-        status: 'on'
+        status: 'on',
+        category: 'others'
       }

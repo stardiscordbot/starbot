@@ -21,5 +21,6 @@ message.quote("a")
 exports.help = {
   name: 'findemoji',
   aliases: ['searchemoji'],
-  status: 'on'
+  status: 'on',
+  category: 'others'
 }

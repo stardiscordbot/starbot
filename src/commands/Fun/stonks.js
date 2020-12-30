@@ -19,7 +19,8 @@ exports.run = async (client, message, args, prefix) => {
             })
         })
     }
-    exports.help = {
+exports.help = {
     name: 'stonks',
-    aliases: [ ]
+    aliases: [],
+    category: 'div'
 }

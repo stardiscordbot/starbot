@@ -41,5 +41,6 @@ module.exports.run = async(client, message, args) => {
 exports.help = {
     name: 'prefixo',
     aliases: ['sprefix', 'setprefix', 'prefix'],
-    status: 'on'
+    status: 'on',
+    categoty: 'mod'
 }

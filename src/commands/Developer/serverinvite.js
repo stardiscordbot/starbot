@@ -30,5 +30,6 @@ module.exports.run = async (client, message, args, prefix) =>{
 module.exports.help = {
     name: "serverinvite",
     aliases: ['getinvite', 'convite', 'servidor'],
-    status: 'on'
+    status: 'on',
+    category: 'dev'
 }

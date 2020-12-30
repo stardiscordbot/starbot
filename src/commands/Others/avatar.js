@@ -53,5 +53,6 @@ module.exports.run = async (client, message, args, prefix) => {
 exports.help = {
     name: 'avatar',
     aliases: ['av'],
-    status: 'on'
+    status: 'on',
+    category: 'others'
 }

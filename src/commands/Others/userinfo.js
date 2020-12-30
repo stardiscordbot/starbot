@@ -91,5 +91,6 @@ module.exports.run = async (client,message,args) => {
 module.exports.help = {
   name: "userinfo",
   aliases: ['ui', 'userinfo', 'whois'],
-  status: 'on'
+  status: 'on',
+  category: 'others'
 }

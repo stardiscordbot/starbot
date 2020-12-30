@@ -39,5 +39,6 @@ exports.run = (client, message, args, prefix) => {
 }
 exports.help = {
     name: 'kick',
-    aliases: ['expulsar']
+    aliases: ['expulsar'],
+    categoty: 'mod'
 }

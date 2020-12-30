@@ -27,5 +27,6 @@ module.exports.run = (client, message, args, prefix) => {
 exports.help = {
     name: 'traduzir',
     aliases: ['translate'],
-    status: "on"
+    status: "on",
+    category: 'div'
 }

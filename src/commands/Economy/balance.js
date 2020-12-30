@@ -38,5 +38,6 @@ module.exports.run = async (client, message, args, prefix) => {
 exports.help = {
     name: 'balance',
     aliases: ['money'],
-    status: 'on'
+    status: 'on',
+    category: 'economy'
 }

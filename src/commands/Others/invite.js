@@ -12,5 +12,6 @@ exports.run = (client, message, args, prefix) => {
 exports.help = {
     name: 'invite',
     aliases: ['convite', 'convidar'],
-    status: 'on'
+    status: 'on',
+    category: 'others'
 }

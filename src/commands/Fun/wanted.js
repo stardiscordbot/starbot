@@ -8,7 +8,7 @@ module.exports.run = (bot, message, args) =>
 
     if(!GuildMember)
     {
-        return message.quote(":no_entry: Mencione um usuário valido :no_entry:");
+        GuildMember = message.author;
     }
 
     message.channel.startTyping();
@@ -34,5 +34,5 @@ exports.help = {
     name: 'wanted',
     aliases: ['procurado'],
     status: 'on',
-    category: 'Divertidos'
+    category: 'div'
 }

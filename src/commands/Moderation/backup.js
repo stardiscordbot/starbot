@@ -113,5 +113,6 @@ exports.run = (client, message, args, prefix) => {
 exports.help = { 
   name: 'backup', 
   aliases: [],
-  status: 'on'
+  status: 'on',
+  categoty: 'mod'
 }

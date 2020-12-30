@@ -47,5 +47,6 @@ Promise.all(promises).then(async results => {
 exports.help = {
     name: 'botinfo',
     aliases: ['starinfo'],
-    status: 'on'
+    status: 'on',
+    category: 'others'
 }

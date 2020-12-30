@@ -34,5 +34,5 @@ exports.help = {
     name: "trumptweet",
     aliases: ['trump'],
     status: 'on',
-    category: 'Divertidos'
+    category: 'div'
 }

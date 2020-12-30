@@ -7,5 +7,6 @@ exports.run = (client, message, args, prefix) => {
 }
 exports.help = {
     name: 'desnotificar',
-    aliases: ['unotify']
+    aliases: ['unotify'],
+    category: 'so'
 }

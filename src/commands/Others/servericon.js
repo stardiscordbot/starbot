@@ -15,5 +15,6 @@ exports.run = async (client, message, args, prefix) => { //estrutura básica de 
 }; // cabou!
 exports.help = {
     name: 'servericon',
-    aliases: ['sic']
+    aliases: ['sic'],
+    category: 'others'
 }

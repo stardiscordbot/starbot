@@ -7,5 +7,6 @@ exports.run = (client, message, args, prefix) => {
 }
 exports.help = {
     name: 'notificar',
-    aliases: ['notify']
+    aliases: ['notify'],
+    category: 'so'
 }

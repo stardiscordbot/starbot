@@ -7,5 +7,6 @@ exports.run = async (client, message, args, prefix) => {
 }
 exports.help = {
     "name": "reverse",
-    "aliases": ["reverter"]
+    "aliases": ["reverter"],
+    "category": 'div'
 }

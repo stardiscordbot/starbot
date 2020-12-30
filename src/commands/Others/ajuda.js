@@ -3,7 +3,6 @@ const config = require('../../config.json');
 let n = '`';
 
 exports.run = (client, message, args, prefix) => {
-
   if(args[0] === 'discord') {
     // Ajuda
   let divertidos = client.commands.filter(command => command.help.category === "Divertidos").map(e => `${n}${e.help.name}${n}`).join(" **|** ");
@@ -34,5 +33,6 @@ exports.run = (client, message, args, prefix) => {
 exports.help = { 
   name: 'ajuda', 
   aliases: ['help', 'comandos', 'commands', 'cmds'],
-  status: 'on'
+  status: 'on',
+  category: 'others'
 }

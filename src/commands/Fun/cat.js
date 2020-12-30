@@ -17,5 +17,6 @@ module.exports.run = async (client,message,args) => {
 module.exports.help = {
     name: "cat",
     aliases: ['kitty'],
-    status: 'on'
+    status: 'on',
+    category: 'div'
 }

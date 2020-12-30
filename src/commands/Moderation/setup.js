@@ -56,5 +56,6 @@ exports.run = async (client, message, args, prefix) => {
 }
 exports.help = {
     name: 'setup',
-    aliases: ['configurar']
+    aliases: ['configurar'],
+    categoty: 'mod'
 }

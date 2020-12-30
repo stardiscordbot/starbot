@@ -55,5 +55,6 @@ module.exports.run = async(client, message, args, prefix) => {
 exports.help = {
     name: 'giveaway',
     aliases: ['sorteio'],
-    status: 'on'
+    status: 'on',
+    categoty: 'mod'
   }

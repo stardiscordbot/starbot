@@ -21,5 +21,6 @@ module.exports.run = async (client, message, args, prefix) => {
 exports.help = {
     name: 'clean',
     aliases: ['clear', 'limpar'],
-    status: 'on'
+    status: 'on',
+    categoty: 'mod'
 }

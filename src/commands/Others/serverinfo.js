@@ -83,5 +83,6 @@ module.exports.run = async (client, message, args, prefix) => {
 
 exports.help = {
     name: 'serverinfo',
-    aliases: ['si']
+    aliases: ['si'],
+    category: 'others'
 }

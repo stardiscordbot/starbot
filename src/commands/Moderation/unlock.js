@@ -11,5 +11,6 @@ module.exports.run = (client, message, args, prefix) => {
  };
  exports.help = {
     name: 'unlock',
-    aliases: ['abrir', 'desbloquear']
+    aliases: ['abrir', 'desbloquear'],
+    categoty: 'mod'
 }

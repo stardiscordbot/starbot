@@ -55,5 +55,6 @@ module.exports.run = async (client,message,args,prefix) => {
 module.exports.help = {
     name: "8ball",
     aliases: ['8b', 'magicball', 'eightball', 'oraculo'],
-    status: 'on'
+    status: 'on',
+    category: 'div'
 }

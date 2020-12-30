@@ -32,5 +32,6 @@ return message.quote(`${message.author}, sua mensagem é muito longa`)}
   exports.help = {
     name: "changemymind",
     aliases: ['cmm'],
-    status: 'on'
+    status: 'on',
+    category: 'div'
 }

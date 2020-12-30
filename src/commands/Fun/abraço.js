@@ -33,5 +33,6 @@ exports.run = async (client, message, args, prefix) => {
 exports.help = {
     name: 'abraço',
     aliases: ['abraçar', 'hug', 'abraco', 'abracar'],
-    status: 'on'
+    status: 'on',
+    category: 'div'
 }

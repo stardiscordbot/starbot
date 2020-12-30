@@ -40,5 +40,6 @@ module.exports.run = async (client, message, args, prefix) => {
 exports.help = {
   name: "welcomechannel",
   aliases: ['joinchannel', 'welcome'],
-  status: 'on'
+  status: 'on',
+  categoty: 'mod'
 }

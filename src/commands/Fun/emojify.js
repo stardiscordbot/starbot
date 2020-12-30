@@ -36,5 +36,6 @@ message.quote(
 };
 exports.help = {
     name: 'emojify',
-    aliases: [ ]
+    aliases: [],
+    category: 'div'
 }

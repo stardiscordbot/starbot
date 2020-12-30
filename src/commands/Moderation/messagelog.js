@@ -42,5 +42,6 @@ module.exports.run = async (bot, message, args) => {
 }
 exports.help = {
     name: 'messagelog',
-    aliases: ['auditoria']
+    aliases: ['auditoria'],
+    categoty: 'mod'
 }

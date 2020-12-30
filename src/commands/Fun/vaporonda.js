@@ -12,5 +12,6 @@ exports.run = async (client, message, args, prefix) => {
 }
 exports.help = {
     "name": "vaporonda",
-    "aliases": ["vaporwave"]
+    "aliases": ["vaporwave"],
+    "category": 'div'
 }

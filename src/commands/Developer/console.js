@@ -29,4 +29,5 @@ exports.help = {
     name: 'console',
     aliases: ['print'],
     status: 'on',
+    category: 'dev'
 }

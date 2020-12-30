@@ -44,5 +44,6 @@ module.exports.run = async(client, message, args) => {
 
 exports.help = {
     name: 'shards',
-    aliases: ['shard','shardinfo']
+    aliases: ['shard','shardinfo'],
+    category: 'others'
 }

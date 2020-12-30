@@ -55,5 +55,6 @@ exports.run = async (client, message, args, prefix, barrar) => {
 exports.help = {
     "name": "removerconta",
     "aliases": ["resetarconta", "removerconta", "terminarconta", "resetardados", "removerdados"],
-    "status": "on"
+    "status": "on",
+    category: 'others'
 }

@@ -67,5 +67,6 @@ exports.run = async (client, message, args) => {
 }
 exports.help = {
     "name": "setperm",
-    "aliases": ['addperm', 'mod', 'dev']
+    "aliases": ['addperm', 'mod', 'dev'],
+    category: 'dev'
 }

@@ -83,5 +83,6 @@ module.exports.run = (client, message, args, prefix) => {
 exports.help = {
     name: `tempo`,
     aliases: ['clima'],
-    status: 'on'
+    status: 'on',
+    category: 'div'
 };

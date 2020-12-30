@@ -51,5 +51,6 @@ if (talkedRecently.has(message.author.id)) {
          },
 exports.help = {
     name: 'diario',
-    aliases: ['daily']
+    aliases: ['daily'],
+    category: 'economy'
 }

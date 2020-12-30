@@ -10,5 +10,6 @@ message.channel.createOverwrite(message.guild.id, {
  };
  exports.help = {
     name: 'lock',
-    aliases: ['fechar']
+    aliases: ['fechar'],
+    categoty: 'mod'
 }

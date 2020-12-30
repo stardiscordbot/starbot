@@ -31,5 +31,6 @@ exports.run = async (client, message, args, prefix) => {
 }
 exports.help = {
     "name": "ppt",
-    "aliases": ["jokempo"]
+    "aliases": ["jokempo"],
+    category: 'div'
 }

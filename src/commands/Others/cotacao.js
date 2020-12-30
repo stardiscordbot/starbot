@@ -26,5 +26,6 @@ exports.run = async (client, message, args, prefix) => {
 exports.help = { 
   name: 'cotacao', 
   aliases: ['cotação', 'dolar', 'real', 'bitcoin', 'euro', 'canadense'],
-  status: 'on'
+  status: 'on',
+  category: 'others'
 }

@@ -35,5 +35,6 @@ module.exports.run = (client, message, args, prefix) => {
     },
 exports.help = {
     name: 'trabalhar',
-    aliases: ['work']
+    aliases: ['work'],
+    category: 'economy'
 }

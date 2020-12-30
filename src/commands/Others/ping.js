@@ -21,5 +21,6 @@ module.exports.run = async (client, message, args, prefix) => {
 }
 exports.help = {
     name: 'ping',
-    aliases: ['ws']
+    aliases: ['ws'],
+    category: 'others'
 }

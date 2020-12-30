@@ -120,4 +120,5 @@ exports.help = {
     name: 'antilink',
     aliases: ['antiinvite'],
     status: 'on',
+    categoty: 'mod'
 }

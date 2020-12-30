@@ -7,5 +7,6 @@ exports.run = async (client, message, args, prefix) => {
 }
 exports.help = {
     "name": "palmas",
-    "aliases": ["clap", "palm"]
+    "aliases": ["clap", "palm"],
+    'category': 'div'
 }

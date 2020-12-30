@@ -12,5 +12,6 @@ exports.run = async (client, message, args, prefix) => {
 exports.help = { 
   name: 'teste', 
   aliases: ['aliases'],
-  status: 'on'
+  status: 'on',
+  category: 'dev'
 }

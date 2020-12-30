@@ -75,5 +75,6 @@ message.quote(embed);
 exports.help = {
     name: 'calc',
     aliases: ['calcular', 'calculadora', 'math'],
-    status: 'on'
+    status: 'on',
+    category: 'div'
 }

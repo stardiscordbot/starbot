@@ -26,5 +26,6 @@ module.exports.run = async (client, message, args, prefix) => {
     }
     exports.help = {
     name: 'laranjo',
-    aliases: [ ]
+    aliases: [],
+    category: 'div'
 }
