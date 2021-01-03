@@ -16,8 +16,8 @@ const backup = require('./npms/discord-backup/lib/index.js')
 const config = require('./src/config.json')
 // Client
 const client = new Discord.Client({
-  leaveOnEnd: false,
-  leaveOnStop: false,
+  leaveOnEnd: true,
+  leaveOnStop: true,
   leaveOnEmpty: true,
   timeout: 0,
   quality: 'high',

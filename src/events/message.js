@@ -18,17 +18,6 @@ const barrar = new Set();
 // Inicio do Code
 const comando = new Discord.WebhookClient(config.logID, config.logToken)
 client.on("message", message => {
-  // Music Player
-  client.player.getQueue(message.guild.id)
-  client.on('end', () => {
-    message.channel.send(`${emoji.alerta} A Fila acabou, estou saindo!`);
-  })
-  client.on('songChanged', (oldSong, newSong) => {
-    message.channel.send(`${emoji.alerta} Tocando Agora ${newSong.name}!`);
-})
-  client.on('channelEmpty', () => {
-    message.channel.send(`${emoji.alerta} Todos sairam do canal`);
-});
   // If's
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;

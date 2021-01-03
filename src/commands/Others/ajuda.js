@@ -31,6 +31,9 @@ exports.run = (client, message, args, prefix) => {
     const othersize = client.commands.filter(command => command.help.category === "others").size
     const other = client.commands.filter(command => command.help.category === "others").map(e => `\`${prefix}${e.help.name}\``).join(" **|** ")
 
+    const musicsize = client.commands.filter(command => command.help.category === "music").size
+    const music = client.commands.filter(command => command.help.category === "music").map(e => `\`${prefix}${e.help.name}\``).join(" **|** ")
+
     ajuda.on('collect', r1 => {
       r1.users.remove(message.author.id)
       r1.users.remove(client.user.id)
@@ -38,6 +41,7 @@ exports.run = (client, message, args, prefix) => {
       .setTitle('Ajuda | Star:tm:')
       .setColor(config.color)
       .setDescription(`${message.author}, já que deseja visualizar meus comandos no discord segue a lista: (lembre-se que o website sempre estará disponível para consultas)`)
+      .addField(`Musica [${musicsize}]`, `${music}`)
       .addField(`Desenvolvedor [${devsize}]`, `${dev}`)
       .addField(`Economia [${ecosize}]`, `${eco}`)
       .addField(`Diversão [${divsize}]`, `${div}`)

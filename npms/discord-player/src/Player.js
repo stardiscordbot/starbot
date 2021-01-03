@@ -108,7 +108,8 @@ class Player {
 			// Searches the song
 			let video = await Util.getVideoBySearch(songName, ytsr, options);
 			// Joins the voice channel
-			let connection = await voiceChannel.join();
+			let connection = await voiceChannel.join()
+			connection.voice.setSelfDeaf(true);
 			// Creates a new guild with data
 			let queue = new Queue(voiceChannel.guild.id);
 			queue.connection = connection;
