@@ -19,7 +19,6 @@ const comando = new Discord.WebhookClient(config.logID, config.logToken)
    const dono = await client.users.fetch(message.guild.ownerID)
    pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
     let prefix = res ? res.prefix : config.prefix;
-    if (!message.content.toLowerCase().startsWith('/')) return;
     if (!message.content.toLowerCase().startsWith(prefix)) return;
             let embeddiretor = new Discord.MessageEmbed()
                 .setTitle("🔔 • Log de comandos!")

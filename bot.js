@@ -2,7 +2,7 @@
 require('./functions/quote.js')
 require('./src/mongodb/blacklist.js')
 // Dependencias
-const {Player} = require("discord-music-player");
+const { Player } = require("./npms/discord-player/index.js");
 const { GiveawaysManager } = require('discord-giveaways');
 // Shard
 const GiveawayManagerWithShardSupport = class extends GiveawaysManager {
@@ -16,9 +16,16 @@ const backup = require('./npms/discord-backup/lib/index.js')
 const config = require('./src/config.json')
 // Client
 const client = new Discord.Client({
-  shardCount: 2,
-  disableMentions: 'everyone'
+  leaveOnEnd: false,
+  leaveOnStop: false,
+  leaveOnEmpty: true,
+  timeout: 0,
+  quality: 'high',
 });
+const player = new Player(client, {
+  leaveOnEmpty: true,
+});
+client.player = player;
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 // Giveaway

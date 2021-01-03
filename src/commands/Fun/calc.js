@@ -1,6 +1,6 @@
 const { create, all } = require('mathjs'); //npm i mathjs
-const cooldowns = {}
 const ms = require("ms")
+const emoji = require('../../jsons/emojis.json')
 const config = require('../../config.json');
 const { MessageEmbed } = require('discord.js');
 module.exports.run = async(client, message, args, prefix) => {
@@ -23,7 +23,6 @@ math.import({
     array: function () { throw new Error('A função ones array desativada') },
     nines: function () { throw new Error('A função ones nines desativada') },
 }, { override: true });
-
 const trava = new MessageEmbed()
 .setColor(config.color)
 .addField('Calculo', `\`\`\`${args.join(' ')}\`\`\``)
@@ -34,43 +33,33 @@ if (message.content.toLowerCase().includes(":")) {
    return message.quote(trava)
  }
  */
- 
+
 const cia = new MessageEmbed()
 .setColor(config.color)
 .addField('Calculo', `\`\`\`${args.join(' ')}\`\`\``)
 .addField('Resultado', `\`\`\`Token is not defined\`\`\``)
 .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL())
 
-if(args[0].length > 18) {
-    return message.quote(`${message.author}, seu calculo é muito longo :(`)
-}
+const argumento = args.join(" ").replace('`', '') || args.join(" ").replace('\`', '')
 
 if (message.content.toLowerCase().includes("token")) {
-   return message.quote(cia)
+   return message.quote(`${emoji.nao} ${message.author}, Olá não sei se você sabe mas \`\`${argumento}\`\` não me parece uma expressão valida, claro que eu faltei a ead para dar assistência aos servidores então pode ser burrice minha.`);
  }
 
 
-const expr = args.join(' ').toLowerCase();
+const expr = args.join(" ").toLowerCase();
 
 let result;
 
 try {
-    result = limitedEvaluate(expr); //Executa a express�o matem�tica introduzida com o math.evaluate limitado com as fun��es acima desativadas
+    result = limitedEvaluate(expr)
 } catch (err) {
-    return message.quote(`${message.author}, calculo invalido!`); //Envia mensagem a avisar que a express�o introduzida � inv�lida se ocorrer algum erro no math.evaluate
+    return message.quote(`${emoji.nao} ${message.author}, Olá não sei se você sabe mas \`\`${argumento}\`\` não me parece uma expressão valida, claro que eu faltei a ead para dar assistência aos servidores então pode ser burrice minha.`); //Envia mensagem a avisar que a express�o introduzida � inv�lida se ocorrer algum erro no math.evaluate
 }
 
-if (result === Infinity || result === -Infinity || result.toString() === 'NaN') result = 'Impossivel determinar'; //Coloca o resultado como 'Imposs�vel de determinar' se o resultado for Infinito ou NaN
-if (typeof result === 'function') return message.quote(`${message.author}, expressão invalida!`); //Envia mensagem a avisar que a express�o � inv�lida se o resultado for do tipo function
+if (result === Infinity || result === -Infinity || result.toString() === 'NaN') result = 'Impossivel determinar';
 
-const embed = new MessageEmbed()
-.setColor(config.color)
-.addField('Calculo', `\`\`\`${args.join(' ')}\`\`\``)
-.addField('Resultado', `\`\`\`${result}\`\`\``)
-.setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL())
-
-    
-message.quote(embed);
+message.quote(`${emoji.sim} ${message.author}, **Resultado:** \`${result}\``);
 }
 exports.help = {
     name: 'calc',
