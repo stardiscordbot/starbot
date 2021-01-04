@@ -4,6 +4,7 @@ require('./src/mongodb/blacklist.js')
 // Dependencias
 const { Player } = require("./npms/discord-player/index.js");
 const { GiveawaysManager } = require('discord-giveaways');
+const Levels = require("discord-xp");
 // Shard
 const GiveawayManagerWithShardSupport = class extends GiveawaysManager {
   async refreshStorage() {
@@ -16,7 +17,7 @@ const backup = require('./npms/discord-backup/lib/index.js')
 const config = require('./src/config.json')
 // Client
 const client = new Discord.Client({
-  leaveOnEnd: true,
+  leaveOnEnd: false,
   leaveOnStop: true,
   leaveOnEmpty: true,
   timeout: 0,
@@ -34,7 +35,6 @@ const manager = new GiveawayManagerWithShardSupport(client, {
   updateCountdownEvery: 10000,
   default: {
       botsCanWin: false,
-      exemptPermissions: ['MANAGE_MESSAGES', 'ADMINISTRATOR', 'MANAGE_GUILD'],
       embedColor: '#FF0000',
       reaction: '🥳'
   }

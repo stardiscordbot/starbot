@@ -16,7 +16,6 @@ const user = require('../mongodb/user.js');
 const emoji = require('../jsons/emojis.json')
 const barrar = new Set();
 // Inicio do Code
-const comando = new Discord.WebhookClient(config.logID, config.logToken)
 client.on("message", message => {
   // If's
   if (message.author.bot) return;

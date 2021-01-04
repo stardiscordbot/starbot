@@ -3,7 +3,11 @@ const emoji = require('../../jsons/emojis.json')
 
 exports.run = async (client, message, args, prefix) => {
     
-    if(!args[0]) return message.quote(`${emoji.nao} ${message.author}, eu preciso que você me especifique uma musica`)
+    const { channel } = message.member.voice;
+
+    if(!channel) return message.quote(`${emoji.nao} ${message.author}, Você Precisa estar em um canal de voz para executar este comando`)
+
+    if(!args[0]) return message.quote(`${emoji.nao} ${message.author}, Eu preciso que você me especifique uma musica`)
     
     const tocando = client.player.isPlaying(message.guild.id);
     
