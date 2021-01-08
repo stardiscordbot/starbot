@@ -2,6 +2,8 @@
 /discord-backup
 /bots
 /.vscode
+src/jsons/api.json
+src/jsons/player.json
 staff.txt
 starredonda.png
 .vscode

@@ -4,13 +4,10 @@ const backup = require('../../../npms/discord-backup/lib/index.js')
 const pr = require('../../mongodb/prefix')
 
 exports.run = (client, message, args, prefix) => {
-
-  pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
-    let prefix = res ? res.prefix : config.prefix;
     
     if(!message.guild.me.permissions.has("ADMINISTRATOR")) {
         const erro = new Discord.MessageEmbed()
-        .setTitle('<:db_download:782290025458696192> | Backups')
+        .setTitle('<:download:796419001990643773> | Backups')
         .setDescription(`${message.author} eu necessito da permissão admininstrador para criar backups`)
         .setThumbnail(client.user.displayAvatarURL({ dynamic: true, size: 2048 }))
         .setColor(config.color)
@@ -19,7 +16,7 @@ exports.run = (client, message, args, prefix) => {
       }
 
     const comando = new Discord.MessageEmbed()
-    .setTitle('<:db_download:782290025458696192> | Backups')
+    .setTitle('<:download:796419001990643773> | Backups')
     .setDescription(`\`${prefix}backup create - Cria um Backup\n${prefix}backup load - Carrega um backup\n${prefix}backup info - Informações de Algum Backup\``)
     .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
     .setThumbnail(client.user.displayAvatarURL({ dynamic: true, size: 2048 }))
@@ -29,20 +26,20 @@ exports.run = (client, message, args, prefix) => {
 
     if(args[0] == 'create') {
       if(!message.member.hasPermission("ADMINISTRATOR")){
-        return message.quote(":x: | Você precisa da permissão de Admininstrador para criar backup's!");
+        return message.quote(`${emoji.nao} ${message.author}, Você precisa da permissão de Admininstrador para criar backup's!`);
     }
     backup.create(message.guild, {
         jsonBeautify: true
     }).then((backupData) => {
         const sucesso = new Discord.MessageEmbed()
-        .setTitle('<:db_download:782290025458696192> | Sucesso')
+        .setTitle('<:download:796419001990643773> | Sucesso')
         .setDescription(`Seu backup foi criado!`)
         .addField(`ID do Backup: ${backupData.id}`, `Para carregar ultilize \`${prefix}backup load <ID>\``)
         .setColor(config.color)
         .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
 
         const criado = new Discord.MessageEmbed()
-        .setTitle('<:db_download:782290025458696192> | Sucesso')
+        .setTitle('<:download:796419001990643773> | Sucesso')
         .setDescription(`Seu backup foi criado, e as informações mandadas na dm`)
         .setColor(config.color)
         .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
@@ -57,7 +54,7 @@ exports.run = (client, message, args, prefix) => {
     }
     let backupID = args[1];
     if(!backupID){
-        return message.quote(":x: | Eu preciso do id do backup!");
+        return message.quote(`${emoji.nao} ${message.author}, Eu preciso do id do backup!`);
     }
     backup.fetch(backupID).then(async () => {
         message.quote(":warning: | Quando o backup for carregado, todos os canais, funções, etc. serão substituídos! Digite `confirmar` para confirmar!");
@@ -66,10 +63,10 @@ exports.run = (client, message, args, prefix) => {
                 time: 20000,
                 errors: ["time"]
             }).catch((err) => {
-                return message.quote(":x: | O Tempo acabou Backup Cancelado!");
+                return message.quote(`${emoji.nao} ${message.author}, O Tempo de resposta acabou e o backup foi cancelado!`);
             });
             const carregando = new Discord.MessageEmbed()
-            .setTitle('<:db_download:782290025458696192> | Sucesso')
+            .setTitle('<:download:796419001990643773> | Sucesso')
             .setDescription('Estou Carregando o backup!')
             .setColor(config.color)
             .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
@@ -95,7 +92,7 @@ exports.run = (client, message, args, prefix) => {
             const yyyy = date.getFullYear().toString(), mm = (date.getMonth()+1).toString(), dd = date.getDate().toString();
             const formatedDate = `${yyyy}/${(mm[1]?mm:"0"+mm[0])}/${(dd[1]?dd:"0"+dd[0])}`;
             let embed = new Discord.MessageEmbed()
-                .setTitle("<:db_download:782290025458696192> | Informações do Backup")
+                .setTitle("<:download:796419001990643773> | Informações do Backup")
                 .addField("ID do Backup", backupInfos.id, false)
                 .addField("ID do Servidor", backupInfos.data.guildID, false)
                 .addField("Tamanho", `${backupInfos.size} mb`, false)
@@ -107,8 +104,6 @@ exports.run = (client, message, args, prefix) => {
             return message.quote(`:x: | Nenhum backup encontrado para \`${backupID}\`!`);
         });
     }
-
-})
 }
 exports.help = { 
   name: 'backup', 

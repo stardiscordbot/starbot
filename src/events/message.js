@@ -88,7 +88,7 @@ client.on("message", message => {
   if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot) return;
   let command =client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
   if (!command) return console.log(c.america('[COMANDO] - COMANDO INEXISTENTE'))
-  if(command.help.status === 'off') return message.reply('sinto muito, esse comando está desabilitado, aguarde');
+  if(command.help.status === 'off') return message.quote(`${emoji.nao} ${message.author}, Sinto muito, esse comando está desabilitado, aguarde`);
   if (command) {
     pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
         let prefix = res ? res.prefix : config.prefix

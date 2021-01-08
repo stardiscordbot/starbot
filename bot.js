@@ -1,75 +1,66 @@
-// Coisas Importantes
+const c = require('colors');
 require('./functions/quote.js')
 require('./src/mongodb/blacklist.js')
+// Coisas Importantes
+console.log(c.yellow('[STARBOT] - Iniciando Conexão'))
 // Dependencias
-const { Player } = require("./npms/discord-player/index.js");
-const { GiveawaysManager } = require('discord-giveaways');
-const Levels = require("discord-xp");
-// Shard
-const GiveawayManagerWithShardSupport = class extends GiveawaysManager {
-  async refreshStorage() {
-      return client.shard.broadcastEval(() => this.giveawaysManager.getAllGiveaways());
-  }
-};
-// Give
+const { Manager } = require('erela.js')
+const player = require('./src/jsons/player.json')
 const Discord = require('discord.js')
-const backup = require('./npms/discord-backup/lib/index.js')
 const config = require('./src/config.json')
 // Client
 const client = new Discord.Client({
-  leaveOnEnd: false,
-  leaveOnStop: true,
-  leaveOnEmpty: true,
-  timeout: 0,
-  quality: 'high',
+  shardCount: 2,
+  disableMentions: 'everyone'
 });
-const player = new Player(client, {
-  leaveOnEmpty: true,
-});
-client.player = player;
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
-// Giveaway
-const manager = new GiveawayManagerWithShardSupport(client, {
-  storage: './src/jsons/giveaways.json',
-  updateCountdownEvery: 10000,
-  default: {
-      botsCanWin: false,
-      embedColor: '#FF0000',
-      reaction: '🥳'
-  }
-});
-// Manager
-client.giveawaysManager = manager;
 // Mais depêndencias
 const fs = require('fs');
 const mongoose = require('mongoose')
-const c = require('colors');
 // Arquivos
-const bldb = require("./src/mongodb/blacklist.js");
-const dc = require('./src/mongodb/dc.js')
 const pr = require("./src/mongodb/prefix");
-const autorole = require('./src/mongodb/autorole.js');
-const welcomeChannel = require('./src/mongodb/WelcomeChannel.js');
-const logChannel = require('./src/mongodb/messagelog.js');
-const Money = require("./src/mongodb/money.js");
-const antilink = require('./src/mongodb/antilink');
 // Outras Depêndencias
-const moment = require("moment");
-const ms = require('ms');
 const DBL = require("dblapi.js");
 const glob = require('glob')
 // Dbl Status
 const dbl = new DBL(config.dbl, client);
-
 dbl.on('posted', () => {
   console.log(c.green('[DBL] - Servidores Postados!'));
 })
-
 dbl.on('error', e => {
  console.log(c.red(`[DBL] - ${e}`));
 })
-// Conectando a database
+
+const nodes = [
+  {
+    host: player.host,
+    password: player.senha,
+    port: 2333,
+  }
+];
+
+client.manager = new Manager({
+  nodes,
+  send: (id, payload) => {
+    const guild = client.guilds.cache.get(id);
+    if (guild) guild.shard.send(payload);
+  }
+});
+
+client.manager.on("nodeConnect", node => {
+    console.log(c.yellow(`[NODES] - Node "${node.options.identifier}" conectado.`))
+})
+
+client.manager.on("nodeError", (node, error) => {
+    console.log(c.red(`[NODES] - Node "${node.options.identifier}" teve um erro: ${error.message}.`))
+})
+
+client.once("ready", () => {
+  console.log(c.yellow(`[NODES] - Iniciando conexão dos nodes`))
+  client.manager.init(client.user.id);
+});
+
 mongoose.connect(config.mongo, { 
   
     useNewUrlParser: true,
@@ -80,19 +71,6 @@ mongoose.connect(config.mongo, {
     console.log(c.brightRed("[BANCO DE DADOS] - Banco de dados desligado por erro"))
   });
 
-client.on('message', message => {
-    if (message.author.bot) return;
-    if (message.channel.type === "dm") return;
-    pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
-      let prefix = res ? res.prefix : config.prefix;
-    if (message.content.startsWith(prefix)) {
-          message.quote(`<a:alerta:763434977412120586> | ${message.author} Você está usando a versão experimental da Star:tm:. Várias funcionalidades podem não funcionar, posso ficar offline a qualquer momento, seu servidor pode explodir e muito mais! Não reporte problemas da versão experimental caso não seja solicitado, obrigada!`).then(msg => {
-            msg.delete({timeout:5000})
-          })
-    }
-  })
-});
-// Handler
   glob(__dirname+'/src/commands/*/*.js', function (er, files) {
     if(er) console.log(er)
     files.forEach(f => {
@@ -105,7 +83,6 @@ client.on('message', message => {
     console.log("[COMANDOS] - Carregados com sucesso".brightCyan)
 })
 
-// Handler de Eventos
 fs.readdir("./src/events/", (err, files) => {
   if(err)
       console.error(err);
@@ -117,16 +94,6 @@ fs.readdir("./src/events/", (err, files) => {
   })
   console.log(c.brightCyan("[EVENTOS] - Carregados com sucesso"))
 });
-// Logando
+
 client.login(config.token)
-// Exportando o Client
 module.exports = {client}
-// Ligando a Star Helper
-const bot = require('./bots/starhelper/bot.js');
-const client2 = bot.init(config.token);
-// Ligando a Star Premium
-const bot2 = require('./bots/starpremium/bot.js');
-const client3 = bot2.init(config.token);
-// Ligando o Backup
-const bot3 = require('./bots/star-instância/bot.js')
-const client4 = bot3.init(config.token);
