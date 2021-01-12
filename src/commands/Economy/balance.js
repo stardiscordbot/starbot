@@ -1,7 +1,8 @@
 const Discord = require ("discord.js");
 const mongoose = require("mongoose");
 const Money = require("../../mongodb/money.js");
-const config = require('../../config.json')
+const config = require('../../config.json');
+
 const dbUrl = config.mongo;
 
 mongoose.connect(config.mongo, {

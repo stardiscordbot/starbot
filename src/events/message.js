@@ -16,6 +16,19 @@ const user = require('../mongodb/user.js');
 const emoji = require('../jsons/emojis.json')
 const barrar = new Set();
 // Inicio do Code
+client.on('message', message => {
+  if (message.author.bot) return;
+  if (message.channel.type === "dm") return;
+  pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
+    let prefix = res ? res.prefix : config.prefix;
+  if (message.content.startsWith(prefix)) {
+        message.quote(`<a:alerta:763434977412120586> | ${message.author} Você está usando a versão experimental da Star:tm:. Várias funcionalidades podem não funcionar, posso ficar offline a qualquer momento, seu servidor pode explodir e muito mais! Não reporte problemas da versão experimental caso não seja solicitado, obrigada!`).then(msg => {
+          msg.delete({timeout:5000})
+        })
+  }
+})
+});
+
 client.on("message", message => {
   // If's
   if (message.author.bot) return;

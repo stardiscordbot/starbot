@@ -1,4 +1,5 @@
 const {client} = require("../../bot.js");
+const {star} = require("../../bot.js");
 const config = require("../config.json");
 const Discord = require('discord.js')
 const c = require('colors')
@@ -28,4 +29,9 @@ client.on("ready", () => {
           .setStatus("online")
           .catch(console.error);
     console.log(c.brightGreen(`[LOGIN] - Estou Online!\n[BOT] - ${client.user.username}\n[SERVIDORES] - ${client.guilds.cache.size}`))
+    const readyembed = new Discord.MessageEmbed()
+    .setTitle('Star™ | Status')
+    .setDescription(`**[LOGIN] - Estou Online!\n[BOT] - ${client.user.username}\n[SERVIDORES] - ${client.guilds.cache.size}**`)
+    .setColor('00ff08')
+    star.send(readyembed)
 });

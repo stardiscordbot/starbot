@@ -1,11 +1,13 @@
 // Coisas Importantes
 require('./functions/quote.js')
 require('./src/mongodb/blacklist.js')
+// Discord
+const webhook = require("./src/jsons/webhooks.json")
+const Discord = require("discord.js")
+const star = new Discord.WebhookClient(webhook.watchdogs.id, webhook.watchdogs.token)
 // Dependencias
 const { Player } = require("./npms/discord-player/index.js");
-const { GiveawaysManager } = require('discord-giveaways');
 // Give
-const Discord = require('discord.js')
 const config = require('./src/config.json')
 // Client
 const client = new Discord.Client({
@@ -23,8 +25,6 @@ const player = new Player(client, {
 client.player = player;
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
-// Manager
-client.giveawaysManager = manager;
 // Mais depêndencias
 const fs = require('fs');
 const mongoose = require('mongoose')
@@ -43,15 +43,42 @@ const moment = require("moment");
 const ms = require('ms');
 const DBL = require("dblapi.js");
 const glob = require('glob')
+// Embeds
+const commandembed = new Discord.MessageEmbed()
+.setTitle('Star™ | Status')
+.setDescription('**[COMANDOS] - Carregados com sucesso**')
+.setColor('ff0000')
+
+const eventembed = new Discord.MessageEmbed()
+.setTitle('Star™ | Status')
+.setDescription('**[EVENTOS] - Carregados com sucesso**')
+.setColor('YELLOW')
+
+const dblembed = new Discord.MessageEmbed()
+.setTitle('Star™ | Status')
+.setDescription('**[DBL] - Servidores Postados**')
+.setColor('BLUE')
+
+const dbembed = new Discord.MessageEmbed()
+.setTitle('Star™ | Status')
+.setDescription('**[BANCO DE DADOS] - Banco de dados foi ligado**')
+.setColor('ffc600')
 // Dbl Status
 const dbl = new DBL(config.dbl, client);
 
 dbl.on('posted', () => {
-  console.log(c.green('[DBL] - Servidores Postados!'));
+  console.log(c.green('[DBL] - Servidores Postados'));
+  star.send(dblembed)
 })
 
 dbl.on('error', e => {
+  const dblerror = new Discord.MessageEmbed()
+  .setTitle('Star™ | Status')
+  .setDescription(`**[DBL ERROR] - ${e}**`)
+  .setColor('RED')
+
  console.log(c.red(`[DBL] - ${e}`));
+ star.send(dblerror)
 })
 // Conectando a database
 mongoose.connect(config.mongo, { 
@@ -60,22 +87,11 @@ mongoose.connect(config.mongo, {
     useUnifiedTopology: true
   }).then (function () {
     console.log(c.brightYellow("[BANCO DE DADOS] - Banco de dados foi ligado"))
+    star.send(dbembed)
   }).catch (function () {
     console.log(c.brightRed("[BANCO DE DADOS] - Banco de dados desligado por erro"))
   });
 
-client.on('message', message => {
-    if (message.author.bot) return;
-    if (message.channel.type === "dm") return;
-    pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
-      let prefix = res ? res.prefix : config.prefix;
-    if (message.content.startsWith(prefix)) {
-          message.quote(`<a:alerta:763434977412120586> | ${message.author} Você está usando a versão experimental da Star:tm:. Várias funcionalidades podem não funcionar, posso ficar offline a qualquer momento, seu servidor pode explodir e muito mais! Não reporte problemas da versão experimental caso não seja solicitado, obrigada!`).then(msg => {
-            msg.delete({timeout:5000})
-          })
-    }
-  })
-});
 // Handler
   glob(__dirname+'/src/commands/*/*.js', function (er, files) {
     if(er) console.log(er)
@@ -87,6 +103,7 @@ client.on('message', message => {
         });
         })
     console.log("[COMANDOS] - Carregados com sucesso".brightCyan)
+    star.send(commandembed)
 })
 
 // Handler de Eventos
@@ -100,11 +117,12 @@ fs.readdir("./src/events/", (err, files) => {
       require("./src/events/" + file);
   })
   console.log(c.brightCyan("[EVENTOS] - Carregados com sucesso"))
+  star.send(eventembed)
 });
 // Logando
 client.login(config.token)
 // Exportando o Client
-module.exports = {client}
+module.exports = {client, star}
 // Ligando a Star Helper
 const bot = require('./bots/starhelper/bot.js');
 const client2 = bot.init(config.token);
