@@ -29,6 +29,7 @@ client.on("ready", () => {
           .setStatus("online")
           .catch(console.error);
     console.log(c.brightGreen(`[LOGIN] - Estou Online!\n[BOT] - ${client.user.username}\n[SERVIDORES] - ${client.guilds.cache.size}`))
+    client.channels.cache.get('798292414686822411').setName(`▏📝Servidores: ${client.guilds.cache.size}`)
     const readyembed = new Discord.MessageEmbed()
     .setTitle('Star™ | Status')
     .setDescription(`**[LOGIN] - Estou Online!\n[BOT] - ${client.user.username}\n[SERVIDORES] - ${client.guilds.cache.size}**`)

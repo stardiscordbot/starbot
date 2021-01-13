@@ -11,6 +11,7 @@ const welcomeChannel = require('../mongodb/WelcomeChannel.js');
 const logChannel = require('../mongodb/messagelog.js');
 const Money = require("../mongodb/money.js");
 const antilink = require('../mongodb/antilink');
+const comando2 = require('../mongodb/command')
 // Inicio do Code
 const comando = new Discord.WebhookClient(config.logID, config.logToken)
  client.on('message', async message => {
@@ -20,6 +21,19 @@ const comando = new Discord.WebhookClient(config.logID, config.logToken)
    pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
     let prefix = res ? res.prefix : config.prefix;
     if (!message.content.toLowerCase().startsWith(prefix)) return;
+    comando2.findOne({nome:"star"}, async (err, db) => {
+      if(!db) {
+        const command = new comando2({
+          nome:"star",
+          quantidade:"1"
+        })
+        command.save().catch(err => console.log(err))
+      } if(db) {
+          let adicionar = 1;
+          db.quantidade = db.quantidade + adicionar
+          await db.save().catch(e => console.log(e));
+        }
+    })
             let embeddiretor = new Discord.MessageEmbed()
                 .setTitle("🔔 • Log de comandos!")
                 .setColor("ff0000")
