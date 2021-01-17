@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args, prefix) => {
         // Se o User for dev
         if(db) {
             try {
-            if(!args.join(' ')) return message.quote('Escreva o código')
+            if(!args.join(' ')) return message.quote(`${emoji.nao} ${message.author}, eu preciso de um código pra evaluar`)
             let code = await eval(args.join(" "));
             if (typeof code !== 'string') code = await require('util').inspect(code, { depth: 0 });
             let embed = new Discord.MessageEmbed()

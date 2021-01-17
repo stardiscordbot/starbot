@@ -4,6 +4,7 @@ require('./src/mongodb/blacklist.js')
 // Discord
 const webhook = require("./src/jsons/webhooks.json")
 const Discord = require("discord.js")
+
 const star = new Discord.WebhookClient(webhook.watchdogs.id, webhook.watchdogs.token)
 // Dependencias
 const { Player } = require("./npms/discord-player/index.js");
@@ -81,17 +82,6 @@ dbl.on('error', e => {
  star.send(dblerror)
 })
 // Conectando a database
-mongoose.connect(config.mongo, { 
-  
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  }).then (function () {
-    console.log(c.brightYellow("[BANCO DE DADOS] - Banco de dados foi ligado"))
-    star.send(dbembed)
-  }).catch (function () {
-    console.log(c.brightRed("[BANCO DE DADOS] - Banco de dados desligado por erro"))
-  });
-
 // Handler
   glob(__dirname+'/src/commands/*/*.js', function (er, files) {
     if(er) console.log(er)
@@ -123,12 +113,3 @@ fs.readdir("./src/events/", (err, files) => {
 client.login(config.token)
 // Exportando o Client
 module.exports = {client, star}
-// Ligando a Star Helper
-const bot = require('./bots/starhelper/bot.js');
-const client2 = bot.init(config.token);
-// Ligando a Star Premium
-const bot2 = require('./bots/starpremium/bot.js');
-const client3 = bot2.init(config.token);
-// Ligando o Backup
-const bot3 = require('./bots/star-instância/bot.js')
-const client4 = bot3.init(config.token);

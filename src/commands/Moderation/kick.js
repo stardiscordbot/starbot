@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const config = require('../../config.json')
 const emoji = require('../../jsons/emojis.json')
 
-exports.run = (client, message, args, prefix) => {
+exports.run = async (client, message, args, prefix) => {
     if(!message.member.hasPermission('KICK_MEMBERS')) return message.quote(`${emoji.nao} ${message.author}, você não tem permissão para usar este comando.`)
     if(!message.guild.me.hasPermission('KICK_MEMBERS')) return message.quote(`${emoji.nao} ${message.author}, eu não tenho permissão para executar este comando`)
     if(!args[0]) return message.quote(`${emoji.nao} ${message.author}, eu preciso do \`ID/Menção\` do usuário`)
@@ -15,7 +15,7 @@ exports.run = (client, message, args, prefix) => {
 
     const awaitembed = new Discord.MessageEmbed()
     .setTitle(`Confirmar Punição | ${client.user.username}`)
-    .setDescription(`${message.author}, se você deseja confirmar a punição de: \`${tag}\` reaja com ${emoji.sim}`)
+    .setDescription(`${message.author}, se você deseja confirmar a punição de: \`${member.tag}\` reaja com ${emoji.sim}`)
     .setColor(config.color)
     message.quote(awaitembed).then(msg => {
     msg.react('754692730546028615')

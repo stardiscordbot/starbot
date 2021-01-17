@@ -12,6 +12,7 @@ const welcomeChannel = require('../mongodb/WelcomeChannel.js');
 const logChannel = require('../mongodb/messagelog.js');
 const Money = require("../mongodb/money.js");
 const antilink = require('../mongodb/antilink');
+const { exec } = require("child_process")
 // Inicio do Code
 client.on("ready", () => {
     let activities = [

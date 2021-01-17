@@ -2,18 +2,14 @@ const Discord = require ("discord.js");
 const mongoose = require("mongoose");
 const Money = require("../../mongodb/money.js");
 const config = require('../../config.json');
-
-const dbUrl = config.mongo;
-
-mongoose.connect(config.mongo, {
-    useNewUrlParser: true
-});
+const emoji = require('../../jsons/emojis.json')
 
 module.exports.run = async (client, message, args, prefix) => {
-        let target = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
+    let target = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
     const bot = new Discord.MessageEmbed()
-    .setTitle('ERRO')
-    .setDescription('BOT não pode ter conta em meu banco')
+    .setAuthor(`•  ${client.user.username} | Erro`, 'https://cdn.discordapp.com/emojis/753735889783357560.gif?v=1')
+    .setDescription(`${emoji.bot} bot não pode ter conta em meu banco`)
+    .setThumbnail(client.user.displayAvatarURL({dynamic:true}))
     .setColor(config.color)
     if(target.user.bot) return message.quote(bot);
 
@@ -22,8 +18,7 @@ module.exports.run = async (client, message, args, prefix) => {
     }, async (err, money) => {
         let balanceEmbed = new Discord.MessageEmbed()
         .setTitle(`${client.user.username} | Banco`)
-        .setThumbnail('https://media.discordapp.net/attachments/754461904575135815/771738697375940648/starredonda.png')
-        .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL())
+        .setThumbnail(client.user.displayAvatarURL({dynamic:true}))
         .setColor(config.color);
 
         if(!money) {

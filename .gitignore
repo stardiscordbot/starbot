@@ -2,6 +2,7 @@
 /discord-backup
 /bots
 /.vscode
+/website
 src/jsons/api.json
 src/jsons/player.json
 staff.txt

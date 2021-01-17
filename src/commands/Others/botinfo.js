@@ -47,15 +47,16 @@ Promise.all(promises).then(async results => {
   .setImage('https://top.gg/api/widget/719524114536333342.png')
    */
   let uptime = `${days.toFixed()} dias ${hours.toFixed()} horas ${minutes.toFixed()} minutos ${seconds.toFixed()} segundos`
+  let users = client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)
   const botinfo = new Discord.MessageEmbed()
   .setAuthor(`${client.user.username}`, client.user.displayAvatarURL({dynamic:true}), 'https://www.stardcbot.tk/')
-  .setDescription(`Olá, meu nome é **${client.user.username}**, tenho 13 anos e sou um simples bot para discord, fui criada por \`${adg.username}\` no dia: \`08/06/2020\`. Atualmente estou em **${client.guilds.cache.size} servidores** e tenho **${client.commands.size} comandos** diversos para seu servidor <:star_todeolho:796455451621326859>\n\nFui programada em <:nodejs:753727823008759838> [JavaScript](https://pt.wikipedia.org/wiki/JavaScript) usando a biblioteca do [discord.js](http://discord.js.org/) (alias eu sou open-source, se quiser dar uma olhada clique [aqui](https://github.com/yADGithub/starbot/tree/developer))\n\nEstou acordada a **${uptime}**`)
+  .setDescription(`Olá, meu nome é **${client.user.username}**, tenho 13 anos e sou um simples bot para discord, fui criada por \`${adg.username}\` no dia: \`08/06/2020\`. Atualmente estou em **${client.guilds.cache.size} servidores**, monitorando **${users} usuários** e tenho **${client.commands.size} comandos** diversos para seu servidor <:star_todeolho:796455451621326859>\n\nFui programada em <:nodejs:753727823008759838> [JavaScript](https://pt.wikipedia.org/wiki/JavaScript) usando a biblioteca do [discord.js](http://discord.js.org/) (alias eu sou open-source, se quiser dar uma olhada clique [aqui](https://github.com/yADGithub/starbot/tree/developer))\n\nEstou acordada a **${uptime}**`)
   .setThumbnail(client.user.displayAvatarURL({dynamic:true}))
   .addField('<:star_todeolho:796455451621326859> • Lista de comandos', '[Clique Aqui](https://starbot-website.yadg.repl.co/comandos)', true)
   .addField('🐦 • Twitter', '[Clique Aqui](https://twitter.com/Starzinha_BOT)', true)
   .addField('<:discord:770039545067995136> • Suporte', '[Clique Aqui](https://discord.gg/2pFH6Yy)', true)
   .addField('💻 • Desenvolvedores', `> \`${adg.tag}\`\n> \`${gustavo.tag}\`\n> \`${bonee.tag}\`\n> \`${etinho.tag}\`\n> \`${andre.tag}\`\n> \`${davi.tag}\``)
-  .addField('🏅 • Pessoas Importantes', `> 🎖️ • \`${adg.tag}\` por ter me criado\n> 🎖️ • Todas a minha staff que me mantém segura!\n> 🎖️ • [Zuraaa! List](https://discord.gg/EShHzNtVAb) por patrocinar a hospedagem\n> 🎖️ • E você ${message.author}, por me ultilizar <:catblush:774345793271889920>`)
+  .addField('🏅 • Pessoas Importantes', `> 🎖️ • \`${adg.tag}\` por ter me criado\n> 🎖️ • Todas a minha staff que me mantém segura!\n> 🎖️ • [Zuraaa! List](https://discord.gg/EShHzNtVAb) por patrocinar a hospedagem\n> 🎖️ • E você ${message.author}, por utilizar minha funções <:catblush:774345793271889920>`)
   .setColor(config.color)
   message.quote(botinfo).then(msg=>{
     const collectfilter = (reaction, user) => reaction.emoji.name === 'star_desconfiada' && user.id === message.author.id;
@@ -98,7 +99,7 @@ Promise.all(promises).then(async results => {
   }
 exports.help = {
     name: 'botinfo',
-    aliases: ['starinfo'],
+    aliases: ['starinfo', 'starbot', 'star'],
     status: 'on',
     category: 'others'
 }

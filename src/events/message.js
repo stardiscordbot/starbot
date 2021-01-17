@@ -19,6 +19,11 @@ const barrar = new Set();
 client.on('message', message => {
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
+
+  if (message.mentions.has(client.user)) {
+    message.react('800474308996104222')
+  }
+
   pr.findOne({name: "prefix", preid: message.guild.id}).then(res => {
     let prefix = res ? res.prefix : config.prefix;
   if (message.content.startsWith(prefix)) {
@@ -84,6 +89,7 @@ client.on("message", message => {
   }
   // Caso o user esteja banido
   bldb.findOne({_id:message.author.id}, (err, bl) => {
+    if(message.author.id == '717766639260532826') return;
     if(bl) {
       const detectado = new Discord.MessageEmbed()
       .setTitle("<a:ban_cat:768210628913266689> | Você está Banido")

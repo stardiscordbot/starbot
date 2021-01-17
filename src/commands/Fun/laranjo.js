@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args, prefix) => {
                 .setTitle('<:stonks:782669448846639125> | Stonks')
                 .setImage({files: [{ attachment: i, name: "laranjo.png"}]})
                 .setColor('ff0000')
-                    message.quote(`>>> **<:Laranja:782671789569474610> | Laranjo**`, {files: [{ attachment: i, name: "laranjo.png"}]})
+                    message.quote({files: [{ attachment: i, name: "laranjo.png"}]})
                     m.delete({ timeout: 3000 });
                 })
             })
