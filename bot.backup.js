@@ -4,8 +4,10 @@ require('./src/mongodb/blacklist.js')
 // Discord
 const webhook = require("./src/jsons/webhooks.json")
 const Discord = require("discord.js")
+
 const star = new Discord.WebhookClient(webhook.watchdogs.id, webhook.watchdogs.token)
 // Dependencias
+const { Player } = require("./npms/discord-player/index.js");
 // Give
 const config = require('./src/config.json')
 // Client
@@ -13,10 +15,13 @@ const client = new Discord.Client({
   shardCount: 2,
   disableMentions: 'everyone'
 });
-const { Player } = require("discord-player");
-
-const player = new Player(client);
-
+// Player
+const player = new Player(client, {
+  leaveOnEnd: false,
+  leaveOnStop: true,
+  leaveOnEmpty: true,
+  quality: 'high',
+});
 client.player = player;
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
@@ -75,6 +80,7 @@ dbl.on('error', e => {
  console.log(c.red(`[ERRO] - Ocorreu um erro com a api do top.gg:\n${e}`));
  star.send(dblerror)
 })
+// Conectando a database
 // Handler
   glob(__dirname+'/src/commands/*/*.js', function (er, files) {
     if(er) console.log(er)
@@ -88,6 +94,7 @@ dbl.on('error', e => {
     console.log("[COMANDOS] - Carregados com sucesso".brightCyan)
     star.send(commandembed)
 })
+
 // Handler de Eventos
 fs.readdir("./src/events/", (err, files) => {
   if(err)
@@ -107,7 +114,5 @@ client.login(config.token).catch(err => {
 })
 // Exportando o Client
 module.exports = {
-  client,
-  player,
-  star
+  client, star
 }

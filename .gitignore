@@ -5,6 +5,8 @@
 /website
 src/jsons/api.json
 src/jsons/player.json
+src/jsons/connections.json
+src/jsons/giveaways.json
 staff.txt
 starredonda.png
 .vscode

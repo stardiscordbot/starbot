@@ -24,6 +24,7 @@
     "discord-canvas": "^1.4.1",
     "discord-giveaways": "^4.3.0",
     "discord-music-player": "^6.1.1-fix3",
+    "discord-player": "^3.2.1",
     "discord-xp": "^1.1.7",
     "discord.js": "^12.5.1",
     "discord.js-light": "^3.5.0",
@@ -51,6 +52,7 @@
     "node-superfetch": "^0.1.10",
     "nodemon": "^2.0.6",
     "opusscript": "0.0.7",
+    "parse-ms": "^2.1.0",
     "passport": "^0.4.1",
     "passport-discord": "^0.1.4",
     "piadas-library": "^1.2.7",
@@ -63,7 +65,7 @@
     "twemoji-parser": "^13.0.0",
     "votos-zuraaa": "^2.0.1",
     "weather-js": "^2.0.0",
-    "ytdl-core": "^4.1.2"
+    "ytdl-core": "^4.4.3"
   },
   "description": ""
 }
