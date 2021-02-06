@@ -94,9 +94,9 @@ client.on("message", message => {
       .setTitle("<a:ban_cat:768210628913266689> | Você está Banido")
       .setColor("ff0000")
       if(!bl.motivo) {
-        detectado.setDescription(`Você foi banido de ultilizar a Star:tm: por desrespeitar os termos de uso, caso ache que isto é um engano contate nosso [suporte](https://discord.gg/2pFH6Yy) e tentaremos resolver\n\n**Motivo:** \`Não Definido - Punido por: ${bl.autorTag}\`\n**Apelação:** \`Você pode enviar uma apelação para seu unban: https://bit.ly/star-unban\``)
+        detectado.setDescription(`Você foi banido de utilizar a Star:tm: por desrespeitar os termos de uso, caso ache que isto é um engano contate nosso [suporte](https://discord.gg/2pFH6Yy) e tentaremos resolver\n\n**Motivo:** \`Não Definido - Punido por: ${bl.autorTag}\`\n**Apelação:** \`Você pode enviar uma apelação para seu unban: https://bit.ly/star-unban\``)
     } else if(bl.motivo) {
-      detectado.setDescription(`Você foi banido de ultilizar a Star:tm: por desrespeitar os termos de uso, caso ache que isto é um engano contate nosso [suporte](https://discord.gg/2pFH6Yy) e tentaremos resolver\n\n**Motivo:** \`${bl.motivo} - Punido por: ${bl.autorTag}\`\n**Apelação:** \`Você pode enviar uma apelação para seu unban: https://bit.ly/star-unban\``)
+      detectado.setDescription(`Você foi banido de utilizar a Star:tm: por desrespeitar os termos de uso, caso ache que isto é um engano contate nosso [suporte](https://discord.gg/2pFH6Yy) e tentaremos resolver\n\n**Motivo:** \`${bl.motivo} - Punido por: ${bl.autorTag}\`\n**Apelação:** \`Você pode enviar uma apelação para seu unban: https://bit.ly/star-unban\``)
     }
        return message.quote(detectado)
         }
