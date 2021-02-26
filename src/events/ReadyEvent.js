@@ -22,7 +22,7 @@ client.on("ready", () => {
         `Utilize ${config.prefix}ajuda para ver meus comandos ^^`,
         `Amor para todo o mundo ❤️!`,
         `Alegria para todos os meus usuários`,
-        `Ultilize ${config.prefix}ajuda para votar em mim!`,
+        `Utilize ${config.prefix}ajuda para votar em mim!`,
         `Entre em meu servidor de suporte! https://discord.gg/2pFH6Yy`
       ],
       i = 0;
