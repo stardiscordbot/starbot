@@ -1,0 +1,10 @@
+{
+    "discord": {
+        "token": "YOU DISCORD BOT TOKEN"
+    },
+    "database": {
+        "mongo": {
+            "url": "YOU MONGODB URL"
+        }
+    }
+}

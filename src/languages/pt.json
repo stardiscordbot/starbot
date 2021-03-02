@@ -1,0 +1,73 @@
+{
+  "avatar": {
+    "from": "Avatar de:",
+    "unknown": "Usuário desconhecido."
+  },
+  "editLogs": {
+    "old": "Mensagem antes da edição:",
+    "new": "Mensagem após edição:",
+    "user": "Usuário",
+    "deleted": "[apagada]",
+    "edited": "[editada]",
+    "click": "Clique aqui",
+    "canal": "Canal",
+    "title": "Log de Mensagens",
+    "content": "Conteúdo"
+  },
+  "multiLang": {
+  "unknownLanguage": "Idioma desconhecido.",
+    "insertLang": "Você não específicou um idioma. Para alterar o idioma do bot, utilize `%pidioma <português | inglês>`"
+  },
+  "autoRole": { 
+    "insertRole": "Você não especificou um cargo, utilize: `%pautorole <@cargo | cargo id | desativar>.`",
+    "success": "Certo, agora membros que entrarem no servidor terão o cargo `%cargo` adicionado automaticamente.",
+    "disabled": "AutoRole foi desativado com sucesso."
+  },
+  "welcome": {
+    "insertChannel": "Você não especificou um canal, utilize: `%pwelcome <#canal | canal id | desativar>`.",
+    "success": "Certo, irei mandar todas as mensagens de boas vindas para o canal `%canal` automaticamente.",
+    "disabled": "As mensagens de boas vindas foram desativadas com sucesso.",
+    "message": "%m bem-vindo ao servidor **%g**, atualmente temos **%c** membros! Espero que se divirta conosco ❤️"
+  },
+  "leave": {
+    "insertChannel": "Você não especificou um canal, utilize: `%psaida <#canal | canal id | desativar>`.",
+    "success": "Certo, irei mandar todas as mensagens de saida para o canal `%canal` automaticamente.",
+    "disabled": "As mensagens de saida foram desativadas com sucesso.",
+    "message": "Infelizmente, %m saiu do servidor. Agora temos **%c** membros."
+  },
+  "guildLogs": {
+    "insertChannel": "Você não especificou um canal, utilize: `%plogs <#canal | canal id | desativar>`.",
+    "success": "Certo, irei mandar todas as logs para o canal `%canal` automaticamente.",
+    "disabled": "As logs foram desativadas com sucesso."
+  },
+  "mention": {
+    "response": "Olá **%u**, veja meus comandos usando `star ajuda` ou `s!ajuda`"
+  },
+  "slowmode": {
+   "time": "Insira o tempo em segundos para ser o novo modo lento. (**0 à 21600**).",
+   "NaN": "Isso não é um número.",
+   "lento": "Modo lento definido para `%tempo segundos` com sucesso.",
+   "error": "Não foi possível alterar o modo lento."
+  },
+  "vaporwave": {
+    "error": "Eu preciso que você me dê algum texto, tente: `%pvaporonda <texto>`"
+  },
+  "backup": {
+    "createdUser": "O backup foi criado, para carregar utilize `%pbackup load %id`!",
+    "created": "O backup foi criado e as informações foram enviadas com sucesso!",
+    "idError": "Você deve especificar um ID de backup válido!",
+    "confirm": "Quando o backup for carregado, todos os canais, funções, etc. serão substituídos! Digite `confirmar` para confirmar!",
+    "time": "O tempo de resposta acabou, cancelando o backup!",
+    "args": "`backup create - Cria um Backup\nbackup load - Carrega um backup\nbackup info - Mostra Informações de Algum Backup`",
+    "info": "Crie & carregue backups privados de seus servidores"
+  },
+  "image": {
+    "editando": "✍️ %u **|** editando",
+    "args": "✍️ %u **|** Eu preciso que você me dê algum argumento para que eu possa editar",
+    "long": "✍️ %u **|** Sua mensagem é muito longa, tente reduzir para 300 caracteres",
+    "achivment": "Progresso Feito!"
+  },
+  "error": {
+    "dm": "❌ %u **|** Não consegui enviar a mensagem em sua dm, verifique se ela está aberta ou se estou bloqueada"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "avatar": {
+    "from": "Avatar from:",
+    "unknown": "Unknown user."
+  },
+  "editLogs": {
+    "old": "Message after editing:",
+    "new": "Message before editing:",
+    "user": "User",
+    "click": "Click here",
+    "deleted": "[deleted]",
+    "edited": "[edited]",
+    "canal": "Channel",
+    "title": "Message Logs",
+    "content": "Content"
+  },
+  "multiLang": {
+  "unknownLanguage": "Unknown language.",
+    "insertLang": "You did not specify a language. To change the bot language, run `%planguage <portuguese | english>`"
+  },
+  "autoRole": { 
+    "insertRole": "You did not specify a role, run: `%pautorole <@role | role id | disable>.`",
+    "success": "Alright, now members that join server, will get the role `%cargo` added automatically.",
+    "disabled": "AutoRole was disabled successfully."
+  },
+  "welcome": {
+    "insertChannel": "You have not specified a channel, use: `%pwelcome <#channel | id channel | disable>`.",
+    "success": "Okay, I will automatically send all welcome messages to the `%canal`.",
+    "disabled": "The welcome messages were successfully deactivated.",
+    "message": "%m welcome to the **%g** server, currently we have **%c** members! Hope you have fun with us ❤️"
+  },
+  "leave": {
+    "insertChannel": "You have not specified a channel, use: `%pleave <#channel | id channel | disable>`.",
+    "success": "Okay, I will automatically send all leave messages to the `%canal`.",
+    "disabled": "The leave messages were successfully deactivated.",
+    "message": "%m left the server. Now we have **%c** members."
+  },
+  "guildLogs": {
+    "insertChannel": "You did not specify a channel, run: `%plogs <#channel | channel id | disable>`.",
+    "success": "Alright, I will send all logs to the `%canal` automatically.",
+    "disabled": "The logs system was disabled successfully."
+  },
+  "mention": {
+    "response": "Hello **%u**! See my commands by using `star help` or `s!help`"
+  },
+  "slowmode": {
+    "time": "Enter the time in seconds to be the new slow mode. (** 0 to 21600 **).",
+   "NaN": "This is not a number.",
+   "lento": "Slowmode defined to `%tempo seconds`.",
+   "error": "Could not change the slowmode."
+  },
+  "vaporwave": {
+    "error": "I need you to give me some text, try: `%pvaporwave <text>`"
+  },
+  "backup": {
+    "createdUser": "The backup was created, to load use `%pbackup load %id`!",
+    "created": "The backup was created and the information was sent successfully!",
+    "idError": "You must specify a valid backup ID!",
+    "confirm": "When the backup is loaded, all the channels, roles, etc. will be replaced! Type `confirm` to confirm!",
+    "time": "Response time is over, canceling the backup!",
+    "args": "`backup create - Create a Backup\nbackup load - Load a backup\nbackup info - Shows Some Backup Information`",
+    "info": "Create & load private backups of your servers"
+  },
+  "image": {
+    "editando": "✍️ %u **|** editing",
+    "args": "✍️ %u **|** I need you to give me some argument so that I can edit",
+    "long": "✍️ %u **|** Your message is too long, try to reduce it to 300 characters",
+    "achivment": "Achievement Unlocked!"
+  },
+  "error": {
+    "dm": "❌ %u **|** I was unable to send the message in your dm, check if it is open or if I am blocked"
+  }
+}
