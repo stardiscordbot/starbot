@@ -4,6 +4,10 @@
 /Arquivo
 /node_modules
 
+# HOST FILES
+
+Procfile
+
 # CONFIDENCIAL FILES
 
 .env

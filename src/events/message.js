@@ -15,9 +15,11 @@ const webhookClient = new (require("discord.js")).WebhookClient(votelog.votehook
 
 module.exports = (client) => {
 	client.on('message', async msg => {
+
 		var message = msg;
 
 		verificaVotos(message, (user) => {
+			
 			const embed = new (require("discord.js")).MessageEmbed()
 			.setAuthor("Zuraaa! List", "https://images-ext-2.discordapp.net/external/QondZexyo8Jz5Dw7HVLUo8d8Wz2p67sCpmxoIarF0AQ/%3Fsize%3D2048/https/cdn.discordapp.com/icons/528352472389910529/6670a5b9acf73a9cf72095a97e2dd647.png?width=325&height=325", "https://zuraaa.com/bots/719524114536333342")
 			.setDescription(`🥳  ›  **${user.username}** votou em mim, [vote](https://www.zuraaa.com/bots/719524114536333342) você também e seja uma pessoa incrivel`)
@@ -26,11 +28,13 @@ module.exports = (client) => {
 			user.send('<:wumplus:801507706807517234>  ›  Obrigado por votar em mim!').catch(e => {
 				console.log("[VOTOS] | DM Fechada, bruh")
 			})
+
 			webhookClient.send({
 				username: client.user.username,
 				avatarURL: client.user.displayAvatarURL({dynamic:true}),
 				embeds: [embed],
 			})
+
 		});
 
 		if (msg.author.bot) return;
