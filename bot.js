@@ -1,4 +1,3 @@
-//require("./server")
 const config = require("./src/config/json/config.json")
 const { Client, Collection, ChannelManager } = require('discord.js')
 
