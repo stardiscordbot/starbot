@@ -17,7 +17,7 @@ module.exports = (client) => {
     .setDescription(idioma.welcome.message.replace('%m', member).replace('%g', member.guild.name).replace('%c', member.guild.memberCount))
 
     if(welcome) {
-      client.channels.forge(welcome).send({embed})
+      client.channels.cache.get(welcome).send({embed})
     }
 		}
 		
