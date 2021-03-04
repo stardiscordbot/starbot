@@ -17,7 +17,7 @@ server.js
 .eslintrc.js
 package-lock.json
 star-developer.zip
+LavalinkManagerBackup.js
 src/config/json/botlist.json
 src/config/json/config.json
 src/config/json/player.json
-utils/LavalinkManagerBackup
