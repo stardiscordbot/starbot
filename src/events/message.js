@@ -1,3 +1,5 @@
+const webhook = require("../config/json/webhooks.json")
+
 function regexEscapar(prefixo) {
 	return prefixo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -11,31 +13,26 @@ const prefixos = new RegExp(
 	)}|star)\\s*`
 ); // menção, star, s. e s! serao prefixos
 
-const webhookClient = new (require("discord.js")).WebhookClient(votelog.votehook.id, votelog.votehook.token);
+const webhookClient = new (require("discord.js")).WebhookClient(webhook.commands.id, webhook.commands.token);
 
 module.exports = (client) => {
 	client.on('message', async msg => {
 
+		const cmdembed = new (require("discord.js")).MessageEmbed()
+		.setAuthor(`${msg.guild.name}`, msg.guild.iconURL())
+		.addField(`Usuário:`, `\`${msg.author.tag} (${msg.author.id})\``)
+		.addField(`Comando:`, `\`${msg.content}\``)
+		.addField(`URL:`, `\`${msg.url}\``)
+		.setColor("GREEN")
+
+		const cmdembed2 = new (require("discord.js")).MessageEmbed()
+		.setAuthor(`${msg.guild.name}`, msg.guild.iconURL())
+		.addField(`Usuário:`, `\`${msg.author.tag} (${msg.author.id})\``)
+		.addField(`Comando:`, `\`${msg.content}\``)
+		.addField(`URL:`, `\`${msg.url}\``)
+		.setColor("ff0000")
+
 		var message = msg;
-
-		verificaVotos(message, (user) => {
-			
-			const embed = new (require("discord.js")).MessageEmbed()
-			.setAuthor("Zuraaa! List", "https://images-ext-2.discordapp.net/external/QondZexyo8Jz5Dw7HVLUo8d8Wz2p67sCpmxoIarF0AQ/%3Fsize%3D2048/https/cdn.discordapp.com/icons/528352472389910529/6670a5b9acf73a9cf72095a97e2dd647.png?width=325&height=325", "https://zuraaa.com/bots/719524114536333342")
-			.setDescription(`🥳  ›  **${user.username}** votou em mim, [vote](https://www.zuraaa.com/bots/719524114536333342) você também e seja uma pessoa incrivel`)
-			.setColor("F47FFF")
-
-			user.send('<:wumplus:801507706807517234>  ›  Obrigado por votar em mim!').catch(e => {
-				console.log("[VOTOS] | DM Fechada, bruh")
-			})
-
-			webhookClient.send({
-				username: client.user.username,
-				avatarURL: client.user.displayAvatarURL({dynamic:true}),
-				embeds: [embed],
-			})
-
-		});
 
 		if (msg.author.bot) return;
 
@@ -81,7 +78,11 @@ module.exports = (client) => {
 				client.commands.get(comandoNome) ||
 				client.commands.find(cmd => cmd.aliases.includes(comandoNome));
 
-			if (!comando) return;
+			if (!comando) return webhookClient.send({
+				username: client.user.username,
+				avatarURL: client.user.displayAvatarURL({ dynamic: true }),
+				embeds: [cmdembed2]
+			})
       
       
 			//Verificar se o membro possui perms
@@ -124,6 +125,11 @@ module.exports = (client) => {
 			}
 			try {
 				await comando.run(client, msg, argumentos, prefixoCerto, idioma);
+				webhookClient.send({
+					username: client.user.username,
+					avatarURL: client.user.displayAvatarURL({ dynamic: true }),
+					embeds: [cmdembed]
+				})
 			} catch (e) {
 				console.log(e);
 				return msg.reply(`deu ruim.\n\`\`\`${e.toString()}\`\`\``);

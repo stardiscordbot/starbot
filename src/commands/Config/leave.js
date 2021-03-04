@@ -16,7 +16,7 @@ module.exports = class WelcomeCommand {
 				categoria: '⚙️ • Config',
 				desc: 'It defines the leavd channel of the server. '
 			},
-			aliases: ['leavechannel', 'leaveconfig', 'leftchannel'],
+			aliases: ['leavechannel', 'leaveconfig', 'leftchannel', 'goodbye'],
 			run: this.run
 		};
 	}

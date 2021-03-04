@@ -4,7 +4,8 @@
     "end": "<:power:817075414961881099> A Fila acabou, estou saindo"
   },
   "play": {
-    "add": "<:adicionado:817077113453543424> Adicionado a fila:"
+    "add": "<:adicionado:817077113453543424> Adicionado a fila:",
+    "nada": "Preciso de algum argumento, utilize: `%pplay <música | url>`"
   },
   "avatar": {
     "from": "Avatar de:",

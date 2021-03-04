@@ -21,9 +21,9 @@ module.exports = class PlayCommand {
       }
     }
     
-    async run(client, message, args, prefixo, idioma) {
+    async run(client, message, args, prefixoCerto, idioma) {
 
-      if(!args[0]) return;
+      if(!args[0]) return message.quote(`:x: ${message.author} **|** ${idioma.play.nada.replace("%p", prefixoCerto)}`)
 
       const res = await client.manager.search(
         args.join(" "),

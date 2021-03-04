@@ -2,6 +2,7 @@
 
 /.vscode
 /Arquivo
+/hospedagem
 /node_modules
 
 # HOST FILES
@@ -21,3 +22,4 @@ LavalinkManagerBackup.js
 src/config/json/botlist.json
 src/config/json/config.json
 src/config/json/player.json
+src/config/json/webhooks.json
