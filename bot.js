@@ -27,7 +27,7 @@ require('./utils/database')(client)
 require("./utils/Utils")(client)
 
 //Carregar sistema de música
-//require("./utils/LavalinkManager")(client)
+require("./utils/LavalinkManager")(client)
 
 //Carregar sistema de multi idiomas
 require("./utils/multiLanguage")(client)

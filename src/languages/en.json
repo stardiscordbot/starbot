@@ -1,4 +1,7 @@
-{
+{ 
+  "erela": {
+    "np": "🎧 Now Playing:"
+  },
   "avatar": {
     "from": "Avatar from:",
     "unknown": "Unknown user."

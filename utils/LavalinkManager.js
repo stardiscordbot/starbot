@@ -1,29 +1,54 @@
-const { Manager } = require("lavacord");
-const player = require("../jsons/player.json")
-const { MessageEmbed } = require("discord.js-light")
+const player = require("../src/config/json/player.json")
+const { Manager } = require("erela.js");
 
 module.exports = (client) => {
 
-console.log('[LAVALINK] Conectado com sucesso.'.cyan)
+    client.manager = new Manager({
 
-const nodes = [
-    { id: "1", host: player.host, port: player.port, password: player.pass }
-]; 
+        nodes: [
+            {
+                host: player.host,
+                port: player.port,
+                password: player.pass
+            },
+        ],
 
-  client.player = new Manager(nodes, {
-    user: client.user.id,
-    shards: client.options.shardCount,
-    send: (packet) => {
-    }
+        send(id, payload) {
+        const guild = client.guilds.cache.get(id);
+        if (guild) guild.shard.send(payload);
+        },
+        
+        
 
-});
+    })
 
-client.player.connect();
+    .on("nodeConnect", node => console.log(`Node ${node.options.identifier} connected`))
+    .on("nodeError", (node, error) => console.log(`Node ${node.options.identifier} had an error: ${error.message}`))
+    .on("trackStart", async (player, track) => {
+    
+    const channel = client.channels.cache.get(player.textChannel);
 
-client.player.on("error", (error, node) => {
-    console.log(`[LAVALINK] Erro, node: "${node}", erro: "${error}"`.red)
-});
+    let idioma = await client.db.get(`idioma-${channel.guild.id}`) || 'pt';
+		
+	idioma = client.lang[idioma];
 
-//console.log(client.player)
+    const npembed = new (require("discord.js")).MessageEmbed()
+    .setDescription(`${idioma.erela.np} \`${track.title}\``)
+    .setColor("F47FFF")
+
+    client.channels.cache
+      .get(player.textChannel)
+      .send(npembed);
+    
+    })
+    .on("queueEnd", (player) => {
+    client.channels.cache
+      .get(player.textChannel)
+      .send("Queue has ended.");
+
+    player.destroy();
+
+  });
+    
 
 }

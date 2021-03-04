@@ -1,5 +1,6 @@
 const { Manager } = require("erela.js");
 const { MessageEmbed } = require("discord.js-light")
+
 module.exports = (client) => {
 
   client.music = new Manager({
@@ -57,4 +58,5 @@ module.exports = (client) => {
         channel.send('Saindo do canal de voz. . .');
         player.destroy()
 	});
+	
 }

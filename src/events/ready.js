@@ -1,7 +1,7 @@
 module.exports = (client) => {
   client.once('ready', () => {
     //client.user.setStatus("idle")
-    //require("../utils/LavalinkManager")(client)
+    client.manager.init(client.user.id);
     console.log(`[BOT] ${client.user.tag} se conectou na API do Discord.\n[BOT] ${client.guilds.cache.size} servidores.`.green)
     client.user.setActivity(`s!help • ${client.guilds.cache.size} servidores`)
     setInterval(()=>{
@@ -13,6 +13,11 @@ module.exports = (client) => {
       }
     },10000)
   })
+
+  client.on("raw", (d) => 
+  client.manager.updateVoiceState(d)
+  );
+
   global.gc()
 }
 //BONEE e Davi
