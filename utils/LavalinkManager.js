@@ -4,7 +4,6 @@ const { Manager } = require("erela.js");
 module.exports = (client) => {
 
     client.manager = new Manager({
-
         nodes: [
             {
                 host: player.host,
@@ -12,28 +11,30 @@ module.exports = (client) => {
                 password: player.pass
             },
         ],
-
+        autoPlay: true,
         send(id, payload) {
         const guild = client.guilds.cache.get(id);
         if (guild) guild.shard.send(payload);
         },
-        
-        
 
     })
 
-    .on("nodeConnect", node => console.log(`Node ${node.options.identifier} connected`))
-    .on("nodeError", (node, error) => console.log(`Node ${node.options.identifier} had an error: ${error.message}`))
+    .on("nodeConnect", node => console.log(`[LAVALINK] Node "${node.options.identifier}" connected`))
+    .on("nodeError", (node, error) => console.log(`[LAVALINK] Node "${node.options.identifier}" had an error: ${error.message}`))
+    
+    .on("playerMove", (player, currentChannel, newChannel) => {
+      player.voiceChannel = client.channels.cache.get(newChannel);
+    })
     .on("trackStart", async (player, track) => {
     
     const channel = client.channels.cache.get(player.textChannel);
 
     let idioma = await client.db.get(`idioma-${channel.guild.id}`) || 'pt';
 		
-	idioma = client.lang[idioma];
+	  idioma = client.lang[idioma];
 
     const npembed = new (require("discord.js")).MessageEmbed()
-    .setDescription(`${idioma.erela.np} \`${track.title}\``)
+    .setDescription(`${idioma.erela.np} \`${track.title}\` | \`${track.requester.tag}\``)
     .setColor("F47FFF")
 
     client.channels.cache
@@ -41,10 +42,22 @@ module.exports = (client) => {
       .send(npembed);
     
     })
-    .on("queueEnd", (player) => {
+    
+    .on("queueEnd", async (player) => {
+
+      const channel = client.channels.cache.get(player.textChannel);
+
+      let idioma = await client.db.get(`idioma-${channel.guild.id}`) || 'pt';
+      
+      idioma = client.lang[idioma];
+
+      const endembed = new (require("discord.js")).MessageEmbed()
+      .setDescription(`${idioma.erela.end}`)
+      .setColor("F47FFF")
+
     client.channels.cache
       .get(player.textChannel)
-      .send("Queue has ended.");
+      .send(endembed);
 
     player.destroy();
 

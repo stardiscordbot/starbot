@@ -1,6 +1,10 @@
 { 
   "erela": {
-    "np": "🎧 Now Playing:"
+    "np": "🎧 Now Playing:",
+    "end": "<:power:817075414961881099> The queue is over, I'm leaving"
+  },
+  "play": {
+    "add": "<:adicionado:817077113453543424> Added the queue:"
   },
   "avatar": {
     "from": "Avatar from:",

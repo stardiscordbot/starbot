@@ -6,7 +6,7 @@ const client = new Client({
   restTimeOffset: 100,
   //Intents: GUILDS, GUILD_MESSAGES e GUILD_MEMBERS
   ws: {
-    intents: 515
+    intents: 643
   },
   //Número de Shards
   shardCount: 1
@@ -31,5 +31,10 @@ require("./utils/LavalinkManager")(client)
 
 //Carregar sistema de multi idiomas
 require("./utils/multiLanguage")(client)
+
+client.once("ready", () => {
+  client.manager.init(client.user.id);
+});
+client.on("raw", (d) => client.manager.updateVoiceState(d));
 
 client.login(config.discord.token)

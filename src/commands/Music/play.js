@@ -8,12 +8,12 @@ module.exports = class PlayCommand {
         },
         pt: {
           nome: 'play',
-          categoria: '(Emoji) Testes',
+          categoria: '🎵 • Musica',
           desc: 'Descrição'
         },
         en: {
           nome: 'play',
-          categoria: '(Emoji) Testing',
+          categoria: '🎵 • Music',
           desc: 'Description'
         },
       aliases: ['p'],
@@ -23,10 +23,34 @@ module.exports = class PlayCommand {
     
     async run(client, message, args, prefixo, idioma) {
 
-    const play = message.client.manager.players.get(message.guild.id)
-     
-    const { channel } = message.member.voice;
+      if(!args[0]) return;
 
+      const res = await client.manager.search(
+        args.join(" "),
+        message.author
+      );
+
+      const player = client.manager.create({
+        guild: message.guild.id,
+        voiceChannel: message.member.voice.channelID,
+        textChannel: message.channel.id,
+        selfDeafen: true,
+        volume: 50
+      });
+  
+      player.connect();
+
+      player.queue.add(res.tracks[0]);
+
+      const adicionado = new (require("discord.js")).MessageEmbed()
+      .setDescription(`${idioma.play.add} \`${res.tracks[0].title}\` | \`${message.author.tag}\``)
+      .setColor("F47FFF")
+
+      message.quote(adicionado);
+  
+      if (!player.playing && !player.paused && !player.queue.size) player.play();
+
+      if (!player.playing && !player.paused && player.queue.totalSize === res.tracks.length) player.play();
     }
   }
   
