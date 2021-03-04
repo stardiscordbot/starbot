@@ -78,7 +78,7 @@ module.exports = class RoleallCommand {
        }, 1000)
        break;
        default:
-       msg.quote(`conheço nn`)
+       msg.quote(`conheço nn`) //aff davi
        break;
    }
   }
