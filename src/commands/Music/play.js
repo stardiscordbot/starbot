@@ -9,31 +9,33 @@ module.exports = class PlayCommand {
         pt: {
           nome: 'play',
           categoria: '🎵 • Musica',
-          desc: 'Descrição'
+          desc: 'Toca músicas em seu servidor'
         },
         en: {
           nome: 'play',
           categoria: '🎵 • Music',
-          desc: 'Description'
+          desc: 'Play music on your server'
         },
-      aliases: ['p'],
+      aliases: ['p', 'tocar', 'start'],
       run: this.run
       }
     }
     
-    async run(client, message, args, prefixoCerto, idioma) {
+    async run(client, msg, argumentos, prefixoCerto, idioma) {
+      
+      const args = argumentos;
 
-      if(!args[0]) return message.quote(`:x: ${message.author} **|** ${idioma.play.nada.replace("%p", prefixoCerto)}`)
+      if(!args[0]) return msg.quote(`:x: ${msg.author} **|** ${idioma.play.nada.replace("%p", prefixoCerto)}`)
 
       const res = await client.manager.search(
         args.join(" "),
-        message.author
+        msg.author
       );
 
       const player = client.manager.create({
-        guild: message.guild.id,
-        voiceChannel: message.member.voice.channelID,
-        textChannel: message.channel.id,
+        guild: msg.guild.id,
+        voiceChannel: msg.member.voice.channel.id,
+        textChannel: msg.channel.id,
         selfDeafen: true,
         volume: 50
       });
@@ -43,10 +45,10 @@ module.exports = class PlayCommand {
       player.queue.add(res.tracks[0]);
 
       const adicionado = new (require("discord.js")).MessageEmbed()
-      .setDescription(`${idioma.play.add} \`${res.tracks[0].title}\` | \`${message.author.tag}\``)
+      .setDescription(`${idioma.play.add} \`${res.tracks[0].title}\` | \`${msg.author.tag}\``)
       .setColor("F47FFF")
 
-      message.quote(adicionado);
+      msg.quote(adicionado);
   
       if (!player.playing && !player.paused && !player.queue.size) player.play();
 

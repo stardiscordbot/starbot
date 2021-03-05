@@ -1,17 +1,33 @@
 const player = require("../src/config/json/player.json")
-const { Manager } = require("erela.js");
+
+const {Manager} = require("erela.js");
+const Deezer  = require("erela.js-deezer");
+const Spotify  = require("erela.js-spotify");
+
+const clientID = player.plugins.spotify.id;
+const clientSecret = player.plugins.spotify.secret;
 
 module.exports = (client) => {
 
     client.manager = new Manager({
         nodes: [
             {
-                host: player.host,
-                port: player.port,
-                password: player.pass
+                host: player.lavalink.host,
+                port: player.lavalink.port,
+                password: player.lavalink.pass,
+                identifier: "LUA"
             },
         ],
+        plugins: [
+          new Spotify({
+            clientID,
+            clientSecret
+          }),
+          new Deezer()
+        ],
+
         autoPlay: true,
+
         send(id, payload) {
         const guild = client.guilds.cache.get(id);
         if (guild) guild.shard.send(payload);

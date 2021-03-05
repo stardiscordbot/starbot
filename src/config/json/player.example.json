@@ -1,5 +1,13 @@
-{
+{  
+  "plugins": {
+    "spotify": {
+      "id": "https://developer.spotify.com/dashboard/applications",
+      "secret": "https://developer.spotify.com/dashboard/applications"
+    }
+  },
+  "lavalink": {
     "host": "localhost",
-    "port": 3000,
+    "port": 2333,
     "pass": "adg"
   }
+}

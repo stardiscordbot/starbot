@@ -9,7 +9,8 @@ const client = new Client({
     intents: 643
   },
   //Número de Shards
-  shardCount: 1
+  shardCount: 1,
+  //respawn: true
 })
 
 client.commands = new Collection()
