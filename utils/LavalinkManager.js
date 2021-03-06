@@ -7,6 +7,8 @@ const Spotify  = require("erela.js-spotify");
 const clientID = player.plugins.spotify.id;
 const clientSecret = player.plugins.spotify.secret;
 
+const c = require("colors");
+
 module.exports = (client) => {
 
     client.manager = new Manager({
@@ -15,7 +17,7 @@ module.exports = (client) => {
                 host: player.lavalink.host,
                 port: player.lavalink.port,
                 password: player.lavalink.pass,
-                identifier: "LUA"
+                identifier: "PLUME"
             },
         ],
         plugins: [
@@ -35,8 +37,8 @@ module.exports = (client) => {
 
     })
 
-    .on("nodeConnect", node => console.log(`[LAVALINK] Node "${node.options.identifier}" connected`))
-    .on("nodeError", (node, error) => console.log(`[LAVALINK] Node "${node.options.identifier}" had an error: ${error.message}`))
+    .on("nodeConnect", node => console.log(c.blue(`[LAVALINK] Node "${node.options.identifier}" connected`)))
+    .on("nodeError", (node, error) => console.log(c.red(`[LAVALINK] Node "${node.options.identifier}" had an error: ${error.message}`)))
     
     .on("playerMove", (player, currentChannel, newChannel) => {
       player.voiceChannel = client.channels.cache.get(newChannel);
@@ -50,7 +52,7 @@ module.exports = (client) => {
 	  idioma = client.lang[idioma];
 
     const npembed = new (require("discord.js")).MessageEmbed()
-    .setDescription(`${idioma.erela.np} \`${track.title}\` | \`${track.requester.tag}\``)
+    .setDescription(`${idioma.erela.np} \`${track.title.replace(/`/g, '')}\` | \`${track.requester.tag}\``)
     .setColor("F47FFF")
 
     client.channels.cache

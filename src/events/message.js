@@ -4,7 +4,6 @@ function regexEscapar(prefixo) {
 	return prefixo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-const { verificaVotos } = require("votos-zuraaa");
 const votelog = require("../config/json/botlist.json")
 
 const prefixos = new RegExp(

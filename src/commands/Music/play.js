@@ -45,7 +45,7 @@ module.exports = class PlayCommand {
       player.queue.add(res.tracks[0]);
 
       const adicionado = new (require("discord.js")).MessageEmbed()
-      .setDescription(`${idioma.play.add} \`${res.tracks[0].title}\` | \`${msg.author.tag}\``)
+      .setDescription(`${idioma.play.add} \`${res.tracks[0].title.replace(/`/g, '')}\` | \`${msg.author.tag}\``)
       .setColor("F47FFF")
 
       msg.quote(adicionado);

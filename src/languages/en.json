@@ -1,11 +1,15 @@
 { 
   "erela": {
     "np": "🎧 Now Playing:",
-    "end": "<:power:817075414961881099> The queue is over, I'm leaving"
+    "end": "<:power:817075414961881099> The queue is over, I'm leaving",
+    "solo": "😔 Unfortunately I was alone on the channel, I'm leaving"
   },
   "play": {
     "add": "<:adicionado:817077113453543424> Added the queue:",
     "nada": "I need some argument, use: `%pplay <music | url> `"
+  },
+  "nodes": {
+    "memoria": "Memory usage"
   },
   "avatar": {
     "from": "Avatar from:",

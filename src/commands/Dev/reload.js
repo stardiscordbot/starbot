@@ -29,9 +29,9 @@ module.exports = class EvalCommand {
     if(aa.includes('commands')||aa.includes('utils')||aa.includes('events')) delete require.cache[aa]
     }
     
-    require('../../utils/commandHandler')(client)
-    require('../../utils/eventHandler')(client)
-    require('../../utils/multiLanguage')(client)
+    require('../../../utils/commandHandler')(client)
+    require('../../../utils/eventHandler')(client)
+    require('../../../utils/multiLanguage')(client)
     
     setTimeout(()=>{
     return msg.channel.send(`:white_check_mark: **|** ${msg.author} ${client.commands.size} comandos e ${client._eventsCount} eventos recarregados com sucesso.`)

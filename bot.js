@@ -1,5 +1,6 @@
-const config = require("./src/config/json/config.json")
-const { Client, Collection, ChannelManager } = require('discord.js')
+const { Client, Collection, ChannelManager } = require('discord.js');
+const dashboard = require("./src/config/json/dashboard.json");
+const config = require("./src/config/json/config.json");
 
 const client = new Client({
   messageCacheMaxSize: 200,
@@ -36,6 +37,9 @@ require("./utils/multiLanguage")(client)
 client.once("ready", () => {
   client.manager.init(client.user.id);
 });
-client.on("raw", (d) => client.manager.updateVoiceState(d));
+
+client.on("raw", (d) => 
+client.manager.updateVoiceState(d)
+);
 
 client.login(config.discord.token)
