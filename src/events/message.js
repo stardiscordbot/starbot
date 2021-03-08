@@ -18,14 +18,14 @@ module.exports = (client) => {
 	client.on('message', async msg => {
 
 		const cmdembed = new (require("discord.js")).MessageEmbed()
-		.setAuthor(`${msg.guild.name}`, msg.guild.iconURL())
+		.setAuthor(`${msg.guild.name} (${msg.guild.id})`, msg.guild.iconURL())
 		.addField(`Usuário:`, `\`${msg.author.tag} (${msg.author.id})\``)
 		.addField(`Comando:`, `\`${msg.content}\``)
 		.addField(`URL:`, `\`${msg.url}\``)
 		.setColor("GREEN")
 
 		const cmdembed2 = new (require("discord.js")).MessageEmbed()
-		.setAuthor(`${msg.guild.name}`, msg.guild.iconURL())
+		.setAuthor(`${msg.guild.name} (${msg.guild.id})`, msg.guild.iconURL())
 		.addField(`Usuário:`, `\`${msg.author.tag} (${msg.author.id})\``)
 		.addField(`Comando:`, `\`${msg.content}\``)
 		.addField(`URL:`, `\`${msg.url}\``)
@@ -111,7 +111,8 @@ module.exports = (client) => {
 					'704468807229505637',
 					'672652538880720896',
 					'717766639260532826',
-					'742798447253651506'
+					'742798447253651506',
+                    '568182075929395210'
 				].includes(msg.author.id)
 			)
 				return msg.channel.send(

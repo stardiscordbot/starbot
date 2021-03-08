@@ -4,6 +4,9 @@
     "end": "<:power:817075414961881099> A Fila acabou, estou saindo",
     "solo": "😔 Infelizmente fiquei sozinha no canal, estou saindo"
   },
+  "botinfo": {
+    "texto": "Olá, **%author** meu nome é **Star™**, tenho **13 anos**, fui"
+  },
   "play": {
     "add": "<:adicionado:817077113453543424> Adicionado a fila:",
     "nada": "Preciso de algum argumento, utilize: `%pplay <música | url>`"

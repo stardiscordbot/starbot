@@ -11,12 +11,12 @@ module.exports = class UserInfoCommand {
 			pt: {
 				nome: 'channelinfo',
 				categoria: '📖 • Info',
-				desc: 'Veja todos os comandos que você pode usar.'
+				desc: 'Veja todas as informações do canal do Servidor.'
 			},
 			en: {
 				nome: 'channelinfo',
 				categoria: '📖 • Info',
-				desc: 'See all bot commands that are available.'
+				desc: 'See all the information of the Server channel.'
 			},
 			aliases: ['ci'],
 			run: this.run
@@ -69,7 +69,44 @@ module.exports = class UserInfoCommand {
 
 					return message.quote(embed);
 					break;
-				
+				case "en":
+                    embed.setTitle(`${canal.guild.name}`);
+					embed.addField(`⌨️ Channel Name:`, `**\`${canal.name}\`**`);
+					embed.addField(`🔢 Channel ID:`, `**\`${canal.id}\`**`);
+					embed.setTimestamp();
+					embed.addField(
+						`🕥 Channel created ago:`,
+						`${prettyMilliseconds(Date.now() - canal.createdTimestamp, {
+							verbose: true
+						})
+							.replace('day', 'day(s)')
+							.replace('minute', 'minute(s)')
+							.replace('second', 'second(s)')
+							.replace('week', 'week(s)')
+							.replace('year', 'year(s)')
+							.replace('hour', 'hour(s)')}`
+					);
+					embed.addField(
+						`📖 Topics:`,
+						`${canal.topic||'Unknown.'}`
+					);
+					embed.setThumbnail(
+						message.guild.iconURL({
+							size: 4096,
+							dynamic: true,
+							format: 'png'
+						})||null
+					);
+
+					embed.setColor(`GREEN`);
+
+					embed.setFooter(
+						`Run by: ${message.author.tag}`,
+						message.author.displayAvatarURL()
+					);
+
+					return message.quote(embed);
+                    break;
 			}
 		} catch (e) {
 		  console.log(e)
@@ -79,5 +116,4 @@ module.exports = class UserInfoCommand {
 		}
 	}
 };
-
-//Davi
+//ADG

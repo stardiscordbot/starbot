@@ -9,14 +9,14 @@ module.exports = class UserInfoCommand {
 				dono: false //Se apenas nos devs podem usar o comando
 			},
 			pt: {
-				nome: 'ajuda',
+				nome: 'userinfo',
 				categoria: '📖 • Info',
-				desc: 'Veja todos os comandos que você pode usar.'
+				desc: 'Veja todas as informações do usuário.'
 			},
 			en: {
-				nome: 'help',
+				nome: 'userinfo',
 				categoria: '📖 • Info',
-				desc: 'See all bot commands that are available.'
+				desc: 'See all user information.'
 			},
 			aliases: ['ui', 'whois'],
 			run: this.run
@@ -118,5 +118,4 @@ module.exports = class UserInfoCommand {
 		}
 	}
 };
-
-//Davi
+//DAVI

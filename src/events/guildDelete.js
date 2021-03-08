@@ -1,6 +1,6 @@
 const webhook = require("../config/json/webhooks.json")
 
-const create = new (require("discord.js")).WebhookClient(webhook.gcreate.id, webhook.gcreate.token)
+const create = new (require("discord.js")).WebhookClient(webhook.gdelete.id, webhook.gdelete.token)
 module.exports = (client) => {
     client.on("guildDelete", async guild => {
 
