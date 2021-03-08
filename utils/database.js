@@ -1,4 +1,5 @@
 const config = require("../src/config/json/config.json")
+
 module.exports = async (client) => {
 	const { Database } = require('quickmongo');
   try {

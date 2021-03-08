@@ -23,9 +23,10 @@
     "erela.js-spotify": "^1.2.0",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
-    "mongoose": "^5.11.18",
+    "mongoose": "^5.11.19",
     "music-progress-bar": "^1.0.4",
     "os": "^0.1.1",
+    "parse-ms": "^2.1.0",
     "path": "^0.12.7",
     "pretty-ms": "^7.0.1",
     "quickmongo": "^3.0.0"
