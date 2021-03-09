@@ -25,6 +25,9 @@ require('./utils/eventHandler')(client)
 //Carregar DB
 require('./utils/database')(client)
 
+//Carregar Botlists
+require('./utils/botlists')(client)
+
 //Carregar DB2
 require('./utils/database2')
 
