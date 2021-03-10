@@ -4,12 +4,21 @@
     "end": "<:power:817075414961881099> A Fila acabou, estou saindo",
     "solo": "😔 Infelizmente fiquei sozinha no canal, estou saindo"
   },
+  "perfil": {
+    "ngm": "NINGUEM",
+    "desc": "A Star é minha amiga, sabia que você pode alterar isso usando \"%psobremim\"?"
+  },
+  "marry": {
+    "deseja": "deseja se casar com você, você aceita?",
+    "vc": "Você não pode casar com você mesmo."
+  },
+  "sobre": {
+    "nada": "Preciso de algum argumento, utilize: `%psobremim <texto>`",
+    "alt": "Sobre alterado para: `%t`"
+  },
   "daily": {
     "coletado": "Você coletou **%m yens** diárias, volte amanhã e colete novamente.",
     "coletou": "Você já coletou sua recompensa diária, colete-a novamente em **%th:%tm:%ts**"
-  },
-  "botinfo": {
-    "texto": "Olá, **%author** meu nome é **Star™**, tenho **13 anos**, fui"
   },
   "play": {
     "add": "<:adicionado:817077113453543424> Adicionado a fila:",

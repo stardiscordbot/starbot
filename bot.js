@@ -7,7 +7,7 @@ const client = new Client({
   restTimeOffset: 100,
   //Intents: GUILDS, GUILD_MESSAGES e GUILD_MEMBERS
   ws: {
-    intents: 643
+    intents: 1667
   },
   //Número de Shards
   shardCount: 1,

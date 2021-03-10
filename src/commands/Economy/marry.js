@@ -25,9 +25,27 @@ module.exports = class ExemploCommand {
     
         if(!args[0]) return message.quote(`:x: ${message.author} **|** Você precisa mencionar alguém para poder casar`);
 
-        const marry = message.mentions.members.first() || await client.users.fetch(args[0]);
+        const marry = message.mentions.users.first() || await client.users.fetch(args[0]);
 
-        message.quote(`💍 ${message.author} **|** ${marry}, ${message.author} deseja se casar com você, você aceita?`)
+        if(marry.id == message.author.id) return message.quote(`:x: ${message.author} **|** ${idioma.marry.vc}`)
+
+        message.quote(`💍 ${marry} **|** **${message.author.username}** ${idioma.marry.deseja}`).then(msg => {
+          msg.react("✅").then(r => {
+
+        const marryfilter = (reaction, user) => reaction.emoji.name === '✅' && user.id === marry.id;
+        
+        msg.createReactionCollector(marryfilter, { time: 60000 }).on("collect", async r => {
+          await client.db.set(`marry-${message.author.id}`, `${marry.id}`)
+          await client.db.set(`marry-${marry.id}`, `${message.author.id}`)
+
+            msg.channel.send(`💍 Eu vos declaro casados`).then(m => {
+            m.react("🥳")
+            })
+
+          })
+
+        })
+      })
     }
   }
   

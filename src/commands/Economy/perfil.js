@@ -21,10 +21,33 @@ module.exports = class PerfilCommand {
       }
     }
     
-    async run(client, message, args, prefixo, idioma) {
+    async run(client, message, args, prefixoCerto, idioma) {
       const user = args[0] ? message.mentions.users.first() ||  client.users.cache.find(a => a.username === args.slice(0).join(' ')) || await client.users.fetch(args[0]).catch(_ => message.author) : message.author
       const economy = require("../../config/database/mongodb/economy");
-      
+
+      const marryid = await client.db.get(`marry-${user.id}`)
+      const sobre = await client.db.get(`about-${user.id}`)
+      const c = {}
+
+      if(!sobre) {
+        c.desc = idioma.perfil.desc.replace("%p", prefixoCerto)
+      }
+
+      if(sobre) {
+        c.desc = `${sobre}`
+      }
+
+      if(!marryid) {
+        c.name = `${idioma.perfil.ngm}`
+        c.dis = "0001"
+      }
+
+      if(marryid) {
+        const marry = await client.users.fetch(marryid)
+        c.name = marry.username
+        c.dis = marry.discriminator
+      }
+
       var eco = 0
 
       economy.findOne({ User: user.id }, async(err, data) => {
@@ -64,16 +87,16 @@ module.exports = class PerfilCommand {
             background.composite(profile, 0, 0);
         
             // ÁREA DE ESCRITA
-            background.print(font20, 10, 400, "Descrição incrivel para mostrar que o Profile que o Tia fez e muito bunito e que ele ama fazer esses perfis de imagem com todo o amor do mundo!", 690);
+            background.print(font20, 10, 400, c.desc, 690);
             background.print(font35, 245, 266, `¥${eco.toLocaleString()}`);
-            background.print(font35, 260, 313, "ADG", (err, image, { x, y }) => {
-                background.print(font20, x + 3, y - 29, '#3474', 50);
+            background.print(font35, 260, 313, c.name, (err, image, { x, y }) => {
+                background.print(font20, x + 3, y - 29, "#" + c.dis, 50);
             });
             background.print(font50, 190, 185, user.username, (err, image, { x, y }) => {
                 background.print(font30, x + 5, y - 101, "#" + user.discriminator, 50);
-            }).write(`./perfil-${user.id}.png`);
+            }).write(`./ProfileFinal.png`);
 
-            const path = `./perfil-${user.id}.png`;
+            const path = `./ProfileFinal.png`;
             const attachment = new (require("discord.js")).MessageAttachment("./ProfileFinal.png");
             
             message.quote(attachment).then(m => {
