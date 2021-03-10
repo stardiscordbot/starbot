@@ -16,7 +16,7 @@ module.exports = class AvatarCommand {
         categoria: '⏰ • Util',
         desc: 'Shows your avatar or a user\'s avatar.'
       },
-    aliases: ['photo', 'av', 'picture', 'foto', 'perfil', 'profile'],
+    aliases: ['photo', 'av', 'picture', 'foto'],
     run: this.run
     }
   }

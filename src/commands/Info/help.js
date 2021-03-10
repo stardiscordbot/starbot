@@ -16,7 +16,7 @@ module.exports = class HelpCommand {
 				categoria: '📖 • Info',
 				desc: 'See all bot commands that are available.'
 			},
-			aliases: ['comandos', 'commands', 'cmds', 'cmd'],
+			aliases: ['comandos', 'commands', 'cmds', 'cmd', 'ajuda', 'help'],
 			run: this.run
 		};
 	}
