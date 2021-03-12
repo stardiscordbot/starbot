@@ -27,6 +27,7 @@ module.exports = class PerfilCommand {
 
       const marryid = await client.db.get(`marry-${user.id}`)
       const sobre = await client.db.get(`about-${user.id}`)
+
       const c = {}
 
       if(!sobre) {
