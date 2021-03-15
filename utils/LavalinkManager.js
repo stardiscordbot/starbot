@@ -17,7 +17,7 @@ module.exports = (client) => {
                 host: player.lavalink.host,
                 port: player.lavalink.port,
                 password: player.lavalink.pass,
-                identifier: "PLUME"
+                identifier: "PANAM"
             },
         ],
         plugins: [

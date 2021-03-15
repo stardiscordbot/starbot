@@ -25,10 +25,10 @@ module.exports = class ExemploCommand {
 
         const API = require("../../../utils/API")
 
-        let node = client.manager.nodes.get("PLUME")
+        let node = client.manager.nodes.get("PANAM")
         let embed = new (require("discord.js")).MessageEmbed()
         embed.setColor("F47FFF")
-        embed.setDescription(`\`\`\`diff\n\n- [ PLUME ]
+        embed.setDescription(`\`\`\`diff\n\n- [ PANAM ]
     --- Uptime ${node.stats.uptime === 0 ? 'Offline' : API.time2(node.stats.uptime)}
     --- Players ${node.stats.playingPlayers}
     --- ${idioma.nodes.memoria} ${API.bytes(node.stats.memory.used).value}${API.bytes(node.stats.memory.used).unit}\`\`\``)

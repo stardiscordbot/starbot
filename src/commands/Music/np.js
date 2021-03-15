@@ -9,14 +9,14 @@ module.exports = class ExemploCommand {
         pt: {
           nome: 'nowplaying',
           categoria: '🎵 • Musica',
-          desc: 'Descrição'
+          desc: 'Mostra a música que está sendo tocada atualmente'
         },
         en: {
           nome: 'nowplaying',
           categoria: '🎵 • Musica',
-          desc: 'Description'
+          desc: 'Shows the song currently being played'
         },
-      aliases: ['example'],
+      aliases: ['nowplaying', 'np', 'tocando', 'now'],
       run: this.run
       }
     }

@@ -28,8 +28,11 @@ module.exports = class EvalCommand {
 
     try {
       var ram = process.memoryUsage().rss/1024/1024
-      let c, bot = client
-      let message, m = msg
+      let bot = client;
+      let c = client;
+      let star = client;
+      let message = msg;
+      let m = msg;
       let code = await eval(args.join(" "));
       if (typeof code !== 'string') code = await require('util').inspect(code, { depth: 0 });
       msg.channel.send(`📩 Entrada \`\`\`js\n${args.join(" ")}\`\`\`\n🚩 Saída \`\`\`js\n${code.slice(0, 1010)}\n\`\`\``)

@@ -10,7 +10,9 @@
   },
   "marry": {
     "deseja": "want to marry you, do you accept?",
-    "vc": "You cannot marry yourself."
+    "vc": "You cannot marry yourself.",
+    "eu": "I don't want to marry you and by the way, I'm only 13 years old.",
+    "ja": "already married, don’t worry, one hour you can do it."
   },
   "sobre": {
     "nada": "I need some argument, use: `%paboutme <text>`",

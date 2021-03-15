@@ -10,7 +10,9 @@
   },
   "marry": {
     "deseja": "deseja se casar com você, você aceita?",
-    "vc": "Você não pode casar com você mesmo."
+    "vc": "Você não pode casar com você mesmo.",
+    "eu": "Eu não quero me casar com você e alias, eu só tenho 13 anos.",
+    "ja": "já está casado, não esquenta, uma hora você consegue."
   },
   "sobre": {
     "nada": "Preciso de algum argumento, utilize: `%psobremim <texto>`",
