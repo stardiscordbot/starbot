@@ -9,7 +9,8 @@ module.exports = async (client) => {
         default: {
             botsCanWin: false,
             exemptPermissions: ['MANAGE_MESSAGES', 'ADMINISTRATOR'],
-            embedColor: '#FF0000',
+            embedColor: '#b2d8FF',
+            embedColorEnd: '#b2d8FF',
             reaction: '🎉'
         }
     });

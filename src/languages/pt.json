@@ -5,7 +5,7 @@
     "solo": "😔 Infelizmente fiquei sozinha no canal, estou saindo"
   },
   "perfil": {
-    "ngm": "NINGUEM",
+    "ngm": "NINGUÉM",
     "desc": "A Star é minha amiga, sabia que você pode alterar isso usando \"%psobremim\"?"
   },
   "giveaway": {
@@ -13,6 +13,10 @@
     "min": "minutos",
     "hrs": "horas",
     "day": "dias",
+    "term": "Terminou ás",
+    "host": "Sorteio de: {user}",
+    "win": "ganhador(es)", 
+    "wins": "Parabéns, {winners}! Você ganhou {prize}!\n{messageURL}",
     "react": "Reaja com 🎉 para participar!",
     "restante": "Tempo Restante:",
     "no": "Sorteio cancelado, sem participações válidas",

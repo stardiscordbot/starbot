@@ -1,10 +1,10 @@
-module.exports = class ExemploCommand {
+module.exports = class GiveawayCommand {
     constructor(){
       return {
         permissoes: {
           membro: [], //Permissoes que o usuario necessita
           bot: [], //Permissoes que o bot necessita
-          dono: true //Se apenas nos devs podem usar o comando
+          dono: false //Se apenas nos devs podem usar o comando
         },
         pt: {
           nome: 'giveaway',
@@ -37,12 +37,12 @@ module.exports = class ExemploCommand {
                 giveawayEnded: `🎉🎉 **${idioma.giveaway.giveend}** 🎉🎉`,
                 timeRemaining: `${idioma.giveaway.restante} **{duration}**!`,
                 inviteToParticipate: idioma.giveaway.react,
-                winMessage: 'Congratulations, {winners}! You won **{prize}**!\n{messageURL}',
+                winMessage: idioma.giveaway.wins,
                 embedFooter: client.user.username,
                 noWinner: idioma.giveaway.no,
-                hostedBy: 'Hosted by: {user}',
-                winners: 'winner(s)',
-                endedAt: 'Ended at',
+                hostedBy: idioma.giveaway.host,
+                winners: idioma.giveaway.win,
+                endedAt: idioma.giveaway.term,
                 units: {
                     seconds: idioma.giveaway.sec,
                     minutes: idioma.giveaway.min,
