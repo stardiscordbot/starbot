@@ -16,7 +16,7 @@ module.exports = class ExemploCommand {
           categoria: '💸 • Economy',
           desc: 'Change your "About Me" to any text of your choice'
         },
-      aliases: ['example'],
+      aliases: ['sobremim'],
       run: this.run
       }
     }
