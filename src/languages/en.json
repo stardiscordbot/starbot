@@ -8,6 +8,18 @@
     "ngm": "NOBODY",
     "desc": "Star is my friend, did you know that you can change this using \"%paboutme\"?"
   },
+  "giveaway": {
+    "sec": "seconds",
+    "min": "minutes",
+    "hrs": "hours",
+    "day": "days",
+    "react": "React with 🎉 to participate!",
+    "restante": "Time remaining:",
+    "no": "Giveaway cancelled, no valid participations",
+    "give": "GIVEAWAY",
+    "giveend": "GIVEAWAY ENDED",
+    "start": "You did not use the command correctly, use: `%pgiveaway [time (10s, 10m)] [winners (1, 1w)] [prize (photos of kittens)]`, do not include **[]** or **()**."
+  },
   "marry": {
     "deseja": "want to marry you, do you accept?",
     "vc": "You cannot marry yourself.",

@@ -4,13 +4,19 @@ const config = require("./src/config/json/config.json");
 
 const client = new Client({
   messageCacheMaxSize: 200,
+
   restTimeOffset: 100,
+
   //Intents: GUILDS, GUILD_MESSAGES e GUILD_MEMBERS
-  ws: {
-    intents: 1667
-  },
+
+  //ws: {
+    //intents: 1667
+  //},
+
   //Número de Shards
+
   shardCount: 1,
+
   //respawn: true
 })
 
@@ -34,18 +40,10 @@ require('./utils/database2')
 //Carregar coisas úteis
 require("./utils/Utils")(client)
 
-//Carregar sistema de música
-require("./utils/StarPlayer")(client)
+//Carregar sistema de sorteios
+require("./utils/giveaways")(client)
 
 //Carregar sistema de multi idiomas
 require("./utils/multiLanguage")(client)
-
-client.once("ready", () => {
-  client.manager.init(client.user.id);
-});
-
-client.on("raw", (d) => 
-client.manager.updateVoiceState(d)
-);
 
 client.login(config.discord.token)

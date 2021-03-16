@@ -8,6 +8,18 @@
     "ngm": "NINGUEM",
     "desc": "A Star é minha amiga, sabia que você pode alterar isso usando \"%psobremim\"?"
   },
+  "giveaway": {
+    "sec": "segundos",
+    "min": "minutos",
+    "hrs": "horas",
+    "day": "dias",
+    "react": "Reaja com 🎉 para participar!",
+    "restante": "Tempo Restante:",
+    "no": "Sorteio cancelado, sem participações válidas",
+    "give": "SORTEIO",
+    "giveend": "SORTEIO ENCERRADO",
+    "start": "Você não usou o comando corretamente, utilize: `%pgiveaway [tempo(10s, 10m)] [ganhadores(1, 1w)] [prêmio(fotos de gatinhos)]`, não inclua **[]** ou **()**."
+  },
   "marry": {
     "deseja": "deseja se casar com você, você aceita?",
     "vc": "Você não pode casar com você mesmo.",

@@ -23,6 +23,7 @@ src/config/json/botlist.json
 src/config/json/config.json
 src/config/json/player.json
 src/config/json/webhooks.json
+src/config/json/giveaways.json
 src/config/json/dashboard.json
 
 # DA LISTA DE ADG E SEUS PNG NA PASTA
