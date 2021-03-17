@@ -1,12 +1,24 @@
 { 
-  "erela": {
+  "player": {
     "np": "🎧 Now Playing:",
     "end": "<:power:817075414961881099> The queue is over, I'm leaving",
-    "solo": "😔 Unfortunately I was alone on the channel, I'm leaving"
+    "solo": "😔 Unfortunately I was alone on the channel, I'm leaving",
+    "noresults": ":x: Unfortunately I didn't find any music related to: ",
+    "dis": "<:power:817075414961881099>  Music stopped, I was disconnected from the voice channel"
   },
   "perfil": {
     "ngm": "NOBODY",
     "desc": "Star is my friend, did you know that you can change this using \"%paboutme\"?"
+  },
+  "sugestao": {
+    "insertChannel": "You did not specify a channel, run: `%pset-suggestions <#channel | channel id | disable>`.",
+    "success": "Alright, I will send all suggestions to the `%canal` automatically.",
+    "disabled": "The suggestions system was disabled successfully.",
+    "nocanal": "There is no suggestion channel set on that server, seven or ask someone to set.",
+    "nada": "You did not write anything, for the convenience of everyone I will not send the suggestion.",
+    "nova": "💡  »  New Suggestion",
+    "link": "For everyone’s convenience, don’t send links for suggestions.",
+    "footer": "Suggestion System, %u"
   },
   "giveaway": {
     "sec": "seconds",

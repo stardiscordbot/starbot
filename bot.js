@@ -24,25 +24,20 @@ client.commands = new Collection()
 
 //Carregar comandos handler
 require('./utils/commandHandler')(client)
-
 //Carregar eventos handler
 require('./utils/eventHandler')(client)
-
 //Carregar DB
 require('./utils/database')(client)
-
 //Carregar Botlists
 require('./utils/botlists')(client)
-
 //Carregar DB2
 require('./utils/database2')
-
 //Carregar coisas úteis
 require("./utils/Utils")(client)
-
 //Carregar sistema de sorteios
 require("./utils/giveaways")(client)
-
+//Carregar sistema de musica
+require("./utils/StarPlayer")(client)
 //Carregar sistema de multi idiomas
 require("./utils/multiLanguage")(client)
 

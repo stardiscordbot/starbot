@@ -99,7 +99,7 @@ module.exports = (client) => {
 				return msg.channel.send(
 					`:x: **|** ${
 						msg.author
-					} Eu não possuo permissões necessárias para executar este comando. Preciso de: \`${comando.permissoes.membro.join(
+					} Eu não possuo permissões necessárias para executar este comando. Preciso de: \`${comando.permissoes.bot.join(
 						', '
 					)}\`.`
 				);

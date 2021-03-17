@@ -1,12 +1,24 @@
 {
-  "erela": {
+  "player": {
     "np": "🎧 Tocando Agora:",
     "end": "<:power:817075414961881099> A Fila acabou, estou saindo",
-    "solo": "😔 Infelizmente fiquei sozinha no canal, estou saindo"
+    "solo": "😔 Infelizmente fiquei sozinha no canal, estou saindo",
+    "noresults": ":x: Infelizmente não encotrei nenhuma música relacionada a: ",
+    "dis": "<:power:817075414961881099> A Música parou, fui desconectada do canal de voz"
   },
   "perfil": {
     "ngm": "NINGUÉM",
     "desc": "A Star é minha amiga, sabia que você pode alterar isso usando \"%psobremim\"?"
+  },
+  "sugestao": {
+    "insertChannel": "Você não especificou um canal, utilize: `%pset-sugestao <#canal | canal id | desativar>`.",
+    "success": "Certo, irei mandar todas as sugestões para o canal `%canal` automaticamente.",
+    "disabled": "As sugestões foram desativadas com sucesso.",
+    "nocanal": "Não existe nenhum canal de sugestão setado nesse servidor, sete ou peça a alguém para setar.",
+    "nada": "Você não escreveu nada, para a conveniência de todos não irei enviar a sugestão.",
+    "nova": "💡  »  Nova Sugestão",
+    "link": "Para a conveniência de todos, não envie links pelas sugestões.",
+    "footer": "Sistema de Sugestões, %u"
   },
   "giveaway": {
     "sec": "segundos",
