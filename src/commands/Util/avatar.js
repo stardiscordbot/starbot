@@ -8,12 +8,12 @@ module.exports = class AvatarCommand {
       },
       pt: {
         nome: 'avatar',
-        categoria: '⏰ • Util' ,
+        categoria: '🪓 • Util' ,
         desc: 'Mostra seu avatar ou o avatar de algum usuário.'
       },
       en: {
         nome: 'avatar',
-        categoria: '⏰ • Util',
+        categoria: '🪓 • Util',
         desc: 'Shows your avatar or a user\'s avatar.'
       },
     aliases: ['photo', 'av', 'picture', 'foto'],
