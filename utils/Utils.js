@@ -37,4 +37,5 @@ module.exports = async (client) => {
     client.utils.formatArray = (array, type = 'conjunction') => {
 		  return new Intl.ListFormat('pt-br', { style: 'short', type: type }).format(array);
   }
+
 }

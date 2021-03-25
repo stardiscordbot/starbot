@@ -36,6 +36,8 @@ require('./utils/database2')
 require("./utils/Utils")(client)
 //Carregar sistema de sorteios
 require("./utils/giveaways")(client)
+//Carregar sistema de reações
+require("./utils/reactionroles")(client)
 //Carregar sistema de musica
 require("./utils/StarPlayer")(client)
 //Carregar sistema de multi idiomas

@@ -1,4 +1,13 @@
-{
+{ 
+  "aki": {
+  "reg": "pt",
+  "q": "Pergunta:",
+  "r": "Respostas:",
+  "i": "Iniciando o Akinator"
+  },
+  "rr": {
+    "noargs": "Estão faltando argumentos, utilize `%prr <@cargo> <:emoji:> [ID DA MENSAGEM]`"
+  },
   "player": {
     "np": "🎧 Tocando Agora:",
     "end": "<:power:817075414961881099> A Fila acabou, estou saindo",
