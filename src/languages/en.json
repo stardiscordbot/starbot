@@ -6,7 +6,7 @@
   "i": "Starting Akinator"
   },
   "rr": {
-    "noargs": "Estão faltando argumentos, utilize `%prr <@cargo> <:emoji:> [ID DA MENSAGEM]`"
+    "noargs": "Arguments are missing, use `%prr <@cargo> <:emoji:> [MESSAGE ID]`"
   },
   "player": {
     "np": "🎧 Now Playing:",
