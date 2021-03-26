@@ -24,12 +24,7 @@ module.exports = (client) => {
 		.addField(`URL:`, `\`${msg.url}\``)
 		.setColor("GREEN")
 
-		const cmdembed2 = new (require("discord.js")).MessageEmbed()
-		.setAuthor(`${msg.guild.name} (${msg.guild.id})`, msg.guild.iconURL())
-		.addField(`Usuário:`, `\`${msg.author.tag} (${msg.author.id})\``)
-		.addField(`Comando:`, `\`${msg.content}\``)
-		.addField(`URL:`, `\`${msg.url}\``)
-		.setColor("ff0000")
+	
 
 		var message = msg;
 
@@ -77,13 +72,9 @@ module.exports = (client) => {
 				client.commands.get(comandoNome) ||
 				client.commands.find(cmd => cmd.aliases.includes(comandoNome));
 
-			if (!comando) return webhookClient.send({
-				username: client.user.username,
-				avatarURL: client.user.displayAvatarURL({ dynamic: true }),
-				embeds: [cmdembed2]
-			})
+		
       
-      
+                        if(!comando) return 
 			//Verificar se o membro possui perms
 			if (!msg.member.permissions.has(comando.permissoes.membro))
 				return msg.channel.send(
