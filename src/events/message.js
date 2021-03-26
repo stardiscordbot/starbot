@@ -77,11 +77,7 @@ module.exports = (client) => {
 				client.commands.get(comandoNome) ||
 				client.commands.find(cmd => cmd.aliases.includes(comandoNome));
 
-			if (!comando) return webhookClient.send({
-				username: client.user.username,
-				avatarURL: client.user.displayAvatarURL({ dynamic: true }),
-				embeds: [cmdembed2]
-			})
+		
       
       
 			//Verificar se o membro possui perms
