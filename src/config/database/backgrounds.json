@@ -1,0 +1,20 @@
+{
+    "backgrounds": [
+        {
+            "url": "https://i.imgur.com/57ObZ60.jpg",
+            "value": 10000
+        },
+        {
+            "url": "https://i.imgur.com/ze9WQii.jpeg",
+            "value": 5000
+        },
+        {
+            "url": "https://i.imgur.com/2MvvE7H.jpeg",
+            "value": 15000
+        },
+        {
+            "url": "https://i.imgur.com/Kdzh0mw.png",
+            "value": 10000
+        }
+    ]
+}

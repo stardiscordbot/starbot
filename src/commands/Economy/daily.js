@@ -29,7 +29,7 @@ module.exports = class DailyCommand {
         let user = message.author;
 
         let timeout = 86400000;
-        let amount = 200;
+        let amount = 1000;
 
         economy.findOne({ User: user.id }, async(err, data)=>{
             if(!data) {

@@ -11,8 +11,8 @@ const prefixos = new RegExp(
 		's.'
 	)}|star)\\s*`
 ); // menção, star, s. e s! serao prefixos
-
 const webhookClient = new (require("discord.js")).WebhookClient(webhook.commands.id, webhook.commands.token);
+const cooldown = new Set();
 
 module.exports = (client) => {
 	client.on('message', async msg => {
