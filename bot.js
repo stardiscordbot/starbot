@@ -28,8 +28,6 @@ require("./utils/Utils")(client)
 require("./utils/giveaways")(client)
 //Carregar sistema de reações
 require("./utils/reactionroles")(client)
-//Carregar sistema de musica
-require("./utils/StarPlayer")(client)
 //Carregar sistema de multi idiomas
 require("./utils/multiLanguage")(client)
 
