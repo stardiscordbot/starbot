@@ -1,18 +1,13 @@
 const { Client, Collection, ChannelManager } = require('discord.js');
-const dashboard = require("./src/config/json/dashboard.json");
 const config = require("./src/config/json/config.json");
 
 const client = new Client({
   messageCacheMaxSize: 200,
-
-  restTimeOffset: 100,
+  restTimeOffset: 50,
   //Intents: GUILDS, GUILD_MESSAGES e GUILD_MEMBERS
-  //ws: {
-    //intents: 1667
-  //},
-  //Número de Shards
-  shardCount: 1,
-  //respawn: true
+  ws: {
+    intents: 1539
+  },
 })
 
 client.commands = new Collection()

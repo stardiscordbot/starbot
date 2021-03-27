@@ -6,7 +6,12 @@
   "i": "Starting Akinator"
   },
   "rr": {
-    "noargs": "Arguments are missing, use `%prr <@cargo> <:emoji:> [MESSAGE ID]`"
+    "noargs": "Arguments are missing, use `%prr <@cargo> <:emoji:> [MESSAGE ID]`",
+    "desc": "Creates a Reaction Role where members can win certain positions by reacting on the given message.",
+    "normal": "Normal reaction system, where the user can take more than one role that is configured in the message.",
+    "toggle": "Toggle reaction system, where the user can only take a role of all the options given.",
+    "noargs2": "Arguments are missing, use `%prr delete <:emoji:> <MESSAGE ID>`",
+    "delete": "Deletes some role from the reaction system."
   },
   "player": {
     "np": "🎧 Now Playing:",

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --expose-gc --optimize_for_size --gc_interval=100 bot.js"
+    "start": "node shard.js"
   },
   "keywords": [],
   "author": "",
@@ -18,11 +18,9 @@
     "dblapi.js": "^2.4.1",
     "discord-giveaways": "^4.4.3",
     "discord-image-generation": "^1.4.7",
-    "discord-player": "^3.4.0",
     "discord.js": "^12.5.1",
     "discord.js-collector": "^1.8.9",
     "express": "^4.17.1",
-    "ffmpeg-static": "^4.2.7",
     "infinity-api": "^1.1.8",
     "jimp": "^0.16.1",
     "listcord.js": "^2.1.5",

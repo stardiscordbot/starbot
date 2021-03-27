@@ -33,7 +33,7 @@ module.exports = class ExemploCommand {
             const canvas = createCanvas(685, 494); 
             const ctx = canvas.getContext('2d');
             
-            const background = await loadImage('https://media.discordapp.net/attachments/510871777728135201/777618213331796029/laranjo-meme-star.jpg?width=627&height=452');
+            const background = await loadImage('https://i.imgur.com/OBTFmrX.jpg');
             ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
             
             ctx.font = '30px sans-serif';
@@ -50,4 +50,4 @@ module.exports = class ExemploCommand {
     }
   }
   
-  //Nome de quem fez ou ajudou
+  //ADG

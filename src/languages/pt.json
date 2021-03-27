@@ -6,7 +6,12 @@
   "i": "Iniciando o Akinator"
   },
   "rr": {
-    "noargs": "Estão faltando argumentos, utilize `%prr <@cargo> <:emoji:> [ID DA MENSAGEM]`"
+    "noargs": "Estão faltando argumentos, utilize `%prr <tipo> <@cargo> <:emoji:> [ID DA MENSAGEM]`",
+    "desc": "Cria um Reaction Role onde membros podem ganhar determinados cargos reagindo na mensagem determinada.",
+    "normal": "Sistema de reação normal, onde o usuário pode pegar mais de um cargo que esteja configurado na mensagem.",
+    "toggle": "Sistema de reação toggle, onde o usuário só pode pegar um cargo de todas as opções dadas.",
+    "noargs2": "Estão faltando argumentos, utilize `%prr delete <:emoji:> <ID DA MENSAGEM>`",
+    "delete": "Deleta algum cargo do sistema de reação."
   },
   "player": {
     "np": "🎧 Tocando Agora:",

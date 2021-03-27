@@ -28,7 +28,6 @@ module.exports = class BackgroundCommand {
       const tema = background.backgrounds[rand];
 
       economy.findOne({ User: message.author.id }, async(err, data) => {
-        if(!data) return message.quote(`:x: ${message.author} **|** ${idioma.perfil.no}`)
 
       const embed = new (require("discord.js")).MessageEmbed()
       .setDescription(`🛒 ${message.author} **|** ${idioma.perfil.comp}, ¥${tema.value.toLocaleString()}`)
@@ -42,7 +41,8 @@ module.exports = class BackgroundCommand {
 
         acc.on('collect', r1 => {
           acc.stop()
-
+          
+          if(!data) return message.quote(`:x: ${message.author} **|** ${idioma.perfil.no}`)
           if(data.Money < tema.value) return message.quote(`:x: ${message.author} **|** ${idioma.perfil.no}`)
 
           client.db.set(`background-${message.author.id}`, `${tema.url}`)

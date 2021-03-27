@@ -4,7 +4,7 @@ module.exports = (client) => {
     //client.user.setStatus("idle")
     //client.manager.init(client.user.id);
     console.log(`[BOT] ${client.user.tag} se conectou na API do Discord.\n[BOT] ${client.guilds.cache.size} servidores.`.green)
-    client.user.setActivity(`s!help • ${client.guilds.cache.size} servidores`)
+    client.user.setActivity(`s!help • ${client.guilds.cache.size} guilds`)
     setInterval(()=>{
       client.channels.cache.sweep(c=>c.type!='text')
     //  client.users.cache.clear()
@@ -14,6 +14,6 @@ module.exports = (client) => {
       }
     },10000)
   })
-  global.gc()
+  //global.gc()
 }
 //BONEE e Davi

@@ -33,7 +33,7 @@
             "value": 14998
         },
         {
-            "url": "http://imgur.com/a/Hu2x5OU",
+            "url": "https://i.imgur.com/tidj7iX.png",
             "value": 15000
         },
         {
@@ -43,6 +43,14 @@
         {
             "url": "https://i.imgur.com/4oXGKfT.jpg",
             "value": 15000
+        },
+        {
+            "url": "https://i.imgur.com/KE94Bsm.png",
+            "value": 10000
+        },
+        {
+            "url": "http://imgur.com/a/1cNODzj",
+            "value": 1000
         }
     ]
 }
