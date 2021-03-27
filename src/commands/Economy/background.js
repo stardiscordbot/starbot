@@ -16,7 +16,7 @@ module.exports = class BackgroundCommand {
           categoria: '💸 • Economy',
           desc: 'Buy Backgrounds for your profile'
         },
-      aliases: ['background'],
+      aliases: ['background', 'backgrounds'],
       run: this.run
       }
     }
@@ -41,7 +41,7 @@ module.exports = class BackgroundCommand {
 
         acc.on('collect', r1 => {
           acc.stop()
-          
+
           if(!data) return message.quote(`:x: ${message.author} **|** ${idioma.perfil.no}`)
           if(data.Money < tema.value) return message.quote(`:x: ${message.author} **|** ${idioma.perfil.no}`)
 
