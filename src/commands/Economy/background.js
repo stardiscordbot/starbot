@@ -3,7 +3,7 @@ module.exports = class BackgroundCommand {
       return {
         permissoes: {
           membro: [], //Permissoes que o usuario necessita
-          bot: ['EMBED_LINKS', 'ATTACH_FILES'], //Permissoes que o bot necessita
+          bot: ['EMBED_LINKS'], //Permissoes que o bot necessita
           dono: false //Se apenas nos devs podem usar o comando
         },
         pt: {
@@ -22,18 +22,44 @@ module.exports = class BackgroundCommand {
     }
     
     async run(client, message, args, prefixo, idioma) {
-      
       const background = require("../../config/database/backgrounds.json");
       const economy = require("../../config/database/mongodb/economy");
-      const tema = background.backgounds[rand];
+      const rand = Math.floor(Math.random() * background.backgrounds.length);
+      const tema = background.backgrounds[rand];
 
-      const embed = new (require("disccord.js")).MessageEmbed()
-      .setColor(colors.default)
-      .setDescription(`Você pode comprar esse **Tema de Fundo** para o seu perfil por:` +
-          `\n:yen: **| Valor**: \`¥${numberFormatter("#,##0.00", tema.value)}\`` +
-          `\n\nPara aceitar, clique no 🛍️ para realizar o pagamento!`)
+      economy.findOne({ User: message.author.id }, async(err, data) => {
+        if(!data) return message.quote(`:x: ${message.author} **|** ${idioma.perfil.no}`)
+
+      const embed = new (require("discord.js")).MessageEmbed()
+      .setDescription(`🛒 ${message.author} **|** ${idioma.perfil.comp}, ¥${tema.value.toLocaleString()}`)
+      .setColor("ff0000")
       .setImage(tema.url)
+      message.quote(embed).then(m => {
+
+        m.react("🛒")
+        const accept = (reaction, user) => reaction.emoji.name === '🛒' && user.id === message.author.id;
+        const acc = m.createReactionCollector(accept, { time: 60000 });
+
+        acc.on('collect', r1 => {
+          acc.stop()
+
+          if(data.Money < tema.value) return message.quote(`:x: ${message.author} **|** ${idioma.perfil.no}`)
+
+          client.db.set(`background-${message.author.id}`, `${tema.url}`)
+
+          data.Money = data.Money - tema.value;
+          data.save()
+
+          const buyembed = new (require("discord.js")).MessageEmbed()
+          .setDescription(`🛒 ${message.author} **|** ${idioma.perfil.succ}`)
+          .setColor("ff0000")
+          .setImage(tema.url)
+          m.edit(buyembed)
+        }) 
+
+      })
+    })
     }
   }
   
-  //Nome de quem fez ou ajudou
+  //ADG

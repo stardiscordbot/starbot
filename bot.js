@@ -6,17 +6,12 @@ const client = new Client({
   messageCacheMaxSize: 200,
 
   restTimeOffset: 100,
-
   //Intents: GUILDS, GUILD_MESSAGES e GUILD_MEMBERS
-
   //ws: {
     //intents: 1667
   //},
-
   //Número de Shards
-
   shardCount: 1,
-
   //respawn: true
 })
 

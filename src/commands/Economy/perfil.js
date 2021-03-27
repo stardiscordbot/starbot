@@ -28,7 +28,16 @@ module.exports = class PerfilCommand {
       const marryid = await client.db.get(`marry-${user.id}`)
       const sobre = await client.db.get(`about-${user.id}`)
 
+      const back = await client.db.get(`background-${user.id}`)
       const c = {}
+
+      if(!back) {
+        c.backg = "./images/background.jpg"
+      }
+
+      if(back) {
+        c.backg = back
+      }
 
       if(!sobre) {
         c.desc = idioma.perfil.desc.replace("%p", prefixoCerto)
@@ -66,7 +75,7 @@ module.exports = class PerfilCommand {
             // ÁREA DE SELECIONAR A MIDIA
             let avatar = await jimp.read(`${av}`)
             let mascara = await jimp.read("./images/mascara.png");
-            let background = await jimp.read("./images/background.jpg");
+            let background = await jimp.read(c.backg);
             let profile = await jimp.read("./images/StarProfileModel.png");
         
             // ÁREA DE SELECIONAR AS FONTES
