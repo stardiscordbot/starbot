@@ -157,5 +157,9 @@
   },
   "error": {
     "dm": "❌ %u **|** I was unable to send the message in your dm, check if it is open or if I am blocked"
+  },
+  "tradutor": {
+    "lang": "You need to specify the language, example: %translator **en** Oi",
+    "text": "You need to specify the text, example: %translator en  **Oi** "
   }
 }
