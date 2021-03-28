@@ -3,7 +3,7 @@ const config = require("./src/config/json/config.json");
 
 const client = new Client({
   messageCacheMaxSize: 200,
-  restTimeOffset: 50,
+  restTimeOffset: 1,
   //Intents: GUILDS, GUILD_MESSAGES e GUILD_MEMBERS
   ws: {
     intents: 1539
