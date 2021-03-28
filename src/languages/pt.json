@@ -3,7 +3,12 @@
   "reg": "pt",
   "q": "Pergunta:",
   "r": "Respostas:",
-  "i": "Iniciando o Akinator"
+  "i": "Iniciando o Akinator",
+  "is": "Esse é seu personagem?",
+  "win": "Ótimo! Acertei mais uma vez.",
+  "nowin": "Uh, você ganhou",
+  "yay": "Amei brincar com você!",
+  "res": "[sim (**s**) / não (**n**)]"
   },
   "rr": {
     "noargs": "Estão faltando argumentos, utilize `%prr <tipo> <@cargo> <:emoji:> [ID DA MENSAGEM]`",

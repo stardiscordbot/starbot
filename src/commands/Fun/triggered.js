@@ -30,12 +30,13 @@ module.exports = class TriggeredCommand {
     const av = user.displayAvatarURL({ dynamic: false, format: 'png', size: 2048 })
 
     message.quote(`${idioma.image.editando.replace("%u", message.author)}`).then(async msg => {
-
+      message.channel.startTyping()
     const img = await new DIG.Triggered().getImage(av)
         
     const attachment = new (require('discord.js')).MessageAttachment(img, `triggered-${user.id}.gif`);
 
       message.quote(message.author,attachment).then(message => {
+        message.channel.stopTyping()
         msg.delete()
       })
       

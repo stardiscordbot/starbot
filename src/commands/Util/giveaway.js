@@ -2,7 +2,7 @@ module.exports = class GiveawayCommand {
     constructor(){
       return {
         permissoes: {
-          membro: [], //Permissoes que o usuario necessita
+          membro: ['MANAGE_GUILD'], //Permissoes que o usuario necessita
           bot: [], //Permissoes que o bot necessita
           dono: false //Se apenas nos devs podem usar o comando
         },

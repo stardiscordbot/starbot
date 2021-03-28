@@ -30,12 +30,13 @@ module.exports = class BobrossCommand {
     const av = user.displayAvatarURL({ dynamic: false, format: 'png', size: 2048 })
 
     message.quote(`${idioma.image.editando.replace("%u", message.author)}`).then(async msg => {
-
+      message.channel.startTyping()
     const img = await new DIG.Bobross().getImage(av)
         
     const attachment = new (require('discord.js')).MessageAttachment(img, `moldura-${user.id}.png`);
 
       message.quote(message.author,attachment).then(message => {
+        message.channel.stopTyping()
         msg.delete()
       })
       

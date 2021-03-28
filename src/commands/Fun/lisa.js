@@ -32,12 +32,13 @@ module.exports = class VarporwaveCommand {
 	  const texto = args.join(" ")
   
 	  message.quote(`${idioma.image.editando.replace("%u", message.author)}`).then(async msg => {
-  
+		message.channel.startTyping()
 	  const img = await new DIG.LisaPresentation().getImage(texto);
 		  
 	  const attachment = new (require('discord.js')).MessageAttachment(img, `lisa-${message.author.id}.png`);
   
 		message.quote(message.author, attachment).then(message => {
+			message.channel.stopTyping()
 		  msg.delete()
 		})
 		

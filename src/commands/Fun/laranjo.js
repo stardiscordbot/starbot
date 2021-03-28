@@ -29,7 +29,7 @@ module.exports = class ExemploCommand {
         if(!args[0]) return message.quote(`${idioma.image.args.replace("%u", message.author)}`)
 
         message.quote(`${idioma.image.editando.replace("%u", message.author)}`).then(async m => {
-
+          message.channel.startTyping()
             const canvas = createCanvas(685, 494); 
             const ctx = canvas.getContext('2d');
             
@@ -40,9 +40,10 @@ module.exports = class ExemploCommand {
             ctx.fillStyle = '#000';
             ctx.fillText(`${args.join(" ")}`.match(/.{1,50}/g).join("\n"), canvas.width / 50.9, canvas.height / 15.9, 655);
             
-            const attachment = new (require("discord.js")).MessageAttachment(canvas.toBuffer(), 'laranjo.png');
+            const attachment = new (require("discord.js")).MessageAttachment(canvas.toBuffer(), `laranjo-${message.author.id}.png`);
          
             await message.quote(`${message.author}`, attachment).then(m2 => {
+              message.channel.stopTyping()
                 m.delete()
                 })
         })

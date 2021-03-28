@@ -30,8 +30,10 @@ module.exports = class VarporwaveCommand {
     }).join("");
 
     if(!args[0]) return message.quote(`:x: ${message.author} **|** ${idioma.vaporwave.error.replace('%p', prefixoCerto)}`)
-
-    message.quote(`✍️ ${message.author} **|** ${vaporwavefield}`)
+    message.channel.startTyping()
+    message.quote(`✍️ ${message.author} **|** ${vaporwavefield}`).then(m => {
+      message.channel.stopTyping()
+    })
 
   }
 }

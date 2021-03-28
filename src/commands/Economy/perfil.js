@@ -16,7 +16,7 @@ module.exports = class PerfilCommand {
           categoria: '💸 • Economy',
           desc: 'Show your profile'
         },
-      aliases: ['perfil', 'profile'],
+      aliases: ['perfil', 'profile', 'balance', 'money', 'economy'],
       run: this.run
       }
     }
@@ -62,7 +62,7 @@ module.exports = class PerfilCommand {
 
       economy.findOne({ User: user.id }, async(err, data) => {
       message.quote(`${idioma.image.editando.replace("%u", message.author)}`).then(async msg => {
-      
+        message.channel.startTyping()
         if(data) {
           eco = eval(data.Money + data.Bank)
         } else {
@@ -109,8 +109,8 @@ module.exports = class PerfilCommand {
             const path = `./ProfileFinal.png`;
             const attachment = new (require("discord.js")).MessageAttachment("./ProfileFinal.png");
             
-            message.quote(attachment).then(m => {
-
+            message.quote(message.author, attachment).then(m => {
+              message.channel.stopTyping()
               msg.delete()
 
               fs.unlink(path, err => {

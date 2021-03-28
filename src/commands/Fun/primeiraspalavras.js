@@ -3,20 +3,20 @@ module.exports = class ExemploCommand {
       return {
         permissoes: {
           membro: [], //Permissoes que o usuario necessita
-          bot: [], //Permissoes que o bot necessita
+          bot: ['ATTACH_FILES'], //Permissoes que o bot necessita
           dono: false //Se apenas nos devs podem usar o comando
         },
         pt: {
-          nome: 'laranjo',
+          nome: 'primeiraspalavras',
           categoria: '🤣 • Fun',
-          desc: 'Cria um meme do laranjo'
+          desc: 'Ai meu deus... as primeiras palavras do bebê'
         },
         en: {
-          nome: 'laranjo',
+          nome: 'firstwords',
           categoria: '🤣 • Fun',
-          desc: 'Create a laranjo meme'
+          desc: 'Oh my god... the baby\'s first words!'
         },
-      aliases: ['laranja', 'laranjo', 'lara'],
+      aliases: ['primeiraspalavras', 'firstword', 'firstwords', 'primeiraspalavras', 'bebe'],
       run: this.run
       }
     }
@@ -29,20 +29,26 @@ module.exports = class ExemploCommand {
         if(!args[0]) return message.quote(`${idioma.image.args.replace("%u", message.author)}`)
 
         message.quote(`${idioma.image.editando.replace("%u", message.author)}`).then(async m => {
+          message.channel.startTyping()
+          let baby = `${args.join(" ").slice(0, 1)}.. ${args.join(" ").slice(0, 2)}...`;
+        
+          const canvas = createCanvas(485, 450); 
+          const ctx = canvas.getContext('2d');
 
-            const canvas = createCanvas(685, 494); 
-            const ctx = canvas.getContext('2d');
-            
-            const background = await loadImage('https://media.discordapp.net/attachments/510871777728135201/777618213331796029/laranjo-meme-star.jpg?width=627&height=452');
-            ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-            
-            ctx.font = '30px sans-serif';
-            ctx.fillStyle = '#000';
-            ctx.fillText(`${args.join(" ")}`.match(/.{1,50}/g).join("\n"), canvas.width / 50.9, canvas.height / 15.9, 655);
-            
-            const attachment = new (require("discord.js")).MessageAttachment(canvas.toBuffer(), 'laranjo.png');
+          const background = await loadImage('https://i.imgur.com/T9CQliT.png');
+          ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+          ctx.font = '30px sans-serif';
+          ctx.fillStyle = '#000';
+          ctx.fillText(baby, canvas.width / 50.9, canvas.height / 16.5);
+
+          ctx.font = '30px sans-serif';
+          ctx.fillStyle = '#000';
+          ctx.fillText(args.join(" ").match(/.{1,20}/g).join("\n"), canvas.width / 50.9, canvas.height / 1.7, 330)
+          const attachment = new (require("discord.js")).MessageAttachment(canvas.toBuffer(), `fw-${message.author.id}.png`);
          
             await message.quote(`${message.author}`, attachment).then(m2 => {
+                message.channel.stopTyping()
                 m.delete()
                 })
         })

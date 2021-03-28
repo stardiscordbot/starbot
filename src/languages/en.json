@@ -3,7 +3,12 @@
   "reg": "en",
   "q": "Question:",
   "r": "Answers:",
-  "i": "Starting Akinator"
+  "i": "Starting Akinator",
+  "is": "Is this your character?",
+  "win": "Great! Guessed right one more time.",
+  "nowin": "Uh, you are win",
+  "yay": "I love playing with you!",
+  "res": "[yes (**y**) / no (**n**)]"
   },
   "rr": {
     "noargs": "Arguments are missing, use `%prr <@cargo> <:emoji:> [MESSAGE ID]`",

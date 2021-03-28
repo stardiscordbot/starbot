@@ -38,7 +38,7 @@ module.exports = class VarporwaveCommand {
 	  const text = args.join(" ")
   
 	  message.quote(`${idioma.image.editando.replace("%u", message.author)}`).then(async msg => {
-	  
+		message.channel.startTyping()
 	  const base = await loadImage('https://cdn.discordapp.com/attachments/719978696278278224/806209796889903224/achievement.png');
   
 	  const canvas = createCanvas(base.width, base.height);
@@ -51,8 +51,9 @@ module.exports = class VarporwaveCommand {
 		  ctx.fillText(shortenText(ctx, text, 230), 60, 60);
   
 		  return message.quote({ files: [{ attachment: canvas.toBuffer(), name: `achievement-${message.author.id}.png` }] }).then(message => {
-		msg.delete()
-	  })
+			message.channel.stopTyping()
+			msg.delete()
+	  	})
 		
 	  })
   
