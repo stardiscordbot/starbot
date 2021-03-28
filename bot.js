@@ -8,6 +8,11 @@ const client = new Client({
   ws: {
     intents: 1539
   },
+    partials: [
+      'MESSAGE',
+      'CHANNEL',
+      'REACTION'
+    ]
 })
 
 client.commands = new Collection()
