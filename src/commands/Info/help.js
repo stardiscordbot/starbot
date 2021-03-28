@@ -61,7 +61,7 @@ module.exports = class HelpCommand {
 					client.commands.get(args[0]) ||
 					client.commands.find(cmd => cmd.aliases.includes(args[0]));
 
-					if(!cmd) return message.quote(`:x: | Esse comando não existe`)
+					if(!cmd) return message.quote(`:x: ${message.author} **|** Esse comando não existe`)
 			
 					const help = new (require('discord.js')).MessageEmbed()
 					.setTitle(':wave: | ' + cmd.pt.nome.split(' ').map(str => str.slice(0, 1).toUpperCase() + str.slice(1)).join(' '))
@@ -106,7 +106,7 @@ module.exports = class HelpCommand {
 					client.commands.get(args[0]) ||
 					client.commands.find(cmd => cmd.aliases.includes(args[0]));
 
-					if(!cmd) return message.quote(`:x: | This command does not exist`)
+					if(!cmd) return message.quote(`:x: ${message.author} **|** This command does not exist`)
 			
 				
 					const help = new (require('discord.js')).MessageEmbed()
