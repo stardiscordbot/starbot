@@ -3,7 +3,7 @@ module.exports = class ExemploCommand {
       return {
         permissoes: {
           membro: [], //Permissoes que o usuario necessita
-          bot: [], //Permissoes que o bot necessita
+          bot: ['EMBED_LINKS'], //Permissoes que o bot necessita
           dono: false //Se apenas nos devs podem usar o comando
         },
         pt: {
