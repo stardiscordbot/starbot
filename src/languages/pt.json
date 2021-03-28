@@ -149,5 +149,9 @@
   },
   "error": {
     "dm": "❌ %u **|** Não consegui enviar a mensagem em sua dm, verifique se ela está aberta ou se estou bloqueada"
+  },
+  "tradutor": {
+    "lang": "Você precisa especificar a linguagem, examplo: %translator **en** Oi",
+    "text": "Você precisa especificar o texto, examplo: %translator en  **Oi** "
   }
 }
