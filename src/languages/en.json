@@ -10,6 +10,9 @@
   "yay": "I love playing with you!",
   "res": "[yes (**y**) / no (**n**)]"
   },
+  "starboard": {
+    "cont": "Content:"
+  },
   "rr": {
     "noargs": "Arguments are missing, use `%prr <@cargo> <:emoji:> [MESSAGE ID]`",
     "desc": "Creates a Reaction Role where members can win certain positions by reacting on the given message.",
@@ -114,6 +117,11 @@
     "success": "Okay, I will automatically send all leave messages to the `%canal`.",
     "disabled": "The leave messages were successfully deactivated.",
     "message": "%m left the server. Now we have **%c** members."
+  },
+  "starboards": {
+    "insertChannel": "You did not specify a channel, use: `%pstarboard <#channel | id channel | disable>`.",
+    "success": "Okay, I'll send all the starboard to the `%canal` automatically.",
+    "disabled": "The starboard has been successfully deactivated."
   },
   "guildLogs": {
     "insertChannel": "You did not specify a channel, run: `%plogs <#channel | channel id | disable>`.",

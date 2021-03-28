@@ -2,7 +2,7 @@ module.exports = (client) => {
 	client.on('messageDelete', async (message) => {
 		let idioma = (await client.db.get(`idioma-${message.guild.id}`)) || 'pt';
 		let deletedmessage = message.content.slice(0,1000) 
-
+		
         if(!message.content.slice(0,1000)){
         deletedmessage = '[FILE]'
         }
