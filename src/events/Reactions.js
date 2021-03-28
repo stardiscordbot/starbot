@@ -35,7 +35,7 @@ module.exports = (client) => {
             .addField(`${idioma.starboard.cont}`, conteudo)
             .setColor("YELLOW")
             .setImage(eURL.i);
-            if(r.count >= 1) return starboard.send(starembed)
+            if(r.count >= 5) return starboard.send(starembed)
         }
     })
 }
