@@ -5,6 +5,10 @@
 /hospedagem
 /node_modules
 
+# SECRET COMMANDS
+
+src/commands/Util/tradutor.js
+
 # HOST FILES
 
 Procfile
