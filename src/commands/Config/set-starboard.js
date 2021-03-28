@@ -4,7 +4,7 @@ module.exports = class AutoRoleCommand {
 			permissoes: {
 				membro: ['MANAGE_GUILD'], //Permissoes que o usuario necessita
 				bot: [], //Permissoes que o bot necessita
-				dono: true //Se apenas nos devs podem usar o comando
+				dono: false //Se apenas nos devs podem usar o comando
 			},
 			pt: {
 				nome: 'set-starboard',
