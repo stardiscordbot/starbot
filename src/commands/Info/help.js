@@ -40,7 +40,7 @@ module.exports = class HelpCommand {
 					if (!categorias[comando.pt.categoria])
 						categorias[comando.pt.categoria] = [];
 					categorias[comando.pt.categoria].push(
-						`- \`${comando.pt.nome}\`\n  • ${comando.pt.desc.endsWith('.')?comando.pt.desc:comando.pt.desc+'.'}`
+						`\`${comando.pt.nome}\``
 					);
 				});
 				embed.setColor(color);
@@ -53,8 +53,32 @@ module.exports = class HelpCommand {
 					msg.author.displayAvatarURL()
 				);
 				for (var categoria in categorias) {
-					embed.addField(categoria, `${categorias[categoria].join('\n')}`);
+					embed.addField(categoria, `${categorias[categoria].join('│')}`);
 				}
+
+				if(args[0]) {
+					const cmd = await 
+					client.commands.get(args[0]) ||
+					client.commands.find(cmd => cmd.aliases.includes(args[0]));
+
+					if(!cmd) return message.quote(`:x: | Esse comando não existe`)
+			
+					const help = new (require('discord.js')).MessageEmbed()
+					.setTitle(':wave: | ' + cmd.pt.nome.split(' ').map(str => str.slice(0, 1).toUpperCase() + str.slice(1)).join(' '))
+					.addField(':book: Descrição:', `\`${cmd.pt.desc}\`` , false)
+					.addField(':small_blue_diamond: Permissões do bot:', `\`${cmd.permissoes.bot.join('`,`') || `Esse comando não necessita de permissões`}\``, false)
+					.addField(':small_orange_diamond: Permissões do usuário:', `\`${cmd.permissoes.membro.join('`,`') || `Esse comando não necessita de permissões especiais para ser executado`}\``, false)
+					.setColor(color)
+					.setTimestamp()
+					.setFooter('Star™ (c) 2021')
+			
+					if(cmd.aliases.join(',') !== ''){
+						help.addField(':twisted_rightwards_arrows: Sinônimos:',  `\`${cmd.aliases.join('`,`')}\``, false )
+					}
+				
+					return msg.quote(help)
+				}
+
 				msg.quote({ embed })
 				break;
 			case 'en':
@@ -63,7 +87,7 @@ module.exports = class HelpCommand {
 					if (!categorias[comando.en.categoria])
 						categorias[comando.en.categoria] = [];
 					categorias[comando.en.categoria].push(
-						`- \`${comando.en.nome}\`\n  • ${comando.en.desc.endsWith('.')?comando.en.desc:comando.en.desc+'.'}`
+						`\`${comando.en.nome}\``
 					);
 				});
 				embed.setColor(color);
@@ -74,12 +98,38 @@ module.exports = class HelpCommand {
 					msg.author.displayAvatarURL()
 				);
 				for (var categoria in categorias) {
-					embed.addField(categoria, `${categorias[categoria].join('\n')}`);
+					embed.addField(categoria, `${categorias[categoria].join(' ,')}`);
 				}
+
+				if(args[0]) {
+					const cmd = await 
+					client.commands.get(args[0]) ||
+					client.commands.find(cmd => cmd.aliases.includes(args[0]));
+
+					if(!cmd) return message.quote(`:x: | This command does not exist`)
+			
+				
+					const help = new (require('discord.js')).MessageEmbed()
+					.setTitle(':wave: | ' + cmd.en.nome.split(' ').map(str => str.slice(0, 1).toUpperCase() + str.slice(1)).join(' '))
+					.addField(':book: Description:', `\`${cmd.en.desc}\`` , false)
+					.addField(':small_blue_diamond: Bot permissions:', `\`${cmd.permissoes.bot.join('`,`') || `This command does not need permissions`}\``, false)
+					.addField(':small_orange_diamond: User permissions:', `\`${cmd.permissoes.membro.join('`,`') || `This command does not need special permissions to be executed`}\``, false)
+					.setColor(color)
+					.setTimestamp()
+					.setFooter('Star™ (c) 2021')
+			
+					if(cmd.aliases.join(',') !== ''){
+						help.addField(':twisted_rightwards_arrows: Aliases:',  `\`${cmd.aliases.join('`,`')}\``, false )
+					}
+					
+				
+					return msg.quote(help)
+				}
+
 				msg.quote({ embed })
 				break;
 		}
 	}
 };
 
-//Davi
+//Davi e André
