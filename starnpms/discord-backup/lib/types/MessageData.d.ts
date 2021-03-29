@@ -1,4 +1,4 @@
-import { MessageEmbed, FileOptions } from 'discord.js'
+import { MessageEmbed, FileOptions } from 'discord.js-light'
 export interface MessageData {
 	username: string;
 	avatar?: string;

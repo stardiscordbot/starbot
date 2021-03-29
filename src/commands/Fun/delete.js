@@ -33,7 +33,7 @@ module.exports = class VarporwaveCommand {
       message.channel.startTyping()
     const img = await new DIG.Delete().getImage(av)
         
-    const attachment = new (require('discord.js')).MessageAttachment(img, `delete-${user.id}.png`);
+    const attachment = new (require('discord.js-light')).MessageAttachment(img, `delete-${user.id}.png`);
 
       message.quote(message.author,attachment).then(message => {
         message.channel.stopTyping()

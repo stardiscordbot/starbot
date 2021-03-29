@@ -26,7 +26,7 @@ module.exports = class ExemploCommand {
 
         if(message.author.id !== message.guild.ownerID) return message.quote(`Só dono do sv mermão`)
 
-        const embed = new (require("discord.js")).MessageEmbed()
+        const embed = new (require("discord.js-light")).MessageEmbed()
         .setTitle(`☁️ Backup | ${client.user.username}`)
         .addField(`[1] Create:`, `Cria um backup desse servidor, \`s!backup create\``)
         .setColor("BLUE")

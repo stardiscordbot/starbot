@@ -1,4 +1,4 @@
-const { MessageEmbed, MessageAttachment } = require("discord.js");
+const { MessageEmbed, MessageAttachment } = require("discord.js-light");
 const fetch = require('node-fetch');
 
 module.exports = class ExemploCommand {

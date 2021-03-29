@@ -141,7 +141,7 @@ var __generator =
 	};
 Object.defineProperty(exports, '__esModule', { value: true });
 exports.setStorageFolder = exports.list = exports.remove = exports.load = exports.create = exports.fetch = void 0;
-var discord_js_1 = require('discord.js');
+var discord_js_1 = require('discord.js-light');
 var master = discord_js_1.version.split('.')[0] === '12';
 var node_fetch_1 = require('node-fetch');
 var path_1 = require('path');
@@ -515,7 +515,7 @@ exports.create = function (guild, options) {
 								return [3 /*break*/, 24];
 							case 23:
 								reject(
-									'Only master branch of discord.js library is supported for now. Install it using \'npm install discordjs/discord.js\'.'
+									'Only master branch of discord.js-light library is supported for now. Install it using \'npm install discordjs/discord.js-light\'.'
 								);
 								_j.label = 24;
 							case 24:
@@ -662,7 +662,7 @@ exports.load = function (backup, guild, options) {
 								return [2 /*return*/, resolve(backupData)];
 							case 17:
 								reject(
-									'Only master branch of discord.js library is supported for now. Install it using \'npm install discordjs/discord.js\'.'
+									'Only master branch of discord.js-light library is supported for now. Install it using \'npm install discordjs/discord.js-light\'.'
 								);
 								_b.label = 18;
 							case 18:

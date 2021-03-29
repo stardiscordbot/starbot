@@ -8,7 +8,7 @@ module.exports = (client) => {
         }
 
 		idioma = client.lang[idioma];
-		const embed = new (require('discord.js')).MessageEmbed()
+		const embed = new (require('discord.js-light')).MessageEmbed()
 			.setAuthor(
 				`${idioma.editLogs.title} ${idioma.editLogs.deleted}`, 'https://media.discordapp.net/attachments/793835549667753984/802230763780309022/messagedelete.png')
 			.setTimestamp()
@@ -25,7 +25,7 @@ module.exports = (client) => {
 
 		let logs = await client.db.get(`logs-${message.guild.id}`);
 		if (logs) {
-			let canal = await client.channels.cache.get(logs);
+			let canal = await client.channels.forge(logs);
 			canal.fetchWebhooks().then(hook => {
 				let webhook = hook.first();
 

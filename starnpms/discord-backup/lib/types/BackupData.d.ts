@@ -4,7 +4,7 @@ import {
 	RoleData,
 	Snowflake,
 	VerificationLevel
-} from 'discord.js'
+} from 'discord.js-light'
 import { AfkData, BanData, ChannelsData, EmojiData, WidgetData } from './'
 export interface BackupData {
 	name: string;

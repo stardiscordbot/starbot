@@ -36,9 +36,9 @@ module.exports = async (client) => {
     dbl.webhook.on('voted', vote => {
         console.log(`votaram em mim, ${vote.user}`)
 
-        const webhook = new (require("discord.js")).WebhookClient(botlist.votehook.id, botlist.votehook.token);
+        const webhook = new (require("discord.js-light")).WebhookClient(botlist.votehook.id, botlist.votehook.token);
         
-        const voteembed = new (require("discord.js")).MessageEmbed()
+        const voteembed = new (require("discord.js-light")).MessageEmbed()
         .setDescription(`${vote.user} votou em mim`)
         .setColor("ff0000")
         webhook.send(voteembed)

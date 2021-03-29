@@ -23,7 +23,7 @@ module.exports = class UserInfoCommand {
 		};
 	}
 	async run(client, message, args, prefixo, idioma) {
-		const embed = new (require('discord.js')).MessageEmbed();
+		const embed = new (require('discord.js-light')).MessageEmbed();
 		const msg = message;
 		let canal;
 		try {

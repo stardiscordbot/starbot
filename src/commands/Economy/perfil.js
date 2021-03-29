@@ -107,7 +107,7 @@ module.exports = class PerfilCommand {
             }).write(`./ProfileFinal.png`);
 
             const path = `./ProfileFinal.png`;
-            const attachment = new (require("discord.js")).MessageAttachment("./ProfileFinal.png");
+            const attachment = new (require("discord.js-light")).MessageAttachment("./ProfileFinal.png");
             
             message.quote(message.author, attachment).then(m => {
               message.channel.stopTyping()

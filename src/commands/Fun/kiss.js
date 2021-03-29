@@ -22,7 +22,7 @@ module.exports = class Command {
 }
 
 async run(client, message, args, prefixoCerto, idioma) {
-    const {MessageEmbed} = require('discord.js');
+    const {MessageEmbed} = require('discord.js-light');
     const superagent = require('superagent');
 
     if (!message.mentions.users.first()) return message.quote(idioma.hug.user.replace('hug', 'kiss').replace('abraçar', 'beijar'));

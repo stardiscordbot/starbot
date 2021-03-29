@@ -1,5 +1,5 @@
 const config = require("./src/config/json/config.json");
-const {ShardingManager} = require('discord.js');
+const {ShardingManager} = require('discord.js-light');
 const cor = require("colors");
 
 const manager = new ShardingManager('./bot.js', { 

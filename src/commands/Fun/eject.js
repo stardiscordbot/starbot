@@ -1,4 +1,4 @@
-const {MessageEmbed} = require("discord.js");
+const {MessageEmbed} = require("discord.js-light");
 
 var color = [ 
         "blue",
@@ -53,7 +53,7 @@ module.exports = class Command {
       message.channel.startTyping()
     const url = `https://vacefron.nl/api/ejected?name=${a}&impostor=${crewmate}&crewmate=${crewcolor}`
         
-        const attachment = new (require("discord.js")).MessageAttachment(url, `eject-${message.author.id}.png`);
+        const attachment = new (require("discord.js-light")).MessageAttachment(url, `eject-${message.author.id}.png`);
 
         message.quote(message.author, attachment).then(m2 =>{
           message.channel.stopTyping()

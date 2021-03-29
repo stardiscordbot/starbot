@@ -16,7 +16,7 @@ module.exports = (client) => {
         }
 
 		idioma = client.lang[idioma];
-		const embed = new (require('discord.js')).MessageEmbed()
+		const embed = new (require('discord.js-light')).MessageEmbed()
 	  	.setAuthor(`${idioma.editLogs.title} ${idioma.editLogs.edited}`, 'https://media.discordapp.net/attachments/798587400871870507/801897320370667520/messageupdate.png')
 			.setTimestamp()
 			.setDescription(
@@ -33,7 +33,7 @@ module.exports = (client) => {
 
 		let logs = await client.db.get(`logs-${oldMessage.guild.id}`);
 		if (logs) {
-			let canal = await client.channels.cache.get(logs);
+			let canal = await client.channels.forge(logs);
 			canal.fetchWebhooks().then(hook => {
 				let webhook = hook.first();
 
