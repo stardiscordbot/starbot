@@ -20,6 +20,7 @@
     "discord-image-generation": "^1.4.7",
     "discord.js": "^12.5.1",
     "discord.js-collector": "^1.8.9",
+    "discord.js-light": "^3.5.4",
     "express": "^4.17.1",
     "infinity-api": "^1.1.8",
     "jimp": "^0.16.1",
