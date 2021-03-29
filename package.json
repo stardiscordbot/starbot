@@ -29,7 +29,8 @@
     "parse-ms": "^2.1.0",
     "path": "^0.12.7",
     "pretty-ms": "^7.0.1",
-    "quickmongo": "^3.0.0"
+    "quickmongo": "^3.0.0",
+    "superagent": "^6.1.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.16.1",

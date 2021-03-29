@@ -161,5 +161,18 @@
   "tradutor": {
     "lang": "You need to specify the language, example: %translator **en** Oi",
     "text": "You need to specify the text, example: %translator en  **Oi** "
+  },
+  "cmm": {
+    "text": "I need you to specify the text."
+  },
+  "eject": {
+    "sim": "Ejection Simulator"
+  },
+  "hug": {
+    "acaba": "just hugged",
+    "user": "Mention a user to hug"
+  },
+  "stonks": {
+    "limit": "you have exceeded the 50 character limit."
   }
 }

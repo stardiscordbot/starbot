@@ -23,8 +23,7 @@ module.exports = class HelpCommand {
 	async run(client, message, args, prefixoCerto) {
 
     const adg = await client.users.fetch('717766639260532826')
-    const bonee = await client.users.fetch('672652538880720896')
-    const davi = await client.users.fetch('704468807229505637')
+    const andre = await client.users.fetch('742798447253651506')
 
     const color = message.member.displayHexColor;
     //if (color == '#000000') color = message.member.hoistRole.hexColor;
@@ -46,7 +45,7 @@ module.exports = class HelpCommand {
 				embed.setColor(color);
 				embed.setTitle(`Lista de Comandos • ${client.user.username}`);
 				embed.setDescription(
-					`> Meu prefixo atual é: \`${prefixoCerto}\`\n> Caso tenha alguma duvida entre em meu suporte: [Clique Aqui](https://discord.gg/2pFH6Yy)\n> Fui desenvolvida por: \`${adg.tag}, ${bonee.tag}, ${davi.tag}\``
+					`> Meu prefixo atual é: \`${prefixoCerto}\`\n> Caso tenha alguma duvida entre em meu suporte: [Clique Aqui](https://discord.gg/2pFH6Yy)\n> Fui desenvolvida por: \`${adg.tag}, ${andre.tag}\`\n> Me adicione clicando [aqui](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot&permissions=805432446)`
 				);
 				embed.setFooter(
 					`Utilizado por: ${msg.author.tag}`,

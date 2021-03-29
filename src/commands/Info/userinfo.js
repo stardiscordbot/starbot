@@ -27,7 +27,14 @@ module.exports = class UserInfoCommand {
 		let user;
 		try {
 			user = message.mentions.members.first() || (((args[0]&&!isNaN(args[0]))?await message.guild.members.fetch(String(args[0])) : message.member))
+			let member = user
 			let idioma = (await client.db.get(`idioma-${message.guild.id}`)) || 'pt';
+			let vazios = [, , , ,];
+            let entradasSort = vazios.concat([...msg.guild.members.cache.values()].sort((a, b) => a.joinedTimestamp - b.joinedTimestamp)).concat(vazios)
+            let membro = entradasSort.indexOf(member);
+            
+            let str = entradasSort.splice(membro - 3, membro + 4).filter(u => u).map(u => `${u.user.tag == member.user.tag ? `**${u.user.username}**` : u.user.username}`).slice(0, 7).join(' > ');
+            let jn = msg.guild.members.cache.sort((a ,b) => a.joinedTimestamp - b.joinedTimestamp).array().indexOf(member)
 
 			switch (idioma) {
 				case 'pt':
@@ -59,6 +66,8 @@ module.exports = class UserInfoCommand {
 							.replace('year', 'ano')
 							.replace('hour', 'hora')}`
 					);
+					embed.addField(
+						`📆 Ordem de entrada:`, `${str}`);
 					embed.setThumbnail(
 						user.user.displayAvatarURL({
 							size: 4096,
@@ -100,6 +109,8 @@ module.exports = class UserInfoCommand {
 							format: 'png'
 						})
 					);
+					embed.addField(
+						`📆 Entry order:`, `${str}`);
 
 					embed.setColor(`GREEN`);
 

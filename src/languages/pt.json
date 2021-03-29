@@ -161,5 +161,18 @@
   "tradutor": {
     "lang": "Você precisa especificar a linguagem, examplo: %translator **en** Oi",
     "text": "Você precisa especificar o texto, examplo: %translator en  **Oi** "
+  },
+  "cmm": {
+    "text": "Eu preciso que você especifique o texto."
+  },
+  "eject": {
+    "sim": "Simulação de Ejeção"
+  },
+  "hug": {
+    "acaba": "acaba de abraçar",
+    "user": " Mencione um usuário para abraçar"
+  },
+  "stonks": {
+    "limit": "voce passou de 50 caracteres"
   }
 }
