@@ -29,11 +29,17 @@ module.exports = class Command {
     let text = args.join(" ");
 
         if (!text) {
-            return message.quote(`:x: ${message.author}, ${idioma.cmm.text}`);
-        }
+            return message.quote(`:x: ${message.author} **|** ${idioma.cmm.text}`);
+        }   
+        message.quote(`${idioma.image.editando.replace("%u", message.author)}`).then(async m => {
+          message.channel.startTyping()
             let res = await fetch(encodeURI(`https://nekobot.xyz/api/imagegen?type=clyde&text=${text}`));
             let json = await res.json();
-            let attachment = new MessageAttachment(json.message, "clyde.png");
-            message.quote(attachment);
+            let attachment = new MessageAttachment(json.message, `clyde-${message.author.id}.png`);
+            message.quote(message.author, attachment).then(m2 => {
+              message.channel.stopTyping()
+              m.delete()
+            })
+          })
   }
 }

@@ -27,17 +27,14 @@ module.exports = class ExemploCommand {
     
     async run(client, message, args, prefixo, idioma) {
 
-    if (!message.mentions.users.first()) return message.quote(idioma.hug.user.replace('hug', 'slap').replace('abraçar', 'bater'));
+    if (!message.mentions.users.first()) return message.quote(`:x: ${message.author} **|** ${idioma.hug.user.replace('hug', 'slap').replace('abraçar', 'bater')}`);
 
     const { body } = await superagent
     .get("https://nekos.life/api/v2/img/slap");
-    let avatar = message.author.displayAvatarURL({format: 'png'});
     const embed = new Discord.MessageEmbed()
-    .setTitle('Slap | Star:tm:')
     .setColor("#ff09de")
-    .setDescription(`**${message.author.username}** ${idioma.hug.acaba.replace('hugged', 'slapped').replace('abraçar', 'bater')} **${message.mentions.users.first().username}**!`)
-    .setThumbnail(avatar)
+    .setDescription(`**${message.author.username}** ${idioma.hug.acaba.replace('hugged', 'slapped').replace('abraçar', 'bater')} **${message.mentions.users.first().username}**`)
     .setImage(body.url) 
-    message.quote({embed})
+    message.quote(message.author, embed)
  }
 }

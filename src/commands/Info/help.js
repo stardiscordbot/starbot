@@ -24,6 +24,7 @@ module.exports = class HelpCommand {
 
     const adg = await client.users.fetch('717766639260532826')
     const andre = await client.users.fetch('742798447253651506')
+	const davi = await client.users.fetch('704468807229505637')
 
     const color = message.member.displayHexColor;
     //if (color == '#000000') color = message.member.hoistRole.hexColor;

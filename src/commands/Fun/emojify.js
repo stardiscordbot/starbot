@@ -50,7 +50,7 @@ async run(client, message, args, prefixoCerto, idioma) {
     message.quote(idioma.cmm.text);
 }
 
-message.quote(` :heavy_check_mark: - ${message.author}, \n\n> ${args.join(' ')
+message.quote(`✅ ${message.author} **|** ${args.join(' ').replace(/`/g, '')
 .split('')
 .map(c => mapping[c] || c)
 .join('')}`);

@@ -43,21 +43,23 @@ module.exports = class Command {
   
   async run(client, message, args, prefixoCerto, idioma) {
 
-    let user = message.mentions.users.first() || client.users.cache.get(args[0]) || client.users.cache.filter(a => a.username == args.join(" ")) || args.join(' ') ||message.author
+    let user = args[0] ? message.mentions.users.first() ||  client.users.cache.find(a => a.username === args.slice(0).join(' ')) || await client.users.fetch(args[0]).catch(_ => message.author) : message.author
     const a = user.username.toString().replace(/ /gi, "%20")
 
     let crewmate = crew[Math.floor(Math.random() * crew.length).toString(2)]
     let crewcolor = color[Math.floor(Math.random() * color.length).toString(16)]
 
+    message.quote(`${idioma.image.editando.replace("%u", message.author)}`).then(async m => {
+      message.channel.startTyping()
+    const url = `https://vacefron.nl/api/ejected?name=${a}&impostor=${crewmate}&crewmate=${crewcolor}`
+        
+        const attachment = new (require("discord.js")).MessageAttachment(url, `eject-${message.author.id}.png`);
 
-        const eject = new MessageEmbed()
-        .setTitle(`<:Laranja:782671789569474610> | ${idioma.eject.sim}`)
-        .setColor('ff0000')
-        .setTimestamp()
-        .setImage(`https://vacefron.nl/api/ejected?name=${a}&impostor=${crewmate}&crewmate=${crewcolor}`)
-        .setFooter(`${message.author.tag} `, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-        message.quote(eject)
-
+        message.quote(message.author, attachment).then(m2 =>{
+          message.channel.startTyping()
+          m.delete()
+        })
+      })
  } 
 
 }

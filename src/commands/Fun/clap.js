@@ -23,7 +23,7 @@ module.exports = class Command {
   
   async run(client, message, args, prefixoCerto, idioma) {
 
-    if(!args.join(" ")) return message.quote(`:x:  ${message.author}, ${idioma.cmm.text}`)
-    message.quote(` :heavy_check_mark: - ${message.author}, \n\n> ${args.join(" ").toString().replace(/ /gi, " 👏 ")}`)
+    if(!args.join(" ")) return message.quote(`:x:  ${message.author} **|** ${idioma.cmm.text}`)
+    message.quote(`✅ ${message.author} **|** \`${args.join(" ").toString().replace(/`/g, '').replace(/ /gi, " 👏 ")}\``)
  }
 }

@@ -18,7 +18,7 @@ module.exports = class Command {
         categoria: '🤣 • Fun',
         desc: 'Dog !!!!!'
       },
-    aliases: ['doggo'],
+    aliases: ['doggo', 'shiba'],
     run: this.run
   }
 }

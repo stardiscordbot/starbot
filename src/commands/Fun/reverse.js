@@ -25,6 +25,6 @@ module.exports = class ExemploCommand {
     
     async run(client, message, args, prefixo, idioma) {
     if(!args.join(" ")) return message.quote(`:x: ${message.author}, ${idioma.cmm.text}`)
-    message.quote(`:heavy_check_mark:  ${message.author}, \n\n> ${args.join(" ").split('').reverse().join('')}`)
+    message.quote(`✅  ${message.author} **|** \`${args.join(" ").replace(/`/g, '').split('').reverse().join('')}\``)
  }
 }

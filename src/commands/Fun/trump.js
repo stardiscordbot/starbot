@@ -34,12 +34,14 @@ module.exports = class ExemploCommand {
         }
 
         message.quote(`${idioma.image.editando.replace("%u", message.author)}`).then(async m => {
+          message.channel.startTyping()
         try {
             let res = await fetch(encodeURI(`https://nekobot.xyz/api/imagegen?type=trumptweet&text=${text}`));
             let json = await res.json();
-            let attachment = new MessageAttachment(json.message, "clyde.png");
+            let attachment = new MessageAttachment(json.message, `trump-${message.author.id}.png`);
 
-            message.quote(attachment).then(m2 => {
+            message.quote(message.author, attachment).then(m2 => {
+              message.channel.stopTyping()
               m.delete()
             })
         } catch (e) {

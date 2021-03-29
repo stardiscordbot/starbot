@@ -25,22 +25,29 @@ module.exports = class ExemploCommand {
     
     async run(client, message, args, prefixo, idioma) {
 
-        let img = jimp.read("https://media.discordapp.net/attachments/723135289320538152/733670552622989352/stonks-meme.png")
-        if (!args[0]) return message.reply(idioma.cmm.text)
-        if(args[0].length > 50) {
-            return message.reply(idioma.stonks.limit)
-            }
-        message.quote(idioma.image.editando.replace('%u', message.author)).then(msg => {
-        img.then(image => {
-            jimp.loadFont(jimp.FONT_SANS_32_WHITE).then(font => {
-                image.resize(685, 500)
-                image.print(font, 20, 30, args.join(" "), 700)
-                image.getBuffer(jimp.MIME_PNG, (err, i) => {
-                    message.channel.send({files: [{ attachment: i, name: "stonks.png"}]}).then(m => {
-                        })
-                    })
-                })
-            })
-        })
+      const { createCanvas, loadImage } = require('canvas');
+      if((args.join(" ").length) > 300) return message.quote(idioma.image.long.replace("%u", message.author))
+
+      if(!args[0]) return message.quote(`${idioma.image.args.replace("%u", message.author)}`)
+
+      message.quote(`${idioma.image.editando.replace("%u", message.author)}`).then(async m => {
+        message.channel.startTyping()
+          const canvas = createCanvas(685, 494); 
+          const ctx = canvas.getContext('2d');
+          
+          const background = await loadImage('https://i.imgur.com/AUzBCnR.png');
+          ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+          
+          ctx.font = '30px sans-serif';
+          ctx.fillStyle = '#FFFFFF';
+          ctx.fillText(`${args.join(" ")}`.match(/.{1,50}/g).join("\n"), canvas.width / 50.9, canvas.height / 15.9, 655);
+          
+          const attachment = new (require("discord.js")).MessageAttachment(canvas.toBuffer(), `laranjo-${message.author.id}.png`);
+       
+          await message.quote(`${message.author}`, attachment).then(m2 => {
+            message.channel.stopTyping()
+              m.delete()
+              })
+      })
     }
 }

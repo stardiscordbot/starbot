@@ -4,15 +4,25 @@ const config = require("./src/config/json/config.json");
 const client = new Client({
   messageCacheMaxSize: 200,
   restTimeOffset: 1,
+  //Caches
+  /*
+  cacheGuilds: true,
+  cacheChannels: true,
+  cacheOverwrites: false,
+  cacheRoles: true,
+  cacheEmojis: false,
+  cachePresences: true,
+  */
   //Intents: GUILDS, GUILD_MESSAGES e GUILD_MEMBERS
   ws: {
     intents: 1539
   },
-    partials: [
+  //Partials
+  partials: [
       'MESSAGE',
       'CHANNEL',
       'REACTION'
-    ]
+  ]
 })
 
 client.commands = new Collection()
