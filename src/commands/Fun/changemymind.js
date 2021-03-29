@@ -19,7 +19,7 @@ module.exports = class Command {
           categoria: '🤣 • Fun',
           desc: 'Make a picture of the changemymind meme'
         },
-      aliases: [],
+      aliases: ['cmm'],
       run: this.run
     }
   }
