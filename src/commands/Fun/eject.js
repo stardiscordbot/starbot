@@ -56,7 +56,7 @@ module.exports = class Command {
         const attachment = new (require("discord.js")).MessageAttachment(url, `eject-${message.author.id}.png`);
 
         message.quote(message.author, attachment).then(m2 =>{
-          message.channel.startTyping()
+          message.channel.stopTyping()
           m.delete()
         })
       })
