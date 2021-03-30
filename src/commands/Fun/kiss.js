@@ -1,12 +1,9 @@
-const {MessageEmbed} = require('discord.js');
-const superagent = require('superagent');
-
 module.exports = class Command {
   constructor(){
     return {
       permissoes: {
         membro: [], //Permissoes que o usuario necessita
-        bot: [], //Permissoes que o bot necessita
+        bot: ['EMBED_LINKS'], //Permissoes que o bot necessita
         dono: false //Se apenas nos devs podem usar o comando
       },
       pt: {
@@ -25,6 +22,8 @@ module.exports = class Command {
 }
 
 async run(client, message, args, prefixoCerto, idioma) {
+    const {MessageEmbed} = require('discord.js-light');
+    const superagent = require('superagent');
 
     if (!message.mentions.users.first()) return message.quote(idioma.hug.user.replace('hug', 'kiss').replace('abraçar', 'beijar'));
     const { body } = await superagent
@@ -32,9 +31,8 @@ async run(client, message, args, prefixoCerto, idioma) {
 
     const embed = new MessageEmbed()
     .setColor("#ff09de")
-    .setTitle("Kiss | Star:tm:")
-    .setDescription(`${message.author} ${idioma.hug.acaba.replace('hugged', 'kissed').replace('abraçar', 'beijar')} ${message.mentions.users.first()}`)
+    .setDescription(`**${message.author.username}** ${idioma.hug.acaba.replace('hugged', 'kissed').replace('abraçar', 'beijar')} **${message.mentions.users.first().username}**`)
     .setImage(body.url)
-    message.quote({embed})
+    message.quote(message.author, embed)
  }
 }

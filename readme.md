@@ -10,7 +10,7 @@
 > I have several features, among them the preferred ones are:<br>
 ```Autorole - Autorole is here for you to give jobs to new members of your server automatically when they join the server. No more giving positions to newbies manually!```<br><br>```MessageLog - Keep an eye on everything on your server with the message logs, with them you will know deleted messages, edited to suddenly prove to that user that he really said this.```
 ## ✨ Stars... is to eat?
-> ```No, but I was made to help on your server, developed in the discord.js library using``` [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) ```&``` [NodeJS](https://nodejs.org/en/)
+> ```No, but I was made to help on your server, developed in the discord.js-light library using``` [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) ```&``` [NodeJS](https://nodejs.org/en/)
 ## 💁 What if I need help?
 > ```You can enter my support server here:``` [Click Here](https://discord.gg/2pFH6Yy)
 ## 🥳 Convinced me, how do I add?

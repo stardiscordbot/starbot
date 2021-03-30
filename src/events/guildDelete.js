@@ -1,6 +1,6 @@
 const webhook = require("../config/json/webhooks.json")
 
-const create = new (require("discord.js")).WebhookClient(webhook.gdelete.id, webhook.gdelete.token)
+const create = new (require("discord.js-light")).WebhookClient(webhook.gdelete.id, webhook.gdelete.token)
 module.exports = (client) => {
     client.on("guildDelete", async guild => {
 
@@ -12,7 +12,7 @@ module.exports = (client) => {
         client.db.delete(`welcome-${guild.id}`);
         client.db.delete(`autorole-${guild.id}`);
 
-        const embed = new (require("discord.js")).MessageEmbed()
+        const embed = new (require("discord.js-light")).MessageEmbed()
         .setAuthor(`${guild.name} (${guild.id})`, guild.iconURL())
         .addField(`Dono:`, `\`${dono.tag} (${dono.id})\``)
         .addField(`Membros:`, `\`${guild.memberCount}\``)

@@ -1,4 +1,4 @@
-const {MessageAttachment} = require('discord.js');
+const {MessageAttachment} = require('discord.js-light');
 const fetch = require('node-fetch');
 
 module.exports = class Command {
@@ -19,7 +19,7 @@ module.exports = class Command {
           categoria: '🤣 • Fun',
           desc: 'Make a picture of the changemymind meme'
         },
-      aliases: [],
+      aliases: ['cmm'],
       run: this.run
     }
   }
@@ -29,11 +29,17 @@ module.exports = class Command {
     let text = args.join(" ");
 
         if (!text) {
-            return message.quote(`:x: ${message.author}, ${idioma.cmm.text}`);
+            return message.quote(`:x: ${message.author} **|** ${idioma.cmm.text}`);
         }
+        message.quote(`${idioma.image.editando.replace("%u", message.author)}`).then(async m => {
+          message.channel.startTyping()
             let res = await fetch(encodeURI(`https://nekobot.xyz/api/imagegen?type=changemymind&text=${text}`));
             let json = await res.json();
-            let attachment = new MessageAttachment(json.message, "changemymind.png");
-            message.quote(attachment);
+            let attachment = new MessageAttachment(json.message, `changemymind-${message.author.id}.png`);
+            message.quote(message.author, attachment).then(m2 => {
+              message.channel.stopTyping()
+              m.delete()
+            })
+        })
   }
 }

@@ -22,7 +22,7 @@ module.exports = class AvatarCommand {
   }
   
   async run(client, message, args, prefixo, idioma) {
-    const embed = new (require('discord.js')).MessageEmbed()
+    const embed = new (require('discord.js-light')).MessageEmbed()
     try {
     const user = message.mentions.users.first() || (!isNaN(args[0])?await client.users.fetch(String(args[0])):message.author)
     

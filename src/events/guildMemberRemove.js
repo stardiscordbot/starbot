@@ -9,14 +9,15 @@ module.exports = (client) => {
 		async function saida(){
     const welcome = await client.db.get(`leave-${member.guild.id}`);
 
-    const embed = new (require('discord.js')).MessageEmbed()
+    const embed = new (require('discord.js-light')).MessageEmbed()
 
     .setTitle(member.guild.name)
     .setColor('ff0000')
     .setDescription(idioma.leave.message.replace('%m', member).replace('%g', member.guild.name).replace('%c', member.guild.memberCount))
 
     if(welcome) {
-      client.channels.cache.get(welcome).send({embed})
+      let channel = await client.channels.forge(welcome)
+      await channel.send({embed})
     }
 		}
 

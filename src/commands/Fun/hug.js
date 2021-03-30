@@ -1,12 +1,9 @@
-const {MessageEmbed} = require('discord.js');
-const superagent = require('superagent');
-
 module.exports = class Command {
   constructor(){
     return {
       permissoes: {
         membro: [], //Permissoes que o usuario necessita
-        bot: [], //Permissoes que o bot necessita
+        bot: ['EMBED_LINKS'], //Permissoes que o bot necessita
         dono: false //Se apenas nos devs podem usar o comando
       },
       pt: {
@@ -25,21 +22,19 @@ module.exports = class Command {
 }
 
 async run(client, message, args, prefixoCerto, idioma) {
-
-
-
-
+  const {MessageEmbed} = require('discord.js-light');
+  const superagent = require('superagent');
+  
     if (!message.mentions.users.first()) return message.quote(`:x: ${idioma.hug.user}`);
     const { body } = await superagent
     .get("https://nekos.life/api/v2/img/hug");
     
     const embed = new MessageEmbed()
-    .setTitle('Star:tm: | Hug')
-    .setDescription(`${message.author} ${idioma.hug.acaba} ${message.mentions.users.first()}`)
-    .setColor(message.member.displayHexColor)
+    .setDescription(`**${message.author.username}** ${idioma.hug.acaba} **${message.mentions.users.first().username}**`)
+    .setColor("#ff09de")
     .setImage(body.url) 
     
-    message.quote(embed)
+    message.quote(message.author, embed)
 }
 }
 

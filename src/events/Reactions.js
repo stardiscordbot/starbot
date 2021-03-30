@@ -8,9 +8,9 @@ module.exports = (client) => {
         //r.message.reactions.forEach((reaction) => {});
         const eURL = {};
         const embeds = r.message.embeds;
-        const msgChannel = client.channels.cache.get(r.message.channel.id);
+        const msgChannel = client.channels.forge(r.message.channel.id);
         const starchannel = await client.db.get(`starboard-${r.message.guild.id}`);
-        const starboard = await client.channels.cache.get(starchannel);
+        const starboard = await client.channels.forge(starchannel);
         const attachments = r.message.attachments;
         const tt = '⭐';
 
@@ -30,7 +30,7 @@ module.exports = (client) => {
 
         if(r.emoji.name !== tt) return;
         if(r.emoji.name == tt) {
-            const starembed = new (require("discord.js")).MessageEmbed()
+            const starembed = new (require("discord.js-light")).MessageEmbed()
             .setAuthor(`${r.message.author.tag} (${r.message.author.id})`, r.message.author.displayAvatarURL({dynamic:true}))
             .addField(`${idioma.starboard.cont}`, conteudo)
             .setColor("YELLOW")

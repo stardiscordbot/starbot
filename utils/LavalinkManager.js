@@ -41,17 +41,17 @@ module.exports = (client) => {
     .on("nodeError", (node, error) => console.log(c.red(`[LAVALINK] Node "${node.options.identifier}" had an error: ${error.message}`)))
     
     .on("playerMove", (player, currentChannel, newChannel) => {
-      player.voiceChannel = client.channels.cache.get(newChannel);
+      player.voiceChannel = client.channels.forge(newChannel);
     })
     .on("trackStart", async (player, track) => {
     
-    const channel = client.channels.cache.get(player.textChannel);
+    const channel = client.channels.forge(player.textChannel);
 
     let idioma = await client.db.get(`idioma-${channel.guild.id}`) || 'pt';
 		
 	  idioma = client.lang[idioma];
 
-    const npembed = new (require("discord.js")).MessageEmbed()
+    const npembed = new (require("discord.js-light")).MessageEmbed()
     .setDescription(`${idioma.erela.np} \`${track.title.replace(/`/g, '')}\` | \`${track.requester.tag}\``)
     .setColor("F47FFF")
 
@@ -63,13 +63,13 @@ module.exports = (client) => {
     
     .on("queueEnd", async (player) => {
 
-      const channel = client.channels.cache.get(player.textChannel);
+      const channel = client.channels.forge(player.textChannel);
 
       let idioma = await client.db.get(`idioma-${channel.guild.id}`) || 'pt';
       
       idioma = client.lang[idioma];
 
-      const endembed = new (require("discord.js")).MessageEmbed()
+      const endembed = new (require("discord.js-light")).MessageEmbed()
       .setDescription(`${idioma.erela.end}`)
       .setColor("F47FFF")
 

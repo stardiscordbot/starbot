@@ -23,7 +23,7 @@ module.exports = class UserInfoCommand {
 		};
 	}
 	async run(client, message, args, prefixo, idioma) {
-		const embed = new (require('discord.js')).MessageEmbed();
+		const embed = new (require('discord.js-light')).MessageEmbed();
 		let user;
 		try {
 			user = message.mentions.members.first() || (((args[0]&&!isNaN(args[0]))?await message.guild.members.fetch(String(args[0])) : message.member))

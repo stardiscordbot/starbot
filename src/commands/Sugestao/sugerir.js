@@ -36,14 +36,14 @@ module.exports = class SugerirCommand {
       if(message.content.toLowerCase().includes("www.")) return message.quote(`:x: ${message.author} **|** ${idioma.sugestao.link}`);
       if(regex.exec(args.join(" "))) return message.quote(`:x: ${message.author} **|** ${idioma.sugestao.link}`);
       
-      const sugembed = new (require("discord.js")).MessageEmbed()
+      const sugembed = new (require("discord.js-light")).MessageEmbed()
       .setThumbnail("https://media.discordapp.net/attachments/719978696278278224/821814940938928149/lightbulb-graphic-on-yellow.jpg")
       .setAuthor(`${message.author.tag} (${message.author.id})`, message.author.displayAvatarURL({dynamic:true}))
       .setDescription(`**${idioma.sugestao.nova}**\n> \`${args.join(" ").replace(/`/g, '')}\``)
       .setColor("YELLOW")
       .setFooter(`${idioma.sugestao.footer.replace("%u", client.user.username)}`, client.user.displayAvatarURL({dynamic:true}))
       .setTimestamp()
-      client.channels.cache.get(sugchannel).send(sugembed).then(m => {
+      client.channels.forge(sugchannel).send(sugembed).then(m => {
           m.react("👍")
           m.react("👎")
       })

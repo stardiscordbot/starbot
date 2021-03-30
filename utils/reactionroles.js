@@ -4,7 +4,7 @@ const config = require("../src/config/json/config.json")
 module.exports = (client) => {
     client.rr = new ReactionRoleManager(client, {
         storage: true, // Enable reaction role store in a Json file
-        mongoDbLink: config.database.mongo.url // See here to see how setup mongoose: https://github.com/IDjinn/Discord.js-Collector/blob/master/examples/reaction-role-manager/Note.md
+        mongoDbLink: config.database.mongo.url // See here to see how setup mongoose: https://github.com/IDjinn/discord.js-collector/blob/master/examples/reaction-role-manager/Note.md
     });
 
     client.rr.on('reactionRoleAdd', (member, role) => {

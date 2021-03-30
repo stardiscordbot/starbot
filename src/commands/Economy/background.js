@@ -29,7 +29,7 @@ module.exports = class BackgroundCommand {
 
       economy.findOne({ User: message.author.id }, async(err, data) => {
 
-      const embed = new (require("discord.js")).MessageEmbed()
+      const embed = new (require("discord.js-light")).MessageEmbed()
       .setDescription(`🛒 ${message.author} **|** ${idioma.perfil.comp}, ¥${tema.value.toLocaleString()}`)
       .setColor("ff0000")
       .setImage(tema.url)
@@ -50,7 +50,7 @@ module.exports = class BackgroundCommand {
           data.Money = data.Money - tema.value;
           data.save()
 
-          const buyembed = new (require("discord.js")).MessageEmbed()
+          const buyembed = new (require("discord.js-light")).MessageEmbed()
           .setDescription(`🛒 ${message.author} **|** ${idioma.perfil.succ}`)
           .setColor("ff0000")
           .setImage(tema.url)

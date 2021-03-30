@@ -23,7 +23,7 @@ module.exports = class ExemploCommand {
     
     async run(client, message, args, prefixoCerto, idioma) {
         const emojis = ["👍", "👎", "❓", "🤔", "🙄", "❌"];
-        const {MessageEmbed} = require("discord.js")
+        const {MessageEmbed} = require("discord.js-light")
         const akinator = new Set();
 
         if(akinator.has(message.author.id)) return message.quote("você já está jogando")
@@ -39,7 +39,7 @@ module.exports = class ExemploCommand {
         const aki = new Aki(region);
         await aki.start();
 
-        const embed = new (require("discord.js")).MessageEmbed()
+        const embed = new (require("discord.js-light")).MessageEmbed()
         .setTitle(`${idioma.aki.q} ${aki.currentStep + 1}`)
         .setColor("YELLOW")
         .setThumbnail("https://i.imgur.com/eyo9wd2.jpg")

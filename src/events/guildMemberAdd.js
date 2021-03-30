@@ -10,14 +10,15 @@ module.exports = (client) => {
 		async function bemvindo(){
     const welcome = await client.db.get(`welcome-${member.guild.id}`);
 
-    const embed = new (require('discord.js')).MessageEmbed()
+    const embed = new (require('discord.js-light')).MessageEmbed()
 
     .setTitle(member.guild.name)
     .setColor('ff0000')
     .setDescription(idioma.welcome.message.replace('%m', member).replace('%g', member.guild.name).replace('%c', member.guild.memberCount))
 
     if(welcome) {
-      client.channels.cache.get(welcome).send({embed})
+      let channel = await client.channels.forge(welcome)
+      await channel.send({embed})
     }
 		}
 		

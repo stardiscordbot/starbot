@@ -1,4 +1,4 @@
-const { MessageEmbed, MessageAttachment } = require("discord.js");
+const { MessageEmbed, MessageAttachment } = require("discord.js-light");
 const fetch = require('node-fetch');
 
 module.exports = class ExemploCommand {
@@ -30,25 +30,23 @@ module.exports = class ExemploCommand {
     let text = args.join(" ");
 
         if (!text) {
-            return message.reply(idioma.cmm.text);
+            return message.quote(`${idioma.image.args.replace("%u", message.author)}`);
         }
 
-        let m = await message.reply("Loading ..... ");
+        message.quote(`${idioma.image.editando.replace("%u", message.author)}`).then(async m => {
+          message.channel.startTyping()
         try {
             let res = await fetch(encodeURI(`https://nekobot.xyz/api/imagegen?type=trumptweet&text=${text}`));
             let json = await res.json();
-            let attachment = new MessageAttachment(json.message, "clyde.png");
+            let attachment = new MessageAttachment(json.message, `trump-${message.author.id}.png`);
 
-            const trump = new MessageEmbed()
-            .setTitle('<:db_twitter:782665233114202182> | Trump Tweet')
-            .setColor('ff0000')
-            .setImage(json.message)
-
-            message.quote(trump);
-            m.delete({ timeout: 3000 });
+            message.quote(message.author, attachment).then(m2 => {
+              message.channel.stopTyping()
+              m.delete()
+            })
         } catch (e) {
-            m.edit(e.message);
-        }
-    
-  }
-}
+            console.log(e.message)
+        };
+      });
+  };
+};
