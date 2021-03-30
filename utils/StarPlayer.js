@@ -11,7 +11,7 @@ module.exports = async (client) => {
         let idioma = await client.db.get(`idioma-${message.guild.id}`) || 'pt';
 		
         idioma = client.lang[idioma];
-        let npembed = new (require("discord.js-light")).MessageEmbed()
+        let npembed = new (require("discord.js")).MessageEmbed()
         .setDescription(`${idioma.player.np} \`${track.title.replace(/`/g, '')}\``)
         .setColor("F47FFF")
 
@@ -22,7 +22,7 @@ module.exports = async (client) => {
     let idioma = await client.db.get(`idioma-${message.guild.id}`) || 'pt';
 		
     idioma = client.lang[idioma];
-    let npembed = new (require("discord.js-light")).MessageEmbed()
+    let npembed = new (require("discord.js")).MessageEmbed()
     .setDescription(`${idioma.play.add} \`${track.title.replace(/`/g, '')}\``)
     .setColor("F47FFF")
 
@@ -32,7 +32,7 @@ module.exports = async (client) => {
     let idioma = await client.db.get(`idioma-${message.guild.id}`) || 'pt';
 		
     idioma = client.lang[idioma];
-    let npembed = new (require("discord.js-light")).MessageEmbed()
+    let npembed = new (require("discord.js")).MessageEmbed()
     .setDescription(`${idioma.play.add} \`${playlist.title.replace(/`/g, '')} (${playlist.tracks.length})\``)
     .setColor("F47FFF")
 
@@ -69,7 +69,7 @@ module.exports = async (client) => {
     let idioma = await client.db.get(`idioma-${message.guild.id}`) || 'pt';
 		
     idioma = client.lang[idioma];
-    let npembed = new (require("discord.js-light")).MessageEmbed()
+    let npembed = new (require("discord.js")).MessageEmbed()
     .setDescription(`${idioma.player.noresults} \`${query.replace(/`/g, '')}\``)
     .setColor("F47FFF")
 
@@ -80,7 +80,7 @@ module.exports = async (client) => {
     let idioma = await client.db.get(`idioma-${message.guild.id}`) || 'pt';
 		
     idioma = client.lang[idioma];
-    let npembed = new (require("discord.js-light")).MessageEmbed()
+    let npembed = new (require("discord.js")).MessageEmbed()
     .setDescription(`${idioma.player.end}`)
     .setColor("F47FFF")
 
@@ -91,7 +91,7 @@ module.exports = async (client) => {
     let idioma = await client.db.get(`idioma-${message.guild.id}`) || 'pt';
 		
     idioma = client.lang[idioma];
-    let npembed = new (require("discord.js-light")).MessageEmbed()
+    let npembed = new (require("discord.js")).MessageEmbed()
     .setDescription(`${idioma.player.solo}`)
     .setColor("F47FFF")
 
@@ -102,7 +102,7 @@ module.exports = async (client) => {
     let idioma = await client.db.get(`idioma-${message.guild.id}`) || 'pt';
 		
     idioma = client.lang[idioma];
-    let npembed = new (require("discord.js-light")).MessageEmbed()
+    let npembed = new (require("discord.js")).MessageEmbed()
     .setDescription(`${idioma.player.dis}`)
     .setColor("F47FFF")
 

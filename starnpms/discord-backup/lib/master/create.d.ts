@@ -5,7 +5,7 @@ import type {
 	EmojiData,
 	RoleData
 } from '../types'
-import type { Guild } from 'discord.js-light'
+import type { Guild } from 'discord.js'
 /**
  * Returns an array with the banned members of the guild
  * @param {Guild} guild The Discord guild

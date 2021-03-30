@@ -33,7 +33,7 @@ module.exports = class TriggeredCommand {
       message.channel.startTyping()
     const img = await new DIG.Triggered().getImage(av)
         
-    const attachment = new (require('discord.js-light')).MessageAttachment(img, `triggered-${user.id}.gif`);
+    const attachment = new (require('discord.js')).MessageAttachment(img, `triggered-${user.id}.gif`);
 
       message.quote(message.author,attachment).then(message => {
         message.channel.stopTyping()

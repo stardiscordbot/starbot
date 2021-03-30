@@ -45,7 +45,7 @@ module.exports = class ExemploCommand {
           ctx.font = '30px sans-serif';
           ctx.fillStyle = '#000';
           ctx.fillText(args.join(" ").match(/.{1,20}/g).join("\n"), canvas.width / 50.9, canvas.height / 1.7, 330)
-          const attachment = new (require("discord.js-light")).MessageAttachment(canvas.toBuffer(), `fw-${message.author.id}.png`);
+          const attachment = new (require("discord.js")).MessageAttachment(canvas.toBuffer(), `fw-${message.author.id}.png`);
          
             await message.quote(`${message.author}`, attachment).then(m2 => {
                 message.channel.stopTyping()

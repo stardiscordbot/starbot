@@ -1,16 +1,9 @@
-const { Client, Collection, ChannelManager } = require('discord.js-light');
+const { Client, Collection, ChannelManager } = require('discord.js');
 const config = require("./src/config/json/config.json");
 
 const client = new Client({
   messageCacheMaxSize: 200,
   restTimeOffset: 1,
-  //Caches
-  cacheGuilds: true,
-  cacheChannels: false,
-  cacheOverwrites: false,
-  cacheRoles: true,
-  cacheEmojis: false,
-  cachePresences: false,
   //Intents: GUILDS, GUILD_MESSAGES e GUILD_MEMBERS
   ws: {
     intents: 1539
@@ -24,8 +17,7 @@ const client = new Client({
   shardCount: 2
 })
 
-client.commands = new Collection()
-
+client.commands = new (require("discord.js")).Collection()
 //Carregar comandos handler
 require('./utils/commandHandler')(client)
 //Carregar eventos handler

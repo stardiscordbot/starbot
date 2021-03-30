@@ -16,7 +16,7 @@ module.exports = (client) => {
         }
 
 		idioma = client.lang[idioma];
-		const embed = new (require('discord.js-light')).MessageEmbed()
+		const embed = new (require('discord.js')).MessageEmbed()
 	  	.setAuthor(`${idioma.editLogs.title} ${idioma.editLogs.edited}`, 'https://media.discordapp.net/attachments/798587400871870507/801897320370667520/messageupdate.png')
 			.setTimestamp()
 			.setDescription(

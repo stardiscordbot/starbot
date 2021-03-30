@@ -4,7 +4,7 @@ import type {
 	CreateOptions,
 	LoadOptions
 } from './types/'
-import type { Guild } from 'discord.js-light'
+import type { Guild } from 'discord.js'
 /**
  * Fetches a backyp and returns the information about it
  */

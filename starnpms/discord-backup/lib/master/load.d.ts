@@ -1,5 +1,5 @@
 import type { BackupData, LoadOptions } from '../types'
-import type { Guild } from 'discord.js-light'
+import type { Guild } from 'discord.js'
 /**
  * Restores the guild configuration
  */

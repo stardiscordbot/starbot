@@ -1,6 +1,6 @@
 const webhook = require("../config/json/webhooks.json")
 
-const create = new (require("discord.js-light")).WebhookClient(webhook.gcreate.id, webhook.gcreate.token)
+const create = new (require("discord.js")).WebhookClient(webhook.gcreate.id, webhook.gcreate.token)
 module.exports = (client) => {
     client.on("guildCreate", async guild => {
 
@@ -10,7 +10,7 @@ module.exports = (client) => {
             client.db.set(`idioma-${guild.id}`, `en`)
         }
 
-        const embed = new (require("discord.js-light")).MessageEmbed()
+        const embed = new (require("discord.js")).MessageEmbed()
         .setAuthor(`${guild.name} (${guild.id})`, guild.iconURL())
         .addField(`Dono:`, `\`${dono.tag} (${dono.id})\``)
         .addField(`Membros:`, `\`${guild.memberCount}\``)

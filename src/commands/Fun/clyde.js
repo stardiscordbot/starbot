@@ -1,4 +1,4 @@
-const {MessageAttachment} = require('discord.js-light');
+const {MessageAttachment} = require('discord.js');
 const fetch = require('node-fetch');
 
 module.exports = class Command {

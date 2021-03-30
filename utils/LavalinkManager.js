@@ -51,7 +51,7 @@ module.exports = (client) => {
 		
 	  idioma = client.lang[idioma];
 
-    const npembed = new (require("discord.js-light")).MessageEmbed()
+    const npembed = new (require("discord.js")).MessageEmbed()
     .setDescription(`${idioma.erela.np} \`${track.title.replace(/`/g, '')}\` | \`${track.requester.tag}\``)
     .setColor("F47FFF")
 
@@ -69,7 +69,7 @@ module.exports = (client) => {
       
       idioma = client.lang[idioma];
 
-      const endembed = new (require("discord.js-light")).MessageEmbed()
+      const endembed = new (require("discord.js")).MessageEmbed()
       .setDescription(`${idioma.erela.end}`)
       .setColor("F47FFF")
 

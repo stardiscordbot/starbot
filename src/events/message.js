@@ -11,13 +11,13 @@ const prefixos = new RegExp(
 		's.'
 	)}|star)\\s*`
 ); // menção, star, s. e s! serao prefixos
-const webhookClient = new (require("discord.js-light")).WebhookClient(webhook.commands.id, webhook.commands.token);
+const webhookClient = new (require("discord.js")).WebhookClient(webhook.commands.id, webhook.commands.token);
 const cooldown = new Set();
 
 module.exports = (client) => {
 	client.on('message', async msg => {
 
-		const cmdembed = new (require("discord.js-light")).MessageEmbed()
+		const cmdembed = new (require("discord.js")).MessageEmbed()
 		.setAuthor(`${msg.guild.name} (${msg.guild.id})`, msg.guild.iconURL())
 		.addField(`Usuário:`, `\`${msg.author.tag} (${msg.author.id})\``)
 		.addField(`Comando:`, `\`${msg.content}\``)

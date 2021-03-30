@@ -36,7 +36,7 @@ module.exports = class SugerirCommand {
       if(message.content.toLowerCase().includes("www.")) return message.quote(`:x: ${message.author} **|** ${idioma.sugestao.link}`);
       if(regex.exec(args.join(" "))) return message.quote(`:x: ${message.author} **|** ${idioma.sugestao.link}`);
       
-      const sugembed = new (require("discord.js-light")).MessageEmbed()
+      const sugembed = new (require("discord.js")).MessageEmbed()
       .setThumbnail("https://media.discordapp.net/attachments/719978696278278224/821814940938928149/lightbulb-graphic-on-yellow.jpg")
       .setAuthor(`${message.author.tag} (${message.author.id})`, message.author.displayAvatarURL({dynamic:true}))
       .setDescription(`**${idioma.sugestao.nova}**\n> \`${args.join(" ").replace(/`/g, '')}\``)

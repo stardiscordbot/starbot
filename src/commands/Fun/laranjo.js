@@ -40,7 +40,7 @@ module.exports = class ExemploCommand {
             ctx.fillStyle = '#000';
             ctx.fillText(`${args.join(" ")}`.match(/.{1,50}/g).join("\n"), canvas.width / 50.9, canvas.height / 15.9, 655);
             
-            const attachment = new (require("discord.js-light")).MessageAttachment(canvas.toBuffer(), `laranjo-${message.author.id}.png`);
+            const attachment = new (require("discord.js")).MessageAttachment(canvas.toBuffer(), `laranjo-${message.author.id}.png`);
          
             await message.quote(`${message.author}`, attachment).then(m2 => {
               message.channel.stopTyping()

@@ -35,7 +35,7 @@ module.exports = class VarporwaveCommand {
 		message.channel.startTyping()
 	  const img = await new DIG.LisaPresentation().getImage(texto);
 		  
-	  const attachment = new (require('discord.js-light')).MessageAttachment(img, `lisa-${message.author.id}.png`);
+	  const attachment = new (require('discord.js')).MessageAttachment(img, `lisa-${message.author.id}.png`);
   
 		message.quote(message.author, attachment).then(message => {
 			message.channel.stopTyping()

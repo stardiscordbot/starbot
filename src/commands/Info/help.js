@@ -32,7 +32,7 @@ module.exports = class HelpCommand {
 		let idioma = (await client.db.get(`idioma-${message.guild.id}`)) || 'pt';
 		let categorias = {} 
 		let msg = message;
-		const embed = new (require('discord.js-light')).MessageEmbed(); 
+		const embed = new (require('discord.js')).MessageEmbed(); 
 		switch (idioma) {
 			case 'pt':
 				client.commands.forEach(comando => {
@@ -63,7 +63,7 @@ module.exports = class HelpCommand {
 
 					if(!cmd) return message.quote(`:x: ${message.author} **|** Esse comando não existe`)
 			
-					const help = new (require('discord.js-light')).MessageEmbed()
+					const help = new (require('discord.js')).MessageEmbed()
 					.setTitle(':wave: | ' + cmd.pt.nome.split(' ').map(str => str.slice(0, 1).toUpperCase() + str.slice(1)).join(' '))
 					.addField(':book: Descrição:', `\`${cmd.pt.desc}\`` , false)
 					.addField(':small_blue_diamond: Permissões do bot:', `\`${cmd.permissoes.bot.join('`,`') || `Esse comando não necessita de permissões`}\``, false)
@@ -109,7 +109,7 @@ module.exports = class HelpCommand {
 					if(!cmd) return message.quote(`:x: ${message.author} **|** This command does not exist`)
 			
 				
-					const help = new (require('discord.js-light')).MessageEmbed()
+					const help = new (require('discord.js')).MessageEmbed()
 					.setTitle(':wave: | ' + cmd.en.nome.split(' ').map(str => str.slice(0, 1).toUpperCase() + str.slice(1)).join(' '))
 					.addField(':book: Description:', `\`${cmd.en.desc}\`` , false)
 					.addField(':small_blue_diamond: Bot permissions:', `\`${cmd.permissoes.bot.join('`,`') || `This command does not need permissions`}\``, false)

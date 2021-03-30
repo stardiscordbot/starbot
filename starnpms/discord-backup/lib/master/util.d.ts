@@ -12,7 +12,7 @@ import type {
 	TextChannel,
 	VoiceChannel,
 	NewsChannel
-} from 'discord.js-light'
+} from 'discord.js'
 /**
  * Gets the permissions for a channel
  */

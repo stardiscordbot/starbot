@@ -33,7 +33,7 @@ module.exports = class WantedCommand {
       message.channel.startTyping()
     const img = await new DIG.Wanted().getImage(av)
         
-    const attachment = new (require('discord.js-light')).MessageAttachment(img, `wanted-${user.id}.png`);
+    const attachment = new (require('discord.js')).MessageAttachment(img, `wanted-${user.id}.png`);
 
       message.quote(message.author,attachment).then(mai => {
         message.channel.stopTyping()

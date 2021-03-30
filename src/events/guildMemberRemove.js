@@ -9,7 +9,7 @@ module.exports = (client) => {
 		async function saida(){
     const welcome = await client.db.get(`leave-${member.guild.id}`);
 
-    const embed = new (require('discord.js-light')).MessageEmbed()
+    const embed = new (require('discord.js')).MessageEmbed()
 
     .setTitle(member.guild.name)
     .setColor('ff0000')

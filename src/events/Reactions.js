@@ -30,7 +30,7 @@ module.exports = (client) => {
 
         if(r.emoji.name !== tt) return;
         if(r.emoji.name == tt) {
-            const starembed = new (require("discord.js-light")).MessageEmbed()
+            const starembed = new (require("discord.js")).MessageEmbed()
             .setAuthor(`${r.message.author.tag} (${r.message.author.id})`, r.message.author.displayAvatarURL({dynamic:true}))
             .addField(`${idioma.starboard.cont}`, conteudo)
             .setColor("YELLOW")

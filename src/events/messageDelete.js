@@ -8,7 +8,7 @@ module.exports = (client) => {
         }
 
 		idioma = client.lang[idioma];
-		const embed = new (require('discord.js-light')).MessageEmbed()
+		const embed = new (require('discord.js')).MessageEmbed()
 			.setAuthor(
 				`${idioma.editLogs.title} ${idioma.editLogs.deleted}`, 'https://media.discordapp.net/attachments/793835549667753984/802230763780309022/messagedelete.png')
 			.setTimestamp()
