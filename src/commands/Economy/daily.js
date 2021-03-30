@@ -16,7 +16,7 @@ module.exports = class DailyCommand {
           categoria: '💸 • Economy',
           desc: 'Description'
         },
-      aliases: ['diario', 'd'],
+      aliases: ['diario', 'd', 'work'],
       run: this.run
       }
     }
