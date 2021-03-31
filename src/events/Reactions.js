@@ -8,9 +8,9 @@ module.exports = (client) => {
         //r.message.reactions.forEach((reaction) => {});
         const eURL = {};
         const embeds = r.message.embeds;
-        const msgChannel = client.channels.forge(r.message.channel.id);
+        const msgChannel = client.channels.cache.get(r.message.channel.id);
         const starchannel = await client.db.get(`starboard-${r.message.guild.id}`);
-        const starboard = await client.channels.forge(starchannel);
+        const starboard = await client.channels.cache.get(starchannel);
         const attachments = r.message.attachments;
         const tt = '⭐';
 

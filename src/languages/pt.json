@@ -174,5 +174,9 @@
   },
   "stonks": {
     "limit": "voce passou de 50 caracteres"
+  },
+  "blackl": {
+    "author": "<:iala:815580061579083846> Você foi banido por quebrar os termos de Uso da Star™",
+    "description": "**<a:Rosa_seta_pg:815580015285501954> Você não pode executar nenhum comando, ou utilizar os recursos da Star™ \n<a:Rosa_seta_pg:815580015285501954> Se acha que essa punição foi injusta, entre em contato com `MrAndre#3077` ou entre em meu [servidor de suporte](https://discord.gg/5uv5ecDhdE) e explique a situação para o suporte.**"
   }
 }

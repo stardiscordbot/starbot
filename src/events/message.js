@@ -52,7 +52,15 @@ module.exports = (client) => {
         client.db.push(`blacklist`, client.user.id);
       }
 
-			if(botban.includes(msg.author.id)) return;
+	  const ban = new (require("discord.js")).MessageEmbed()
+	  .setAuthor(idioma.blackl.author)
+	  .setDescription(idioma.blackl.description)
+	  .setFooter('Star™ 2021')
+	  .setTimestamp()
+	  .setThumbnail(client.user.displayAvatarURL()
+	  )
+	  .setColor('#ff00c2')
+
 			if (!prefixos.test(message.content.toLowerCase())) return;
 
 			//Procurar prefixo usado na mensagem com regex
@@ -74,7 +82,9 @@ module.exports = (client) => {
 
 		
       
-                        if(!comando) return 
+          if(!comando) return 
+		  if(botban.includes(msg.author.id)) return msg.author.send(ban).catch(() => msg.quote(ban))
+
 			//Verificar se o membro possui perms
 			if (!msg.member.permissions.has(comando.permissoes.membro))
 				return msg.channel.send(

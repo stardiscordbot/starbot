@@ -41,11 +41,11 @@ module.exports = (client) => {
     .on("nodeError", (node, error) => console.log(c.red(`[LAVALINK] Node "${node.options.identifier}" had an error: ${error.message}`)))
     
     .on("playerMove", (player, currentChannel, newChannel) => {
-      player.voiceChannel = client.channels.forge(newChannel);
+      player.voiceChannel = client.channels.cache.get(newChannel);
     })
     .on("trackStart", async (player, track) => {
     
-    const channel = client.channels.forge(player.textChannel);
+    const channel = client.channels.cache.get(player.textChannel);
 
     let idioma = await client.db.get(`idioma-${channel.guild.id}`) || 'pt';
 		
@@ -63,7 +63,7 @@ module.exports = (client) => {
     
     .on("queueEnd", async (player) => {
 
-      const channel = client.channels.forge(player.textChannel);
+      const channel = client.channels.cache.get(player.textChannel);
 
       let idioma = await client.db.get(`idioma-${channel.guild.id}`) || 'pt';
       

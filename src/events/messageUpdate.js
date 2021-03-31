@@ -33,7 +33,7 @@ module.exports = (client) => {
 
 		let logs = await client.db.get(`logs-${oldMessage.guild.id}`);
 		if (logs) {
-			let canal = await client.channels.forge(logs);
+			let canal = await client.channels.cache.get(logs);
 			canal.fetchWebhooks().then(hook => {
 				let webhook = hook.first();
 

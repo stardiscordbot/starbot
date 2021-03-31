@@ -174,5 +174,10 @@
   },
   "stonks": {
     "limit": "you have exceeded the 50 character limit."
+  },
+  "blackl": {
+    "author": "<:iala:815580061579083846> You have been banned for breaking Star™ Terms of Use",
+    "description": "**<a:Rosa_seta_pg:815580015285501954> You cannot execute any commands, or use the features of Star™ \n<a:Rosa_seta_pg:815580015285501954> If you think this punishment was unfair please contact `MrAndre#3077` or enter my [support server](https://discord.gg/5uv5ecDhdE)**"
   }
+
 }
