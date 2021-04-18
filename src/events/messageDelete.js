@@ -15,7 +15,7 @@ module.exports = (client) => {
 			.setDescription(
 				`**${idioma.editLogs.user}**: ${message.author}\n**${idioma.editLogs.canal}**: ${
 					message.channel
-				}\n**URL:** [${idioma.editLogs.click}](${message.url})`
+				}\n`
 			)
 			.setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
 			.setColor('ff0000')
