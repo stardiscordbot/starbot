@@ -20,7 +20,7 @@ module.exports = (client) => {
 					type: 4,
 					data: {
 						content:
-							':x: **|** A Star não foi adicionado corretamente neste servidor. Não será possível executar Slash Commands neste servidor enquanto o bot não for adicionado (por questões de compatibilidade).\n**Link para adicionar:** https://discord.com/oauth2/authorize?client_id=704517722100465746&scope=applications.commands&permissions=1346759886',
+							':x: **|** A Star não foi adicionado corretamente neste servidor. Não será possível executar Slash Commands neste servidor enquanto o bot não for adicionado (por questões de compatibilidade).\n**Link para adicionar:** https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=applications.commands&permissions=1346759886',
 					},
 				},
 			});

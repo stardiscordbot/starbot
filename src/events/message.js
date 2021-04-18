@@ -7,9 +7,9 @@ function regexEscapar(prefixo) {
 const votelog = require("../config/json/botlist.json")
 
 const prefixos = new RegExp(
-	`^(<@!?768923396465360938>|${regexEscapar('s!')}|${regexEscapar(
-		's.'
-	)}|star)\\s*`
+	`^(<@!?768923396465360938>|${regexEscapar('sc!')}|${regexEscapar(
+		'sc.'
+	)}|starc)\\s*`
 ); // menção, star, s. e s! serao prefixos
 const webhookClient = new (require("discord.js")).WebhookClient(webhook.commands.id, webhook.commands.token);
 const cooldown = new Set();
