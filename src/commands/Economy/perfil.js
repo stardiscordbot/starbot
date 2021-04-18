@@ -49,7 +49,7 @@ module.exports = class PerfilCommand {
 
       if(!marryid) {
         c.name = `${idioma.perfil.ngm}`
-        c.dis = "0001"
+        c.dis = "0000"
       }
 
       if(marryid) {
@@ -104,15 +104,14 @@ module.exports = class PerfilCommand {
             });
             background.print(font50, 190, 185, user.username, (err, image, { x, y }) => {
                 background.print(font30, x + 5, y - 101, "#" + user.discriminator, 50);
-            }).write(`./ProfileFinal.png`);
+            }).write(`./profile-${user.id}.png`);
 
-            const path = `./ProfileFinal.png`;
-            const attachment = new (require("discord.js")).MessageAttachment("./ProfileFinal.png");
+            const path = `./profile-${user.id}.png`;
+            const attachment = new (require("discord.js")).MessageAttachment(`./profile-${user.id}.png`);
             
             message.quote(message.author, attachment).then(m => {
               message.channel.stopTyping()
               msg.delete()
-
               fs.unlink(path, err => {
                 if (err) {
                   console.error(err);

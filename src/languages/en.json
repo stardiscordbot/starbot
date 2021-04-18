@@ -1,4 +1,8 @@
 {  
+  "erela": {
+    "np": "🎧 Now Playing:",
+    "end": "<:power:817075414961881099> The queue is over, I'm leaving"
+  },
   "aki": {
   "reg": "en",
   "q": "Question:",
@@ -29,7 +33,11 @@
     "end": "<:power:817075414961881099> The queue is over, I'm leaving",
     "solo": "😔 Unfortunately I was alone on the channel, I'm leaving",
     "noresults": ":x: Unfortunately I didn't find any music related to: ",
-    "dis": "<:power:817075414961881099>  Music stopped, I was disconnected from the voice channel"
+    "dis": "<:power:817075414961881099>  Music stopped, I was disconnected from the voice channel",
+    "noc1": ":x: You need to be on the same voice channel as me to perform music commands.",
+    "noc2": ":x: You need to be connected to a voice channel to perform music commands.",
+    "not": "I am not playing anything on this server.",
+    "stop": "<:power:817075414961881099> I stopped playing, I'm leaving."
   },
   "perfil": {
     "ngm": "NOBODY",
@@ -79,7 +87,7 @@
     "coletou": "You've already collected your daily reward, collect it again in **%th:%tm:%ts**"
   },
   "play": {
-    "add": "<:adicionado:817077113453543424> Added the queue:",
+    "add": "<:st_music_adicionado:830833070252097596> Added the queue:",
     "nada": "I need some argument, use: `%pplay <music | url> `"
   },
   "nodes": {

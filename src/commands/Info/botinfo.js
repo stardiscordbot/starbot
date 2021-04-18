@@ -7,16 +7,16 @@ module.exports = class ExemploCommand {
           dono: true //Se apenas nos devs podem usar o comando
         },
         pt: {
-          nome: 'exemplo',
-          categoria: '(Emoji) Testes',
+          nome: 'botinfo',
+          categoria: '📖 • Info',
           desc: 'Descrição'
         },
         en: {
-          nome: 'exemple',
-          categoria: '(Emoji) Testing',
+          nome: 'botinfo',
+          categoria: '📖 • Info',
           desc: 'Description'
         },
-      aliases: ['example'],
+      aliases: ['bi', 'star', 'starinfo', 'si'],
       run: this.run
       }
     }

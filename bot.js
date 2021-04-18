@@ -6,7 +6,7 @@ const client = new Client({
   restTimeOffset: 1,
   //Intents: GUILDS, GUILD_MESSAGES e GUILD_MEMBERS
   ws: {
-    intents: 1539
+    intents: 1667
   },
   //Partials
   partials: [
@@ -41,6 +41,6 @@ require("./utils/multiLanguage")(client)
 
 client.once('ready', () =>
      require('./SlashCommands')(client)
-)
+);
 
 client.login(config.discord.token)

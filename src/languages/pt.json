@@ -1,4 +1,8 @@
 { 
+  "erela": {
+    "np": "🎧 Tocando Agora:",
+    "end": "<:power:817075414961881099> A Fila acabou, estou saindo"
+  },
   "aki": {
   "reg": "pt",
   "q": "Pergunta:",
@@ -29,7 +33,11 @@
     "end": "<:power:817075414961881099> A Fila acabou, estou saindo",
     "solo": "😔 Infelizmente fiquei sozinha no canal, estou saindo",
     "noresults": ":x: Infelizmente não encotrei nenhuma música relacionada a: ",
-    "dis": "<:power:817075414961881099> A Música parou, fui desconectada do canal de voz"
+    "dis": "<:power:817075414961881099> A Música parou, fui desconectada do canal de voz",
+    "noc1": "Você precisa estar no mesmo canal de voz que eu para executar comandos de música.",
+    "noc2": "Você precisa estar conectado em algum canal de voz para executar comandos de música.",
+    "not": "Não estou tocando nada neste servidor.",
+    "stop": "<:power:817075414961881099> Parei de tocar, estou saindo"
   },
   "perfil": {
     "ngm": "NINGUÉM",
@@ -79,7 +87,7 @@
     "coletou": "Você já coletou sua recompensa diária, colete-a novamente em **%th:%tm:%ts**"
   },
   "play": {
-    "add": "<:adicionado:817077113453543424> Adicionado a fila:",
+    "add": "<:st_music_adicionado:830833070252097596> Adicionado a fila:",
     "nada": "Preciso de algum argumento, utilize: `%pplay <música | url>`"
   },
   "nodes": {

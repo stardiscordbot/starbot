@@ -72,7 +72,7 @@ module.exports = (client) => {
       const endembed = new (require("discord.js")).MessageEmbed()
       .setDescription(`${idioma.erela.end}`)
       .setColor("F47FFF")
-
+      
     client.channels.cache
       .get(player.textChannel)
       .send(endembed);

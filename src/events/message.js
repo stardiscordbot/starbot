@@ -122,7 +122,7 @@ module.exports = (client) => {
 				})
 			} catch (e) {
 				console.log(e);
-				return msg.reply(`deu ruim.\n\`\`\`${e.toString()}\`\`\``);
+				return msg.quote(`:x: ${msg.author} **|** An error occurred while executing this command, sorry for the inconvenience.\n\`\`\`js\n${e.toString()}\n\`\`\``);
 			}
 		}
 	});

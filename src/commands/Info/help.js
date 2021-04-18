@@ -73,7 +73,7 @@ module.exports = class HelpCommand {
 					.setFooter('Star™ (c) 2021')
 			
 					if(cmd.aliases.join(',') !== ''){
-						help.addField(':twisted_rightwards_arrows: Sinônimos:',  `\`${cmd.aliases.join('`,`')}\``, false )
+						help.addField(':twisted_rightwards_arrows: Sinônimos:',  `\`${cmd.aliases.join('`|`')}\``, false )
 					}
 				
 					return msg.quote(help)
@@ -92,13 +92,13 @@ module.exports = class HelpCommand {
 				});
 				embed.setColor(color);
 				embed.setTitle(`Command List • ${client.user.username}`);
-				embed.setDescription(`> My current prefix is: \`${prefixoCerto}\`\n> If you have any questions, please contact my support: [Click Here](https://discord.gg/2pFH6Yy)\n> I was developed by: \`${adg.tag}, ${bonee.tag}, ${davi.tag}\`.`);
+				embed.setDescription(`> My current prefix is: \`${prefixoCerto}\`\n> If you have any questions, please contact my support: [Click Here](https://discord.gg/2pFH6Yy)\n> I was developed by: \`${adg.tag}, ${davi.tag}\`.`);
 				embed.setFooter(
 					`Used by: ${msg.author.tag}`,
 					msg.author.displayAvatarURL()
 				);
 				for (var categoria in categorias) {
-					embed.addField(categoria, `${categorias[categoria].join(' ,')}`);
+					embed.addField(categoria, `${categorias[categoria].join(' | ')}`);
 				}
 
 				if(args[0]) {
