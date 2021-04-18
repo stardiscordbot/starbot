@@ -23,7 +23,6 @@ module.exports = (client) => {
 		.addField(`Comando:`, `\`${msg.content}\``)
 		.addField(`URL:`, `\`${msg.url}\``)
 		.setColor("GREEN")
-
 	
 
 		var message = msg;

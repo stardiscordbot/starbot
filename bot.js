@@ -14,7 +14,7 @@ const client = new Client({
       'CHANNEL',
       'REACTION'
   ],
-  shardCount: 2
+  //shardCount: 2
 })
 
 client.commands = new (require("discord.js")).Collection()
@@ -32,9 +32,15 @@ require('./utils/database2')
 require("./utils/Utils")(client)
 //Carregar sistema de sorteios
 require("./utils/giveaways")(client)
+//Carregar sistema de Musica
+require("./utils/LavalinkManager")(client)
 //Carregar sistema de reações
 require("./utils/reactionroles")(client)
 //Carregar sistema de multi idiomas
 require("./utils/multiLanguage")(client)
+
+client.once('ready', () =>
+     require('./SlashCommands')(client)
+)
 
 client.login(config.discord.token)

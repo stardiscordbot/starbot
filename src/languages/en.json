@@ -10,6 +10,9 @@
   "yay": "I love playing with you!",
   "res": "[yes (**y**) / no (**n**)]"
   },
+  "backup": {
+    "criando": "Creating Backup"
+  },
   "starboard": {
     "cont": "Content:"
   },
@@ -139,15 +142,6 @@
   },
   "vaporwave": {
     "error": "I need you to give me some text, try: `%pvaporwave <text>`"
-  },
-  "backup": {
-    "createdUser": "The backup was created, to load use `%pbackup load %id`!",
-    "created": "The backup was created and the information was sent successfully!",
-    "idError": "You must specify a valid backup ID!",
-    "confirm": "When the backup is loaded, all the channels, roles, etc. will be replaced! Type `confirm` to confirm!",
-    "time": "Response time is over, canceling the backup!",
-    "args": "`backup create - Create a Backup\nbackup load - Load a backup\nbackup info - Shows Some Backup Information`",
-    "info": "Create & load private backups of your servers"
   },
   "image": {
     "editando": "✍️ %u **|** editing",

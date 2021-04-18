@@ -13,7 +13,9 @@ module.exports = (client) => {
         sv.channels.cache.sweep(c=>!client.channels.cache.get(c.id))
       }
     },10000)
+    client.manager.init(client.user.id);
   })
+  client.on("raw", (d) => client.manager.updateVoiceState(d));
   //global.gc()
 }
 //BONEE e Davi

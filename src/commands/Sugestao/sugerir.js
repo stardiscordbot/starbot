@@ -43,7 +43,8 @@ module.exports = class SugerirCommand {
       .setColor("YELLOW")
       .setFooter(`${idioma.sugestao.footer.replace("%u", client.user.username)}`, client.user.displayAvatarURL({dynamic:true}))
       .setTimestamp()
-      client.channels.forge(sugchannel).send(sugembed).then(m => {
+      message.react("✔️")
+      client.channels.cache.get(sugchannel).send(sugembed).then(m => {
           m.react("👍")
           m.react("👎")
       })

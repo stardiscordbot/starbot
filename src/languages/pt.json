@@ -10,6 +10,9 @@
   "yay": "Amei brincar com você!",
   "res": "[sim (**s**) / não (**n**)]"
   },
+  "backup": {
+    "criando": "Criando Backup"
+  },
   "starboard": {
     "cont": "Conteúdo:"
   },
@@ -139,15 +142,6 @@
   },
   "vaporwave": {
     "error": "Eu preciso que você me dê algum texto, tente: `%pvaporonda <texto>`"
-  },
-  "backup": {
-    "createdUser": "O backup foi criado, para carregar utilize `%pbackup load %id`!",
-    "created": "O backup foi criado e as informações foram enviadas com sucesso!",
-    "idError": "Você deve especificar um ID de backup válido!",
-    "confirm": "Quando o backup for carregado, todos os canais, funções, etc. serão substituídos! Digite `confirmar` para confirmar!",
-    "time": "O tempo de resposta acabou, cancelando o backup!",
-    "args": "`backup create - Cria um Backup\nbackup load - Carrega um backup\nbackup info - Mostra Informações de Algum Backup`",
-    "info": "Crie & carregue backups privados de seus servidores"
   },
   "image": {
     "editando": "✍️ %u **|** editando",

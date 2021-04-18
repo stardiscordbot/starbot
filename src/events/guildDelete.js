@@ -6,11 +6,21 @@ module.exports = (client) => {
 
         const dono = await client.users.fetch(guild.ownerID)
         
-        client.db.delete(`idioma-${guild.id}`);
-        client.db.delete(`logs-${guild.id}`);
-        client.db.delete(`leave-${guild.id}`);
-        client.db.delete(`welcome-${guild.id}`);
-        client.db.delete(`autorole-${guild.id}`);
+        client.db.delete(`idioma-${guild.id}`).catch((e) => {
+            console.log(`${guild.id} | No Idioma`)
+        })
+        client.db.delete(`logs-${guild.id}`).catch((e) => {
+            console.log(`${guild.id} | No Logs`)
+        });
+        client.db.delete(`leave-${guild.id}`).catch((e) => {
+            console.log(`${guild.id} | No Leave`)
+        });
+        client.db.delete(`welcome-${guild.id}`).catch((e) => {
+            console.log(`${guild.id} | No Welcome`)
+        });
+        client.db.delete(`autorole-${guild.id}`).catch((e) => {
+            console.log(`${guild.id} | No Autorole`)
+        });
 
         const embed = new (require("discord.js")).MessageEmbed()
         .setAuthor(`${guild.name} (${guild.id})`, guild.iconURL())

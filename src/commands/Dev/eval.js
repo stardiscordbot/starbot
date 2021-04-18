@@ -27,10 +27,11 @@ module.exports = class EvalCommand {
     if(!args.length) return msg.channel.send("Da um eval ai meu patrão")
 
     try {
-      var ram = process.memoryUsage().rss/1024/1024
+      var ram = process.memoryUsage().rss/1024/1024;
       let bot = client;
       let c = client;
       let star = client;
+      this.client = client
       let message = msg;
       let m = msg;
       let code = await eval(args.join(" "));
