@@ -28,6 +28,43 @@ module.exports = (client) => {
 		var message = msg;
 
 		if (msg.author.bot) return;
+		/*
+		const nqnn = client.db.get(`nqn-${message.guild.id}`)
+	if(nqnn) {
+		let texto = msg.content
+		if (texto.includes(":")) {
+    	for (var emoji of client.emojis.cache.values()) {
+        var regex = new RegExp(`:${emoji.name}:`, 'g')
+        if (texto.includes(`:${emoji.name}:`)) texto = texto.replace(regex, emoji)//.toString())
+    	}
+			let canal = message.channel
+			canal.fetchWebhooks().then(hook => {
+				let webhook = hook.first();
+				if (!webhook) {
+					canal.createWebhook('Star (NQN)', {
+							avatar: client.user.displayAvatarURL({ dynamic: true }),
+							reason: 'NQN'
+						}).then(w => {
+						if(texto!=msg.content) w.send(`${texto}`, {
+						username: message.author.username,
+						avatarURL: message.author.displayAvatarURL({dynamic:true}),
+					}).then(a => {
+						msg.delete()
+					});
+					})
+				}
+				if (webhook) {
+					webhook.send(texto, {
+						username: message.author.username,
+						avatarURL: message.author.displayAvatarURL({dynamic:true}),
+					}).then(m => {
+						msg.delete()
+					});
+				}
+			});
+		}
+	}
+	*/
 
 		let regexMention = new RegExp(`^<@!?${client.user.id}>$`);
 
@@ -126,6 +163,5 @@ module.exports = (client) => {
 			}
 		}
 	});
-};
-
+};	
 // - BONEE e Davi
