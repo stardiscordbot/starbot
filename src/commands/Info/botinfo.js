@@ -22,7 +22,22 @@ module.exports = class ExemploCommand {
     }
     
     async run(client, message, args, prefixo, idioma) {
-      return message.channel.send(`demostração de comando em ação:\nargs: ${args.join(' ')}\nprefixo: ${prefixo}`)
+      
+      let servidores = await client.shard.fetchClientValues('guilds.cache.size')
+      let total_servers = servidores.reduce((prev, val) => prev + val)
+      let embed = new (require('discord.js')).MessageEmbed()
+      .setAuthor(client.user.username, client.user.displayAvatarURL({ size: 2048 }))
+      .setDescription(`<:st_host:830841046153691197> Host: VPS [Linux](https://discord.gg/8tapRMCm)`)
+      .setColor("BLUE")
+      .addFields(
+          { name: "Guilds", value: `**${total_servers}** Guilds`, inline: true },
+          { name: "Uptime", value: `**${client.utils.time(client.uptime)}**`, inline: true },
+          { name: "Ping", value: `**${Math.round(client.ws.ping)}**ms`, inline: true },
+          { name: "Memory", value: `**${client.utils.formatBytes(process.memoryUsage().rss)}**`, inline: true },
+          { name: "Shards", value: `Shard: ${client.shard ? client.shard.count : '1'} **[${eval(message.guild.shard.id+1)}]**`, inline: true },
+      )
+      return message.quote(embed)
+      
     }
   }
   

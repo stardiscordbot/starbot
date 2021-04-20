@@ -1,0 +1,180 @@
+{  
+    "erela": {
+      "np": "🎧 Reproduciendo ahora:",
+      "end": "<:power:817075414961881099> Se acabó la cola, me voy"
+    },
+    "aki": {
+    "reg": "es",
+    "q": "Pregunta:",
+    "r": "Respuestas:",
+    "i": "Akinator inicial",
+    "is": "¿Es este tu personaje?",
+    "win": "¡Estupendo! Adivinado una vez más.",
+    "nowin": "Uh eres ganador(a)",
+    "yay": "¡Amo jugar contigo!",
+    "res": "[yes (**y**) / no (**n**)]"
+    },
+    "backup": {
+      "criando": "Creando copia de seguridad"
+    },
+    "starboard": {
+      "cont": "Content:"
+    },
+    "rr": {
+      "noargs": "Arguments are missing, use `%prr <@cargo> <:emoji:> [MESSAGE ID]`",
+      "desc": "Creates a Reaction Role where members can win certain positions by reacting on the given message.",
+      "normal": "Normal reaction system, where the user can take more than one role that is configured in the message.",
+      "toggle": "Toggle reaction system, where the user can only take a role of all the options given.",
+      "noargs2": "Arguments are missing, use `%prr delete <:emoji:> <MESSAGE ID>`",
+      "delete": "Deletes some role from the reaction system."
+    },
+    "player": {
+      "np": "🎧 Now Playing:",
+      "end": "<:power:817075414961881099> The queue is over, I'm leaving",
+      "solo": "😔 Unfortunately I was alone on the channel, I'm leaving",
+      "noresults": ":x: Unfortunately I didn't find any music related to: ",
+      "dis": "<:power:817075414961881099>  Music stopped, I was disconnected from the voice channel",
+      "noc1": ":x: You need to be on the same voice channel as me to perform music commands.",
+      "noc2": ":x: You need to be connected to a voice channel to perform music commands.",
+      "not": "I am not playing anything on this server.",
+      "stop": "<:power:817075414961881099> I stopped playing, I'm leaving."
+    },
+    "perfil": {
+      "ngm": "NOBODY",
+      "desc": "Star is my friend, did you know that you can change this using \"%paboutme\"?",
+      "comp": "Click on `🛒` to buy",
+      "succ": "Background purchased successfully",
+      "no": "You don't have enough money to buy this background"
+    },
+    "sugestao": {
+      "insertChannel": "You did not specify a channel, run: `%pset-suggestions <#channel | channel id | disable>`.",
+      "success": "Alright, I will send all suggestions to the `%canal` automatically.",
+      "disabled": "The suggestions system was disabled successfully.",
+      "nocanal": "There is no suggestion channel set on that server, seven or ask someone to set.",
+      "nada": "You did not write anything, for the convenience of everyone I will not send the suggestion.",
+      "nova": "💡  »  New Suggestion",
+      "link": "For everyone’s convenience, don’t send links for suggestions.",
+      "footer": "Suggestion System, %u"
+    },
+    "giveaway": {
+      "sec": "seconds",
+      "min": "minutes",
+      "hrs": "hours",
+      "day": "days",
+      "term": "Ended at",
+      "host": "Hosted by: {user}",
+      "win": "winner(s)",
+      "wins": "Congratulations, {winners}! You won **{prize}**!\n{messageURL}",
+      "react": "React with 🎉 to participate!",
+      "restante": "Time remaining:",
+      "no": "Giveaway cancelled, no valid participations",
+      "give": "GIVEAWAY",
+      "giveend": "GIVEAWAY ENDED",
+      "start": "You did not use the command correctly, use: `%pgiveaway [time (10s, 10m)] [winners (1, 1w)] [prize (photos of kittens)]`, do not include **[]** or **()**."
+    },
+    "marry": {
+      "deseja": "want to marry you, do you accept?",
+      "vc": "You cannot marry yourself.",
+      "eu": "I don't want to marry you and by the way, I'm only 13 years old.",
+      "ja": "already married, don’t worry, one hour you can do it."
+    },
+    "sobre": {
+      "nada": "I need some argument, use: `%paboutme <text>`",
+      "alt": "About changed to: `%t`"
+    },
+    "daily": {
+      "coletado": "You collected **%m yens** daily, come back tomorrow and collect again.",
+      "coletou": "You've already collected your daily reward, collect it again in **%th:%tm:%ts**"
+    },
+    "play": {
+      "add": "<:st_music_adicionado:830833070252097596> Added the queue:",
+      "nada": "I need some argument, use: `%pplay <music | url> `"
+    },
+    "nodes": {
+      "memoria": "Memory usage"
+    },
+    "avatar": {
+      "from": "Avatar from:",
+      "unknown": "Unknown user."
+    },
+    "editLogs": {
+      "old": "Message after editing:",
+      "new": "Message before editing:",
+      "user": "User",
+      "click": "Click here",
+      "deleted": "[deleted]",
+      "edited": "[edited]",
+      "canal": "Channel",
+      "title": "Message Logs",
+      "content": "Content"
+    },
+    "multiLang": {
+    "unknownLanguage": "Unknown language.",
+      "insertLang": "You did not specify a language. To change the bot language, run `%planguage <portuguese | english>`"
+    },
+    "autoRole": { 
+      "insertRole": "You did not specify a role, run: `%pautorole <@role | role id | disable>.`",
+      "success": "Alright, now members that join server, will get the role `%cargo` added automatically.",
+      "disabled": "AutoRole was disabled successfully."
+    },
+    "welcome": {
+      "insertChannel": "You have not specified a channel, use: `%pwelcome <#channel | id channel | disable>`.",
+      "success": "Okay, I will automatically send all welcome messages to the `%canal`.",
+      "disabled": "The welcome messages were successfully deactivated.",
+      "message": "%m welcome to the **%g** server, currently we have **%c** members! Hope you have fun with us ❤️"
+    },
+    "leave": {
+      "insertChannel": "You have not specified a channel, use: `%pleave <#channel | id channel | disable>`.",
+      "success": "Okay, I will automatically send all leave messages to the `%canal`.",
+      "disabled": "The leave messages were successfully deactivated.",
+      "message": "%m left the server. Now we have **%c** members."
+    },
+    "starboards": {
+      "insertChannel": "You did not specify a channel, use: `%pstarboard <#channel | id channel | disable>`.",
+      "success": "Okay, I'll send all the starboard to the `%canal` automatically.",
+      "disabled": "The starboard has been successfully deactivated."
+    },
+    "guildLogs": {
+      "insertChannel": "You did not specify a channel, run: `%plogs <#channel | channel id | disable>`.",
+      "success": "Alright, I will send all logs to the `%canal` automatically.",
+      "disabled": "The logs system was disabled successfully."
+    },
+    "mention": {
+      "response": "Hello **%u**! See my commands by using `star help` or `s!help`"
+    },
+    "slowmode": {
+      "time": "Enter the time in seconds to be the new slow mode. (** 0 to 21600 **).",
+     "NaN": "This is not a number.",
+     "lento": "Slowmode defined to `%tempo seconds`.",
+     "error": "Could not change the slowmode."
+    },
+    "vaporwave": {
+      "error": "I need you to give me some text, try: `%pvaporwave <text>`"
+    },
+    "image": {
+      "editando": "✍️ %u **|** editing",
+      "args": "✍️ %u **|** I need you to give me some argument so that I can edit",
+      "long": "✍️ %u **|** Your message is too long, try to reduce it to 300 characters",
+      "achivment": "Achievement Unlocked!"
+    },
+    "error": {
+      "dm": "❌ %u **|** I was unable to send the message in your dm, check if it is open or if I am blocked"
+    },
+    "tradutor": {
+      "lang": "You need to specify the language, example: %translator **en** Oi",
+      "text": "You need to specify the text, example: %translator en  **Oi** "
+    },
+    "cmm": {
+      "text": "I need you to specify the text."
+    },
+    "eject": {
+      "sim": "Ejection Simulator"
+    },
+    "hug": {
+      "acaba": "just hugged",
+      "user": "Mention a user to hug"
+    },
+    "stonks": {
+      "limit": "you have exceeded the 50 character limit."
+    }
+  }

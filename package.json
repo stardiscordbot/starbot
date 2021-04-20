@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.5.0",
+    "@google-cloud/vision": "^2.3.1",
     "aki-api": "^5.2.1",
     "bufferutil": "^4.0.3",
     "canvas": "^2.6.1",
@@ -19,6 +20,7 @@
     "dblapi.js": "^2.4.1",
     "discord-giveaways": "^4.4.3",
     "discord-image-generation": "^1.4.7",
+    "discord-slash-commands-client": "^1.1.1",
     "discord.js": "^12.5.3",
     "discord.js-collector": "^1.8.9",
     "erela.js": "^2.3.3",

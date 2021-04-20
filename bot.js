@@ -1,4 +1,5 @@
 const { Client, Collection, ChannelManager } = require('discord.js');
+const interactions = require("discord-slash-commands-client");
 const config = require("./src/config/json/config.json");
 
 const client = new Client({
@@ -18,10 +19,22 @@ const client = new Client({
 })
 
 client.commands = new (require("discord.js")).Collection()
+client.on("ready", () => {
+
+client.slash = new interactions.Client(
+  client.token,
+  client.user.id
+);
+
+})
+//Carregar api do google
+require("./google")(client)
+
 //Carregar comandos handler
 require('./utils/commandHandler')(client)
 //Carregar eventos handler
 require('./utils/eventHandler')(client)
+
 //Carregar DB
 require('./utils/database')(client)
 //Carregar Botlists
@@ -38,7 +51,6 @@ require("./utils/LavalinkManager")(client)
 require("./utils/reactionroles")(client)
 //Carregar sistema de multi idiomas
 require("./utils/multiLanguage")(client)
-
 client.once('ready', () =>
      require('./SlashCommands')(client)
 );

@@ -48,7 +48,7 @@ module.exports = class ExemploCommand {
           if (!player.playing && !player.paused && !player.queue.size) player.play()
           
           const embed = new (require("discord.js")).MessageEmbed()
-          .setDescription(`${idioma.play.add} \`${res.tracks[0].title.replace(/`/g, '')}\` | \`${message.author.username.replace(/`/g, '')}\``)
+          .setDescription(`${idioma.play.add} \`${res.tracks[0].title.replace(/`/g, '')}\` | \`${message.author.tag.replace(/`/g, '')}\``)
           .setColor("F47FFF")
           return message.channel.send(embed);
 
