@@ -1,3 +1,5 @@
+// Feito por Veric#0311 | https://github.com/davipatricio/EasyInteractionsJS
+
 module.exports = (client) => {
 	const Discord = require('discord.js');
 	const APIMessage = Discord.APIMessage;
