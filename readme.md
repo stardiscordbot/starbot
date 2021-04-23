@@ -6,6 +6,17 @@
 </a>
 </p>
 
+## 📋 A multifunctional bot for discord
+- Autorole
+- MessageLogs
+- Welcome
+- Goodbye
+- StarBoard
+- ReactionRoles
+- Giveaways
+- SlashCommands
+- Clusters
+- Shards
 ## 🤔 What can you do?
 > I have several features, among them the preferred ones are:<br>
 ```Autorole - Autorole is here for you to give jobs to new members of your server automatically when they join the server. No more giving positions to newbies manually!```<br><br>```MessageLog - Keep an eye on everything on your server with the message logs, with them you will know deleted messages, edited to suddenly prove to that user that he really said this.```
