@@ -1,4 +1,4 @@
-module.exports = class ExemploCommand {
+module.exports = class BotinfoCommand {
     constructor(){
       return {
         permissoes: {
@@ -9,12 +9,12 @@ module.exports = class ExemploCommand {
         pt: {
           nome: 'botinfo',
           categoria: '📖 • Info',
-          desc: 'Descrição'
+          desc: 'Mostra as informações do bot'
         },
         en: {
           nome: 'botinfo',
           categoria: '📖 • Info',
-          desc: 'Description'
+          desc: 'Show the botinfo'
         },
       aliases: ['bi', 'star', 'starinfo', 'si'],
       run: this.run

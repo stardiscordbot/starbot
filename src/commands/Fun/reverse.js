@@ -1,6 +1,6 @@
 
 
-module.exports = class ExemploCommand {
+module.exports = class ReverseCommand {
     constructor(){
       return {
         permissoes: {

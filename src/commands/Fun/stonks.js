@@ -1,6 +1,6 @@
 const jimp = require("jimp")
 
-module.exports = class ExemploCommand {
+module.exports = class StonksCommand {
     constructor(){
       return {
         permissoes: {

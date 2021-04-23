@@ -1,4 +1,4 @@
-module.exports = class ExemploCommand {
+module.exports = class LaranjoCommand {
     constructor(){
       return {
         permissoes: {
@@ -16,7 +16,7 @@ module.exports = class ExemploCommand {
           categoria: '(Emoji) Testing',
           desc: 'Create a laranjo meme'
         },
-      aliases: ['example'],
+      aliases: ['laranjo', 'laranja'],
       run: this.run
       }
     }

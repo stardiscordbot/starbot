@@ -1,7 +1,5 @@
-const { MessageEmbed, MessageAttachment } = require("discord.js");
 const fetch = require('node-fetch');
-
-module.exports = class ExemploCommand {
+module.exports = class TrumpCommand {
     constructor(){
       return {
         permissoes: {
@@ -38,7 +36,7 @@ module.exports = class ExemploCommand {
         try {
             let res = await fetch(encodeURI(`https://nekobot.xyz/api/imagegen?type=trumptweet&text=${text}`));
             let json = await res.json();
-            let attachment = new MessageAttachment(json.message, `trump-${message.author.id}.png`);
+            let attachment = new (require("discord.js")).MessageAttachment(json.message, `trump-${message.author.id}.png`);
 
             message.quote(message.author, attachment).then(m2 => {
               message.channel.stopTyping()

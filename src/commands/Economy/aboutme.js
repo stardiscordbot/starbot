@@ -1,4 +1,4 @@
-module.exports = class ExemploCommand {
+module.exports = class AboutmeCommand {
     constructor(){
       return {
         permissoes: {
@@ -32,4 +32,4 @@ module.exports = class ExemploCommand {
     }
   }
   
-  //Nome de quem fez ou ajudou
+  //ADG

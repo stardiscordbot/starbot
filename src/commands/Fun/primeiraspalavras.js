@@ -1,4 +1,4 @@
-module.exports = class ExemploCommand {
+module.exports = class FirstwordsCommand {
     constructor(){
       return {
         permissoes: {
