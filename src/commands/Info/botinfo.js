@@ -26,7 +26,7 @@ module.exports = class BotinfoCommand {
       let servidores = await client.shard.fetchClientValues('guilds.cache.size')
       let total_servers = servidores.reduce((prev, val) => prev + val)
       let embed = new (require('discord.js')).MessageEmbed()
-      .setAuthor(client.user.username, client.user.displayAvatarURL({ size: 2048 }))
+      .setAuthor(client.user.username, client.user.displayAvatarURL({ size: 4096 }))
       .setDescription(`<:st_host:830841046153691197> Host: VPS [Linux](https://discord.gg/8tapRMCm)`)
       .setColor("BLUE")
       .addFields(

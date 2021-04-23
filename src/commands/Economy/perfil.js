@@ -71,7 +71,7 @@ module.exports = class PerfilCommand {
 
         const jimp = require("jimp");
         const fs = require("fs");
-        const av = user.displayAvatarURL({dynamic:false, format: 'png', size: 2048})
+        const av = user.displayAvatarURL({dynamic:false, format: 'png', size: 4096})
             // ÁREA DE SELECIONAR A MIDIA
             let avatar = await jimp.read(`${av}`)
             let mascara = await jimp.read("./images/mascara.png");

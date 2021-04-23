@@ -27,7 +27,7 @@ module.exports = class VarporwaveCommand {
 
     const user = args[0] ? message.mentions.users.first() ||  client.users.cache.find(a => a.username === args.slice(0).join(' ')) || await client.users.fetch(args[0]).catch(_ => message.author) : message.author
 
-    const av = user.displayAvatarURL({ dynamic: false, format: 'png', size: 2048 })
+    const av = user.displayAvatarURL({ dynamic: false, format: 'png', size: 4096 })
 
     message.quote(`${idioma.image.editando.replace("%u", message.author)}`).then(async msg => {
       message.channel.startTyping()

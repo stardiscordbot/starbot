@@ -1,4 +1,4 @@
-module.exports = class StonksCommand {
+module.exports = class NotStonksCommand {
     constructor(){
       return {
         permissoes: {
@@ -7,16 +7,16 @@ module.exports = class StonksCommand {
           dono: false //Se apenas nos devs podem usar o comando
         },
         pt: {
-          nome: 'stonks',
+          nome: 'notstonks',
           categoria: '🤣 • Fun',
-          desc: 'Faça um meme stonks !!!'
+          desc: 'Faça um notmeme stonks !!!'
         },
         en: {
-          nome: 'stonks',
+          nome: 'notstonks',
           categoria: '🤣 • Fun',
-          desc: 'Make a meme stonks !!!'
+          desc: 'Make a notmeme stonks !!!'
         },
-      aliases: [],
+      aliases: ['not', 'nstonks', 'notstonks'],
       run: this.run
       }
     }
@@ -34,7 +34,7 @@ module.exports = class StonksCommand {
           const ctx = canvas.getContext('2d');
           
           const DIG = require("discord-image-generation");
-          let img = await new DIG.Stonk().getImage(message.author.displayAvatarURL({ dynamic: false, format: 'png', size: 4096 }))
+          let img = await new DIG.NotStonk().getImage(message.author.displayAvatarURL({ dynamic: false, format: 'png', size: 4096 }))
 
           //const im = `https://vacefron.nl/api/stonks?user=${img}`
 
@@ -42,7 +42,7 @@ module.exports = class StonksCommand {
           ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
           
           ctx.font = '30px sans-serif';
-          ctx.fillStyle = '#FFFFFF';
+          ctx.fillStyle = '#ff00c2';
           ctx.fillText(`${args.join(" ")}`.match(/.{1,50}/g).join("\n"), canvas.width / 50.9, canvas.height / 15.9, 655);
           
           const attachment = new (require("discord.js")).MessageAttachment(canvas.toBuffer(), `stonks-${message.author.id}.png`);
