@@ -1,14 +1,15 @@
 const config = require("./src/config/json/config.json");
 const {ShardingManager} = require('discord.js');
+//var numWorkers = require('os').cpus().length;
 const cor = require("colors");
 
 const manager = new ShardingManager('./bot.js', { 
-    totalShards: 'auto',
+    totalShards: 'auto', //numWorkers, //'auto',
     token: config.discord.token, 
     respawn: true
 });
 
 manager.on('shardCreate', shard => {
-    console.log(cor.magenta(`[SHARD] Iniciando shard ${shard.id}`))
+    console.log(cor.rainbow(`[SHARD] Iniciando shard ${shard.id}`))
 });
 manager.spawn();
