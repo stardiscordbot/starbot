@@ -10,6 +10,14 @@
   "fst": {
     "arg": "Use: `%pfst on` to enable and `%pfst off` to disable"
   },
+  "pay": {
+    "noarg": "Arguments are missing, use `%ppay <@​user | id> <amount>`",
+    "nan": "`%q` does not seem to be a valid amount, try again",
+    "no": "You don't have enough money.",
+    "s": "Transaction successfully completed, **%m ** received **%q yens **",
+    "c": "You want to send **%q yens** for **%m**?",
+    "vc": "You cannot pay yourself."
+  },
   "aki": {
   "reg": "en",
   "q": "Question:",

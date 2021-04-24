@@ -7,6 +7,14 @@
     "n": "Insira o link de uma imagem ou anexe uma.",
     "read": "Lendo..."
   },
+  "pay": {
+    "noarg": "Estão faltando argumentos, utilize `%ppay <@usuario | id> <quantia>`",
+    "nan": "`%q` não me parece ser uma quantia valida, tente novamente",
+    "no": "Você não tem dinheiro suficiente.",
+    "s": "Transação realizada com sucesso, **%m** recebeu **%q yens**",
+    "c": "Você deseja enviar **%q yens** para **%m**?",
+    "vc": "Você não pode pagar você mesmo."
+  },
   "fst": {
     "arg": "Utilize: `%pfst on` para ativar e `%pfst off` para desativar"
   },
