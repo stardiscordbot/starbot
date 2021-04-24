@@ -25,7 +25,6 @@ require("./google")(client)
 require('./utils/commandHandler')(client)
 //Carregar eventos handler
 require('./utils/eventHandler')(client)
-
 //Carregar DB
 require('./utils/database')(client)
 //Carregar Botlists

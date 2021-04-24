@@ -11,12 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/opus": "^0.5.0",
     "aki-api": "^5.2.1",
     "canvas": "^2.6.1",
     "cluster": "^0.7.7",
     "colors": "^1.4.0",
-    "dblapi.js": "^2.4.1",
     "discord-giveaways": "^4.4.3",
     "discord-image-generation": "^1.4.7",
     "discord.js": "^12.5.3",
@@ -25,7 +23,6 @@
     "erela.js-deezer": "^1.0.5",
     "erela.js-spotify": "^1.2.0",
     "express": "^4.17.1",
-    "http": "*",
     "infinity-api": "^1.1.8",
     "jimp": "^0.16.1",
     "listcord.js": "^2.1.5",
@@ -38,6 +35,7 @@
     "path": "^0.12.7",
     "pretty-ms": "^7.0.1",
     "quickmongo": "^3.0.2",
+    "snakecord": "^1.0.6",
     "superagent": "^6.1.0"
   },
   "devDependencies": {

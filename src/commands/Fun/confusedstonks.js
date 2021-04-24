@@ -9,14 +9,14 @@ module.exports = class NotStonksCommand {
         pt: {
           nome: 'notstonks',
           categoria: '🤣 • Fun',
-          desc: 'Faça um notmeme stonks !!!'
+          desc: 'Faça um confusedmeme stonks !!!'
         },
         en: {
           nome: 'notstonks',
           categoria: '🤣 • Fun',
-          desc: 'Make a notmeme stonks !!!'
+          desc: 'Make a confusedmeme stonks !!!'
         },
-      aliases: ['not', 'nstonks', 'notstonks'],
+      aliases: ['confused', 'cstonks', 'confusedstonks'],
       run: this.run
       }
     }
@@ -34,7 +34,7 @@ module.exports = class NotStonksCommand {
           const ctx = canvas.getContext('2d');
           
           const DIG = require("discord-image-generation");
-          let img = await new DIG.NotStonk().getImage(message.author.displayAvatarURL({ dynamic: false, format: 'png', size: 4096 }))
+          let img = await new DIG.ConfusedStonk().getImage(message.author.displayAvatarURL({ dynamic: false, format: 'png', size: 4096 }))
 
           //const im = `https://vacefron.nl/api/stonks?user=${img}`
 
@@ -45,7 +45,7 @@ module.exports = class NotStonksCommand {
           ctx.fillStyle = '#ffffff';
           ctx.fillText(`${args.join(" ")}`.match(/.{1,50}/g).join("\n"), canvas.width / 50.9, canvas.height / 15.9, 655);
           
-          const attachment = new (require("discord.js")).MessageAttachment(canvas.toBuffer(), `nstonks-${message.author.id}.png`);
+          const attachment = new (require("discord.js")).MessageAttachment(canvas.toBuffer(), `cstonks-${message.author.id}.png`);
        
           await message.quote(`${message.author}`, attachment).then(m2 => {
             message.channel.stopTyping()

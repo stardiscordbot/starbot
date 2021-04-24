@@ -255,7 +255,6 @@ module.exports = (client) => {
 				);
 			}
 		}
-
 		// Finalmente, executamos o comando!
 		comando.run(client, msg, args, idioma, '/');
 	});
