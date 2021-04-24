@@ -7,6 +7,9 @@
     "n": "Insira o link de uma imagem ou anexe uma.",
     "read": "Lendo..."
   },
+  "fst": {
+    "arg": "Utilize: `%pfst on` para ativar e `%pfst off` para desativar"
+  },
   "aki": {
   "reg": "pt",
   "q": "Pergunta:",

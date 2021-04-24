@@ -7,6 +7,9 @@
     "n": "Insert an image link or attach an image.",
     "read": "Reading..."
   },
+  "fst": {
+    "arg": "Use: `%pfst on` to enable and `%pfst off` to disable"
+  },
   "aki": {
   "reg": "en",
   "q": "Question:",

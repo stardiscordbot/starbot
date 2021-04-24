@@ -3,35 +3,35 @@ module.exports = class NQNCommand {
       return {
         permissoes: {
           membro: ['MANAGE_GUILD'], //Permissoes que o usuario necessita
-          bot: ['MANAGE_WEBHOOKS', 'MANAGE_MESSAGES'], //Permissoes que o bot necessita
-          dono: true //Se apenas nos devs podem usar o comando
+          bot: ['EMBED_LINKS'], //Permissoes que o bot necessita
+          dono: false //Se apenas nos devs podem usar o comando
         },
         pt: {
-          nome: 'nqn',
+          nome: 'faustao',
           categoria: '⚙️ • Config',
-          desc: 'Ativa o not-quite-nitro'
+          desc: 'Ativa o faustao'
         },
         en: {
           nome: 'nqn',
           categoria: '⚙️ • Config',
-          desc: 'Activates not-quite-nitro'
+          desc: 'Activates faustao'
         },
-      aliases: ['nqn', 'notquitenitro', 'not-quite-nitro', 'n-q-n'],
+      aliases: ['fst', 'evento', 'f-s-t'],
       run: this.run
       }
     }
     
-    async run(client, message, args, prefixo, idioma) {
+    async run(client, message, args, prefixoCerto, idioma) {
 
-        if(!args[0]) return message.quote(`aff, ativa ou desativa`)
+        if(!args[0]) return message.quote(`:x: ${message.author} **|** ${idioma.fst.arg.replace(/%p/g, prefixoCerto)}`)
         if(args[0] == "on") {
             message.react("✔️")
-            client.db.set(`nqn-${message.guild.id}`, "true")
+            client.db.set(`fst-${message.guild.id}`, "true")
         }
 
         if(args[0] == "off") {
             message.react("✔️")
-            client.db.delete(`nqn-${message.guild.id}`)
+            client.db.delete(`fst-${message.guild.id}`)
         }
 
     }

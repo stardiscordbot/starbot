@@ -40,7 +40,9 @@ module.exports = class AvatarCommand {
         message.quote(`🔍 ${message.author} **|** ${idioma.ocr.read}`).then(async mm => {
           message.channel.startTyping()
         const ocrSpace = require('ocr-space-api-wrapper')
-        const res = await ocrSpace(`${imagem.url}`, { apiKey: keys.ocr });
+        const res = await ocrSpace(`${imagem.url}`, { apiKey: keys.ocr }).catch(e => {
+          message.quote(`:x: ${message.author} **|** Invalid Image.`)
+        });
         const o = res.ParsedResults.map(parse => parse.ParsedText.replace(/`/g, ''))
         const ocembed = new (require("discord.js")).MessageEmbed()
         .setTitle("📰 OCR")
