@@ -3,6 +3,10 @@
     "np": "🎧 Tocando Agora:",
     "end": "<:power:817075414961881099> A Fila acabou, estou saindo"
   },
+  "ocr": {
+    "n": "Insira o link de uma imagem ou anexe uma.",
+    "read": "Lendo..."
+  },
   "aki": {
   "reg": "pt",
   "q": "Pergunta:",
