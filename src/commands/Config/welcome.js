@@ -35,7 +35,12 @@ module.exports = class WelcomeCommand {
 			);
 
 		if(args[0].toLowerCase() === 'desativar' || args[0].toLowerCase() === 'disable') {
-			await client.db.delete(`welcome-${message.guild.id}`);
+			await client.db.delete(`welcome-${message.guild.id}`).catch(e => {
+				console.log("[DELETE] Não exite dados")
+			});;
+			await client.db.delete(`welmsg-${message.guild.id}`).catch(e => {
+				console.log("[DELETE] Não exite dados")
+			});
 			return message.quote(
 				`:white_check_mark: ${
 					message.author

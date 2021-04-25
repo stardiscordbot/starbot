@@ -1,5 +1,4 @@
 <h1 align="center">✨ Hi my name is Star! ✨</h1>
-
 <p align="center">
 <a href="https://top.gg/bot/719524114536333342">
     <img src="https://top.gg/api/widget/719524114536333342.svg" alt="Star™" />
@@ -17,6 +16,8 @@
 - SlashCommands
 - Clusters
 - Shards
+## 👨‍💻 Less work and more fun!
+Star is a multifunctional bot, where you get all kinds of things. Music, Moderation, Multi-Language, Economy, Giveaways, Fun, Chat Events, ReactionRoles, Support, Website and More! What we want most is peace of mind for your server.
 ## 🤔 What can you do?
 > I have several features, among them the preferred ones are:<br>
 ```Autorole - Autorole is here for you to give role to new members of your server automatically when they join the server. No more giving positions to newbies manually!```<br><br>```MessageLog - Keep an eye on everything on your server with the message logs, with them you will know deleted messages, edited to suddenly prove to that user that he really said this.```
