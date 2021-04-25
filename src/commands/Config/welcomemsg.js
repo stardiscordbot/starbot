@@ -4,7 +4,7 @@ module.exports = class WelcomeCommand {
 			permissoes: {
 				membro: ['MANAGE_GUILD'], //Permissoes que o usuario necessita
 				bot: ['EMBED_LINKS'], //Permissoes que o bot necessita
-				dono: false //Se apenas nos devs podem usar o comando
+				dono: true //Se apenas nos devs podem usar o comando
 			},
 			pt: {
 				nome: 'welcome-message',
