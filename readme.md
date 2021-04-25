@@ -19,7 +19,7 @@
 ## 👨‍💻 Less work and more fun!
 Star is a multifunctional bot, where you get all kinds of things. Music, Moderation, Multi-Language, Economy, Giveaways, Fun, Chat Events, ReactionRoles, Support, Website and More! What we want most is peace of mind for your server.
 ## ✨ Stars... is to eat?
-> ```No, but I was made to help on your server, developed in the discord.js library using``` [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) ```&``` [NodeJS](https://nodejs.org/en/)
+No, but I was made to help on your server, developed in the discord.js library using [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) & [NodeJS](https://nodejs.org/en/)
 ## 💁 What if I need help?
 You can enter my support server here: [Click Here](https://discord.gg/2pFH6Yy)
 ## 🥳 Convinced me, how do I add?
