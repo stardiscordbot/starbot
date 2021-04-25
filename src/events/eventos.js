@@ -14,7 +14,7 @@ client.on("message", async message => {
     const fschanc = Math.floor(Math.random() * 90);
     const faustao = new (require("discord.js")).MessageEmbed()
     .setTitle(`<:st_random_faustao:833319957113995286> Domingão do Faustão`)
-    .setDescription(`Olá caro usuário! Está afim de ganhar yens? Sabia que você pode ganhar de **0 à 400 Yens?** neste exato momento? Seja rápido e digite: \`${frase.noc}\``)
+    .setDescription(`Olá caro usuário! Está afim de ganhar yens? Sabia que você pode ganhar de **0 à 10000 Yens?** neste exato momento? Seja rápido e digite: \`${frase.noc}\``)
     .setImage("https://i.imgur.com/9uf04Fz.jpg")
     .setColor("BLUE")
     console.log(fschanc)
