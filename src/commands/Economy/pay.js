@@ -21,10 +21,10 @@ module.exports = class PayCommand {
       }
     }
     
-    async run(client, message, args, prefixo, idioma) {
+    async run(client, message, args, prefixoCerto, idioma) {
         const economy = require("../../config/database/mongodb/economy");
-        if(!args[0]) return message.quote(`:x: ${message.author} **|** ${idioma.pay.noargs.replace("%p", prefixoCerto)}`)
-        if(!args[1]) return message.quote(`:x: ${message.author} **|** ${idioma.pay.noargs.replace("%p", prefixoCerto)}`)
+        if(!args[0]) return message.quote(`:x: ${message.author} **|** ${idioma.pay.noarg.replace("%p", prefixoCerto)}`)
+        if(!args[1]) return message.quote(`:x: ${message.author} **|** ${idioma.pay.noarg.replace("%p", prefixoCerto)}`)
         const user = message.mentions.users.first() || await client.users.fetch(args[0]);
         if(!user) return message.quote(`:x: ${message.author} **|** ${idioma.avatar.unknown}`)
         const quantia = args[1].replace(/`/g, '')

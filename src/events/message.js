@@ -1,3 +1,4 @@
+const logcommand = require("../config/database/mongodb/commandlog")
 const webhook = require("../config/json/webhooks.json")
 
 function regexEscapar(prefixo) {
