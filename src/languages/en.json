@@ -190,7 +190,8 @@
   },
   "hug": {
     "acaba": "just hugged",
-    "user": "Mention a user to hug"
+    "user": "Mention a user to hug",
+    "em": "in"
   },
   "stonks": {
     "limit": "you have exceeded the 50 character limit."

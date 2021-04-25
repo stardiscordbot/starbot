@@ -23,17 +23,15 @@ module.exports = class SlapCommand {
     
     async run(client, message, args, prefixo, idioma) {
       const {MessageEmbed} = require('discord.js');
-      const superagent = require('superagent');
-
-    if (!message.mentions.users.first()) return message.quote(`:x: ${message.author} **|** ${idioma.hug.user.replace('hug', 'slap').replace('abraçar', 'bater')}`);
-
-    const { body } = await superagent
-    .get("https://nekos.life/api/v2/img/slap");
-    
+      const fetch = require('node-fetch');
+      if (!message.mentions.users.first()) return message.quote(`:x: ${message.author} **|** ${idioma.hug.user.replace('hug', 'slap').replace('abraçar', 'bater')}`);
+    const res = await fetch('https://nekos.life/api/v2/img/slap').then(res => res.json())
+      .then(json => {
     const embed = new MessageEmbed()
     .setColor("#ff09de")
-    .setDescription(`**${message.author.username}** ${idioma.hug.acaba.replace('hugged', 'slapped').replace('abraçar', 'bater')} **${message.mentions.users.first().username}**`)
-    .setImage(body.url) 
+    .setDescription(`**${message.author.username}** ${idioma.hug.acaba.replace('hugged', 'slapped').replace('abraçar', 'bater')} ${idioma.hug.em} **${message.mentions.users.first().username}**`)
+    .setImage(json.url) 
     message.quote(message.author, embed)
+  })
  }
 }

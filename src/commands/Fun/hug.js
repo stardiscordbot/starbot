@@ -23,18 +23,16 @@ module.exports = class Command {
 
 async run(client, message, args, prefixoCerto, idioma) {
   const {MessageEmbed} = require('discord.js');
-  const superagent = require('superagent');
-  
+  const fetch = require("node-fetch") 
     if (!message.mentions.users.first()) return message.quote(`:x: ${idioma.hug.user}`);
-    const { body } = await superagent
-    .get("https://nekos.life/api/v2/img/hug");
-    
+    const res = await fetch('https://nekos.life/api/v2/img/hug').then(res => res.json())
+    .then(json => {
     const embed = new MessageEmbed()
-    .setDescription(`**${message.author.username}** ${idioma.hug.acaba} **${message.mentions.users.first().username}**`)
+    .setDescription(`**${message.author.username}** ${idioma.hug.acaba} ${idioma.hug.em} **${message.mentions.users.first().username}**`)
     .setColor("#ff09de")
-    .setImage(body.url) 
-    
+    .setImage(json.url) 
     message.quote(message.author, embed)
+  })
 }
 }
 

@@ -24,33 +24,28 @@ module.exports = class AvatarCommand {
     async run(client, message, args, prefixo, idioma) {
         const keys = require("../../config/json/keys.json")
         const at = message.attachments.first()
+        const fetch = require("node-fetch")
         const imagem = {}
-
         if (message.attachments.size == 0 && !args[0]) return message.quote(`:x: ${message.author} **|** ${idioma.ocr.n}`)
-
         if(at) {
           imagem.url = at.url
         } else {
           imagem.url = args[0]
         }
-        //if(args[0]) return imagem.url = args[0]
-
-        //const firstAttachment = message.attachments.first()
-
         message.quote(`🔍 ${message.author} **|** ${idioma.ocr.read}`).then(async mm => {
+          const res = await fetch(`https://api.ocr.space/parse/imageurl?apikey=${keys.ocr}&url=${imagem.url}`).then(res => res.json())
+          .then(json => {
           message.channel.startTyping()
-        const ocrSpace = require('ocr-space-api-wrapper')
-        const res = await ocrSpace(`${imagem.url}`, { apiKey: keys.ocr }).catch(e => {
-          message.quote(`:x: ${message.author} **|** Invalid Image.`)
-        });
-        const o = res.ParsedResults.map(parse => parse.ParsedText.replace(/`/g, ''))
+        const o = json.ParsedResults.map(parse => parse.ParsedText.replace(/`/g, ''))
         const ocembed = new (require("discord.js")).MessageEmbed()
         .setTitle("📰 OCR")
+        .setColor("BLUE")
         .setDescription(`\`\`\`\n${o}\n\`\`\``)
 
         message.quote(message.author, ocembed).then(m => {
           message.channel.stopTyping()
           mm.delete()
+          })
         })
       })
   }

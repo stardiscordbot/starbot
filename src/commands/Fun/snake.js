@@ -22,15 +22,14 @@ module.exports = class VarporwaveCommand {
     }
     
     async run(client, message, args, prefixoCerto, idioma) {
-        const SnakeGame = require('snakecord');
+        const SnakeGame = require('../../../utils/snakegame');
         const snakeGame = new SnakeGame({
-            title: 'Snake Game',
+            title: '🐍 Snake Game',
             color: "GREEN",
             timestamp: false,
             gameOverTitle: "Game Over"
         });
         return snakeGame.newGame(message);
-  
     }
   }
   

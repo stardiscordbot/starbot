@@ -1,0 +1,16 @@
+# Ignore node modules
+node_modules/*
+
+# Ignore output files
+build/*
+out/*
+tests/roles.json
+
+# Ignore unsefull files
+yarn-error.log
+yarn.lock
+.vscode/*
+
+# Ignore settings files
+**/process.env
+.npmrc

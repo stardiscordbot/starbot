@@ -1,23 +1,3 @@
-const {MessageEmbed} = require("discord.js");
-
-var color = [ 
-        "blue",
-        "white",
-        "pink",
-        "red",
-        "cyan",
-        "purple",
-        "black",
-        "yellow",
-        "brown",
-        "orange"
-]
-
-var crew = [ 
-    "true",
-    "false"
-]
-
 module.exports = class Command {
     constructor(){
       return {
@@ -42,7 +22,23 @@ module.exports = class Command {
   }
   
   async run(client, message, args, prefixoCerto, idioma) {
+    var color = [ 
+      "blue",
+      "white",
+      "pink",
+      "red",
+      "cyan",
+      "purple",
+      "black",
+      "yellow",
+      "brown",
+      "orange"
+    ]
 
+  var crew = [ 
+  "true",
+  "false"
+  ]
     let user = args[0] ? message.mentions.users.first() ||  client.users.cache.find(a => a.username === args.slice(0).join(' ')) || await client.users.fetch(args[0]).catch(_ => message.author) : message.author
     const a = user.username.toString().replace(/ /gi, "%20")
 

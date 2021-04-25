@@ -1,4 +1,3 @@
-const fetch = require('node-fetch');
 module.exports = class TrumpCommand {
     constructor(){
       return {
@@ -23,7 +22,7 @@ module.exports = class TrumpCommand {
     }
     
     async run(client, message, args, prefixo, idioma) {
-
+    const fetch = require('node-fetch');
   
     let text = args.join(" ");
 

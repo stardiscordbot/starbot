@@ -190,7 +190,8 @@
   },
   "hug": {
     "acaba": "acaba de abraçar",
-    "user": " Mencione um usuário para abraçar"
+    "user": " Mencione um usuário para abraçar",
+    "em": "em"
   },
   "stonks": {
     "limit": "voce passou de 50 caracteres"

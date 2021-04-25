@@ -1,6 +1,3 @@
-const {MessageAttachment} = require('discord.js');
-const fetch = require('node-fetch');
-
 module.exports = class Command {
     constructor(){
       return {
@@ -25,7 +22,7 @@ module.exports = class Command {
   }
   
   async run(client, message, args, prefixoCerto, idioma) {
-  
+const fetch = require('node-fetch');
     let text = args.join(" ");
 
         if (!text) {

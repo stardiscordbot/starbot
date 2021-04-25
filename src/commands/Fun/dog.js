@@ -1,5 +1,3 @@
-const fetch = require("node-fetch");
-
 module.exports = class Command {
   constructor(){
     return {
@@ -24,7 +22,7 @@ module.exports = class Command {
 }
 
 async run(client, message, args, prefixoCerto, idioma) {
-
+  const fetch = require("node-fetch");
     fetch("https://random.dog/woof.json")
     .then(res => res.json())
     .then(json => {message.quote({"embed": {

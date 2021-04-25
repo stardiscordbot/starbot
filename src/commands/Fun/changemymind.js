@@ -1,6 +1,3 @@
-const {MessageAttachment} = require('discord.js');
-const fetch = require('node-fetch');
-
 module.exports = class Command {
     constructor(){
       return {
@@ -25,7 +22,7 @@ module.exports = class Command {
   }
   
   async run(client, message, args, prefixoCerto, idioma) {
-  
+    const fetch = require('node-fetch');
     let text = args.join(" ");
 
         if (!text) {
@@ -35,7 +32,7 @@ module.exports = class Command {
           message.channel.startTyping()
             let res = await fetch(encodeURI(`https://nekobot.xyz/api/imagegen?type=changemymind&text=${text}`));
             let json = await res.json();
-            let attachment = new MessageAttachment(json.message, `changemymind-${message.author.id}.png`);
+            let attachment = new (require("discord.js")).MessageAttachment(json.message, `changemymind-${message.author.id}.png`);
             message.quote(message.author, attachment).then(m2 => {
               message.channel.stopTyping()
               m.delete()
