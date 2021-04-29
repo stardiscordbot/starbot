@@ -6,7 +6,7 @@ const client = new Client({
   restTimeOffset: 1,
   //Intents: GUILDS, GUILD_MESSAGES e GUILD_MEMBERS
   ws: {
-    intents: 1667
+    intents: 1775
   },
   //Partials
   partials: [
