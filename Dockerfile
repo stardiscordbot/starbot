@@ -4,6 +4,9 @@ WORKDIR /opt/app
 
 ENV PORT=80
 
+# Extras:
+RUN apk --update add make python gcc g++
+
 # daemon for cron jobs
 RUN echo 'crond' > /boot.sh
 # RUN echo 'crontab .openode.cron' >> /boot.sh
