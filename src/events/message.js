@@ -1,4 +1,4 @@
-const logcommand = require("../config/database/mongodb/commandlog")
+const logcommand = require("../config/database/mongodb/vip")
 const webhook = require("../config/json/webhooks.json")
 
 function regexEscapar(prefixo) {
@@ -112,11 +112,7 @@ module.exports = (client) => {
 			if (
 				comando.permissoes.dono &&
 				![
-					'704468807229505637',
-					'672652538880720896',
 					'717766639260532826',
-					'742798447253651506',
-                    '726449359167684734'
 				].includes(msg.author.id)
 			)
 				return msg.channel.send(

@@ -23,10 +23,7 @@ module.exports = class PingCommand {
 
 	async run(client, message, args, prefixo) {
 		return message.quote(
-				`🏓 **|** ${message.author} Pong!\n- **Websocket Ping:** \`${
-					client.ws.ping
-				}ms\`\n- **API Ping:** \`${Date.now() - message.createdTimestamp}ms\``
-			)
+				`🏓 **|** ${message.author} Pong!\n- **Websocket Ping:** \`${client.ws.ping}ms\`\n- **API Ping:** \`${Date.now() - message.createdTimestamp}ms\``)
 	}
 };
 

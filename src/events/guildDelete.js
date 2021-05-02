@@ -21,6 +21,9 @@ module.exports = (client) => {
         client.db.delete(`autorole-${guild.id}`).catch((e) => {
             console.log(`${guild.id} | No Autorole`)
         });
+        client.db.delete(`prefix-${guild.id}`).catch((e) => {
+            console.log(`${guild.id} | No Prefix`)
+        });
 
         const embed = new (require("discord.js")).MessageEmbed()
         .setAuthor(`${guild.name} (${guild.id})`, guild.iconURL())
