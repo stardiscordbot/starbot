@@ -21,12 +21,19 @@ module.exports = class PlayCommand {
       }
     }
     
-    async run(client, message, args, prefixo, idioma) {
+    async run(client, message, args, prefixoCerto, idioma) {
+      //262800000000002623
+      const vipschema = require("../../config/database/mongodb/vip");
+      const timeout = 262800000000002623
 
-        if(!args[0]) return message.quote(`:x: ${message.author} **|** ${idioma.play.nada}`)
+      vipschema.findOne({User:message.author.id}, async (err,data) => {
+        if(!data) return message.quote(`:x: ${message.author} **|** ${idioma.donate.vip}`)
+        
+        if (data.Time !== null && timeout - (Date.now() - data.Time) < 0) return message.quote(`:x: ${message.author} **|** ${idioma.donate.vip}`)
+        
+        if(!args[0]) return message.quote(`:x: ${message.author} **|** ${idioma.play.nada.replace("%p", prefixoCerto)}`)
         const search = args.join(" ");
         let res;
-
         try {
             res = await client.manager.search(search, message.author);
             if (res.loadType === "LOAD_FAILED") throw res.exception;
@@ -34,23 +41,20 @@ module.exports = class PlayCommand {
           } catch (err) {
             return message.quote(`:x: ${message.author} | Error: \`${err.message}\``);
           }
-
           const player = client.manager.create({
             guild: message.guild.id,
             voiceChannel: message.member.voice.channel.id,
             textChannel: message.channel.id,
             selfDeafen: true
           });
-          
           player.connect();
           player.queue.add(res.tracks[0]);
-
           if (!player.playing && !player.paused && !player.queue.size) player.play()
-          
           const embed = new (require("discord.js")).MessageEmbed()
           .setDescription(`${idioma.play.add} \`${res.tracks[0].title.replace(/`/g, '')}\` | \`${message.author.tag.replace(/`/g, '')}\``)
           .setColor("F47FFF")
           return message.channel.send(embed);
+      })
 
     }
   }

@@ -22,6 +22,9 @@ module.exports = class StopCommand {
     }
     
     async run(client, message, args, prefixo, idioma) {
+        const vipschema = require("../../config/database/mongodb/vip")
+        vipschema.findOne({User:message.author.id}, async (err,data) => {
+          if(!data) return message.quote(`:x: ${message.author} **|** ${idioma.donate.vip}`)
         const player = client.manager.players.get(message.guild.id)
         if(!player) return message.channel.send(`:x: ${message.author} **|** ${idioma.player.not}`)
         const {channel} = message.member.voice
@@ -32,6 +35,7 @@ module.exports = class StopCommand {
         .setDescription(`${idioma.player.stop}`)
         .setColor("F47FFF")
         return message.channel.send(sembed);
+      })
     }
   }
   

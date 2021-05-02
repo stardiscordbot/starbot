@@ -1,7 +1,9 @@
-{  
+{ "donate": {
+  "vip": "Command only available to donors from basic level."
+  },
   "erela": {
     "np": "🎧 Now Playing:",
-    "end": "<:power:817075414961881099> The queue is over, I'm leaving"
+    "end": "<:st_music_powerbutton:836584974509015050> The queue is over, I'm leaving"
   },
   "ocr": {
     "n": "Insert an image link or attach an image.",

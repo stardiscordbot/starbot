@@ -26,7 +26,7 @@ module.exports = class UserInfoCommand {
 		const embed = new (require('discord.js')).MessageEmbed();
 		let user;
 		try {
-			user = message.mentions.members.first() || (((args[0]&&!isNaN(args[0]))?await message.guild.members.fetch(String(args[0])) : message.member))
+			user = message.mentions.members.first() || (((args[0]&&!isNaN(args[0]))?await message.guild.members.cache.get(String(args[0])) : message.member))
 			let member = user
 			let idioma = (await client.db.get(`idioma-${message.guild.id}`)) || 'pt';
 			let vazios = [, , , ,];

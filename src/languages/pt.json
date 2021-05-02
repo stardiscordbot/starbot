@@ -1,7 +1,9 @@
-{ 
+{ "donate": {
+    "vip": "Comando só disponível para doadores a partir do nível básico."
+  },
   "erela": {
     "np": "🎧 Tocando Agora:",
-    "end": "<:power:817075414961881099> A Fila acabou, estou saindo"
+    "end": "<:st_music_powerbutton:836584974509015050> A Fila acabou, estou saindo"
   },
   "ocr": {
     "n": "Insira o link de uma imagem ou anexe uma.",

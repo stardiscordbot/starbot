@@ -40,17 +40,18 @@ module.exports = class PremiumCommand {
             const gold = msg.createReactionCollector(goldfilter, { time: 60000 });
 
             basic.on('collect', r => {
-                vipschema.findOne({user:u.id}, async (err,data) => {
+                vipschema.findOne({User:u.id}, async (err,data) => {
                     if(!data) {
                         let newvip = new vipschema({
-                            user: u.id,
-                            vip: "basic",
-                            date: Date.now(),
+                            User: u.id,
+                            Vip: "basic",
+                            Time: Date.now(),
                         })
                         newvip.save()
                     } 
                     if(data) {
-                        data.vip = "basic"
+                        data.Vip = "basic"
+                        data.Time = Date.now()
                         data.save()
                     }
                 })
@@ -64,17 +65,18 @@ module.exports = class PremiumCommand {
             u.send(succes)
             })
             gold.on('collect', r => {
-                vipschema.findOne({user:u.id}, async (err,data) => {
+                vipschema.findOne({User:u.id}, async (err,data) => {
                     if(!data) {
                         let newvip = new vipschema({
-                            user: u.id,
-                            vip: "gold",
-                            date: Date.now(),
+                            User: u.id,
+                            Vip: "gold",
+                            Time: Date.now(),
                         })
                         newvip.save()
                     } 
                     if(data) {
                         data.vip = "gold"
+                        data.Time = Date.now()
                         data.save()
                     }
                 })

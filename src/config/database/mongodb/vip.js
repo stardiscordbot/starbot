@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 let Schema = new mongoose.Schema({
-    user: String,
-    vip: String,
-    date: String,
+    User: String,
+    Vip: String,
+    Time: Number,
 })
 module.exports = mongoose.model("vips", Schema)
