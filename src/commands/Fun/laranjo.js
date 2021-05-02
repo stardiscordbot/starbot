@@ -8,12 +8,12 @@ module.exports = class LaranjoCommand {
         },
         pt: {
           nome: 'laranjo',
-          categoria: '(Emoji) Testes',
+          categoria: '🤣 • Fun',
           desc: 'Cria um meme do laranjo'
         },
         en: {
           nome: 'laranjo',
-          categoria: '(Emoji) Testing',
+          categoria: '🤣 • Fun',
           desc: 'Create a laranjo meme'
         },
       aliases: ['laranjo', 'laranja'],

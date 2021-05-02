@@ -1,4 +1,6 @@
 // Feito por Veric#0311 | https://github.com/davipatricio/EasyInteractionsJS
+const webhook = require("./src/config/json/webhooks.json")
+const webhookClient = new (require("discord.js")).WebhookClient(webhook.commands.id, webhook.commands.token);
 
 module.exports = (client) => {
 	const Discord = require('discord.js');
@@ -220,7 +222,17 @@ module.exports = (client) => {
 				msg.guild.id
 			})`,
 		);
-
+		let commandlog = new (require("discord.js")).MessageEmbed()
+		.setAuthor(`SlashCommands`, `https://is.gd/5f4iF2`)
+		.addField(`Servidor:`, `\`${msg.guild.name} (${msg.guild.id})\``)
+		.addField(`Usuário:`, `\`${msg.author.tag} (${msg.author.id})\``)
+		.addField(`Comando:`, `\`/${interaction.data.name} | Argumentos: ${args.join(" ")}\``)
+		.setColor("BLUE")
+		webhookClient.send({
+			username: client.user.username,
+			avatarURL: client.user.displayAvatarURL({ dynamic: true }),
+			embeds: [commandlog]
+		})
 		// Cria o membro da interação (apenas o autor foi criado)
 		const membroInt = new Discord.GuildMember(
 			client,
@@ -255,7 +267,8 @@ module.exports = (client) => {
 				);
 			}
 		}
+		const prefixoCerto = "/"
 		// Finalmente, executamos o comando!
-		comando.run(client, msg, args, idioma, '/');
+		comando.run(client, msg, args, prefixoCerto, idioma, '/');
 	});
 };

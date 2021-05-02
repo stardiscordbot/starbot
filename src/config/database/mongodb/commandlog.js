@@ -5,4 +5,4 @@ let Schema = new mongoose.Schema({
     date: String,
     region: String,
 })
-module.exports = mongoose.model("economy", Schema)
+module.exports = mongoose.model("commandlog", Schema)
