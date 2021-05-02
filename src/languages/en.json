@@ -1,6 +1,9 @@
 { "donate": {
   "vip": "Command only available to donors from basic level."
   },
+  "metar": {
+    "ft": "Api information: https://www.checkwxapi.com/"
+  },
   "erela": {
     "np": "🎧 Now Playing:",
     "end": "<:st_music_powerbutton:836584974509015050> The queue is over, I'm leaving"

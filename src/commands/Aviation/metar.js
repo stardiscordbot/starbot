@@ -1,4 +1,4 @@
-module.exports = class ExemploCommand {
+module.exports = class MetarCommand {
     constructor(){
       return {
         permissoes: {
@@ -32,9 +32,12 @@ module.exports = class ExemploCommand {
         .then(res => res.json())
         .then(json => {
         json.data.map(met => {
+        console.log(met)
         let ember = new (require("discord.js")).MessageEmbed()
+        .setAuthor(`🌎 Airport: ${met.station.name}`)
         .setColor("BLUE")
-        .setDescription(`> Informações do aeroporto:\n\n**🛩️ ICAO:** ${met.icao}\n**🧑‍✈️ Flight Rule:** ${met.flight_category}`)
+        .setDescription(`**🛩️ ICAO:** ${met.icao}\n**📖 Raw Report:** ${met.raw_text.toLocaleString()}\n**🧑‍✈️ Flight Rule:** ${met.flight_category}\n**☁️ Clouds:**\n> Feet: ${met.clouds.map(a => a.base_feet_agl.toLocaleString())}\n> Meters: ${met.clouds.map(a => a.base_meters_agl.toLocaleString())}\n**🗺️ Location:** ${met.station.location}`)
+        .setFooter(idioma.metar.ft, "https://i.imgur.com/BJko5HW.png")
         message.quote(message.author, ember)
         })
         })

@@ -12,6 +12,7 @@ src/commands/Util/tradutor.js
 
 # HOST FILES
 
+.openode
 Procfile
 
 # CONFIDENCIAL FILES

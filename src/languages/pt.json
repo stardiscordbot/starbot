@@ -1,6 +1,9 @@
 { "donate": {
     "vip": "Comando só disponível para doadores a partir do nível básico."
   },
+  "metar": {
+    "ft": "Informações da api: https://www.checkwxapi.com"
+  },
   "erela": {
     "np": "🎧 Tocando Agora:",
     "end": "<:st_music_powerbutton:836584974509015050> A Fila acabou, estou saindo"

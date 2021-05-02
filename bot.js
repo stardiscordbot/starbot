@@ -20,7 +20,6 @@ const client = new Client({
 client.commands = new (require("discord.js")).Collection()
 //Carregar api do google
 require("./google")(client)
-
 //Carregar comandos handler
 require('./utils/commandHandler')(client)
 //Carregar eventos handler
