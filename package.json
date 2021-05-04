@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@jimp/plugin-mask": "^0.16.1",
     "aki-api": "^5.2.1",
     "async-lock": "^1.2.8",
     "canvas": "^2.7.0",

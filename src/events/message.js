@@ -22,7 +22,7 @@ module.exports = (client) => {
 		const prefixos = new RegExp(
 			`^(<@!?${client.user.id}>|${regexEscapar(`${p.prefix.replace(/./g, "!")}`)}|${regexEscapar(
 				`${p.prefix.replace(/!/g, ".")}`
-			)}|starc)\\s*`
+			)}|star)\\s*`
 		); // menção, star, s. e s! serao prefixos
 
 		const cmdembed = new (require("discord.js")).MessageEmbed()
