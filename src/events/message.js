@@ -1,4 +1,4 @@
-const logcommand = require("../config/database/mongodb/vip")
+//const logcommand = require("../config/database/mongodb/vip")
 const webhook = require("../config/json/webhooks.json")
 
 function regexEscapar(prefixo) {
@@ -11,7 +11,9 @@ const webhookClient = new (require("discord.js")).WebhookClient(webhook.commands
 const cooldown = new Set();
 
 module.exports = (client) => {
+	const cooldowns = {}
 	client.on('message', async msg => {
+		const ms = require("parse-ms")
 		const p = {}
 		const pr = await client.db.get(`prefix-${msg.guild.id}`)
 		if(!pr) {
@@ -124,6 +126,22 @@ module.exports = (client) => {
 			  msg.mentions.users.delete(client.user.id)
 			}
 			try {
+				if(!cooldowns[message.author.id]) cooldowns[message.author.id] = {
+					lastCmd: null
+				  }
+			let ultimoCmd = cooldowns[message.author.id].lastCmd //pegando a data que a pessoa usou o último comando.
+				 let timeout = 5000 //tempo de espera, no meu caso 8 segundos
+				if (ultimoCmd !== null && timeout- (Date.now() - ultimoCmd) > 0) { //comparando pra vê se já se passaram 8 segundos.
+			let time = ms(timeout - (Date.now() - ultimoCmd)); //formatando os ms que estão entre as datas, para segundos.
+			let resta = [time.seconds, 'segundos'] //mensagem que vai ser enviada (se vc quiser mudar, fique a vontade)
+			 
+			if(resta[0] == 0) resta = ['some', 'milliseconds']
+			if(resta[0] == 1) resta = [time.seconds, 'seconds']
+					msg.quote(`:x: ${message.author} **|** Wait **${resta.join(" ")}**, to use another command.`) //enviando a mensagem
+				   return;
+				} else {
+			cooldowns[message.author.id].lastCmd = Date.now() //colocando a pessoa no cooldown, caso ela não esteja.
+				}
 				await comando.run(client, msg, argumentos, prefixoCerto, idioma);
 				webhookClient.send({
 					username: client.user.username,
