@@ -17,7 +17,7 @@ module.exports = (client) => {
 		const p = {}
 		const pr = await client.db.get(`prefix-${msg.guild.id}`)
 		if(!pr) {
-			p.prefix = 'sc.'
+			p.prefix = 's.'
 		} else {
 			p.prefix = pr
 		}
