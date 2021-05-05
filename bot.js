@@ -36,10 +36,9 @@ require("./utils/Utils")(client)
 require("./utils/giveaways")(client)
 //Carregar sistema de Musica
 require("./utils/LavalinkManager")(client)
-//Carregar sistema de reações
-require("./utils/reactionroles")(client)
 //Carregar sistema de multi idiomas
 require("./utils/multiLanguage")(client)
+//Carregar slashs
 client.once('ready', () =>
      require('./SlashCommands')(client)
 );

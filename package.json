@@ -13,10 +13,12 @@
   "dependencies": {
     "@jimp/plugin-mask": "^0.16.1",
     "aki-api": "^5.2.1",
+    "canvacord": "^5.2.0",
     "canvas": "^2.7.0",
     "colors": "^1.4.0",
     "discord-giveaways": "^4.4.3",
     "discord-image-generation": "^1.4.7",
+    "discord-xp": "^1.1.14",
     "discord.js": "^12.5.3",
     "discord.js-collector": "^1.8.9",
     "erela.js": "^2.3.3",
