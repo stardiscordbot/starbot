@@ -269,6 +269,6 @@ module.exports = (client) => {
 		}
 		const prefixoCerto = "/"
 		// Finalmente, executamos o comando!
-		comando.run(client, msg, args, prefixoCerto, idioma, '/');
+		comando.run(client, msg, args, prefixoCerto, idioma, prefixoCerto);
 	});
 };
