@@ -3,8 +3,11 @@
 <a href="https://top.gg/bot/719524114536333342">
     <img src="https://top.gg/api/widget/719524114536333342.svg" alt="Star™" />
 </a>
-<a href='https://infinitybotlist.com/bots/719524114536333342' title='widget'> <img src='https://infinitybotlist.com/bots/719524114536333342/widget?size=large'></img></a>
 </p>
+
+<center>
+<a href='https://infinitybotlist.com/bots/719524114536333342' title='widget'> <img src='https://infinitybotlist.com/bots/719524114536333342/widget?size=large'></img></a>
+</center>
 
 ## 📋 A multifunctional bot for discord
 - Autorole
