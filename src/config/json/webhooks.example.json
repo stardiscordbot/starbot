@@ -1,0 +1,14 @@
+{
+    "gcreate": {
+        "id": "the guild create webhook id",
+        "token": "the guild create webhook token"
+    },
+    "gdelete": {
+        "id": "the guild delete webhook id",
+        "token": "the guild delete webhook token"
+    },
+    "commands": {
+        "id": "the logcommand webhook id",
+        "token":  "the logcommand webhook token",
+    }
+}
