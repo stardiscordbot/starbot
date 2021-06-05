@@ -1,67 +1,67 @@
 module.exports = class DailyCommand {
-    constructor(){
+    constructor() {
       return {
         permissoes: {
-          membro: [], //Permissoes que o usuario necessita
-          bot: [], //Permissoes que o bot necessita
-          dono: false //Se apenas nos devs podem usar o comando
+          membro: [],
+          bot: [],
+          dono: false
         },
         pt: {
           nome: 'daily',
           categoria: '💸 • Economia',
-          desc: 'Descrição'
+          desc: 'Pega seu bonûs diário'
         },
         en: {
           nome: 'daily',
           categoria: '💸 • Economy',
-          desc: 'Description'
+          desc: 'Take you daily bonûs'
         },
-      aliases: ['diario', 'd', 'work'],
-      run: this.run
+        aliases: ['diario', 'dd'],
+        run: this.run
       }
     }
-    
-    async run(client, message, args, prefixoCerto, idioma) {
-        const economy = require("../../config/database/mongodb/economy");
+    async run(ctx) {
+        const timeout = 86400000;
+        const moment = require("moment");
+        const daily = Math.floor(Math.random() * 6500) + 1000; //Minimo 1000, Máximo 7500
+        const dailytime = await db.get(`dailytime-${ctx.message.author.id}`);
 
-        const ms = require("parse-ms");
+        if(!dailytime) {
+            await db.set(`money-${ctx.message.author.id}`, daily)
+            await db.set(`dailytime-${ctx.message.author.id}`, Date.now())
 
-        let user = message.author;
+            let embed = new star.manager.ebl;
+            embed.title(`💸 Daily | ${star.user.username}`)
+            embed.description(`🌟 **${ctx.message.author.username}** ${ctx.idioma.daily.coletado.replace("%m", daily)}`)
+            embed.color('#dd3af0')
+            embed.thumbnail(star.user.avatarURL)
 
-        let timeout = 86400000;
-        let amount = Math.floor(Math.random() * 7500);
+            ctx.message.channel.createMessage(embed.create)
+        } else {
+            if(dailytime !== null && timeout - (Date.now() - dailytime) > 0) {
+                let tt = moment(timeout - (Date.now() - dailytime)).format('HH:mm:ss')
 
-        economy.findOne({ User: user.id }, async(err, data)=>{
-            if(!data) {
+                let embed = new star.manager.ebl;
+                embed.title(`💸 Daily | ${star.user.username}`)
+                embed.description(`<:st_util_info:835532528617259068> **${ctx.message.author.username}** ${ctx.idioma.daily.coletou.replace("%time", tt)}.`)
+                embed.color('#dd3af0')
+                embed.thumbnail(star.user.avatarURL)
 
-                let newEconomy = new economy({
-                    User: user.id,
-                    Money: amount,
-                    Bank: 0,
-                    Tag: message.author.tag,
-                    DailyTime: Date.now()
-                })
-
-                newEconomy.save();
-
-                message.quote(`💸 ${message.author} **|** ${idioma.daily.coletado.replace("%m", amount)}`)
-
+                ctx.message.channel.createMessage(embed.create)
             } else {
-                if (data.DailyTime !== null && timeout - (Date.now() - data.DailyTime) > 0) {
-                  let time = ms(timeout - (Date.now() - data.DailyTime));
+                let q = await db.get(`money-${ctx.message.author.id}`)
+                await db.set(`money-${ctx.message.author.id}`, daily + q)
+                await db.set(`dailytime-${ctx.message.author.id}`, Date.now())
+                await db.set(`banco-${ctx.message.author.id}`, 0)
 
-                  message.quote(`:x: ${message.author} **|** ${idioma.daily.coletou.replace("%th", time.hours).replace("%tm", time.minutes).replace("%ts", time.seconds)}`)
-                } else {
-                  data.Money = data.Money + amount;
-                  data.DailyTime = Date.now();
-                  data.save()
-
-                  message.quote(`💸 ${message.author} **|** ${idioma.daily.coletado.replace("%m", amount)}`)
-              }
+                let embed = new star.manager.ebl;
+                embed.title(`💸 Daily | ${star.user.username}`)
+                embed.description(`🌟 **${ctx.message.author.username}** ${ctx.idioma.daily.coletado.replace("%m", daily)}`)
+                embed.color('#dd3af0')
+                embed.thumbnail(star.user.avatarURL)
+                ctx.message.channel.createMessage(embed.create)
             }
-        })
-
+        }
+        
     }
-  }
-  
-//ADG
+}

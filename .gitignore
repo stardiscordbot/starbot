@@ -1,46 +1,9 @@
-# INUTIL FOLDERS
-
-/.vscode
-/Arquivo
-/hospedagem
-/node_modules
 /lixeirinha
-
-# SECRET COMMANDS
-
-src/commands/Util/tradutor.js
-
-# HOST FILES
-
-.openode
-Procfile
-Dockerfile
-
-# CONFIDENCIAL FILES
-
-.env
-.replit
-main.sh
-server.js
-.eslintrc.js
+/node_modules
 package-lock.json
-starevolution.mp4
-star-developer.zip
-LavalinkManagerBackup.js
-src/config/json/keys.json
-src/config/json/config.json
-src/config/json/player.json
-src/config/json/botlist.json
-src/config/json/webhooks.json
-src/config/json/giveaways.json
-src/config/json/dashboard.json
-
-# DA LISTA DE ADG E SEUS PNG NA PASTA
-
-perfil-274289097689006080.png
-perfil-568182075929395210.png
-
-# AFF KIBA N DEU TRABALHO
-
-src/commands/Util/tradutor.js
-src/commands/Fun/blanket.js
+src/botlists.json
+src/config/config.js
+src/System/webhooks.json
+src/apikey.json
+.openode
+Dockerfile

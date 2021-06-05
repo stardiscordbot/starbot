@@ -1,0 +1,10 @@
+{
+    "webhook": {
+        "id": "WEBHOOK ID",
+        "token": "WEBHOOK TOKEN"
+    },
+    "cmdlog": {
+        "id": "WEBHOOK ID",
+        "token": "WEBHOOK TOKEN"
+    }
+}

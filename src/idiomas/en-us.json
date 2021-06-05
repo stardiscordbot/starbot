@@ -1,0 +1,266 @@
+{ "botinfo": {
+  "pessoas": "Important People:",
+  "add": "Add me:",
+  "por": "for having created me.",
+  "ded": "• All the people who helped/helped me to develop;\n• All my team;\n• And you: %u for using my commands! :)",
+  "textt": "With all permissions: **[click here](https://top.gg/bot/719524114536333342/invite)**;\nWithout any permissions: **[click here](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=0)**.",
+  "text": "<:st_wumpus:844541072855662593> Hi, my name is **Star:tm:** I'm **13** years old, I created my account on **06/08/2020**, I know more than **%g** different places and **%u** people and their styles, it's a honor is on your server! :)\n\n<:st_terminal:845647948335284235> I was developed in **[javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** using **[eris](https://abal.moe/Eris/)** in my client and commands, yay",
+  "open": "I am",
+  "com": "Consumption:"
+},
+  "afk": {
+    "set": "I set your AFK with the reason:",
+    "wel": "Welcome back!"
+  },
+  "ship": {
+    "nou": "Mention a user to ship"
+  },
+  "userinfo": {
+    "inf": "Information:",
+    "tag": "Tag of: ",
+    "id": "ID of: ",
+    "create": "Account created day: "
+  },
+  "roblox": {
+  "criado": "📆 Created day:"
+},
+  "pdex": {
+  "lang": "en"
+  },
+  "baninfo": {
+  "user": "User:",
+  "reason": "Reason:",
+  "desban": "To unban, addMessageReaction with 🐹."
+  },
+  "say": {
+    "noarg": "Insert something after the command to speak.",
+    "enviada": "Message sent by:"
+  },
+  "clear": {
+    "msg": "messages** cleared successfully.",
+    "no": "Insira a quantidade de mensagens a serem limpas."
+  },
+  "ban": {
+    "noarg": "**Mention** some user or give the **ID** of the same.",
+    "vc": "You really want to punish",
+    "r": "✅",
+    "r2": "✅",
+    "mot": "Not Defined",
+    "mot2": "Punished for:",
+    "mot3": "Reason:",
+    "the": "The User",
+    "foi": "has been successfully punished."
+  },
+  "help": {
+    "title": "Command List • ",
+    "creators": "I was developed by ",
+    "description": "> My current prefix is: `%p`\n> If you have any questions, please enter my support server: [Click here](https://discord.gg/2pFH6Yy)\n> Add me by clicking [here](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot&permissions=805432446)"
+  },
+  "donate": {
+  "vip": "Command only available to donors from basic level."
+  },
+  "metar": {
+    "ft": "Api information: https://www.checkwxapi.com/"
+  },
+  "erela": {
+    "np": "🎧 Now Playing:",
+    "end": "<:st_music_powerbutton:836584974509015050> The queue is over, I'm leaving"
+  },
+  "ocr": {
+    "n": "Insert an image link or attach an image.",
+    "read": "Reading..."
+  },
+  "isgd": {
+    "nolink": "Insert some link to shorten",
+    "link": "here's your link:"
+  },
+  "welmsg": {
+    "noargs": "Você precisa setar uma mensagem, utilize: `%pwelcome-message <mensagem>`\n\n// <:st_util_info:835532528617259068> Você pode customizar ela usando **PlaceHolders:**\n**{guild}** - Mostra o nome do servidor (Exemplo: **%g**)\n**{member}** - Mostra o Username do membro (Exemplo: **%use**)\n**{@member}** - Menciona o Membro (Exemplo: **%author**})\n**{memberCount}** - Mostra a quantidade de Membros do servidor (Exemplo: **%mc**)\n**{member.discrim}** - Mostra a tag do Membro (Exemplo: **%ut**)\n**{member.id}** - Mostra o ID do membro (Exemplo: **%id**)"
+  },
+  "fst": {
+    "arg": "Use: `%pfst on` to enable and `%pfst off` to disable"
+  },
+  "pay": {
+    "noarg": "Arguments are missing, use `%ppay <@​user | id> <amount>`",
+    "nan": "`%q` does not seem to be a valid amount, try again",
+    "no": "You don't have enough money.",
+    "s": "Transaction successfully completed, **%m ** received **%q stars **",
+    "c": "You want to send **%q stars** for **%m**?",
+    "vc": "You cannot pay yourself."
+  },
+  "aki": {
+  "reg": "en",
+  "q": "Question:",
+  "r": "Answers:",
+  "i": "Starting Akinator",
+  "is": "Is this your character?",
+  "win": "Great! Guessed right one more time.",
+  "nowin": "Uh, you are win",
+  "yay": "I love playing with you!",
+  "res": "[yes (**y**) / no (**n**)]"
+  },
+  "backup": {
+    "criando": "Creating Backup"
+  },
+  "starboard": {
+    "cont": "Content:"
+  },
+  "rr": {
+    "noargs": "Arguments are missing, use `%prr <@cargo> <:emoji:> [MESSAGE ID]`",
+    "desc": "Creates a addMessageReactionion Role where members can win certain positions by addMessageReactioning on the given message.",
+    "normal": "Normal addMessageReactionion system, where the user can take more than one role that is configured in the message.",
+    "toggle": "Toggle addMessageReactionion system, where the user can only take a role of all the options given.",
+    "noargs2": "Arguments are missing, use `%prr delete <:emoji:> <MESSAGE ID>`",
+    "delete": "Deletes some role from the addMessageReactionion system."
+  },
+  "player": {
+    "np": "🎧 Now Playing:",
+    "end": "<:power:817075414961881099> The queue is over, I'm leaving",
+    "solo": "😔 Unfortunately I was alone on the channel, I'm leaving",
+    "noresults": ":x: Unfortunately I didn't find any music related to: ",
+    "dis": "<:power:817075414961881099>  Music stopped, I was disconnected from the voice channel",
+    "noc1": ":x: You need to be on the same voice channel as me to perform music commands.",
+    "noc2": ":x: You need to be connected to a voice channel to perform music commands.",
+    "not": "I am not playing anything on this server.",
+    "stop": "<:power:817075414961881099> I stopped playing, I'm leaving."
+  },
+  "perfil": {
+    "ngm": "NOBODY",
+    "desc": "Star is my friend, did you know that you can change this using \"%paboutme\"?",
+    "comp": "Click on `🛒` to buy",
+    "succ": "Background purchased successfully",
+    "no": "You don't have enough money to buy this background"
+  },
+  "sugestao": {
+    "insertChannel": "You did not specify a channel, run: `%pset-suggestions <#channel | channel id | disable>`.",
+    "success": "Alright, I will send all suggestions to the `%canal` automatically.",
+    "disabled": "The suggestions system was disabled successfully.",
+    "nocanal": "There is no suggestion channel set on that server, seven or ask someone to set.",
+    "nada": "You did not write anything, for the convenience of everyone I will not send the suggestion.",
+    "nova": "💡  »  New Suggestion",
+    "link": "For everyone’s convenience, don’t send links for suggestions.",
+    "footer": "Suggestion System, %u"
+  },
+  "giveaway": {
+    "sec": "seconds",
+    "min": "minutes",
+    "hrs": "hours",
+    "day": "days",
+    "term": "Ended at",
+    "host": "Hosted by: {user}",
+    "win": "winner(s)",
+    "wins": "Congratulations, {winners}! You won **{prize}**!\n{messageURL}",
+    "addMessageReaction": "addMessageReaction with 🎉 to participate!",
+    "restante": "Time remaining:",
+    "no": "Giveaway cancelled, no valid participations",
+    "give": "GIVEAWAY",
+    "giveend": "GIVEAWAY ENDED",
+    "start": "You did not use the command correctly, use: `%pgiveaway [time (10s, 10m)] [winners (1, 1w)] [prize (photos of kittens)]`, do not include **[]** or **()**."
+  },
+  "marry": {
+    "deseja": "want to marry you, do you accept?",
+    "vc": "You cannot marry yourself.",
+    "eu": "I don't want to marry you and by the way, I'm only 13 years old.",
+    "ja": "already married, don’t worry, one hour you can do it."
+  },
+  "sobre": {
+    "nada": "I need some argument, use: `%paboutme <text>`",
+    "alt": "About changed to: `%t`"
+  },
+  "daily": {
+    "coletado": "You collected **%m stars** daily, come back tomorrow and collect again.",
+    "coletou": "You've already collected your daily reward, collect it again in **%time**"
+  },
+  "play": {
+    "add": "<:st_music_adicionado:830833070252097596> Added the queue:",
+    "nada": "I need some argument, use: `%pplay <music | url> `"
+  },
+  "nodes": {
+    "memoria": "Memory usage"
+  },
+  "avatar": {
+    "from": "Avatar from:",
+    "unknown": "Unknown user."
+  },
+  "editLogs": {
+    "old": "Message after editing:",
+    "new": "Message before editing:",
+    "user": "User",
+    "click": "Click here",
+    "deleted": "[deleted]",
+    "edited": "[edited]",
+    "canal": "Channel",
+    "title": "Message Logs",
+    "content": "Content"
+  },
+  "multiLang": {
+  "unknownLanguage": "Unknown language.\nℹ️ Available languages: %langs",
+    "insertLang": "You did not specify a language. To change the bot language, run `%planguage %langs`"
+  },
+  "autoRole": { 
+    "insertRole": "You did not specify a role, run: `%pautorole <@role | role id | disable>.`",
+    "success": "Alright, now members that join server, will get the role `%cargo` added automatically.",
+    "disabled": "AutoRole was disabled successfully."
+  },
+  "welcome": {
+    "insertChannel": "You have not specified a channel, use: `%pwelcome <#channel | id channel | disable>`.",
+    "success": "Okay, I will automatically send all welcome messages to the `%canal`.",
+    "disabled": "The welcome messages were successfully deactivated.",
+    "message": "%m welcome to the **%g** server, currently we have **%c** members! Hope you have fun with us ❤️"
+  },
+  "leave": {
+    "insertChannel": "You have not specified a channel, use: `%pleave <#channel | id channel | disable>`.",
+    "success": "Okay, I will automatically send all leave messages to the `%canal`.",
+    "disabled": "The leave messages were successfully deactivated.",
+    "message": "%m left the server. Now we have **%c** members."
+  },
+  "starboards": {
+    "insertChannel": "You did not specify a channel, use: `%pstarboard <#channel | id channel | disable>`.",
+    "success": "Okay, I'll send all the starboard to the `%canal` automatically.",
+    "disabled": "The starboard has been successfully deactivated."
+  },
+  "guildLogs": {
+    "insertChannel": "You did not specify a channel, run: `%plogs <#channel | channel id | disable>`.",
+    "success": "Alright, I will send all logs to the `%canal` automatically.",
+    "disabled": "The logs system was disabled successfully."
+  },
+  "mention": {
+    "response": "Hello **%u**! See my commands by using `star help` or `s!help`"
+  },
+  "slowmode": {
+    "time": "Enter the time in seconds to be the new slow mode. (** 0 to 21600 **).",
+   "NaN": "This is not a number.",
+   "lento": "Slowmode defined to `%tempo seconds`.",
+   "error": "Could not change the slowmode."
+  },
+  "vaporwave": {
+    "error": "I need you to give me some text, try: `%pvaporwave <text>`"
+  },
+  "image": {
+    "editando": "✍️ %u **|** editing",
+    "args": "✍️ %u **|** I need you to give me some argument so that I can edit",
+    "long": "✍️ %u **|** Your message is too long, try to reduce it to 300 characters",
+    "achivment": "Achievement Unlocked!"
+  },
+  "error": {
+    "dm": "❌ %u **|** I was unable to send the message in your dm, check if it is open or if I am blocked"
+  },
+  "tradutor": {
+    "lang": "You need to specify the language, example: %translator **en** Oi",
+    "text": "You need to specify the text, example: %translator en  **Oi** "
+  },
+  "cmm": {
+    "text": "I need you to specify the text."
+  },
+  "eject": {
+    "sim": "Ejection Simulator"
+  },
+  "hug": {
+    "acaba": "just hugged",
+    "user": "Mention a user to hug",
+    "em": "in"
+  },
+  "stonks": {
+    "limit": "you have exceeded the 50 character limit."
+  }
+}
