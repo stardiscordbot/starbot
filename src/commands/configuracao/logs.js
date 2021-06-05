@@ -3,7 +3,7 @@ module.exports = class EventlogCommand {
 		return {
 			permissoes: {
 				membro: ['manageGuild'], //Permissoes que o usuario necessita
-				bot: ['MANAGE_WEBHOOKS'], //Permissoes que o bot necessita
+				bot: [], //Permissoes que o bot necessita
 				dono: false //Se apenas nos devs podem usar o comando
 			},
 			pt: {
@@ -44,7 +44,7 @@ module.exports = class EventlogCommand {
 			);
 		}
 
-        let logs = ctx.message.mentions.channels.first() || await ctx.message.guild.channels.fetch(ctx.args[0]);
+        let logs = ctx.message.channelMentions[0] || await star.getRESTChannel(ctx.args[0]);
 
 		if (!logs)
 			return ctx.message.channel.createMessage(

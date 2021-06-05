@@ -29,8 +29,8 @@ module.exports = class executarCMD {
         }
 
         if (xp > levels) {
-            const cg = db.get(`cargo-${message.guildID}-${level + 1}`)
-            db.set(`level-${message.guildID}-${message.author.id}`, level + 1)
+            const cg = await db.get(`cargo-${message.guildID}-${level + 1}`)
+            await db.set(`level-${message.guildID}-${message.author.id}`, level + 1)
             let lv = level + 1
 
             if (cg) {
@@ -44,9 +44,9 @@ module.exports = class executarCMD {
         }
         const messages = await db.get(`messages-${message.guildID}-${message.author.id}`)
         if (messages) {
-            db.set(`messages-${message.guildID}-${message.author.id}`, messages + 1)
+            await db.set(`messages-${message.guildID}-${message.author.id}`, messages + 1)
         } else {
-            db.set(`messages-${message.guildID}-${message.author.id}`, 1)
+            await db.set(`messages-${message.guildID}-${message.author.id}`, 1)
         }
         var prefix = config.prefix;
         const preDb = await db.get(`prefix-${message.guildID}`);
@@ -88,7 +88,7 @@ module.exports = class executarCMD {
             const command = star.commands.get(cmd) || star.aliases.get(cmd);
 
             if (!command) {
-                if (db.get(`mensagem-comando-${message.guildID}`)) {
+                if (await db.get(`mensagem-comando-${message.guildID}`)) {
                     message.channel.createMessage(`O Comando ${cmd.replace(/@/g, '').replace(/#/g, '').replace(/`/g, '')} não existe ou não pode ser executado no momento!`)
       } else {
         return;
@@ -138,9 +138,9 @@ module.exports = class executarCMD {
 
                 const cmds = await db.get("comandos")
                 if (!cmds) {
-                    db.set("comandos", 1)
+                    await db.set("comandos", 1)
                 } else {
-                    db.set("comandos", cmds + 1)
+                    await db.set("comandos", cmds + 1)
                 }
 
                 this.ctx = {
@@ -170,6 +170,18 @@ module.exports = class executarCMD {
                         await star.manager.fetch(url);
                     }
                 }
+                const owner = await star.getRESTUser(message.channel.guild.ownerID)
+                const moment = require("moment")
+                let embed2 = new star.manager.ebl;
+                embed2.title("<:st_website:830841154203025439> Log de Comandos")
+                embed2.field(`<:st_membros:845390325638889482> Usuário:`, `\`\`\`${message.author.username}#${message.author.discriminator} (${message.author.id})\`\`\``)
+                embed2.field(`<:st_util_info:835532528617259068> Comando:`, `\`\`\`${message.content.slice(0, 1010)}\`\`\``)
+                embed2.field(`<:st_link:845643800080416770> Link da mensagem:`, `\`\`\`${message.jumpLink}\`\`\``)
+                embed2.field(`<:st_like:845646603368661002> GuildInfo:`, `\`\`\`📋 Nome: ${message.channel.guild.name}\n🧭 ID: ${message.channel.guild.id} [${message.channel.guild.shard.id}]\n👑 ${owner.username}#${owner.discriminator}\n🧑 Membros: ${message.channel.guild.memberCount}\n📅 Criado há dias/horas: ${moment(message.channel.guild.createdAt).format('📆 DD/MM/YY')}\n${moment(message.channel.guild.createdAt).format('⏰ HH:mm:ss')}\n🗺️ Região: ${message.channel.guild.region}\`\`\``)
+                embed2.color('#dd3af0')
+                embed2.thumbnail(message.channel.guild.iconURL || star.user.avatarURL)
+                const log = await star.getRESTChannel("829530412350308392")
+                log.createMessage(embed2.create)
                 return command.run(this.ctx);
             } catch (erro) {
                 // Informar o erro ao executar o comando.

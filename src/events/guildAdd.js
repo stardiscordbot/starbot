@@ -7,7 +7,7 @@ module.exports = class SetarStatus {
         }
     }
     async run(guild) {
-        const ch = await star.channels.fetch("848955667866976276")
-        ch.setName(`🧭 → Servers [${star.guilds.cache.size}]`)
+        const ch = await star.getRESTChannel("848955667866976276")
+        ch.edit({name: `🧭 → Servers [${star.guilds.size}]`})
     }
 }

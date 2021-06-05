@@ -6,53 +6,25 @@ module.exports = class SetarStatus {
         }
     }
     async run(guild) {
-        const fetchedLogs = await guild.fetchAuditLogs({
+        const {Constants} = require("eris")
+        const fetchedLogs = await guild.getAuditLogs({
             limit: 1,
-            type: 'MEMBER_BAN_REMOVE',
+            type: Constants.AuditLogActions.MEMBER_BAN_REMOVE,
         });
 
-        const banLog = fetchedLogs.entries.first();
-        const { executor, target } = banLog;
+        if (!fetchedLogs) return star.getRESTChannel("829534916765155358").createMessage(`[BAN] **${user.tag} (${user.id})** foi banido mais não achei o autor.`);
 
-        const user = await star.getRESTUser(target.id)
-
-        let logs = await db.get(`logs-${guildID}`)
+        let logs = await db.get(`logs-${guild.id}`)
         if(!logs) return;
-        let canal = await star.channels.forge(logs);
+        let canal = await star.getRESTChannel(logs);
 
         const embed = new star.manager.ebl;
-        embed.title(`<:st_tools:846423174686310473> Event Log | UnBan`)
+        embed.title(`<:st_tools:846423174686310473> Event Log | Unban`)
         embed.field(`🛠️ Member Unbanned:`, `\`\`\`${user.username}#${user.discriminator} (${user.id})\`\`\``)
-        embed.field('🛠️ Unbanned by:', `\`\`\`${executor.tag} (${executor.id})\`\`\``)
-        embed.thumbnail(user.displayAvatarURL({dynamic:true, size: 4096}))
+        embed.field('🛠️ Unbanned By:', `\`\`\`${fetchedLogs.user.username}#${fetchedLogs.user.discriminator} (${fetchedLogs.user.id})\`\`\``)
+        embed.thumbnail(user.avatarURL || star.user.avatarURL)
         embed.color('#dd3af0')
-
-        canal.fetchWebhooks().then(hook => {
-            if (!webhook) {
-                const webhook = canal
-                    .createWebhook('Star (LOGS)', {
-                        avatar: star.user.displayAvatarURL({ dynamic: true }),
-                        reason: 'Star | Logs'
-                    })
-                    .catch(err => {
-                        console.log(err);
-                    });
-
-                webhook.send({
-                    username: star.user.username,
-                    avatarURL: star.user.displayAvatarURL({ dynamic: true }),
-                    embeds: [embed.create]
-                });
-            }
-
-            if (webhook) {
-                webhook.send({
-                    username: star.user.username,
-                    avatarURL: star.user.displayAvatarURL({ dynamic: true }),
-                    embeds: [embed.create]
-                });
-            }
-        })
+        canal.createMessage(embed.create)
 
     }
 }

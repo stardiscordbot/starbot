@@ -612,10 +612,10 @@ simple-get@^3.0.3:
     once "^1.3.1"
     simple-concat "^1.0.0"
 
-star-database-manager@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/star-database-manager/-/star-database-manager-2.0.0.tgz#dfb8acd80d6a571d48621f9ff19fdda6ec3d2820"
-  integrity sha512-mcrX7aq0uIPTiKt2Vn+czCis/Cw9FOnkqPov1VZaqqVOHCLwuLwAzp3zMajOy23g7ZzItzW/PeTCKbB6EJbrIw==
+star-database-manager@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/star-database-manager/-/star-database-manager-2.2.0.tgz#404aa53473110acba73dd56e272d7e43f125ae81"
+  integrity sha512-9rjCxPiAoFpNIiF6ug81AtUCK0d3U1GDsjKQkIr85MAGBNji2/QqVIicJiO7K4de5X/TzNFUthCMeNCIcLRjKw==
 
 star-fetch@^1.0.4:
   version "1.0.4"

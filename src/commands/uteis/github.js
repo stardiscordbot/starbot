@@ -33,7 +33,7 @@ module.exports = class PingCommand {
         embed.title(`<:st_github:850386245887852545> Github | ${git.login} ${badge}`)
         embed.url(git.html_url)
         embed.field(`📋 Name:`, `\`\`\`${git.name || git.login}\`\`\``)
-        embed.field(`📚 Bio:`, `\`\`\`md\n${git.bio || "Aff, só pra não ficar null"}\`\`\``)
+        embed.field(`📚 Bio:`, `\`\`\`md\n${git.bio || "Just a github to post projects and contribute :)"}\`\`\``)
         embed.field(`<:st_membros:845390325638889482> Social:`, `\`\`\`md\n# Followers: ${git.followers}\n# Following: ${git.following}\`\`\``)
         embed.color('#dd3af0')
         embed.thumbnail(git.avatar_url || star.user.avatarURL)
