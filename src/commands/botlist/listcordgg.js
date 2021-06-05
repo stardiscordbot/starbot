@@ -34,7 +34,7 @@ module.exports = class EvalCommand {
             let res = response.data
             let owner = await star.getRESTUser(res.developers[0])
             const embed = new star.manager.ebl;
-            embed.title(`<:st_listcord:845723224397709332> listcord.gg | ${user.tag}`)
+            embed.title(`<:st_listcord:845723224397709332> listcord.gg | ${user.username}#${user.discriminator}`)
             embed.url(`https://listcord.gg/bot/${user.id}`)
             embed.description(`${res.description.short}`)
             embed.field(`<:st_owner:845713255670087690> Owner:`, `**Tag:** ${owner.username}#${owner.discriminator}\n**ID:** ${res.developers[0]}`, true)

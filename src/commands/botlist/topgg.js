@@ -35,7 +35,7 @@ module.exports = class EvalCommand {
             //console.log(res)
             let owner = await star.getRESTUser(res.owners[0])
             const embed = new star.manager.ebl;
-            embed.title(`<:st_botlist_topgg:836183481432276993> top.gg | ${user.tag}`)
+            embed.title(`<:st_botlist_topgg:836183481432276993> top.gg | ${user.username}#${user.discriminator}`)
             embed.url(`https://top.gg/bot/${user.id}`)
             embed.description(`${res.shortdesc}`)
             embed.field(`<:st_owner:845713255670087690> Owner:`, `**Tag:** ${owner.username}#${owner.discriminator}\n**ID:** ${res.owners[0]}`, true)
