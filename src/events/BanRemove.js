@@ -1,11 +1,11 @@
-module.exports = class SetarStatus {
+module.exports = class guildBanRemove {
     constructor() {
         return {
             nome: 'guildBanRemove',
             run: this.run
         }
     }
-    async run(guild) {
+    async run(guild, user) {
         const {Constants} = require("eris")
         const fetchedLogs = await guild.getAuditLogs({
             limit: 1,

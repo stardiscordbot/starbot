@@ -38,7 +38,9 @@
   },
   "clear": {
     "msg": "mensagens** excluidas com sucesso.",
-    "no": "Insira a quantidade de mensagens a serem limpas."
+    "no": "Insira a quantidade de mensagens a serem limpas.",
+    "p": "Procurando mensagens, isso pode levar 30 segundos...",
+    "num": "Eu só consigo limpar entre 2 a 2000 mensagens."
   },
   "ban": {
     "noarg": "**Mencione** o marginal ou ou dê o **ID** dele pa nós procurar no sistema da puliça. <:st_random_pato:830842917790810183>",

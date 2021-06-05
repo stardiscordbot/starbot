@@ -1,4 +1,4 @@
-module.exports = class SetarStatus {
+module.exports = class guildBanAdd {
     constructor() {
         return {
             nome: 'guildBanAdd',

@@ -38,7 +38,9 @@
   },
   "clear": {
     "msg": "messages** cleared successfully.",
-    "no": "Insira a quantidade de mensagens a serem limpas."
+    "no": "Insira a quantidade de mensagens a serem limpas.",
+    "p": "Looking for messages, this could take 30 seconds...",
+    "num": "I can only clear between 2 to 2000 messages."
   },
   "ban": {
     "noarg": "**Mention** some user or give the **ID** of the same.",

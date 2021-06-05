@@ -23,16 +23,16 @@ module.exports = class PingCommand {
     async run(ctx) {
         if (!ctx.args[0]) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.clear.no}`)
         //ctx.message.delete()
-		if(ctx.args[0] > 2000 || ctx.args[0] < 0) return ctx.message.channel.createMessage(``)
-        let ids = []
-        let messages = await ctx.message.channel.getMessages(ctx.args[0]);
+		if(Number(ctx.args[0]) > 2000 || Number(ctx.args[0]) < 2) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.clear.num}`)
+            let ids = []
+            let messages = await ctx.message.channel.getMessages(Number(ctx.args[0]));
 
-        messages.forEach((m) => {
-            ids.push(m.id)
-        })
+            messages.forEach((m) => {
+               ids.push(m.id)
+            })
 
-        ctx.message.channel.deleteMessages(ids);
-        ctx.message.channel.createMessage(`:white_check_mark: ${ctx.message.author.mention} **|** **${ctx.args[0]} ${ctx.idioma.clear.msg}.`)
+            ctx.message.channel.deleteMessages(ids);
+            ctx.message.channel.createMessage(`:white_check_mark: ${ctx.message.author.mention} **|** **${ctx.args[0]} ${ctx.idioma.clear.msg}.`)
     }
 };
 
