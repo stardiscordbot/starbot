@@ -1,4 +1,16 @@
-{  "botinfo": {
+{  "message": {
+  "view": "Eu não tenho permissão de ler o histórico de mensagens!",
+  "the": "O Comando",
+  "unk": "não existe ou não pode ser executado no momento!",
+  "user": "Você não tem todas as permissões necessárias para usar este comando!\n Permissões necessárias:",
+  "bot": "Eu não tenho todas as permissões necessárias para executar este comando! \n Permissões necessárias:",
+  "dev": "Apenas meus desenvolvedores podem usar este comando!",
+  "c": "Aguarde 5 segundos para usar outro comando.",
+  "e": "Ops, ocorreu um erro!",
+  "e2": "Reporte este erro!",
+  "e3": "Provavelmente minha equipe ja sabe sobre este erro, mas que tal você ajudar? Você pode abir um [issue](https://github.com/stardiscordbot/starbot/issues) no [github](https://github.com/stardiscordbot/starbot) ou então reportar em meu [servidor de suporte](https://discord.gg/2pFH6Yy), vamos fazer o discord um lugar melhor, juntos 🤝"
+  },
+  "botinfo": {
   "pessoas": "Pessoas Importantes:",
   "por": "por ter me criado.",
   "add": "Me adicione:",

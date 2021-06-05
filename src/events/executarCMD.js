@@ -80,7 +80,7 @@ module.exports = class executarCMD {
             //const bot = message.guild.me
 
             if (!message.channel.guild.members.get(star.user.id).permissions.has('readMessageHistory')) {
-                return message.channel.createMessage(':x: Eu não tenho permissão de ler o histórico de mensagens!')
+                return message.channel.createMessage(`:x: ${idioma.message.view}`)
             }
 
             const argumentos = message.content.slice(prefix.length).trim().split(/ +/);
@@ -89,7 +89,7 @@ module.exports = class executarCMD {
 
             if (!command) {
                 if (await db.get(`mensagem-comando-${message.guildID}`)) {
-                    message.channel.createMessage(`O Comando ${cmd.replace(/@/g, '').replace(/#/g, '').replace(/`/g, '')} não existe ou não pode ser executado no momento!`)
+                    message.channel.createMessage(`:x: ${ctx.message.author} **|** ${idioma.message.the} \`${cmd.replace(/@/g, '').replace(/#/g, '').replace(/`/g, '')}\` ${idioma.message.unk}`)
       } else {
         return;
       }
@@ -98,12 +98,12 @@ module.exports = class executarCMD {
     if (command.permissoes) {
       if (!command.permissoes.membro == []) {
         if (!command.permissoes.membro.every(p => message.channel.guild.members.get(message.author.id).permissions.has(p)))  {
-          return message.channel.createMessage(`:x: ${message.author.mention} ** | ** You don 't have all the necessary permissions to use this command!\nNeeded permissions: \`${command.permissoes.membro}\`.`);
+          return message.channel.createMessage(`:x: ${message.author.mention} **|** ${idioma.message.user} \`${command.permissoes.membro}\`.`);
                     }
                 }
                 if (!command.permissoes.bot == []) {
                     if (!command.permissoes.bot.every(p => message.channel.guild.members.get(star.user.id).permissions.has(p))) {
-                        return message.channel.createMessage(`:x: ${message.author.mention} **|** I don't have all the necessary permissions to run this command!\nNeeded permissions: \`${command.permissoes.bot}\`.`);
+                        return message.channel.createMessage(`:x: ${message.author.mention} **|** ${idioma.message.bot} \`${command.permissoes.bot}\`.`);
                     }
                 }
                 if (command.permissoes.dono) {
@@ -119,19 +119,31 @@ module.exports = class executarCMD {
                     })
 
                     if (!developers.includes(message.member.id)) {
-                        return message.channel.createMessage(`:x: ${message.author.mention} **|** Only my developers can use this command!`);
+                        return message.channel.createMessage(`:x: ${message.author.mention} **|** ${idioma.message.dev}`);
                     }
                 }
             }
 
             try {
+                const moment = require("moment")
+                let timeout = 5000
+                var developers = await db.get('devs');
+                if (!developers) {
+                    await db.set('devs', ['717766639260532826', '630493603575103519']);
+                }
+                developers = developers.map(dev => {
+                    return dev;
+                })
+                if(developers.includes(message.author.id)) {
+                    timeout = 0
+                }
                 // Caso tudo ocorra bem executar o comando.
                 if (!cooldowns[message.author.id]) cooldowns[message.author.id] = {
                     lastCmd: null
                 }
                 let ultimoCmd = cooldowns[message.author.id].lastCmd
-                if (ultimoCmd !== null && 5000 - (Date.now() - ultimoCmd) > 0) {
-                    return message.channel.createMessage(`:x: ${message.author.mention} **|** Wait 5 seconds to use another command.`)
+                if (ultimoCmd !== null && timeout - (Date.now() - ultimoCmd) > 0) {
+                    return message.channel.createMessage(`:x: ${message.author.mention} **|** ${idioma.message.c}`)
                 } else {
                     cooldowns[message.author.id].lastCmd = Date.now()
                 }
@@ -186,8 +198,9 @@ module.exports = class executarCMD {
             } catch (erro) {
                 // Informar o erro ao executar o comando.
                 const embed = new star.manager.ebl;
-                embed.title('Oops, an error happened!')
+                embed.title(`${idioma.message.e}`)
                 embed.description(`\`\`\`js\n${erro}\n\`\`\``)
+                embed.field(`${idioma.message.e2}`, `${idioma.message.e2}`)
                 embed.color('#ff0000')
                 embed.thumbnail(star.user.avatarURL)
                 return message.channel.createMessage(embed.create)

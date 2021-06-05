@@ -55,17 +55,41 @@ module.exports = class RbuserCommand {
         embed.thumbnail(avatar)
         ctx.message.channel.createMessage(embed.create)
           }).catch((err) => {
-            return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.avatar.unknown}`)
+            const embed = new star.manager.ebl;
+            embed.title(`${ctx.idioma.message.e}`)
+            embed.description(`\`\`\`js\n${err}\n\`\`\``)
+            embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e2}`)
+            embed.color('#ff0000')
+            embed.thumbnail(star.user.avatarURL)
+            return ctx.message.channel.createMessage(embed.create)
           })
         }).catch((err) => {
-          return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.avatar.unknown}`)
-        })
+          const embed = new star.manager.ebl;
+          embed.title(`${ctx.idioma.message.e}`)
+          embed.description(`\`\`\`js\n${err}\n\`\`\``)
+          embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e2}`)
+          embed.color('#ff0000')
+          embed.thumbnail(star.user.avatarURL)
+          return ctx.message.channel.createMessage(embed.create)
+                })
       }).catch((err) => {
-        return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.avatar.unknown}`)
-      })
+        const embed = new star.manager.ebl;
+        embed.title(`${ctx.idioma.message.e}`)
+        embed.description(`\`\`\`js\n${err}\n\`\`\``)
+        embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e2}`)
+        embed.color('#ff0000')
+        embed.thumbnail(star.user.avatarURL)
+        return ctx.message.channel.createMessage(embed.create)
+            })
     }).catch((err) => {
-      return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.avatar.unknown}`)
-    })
+      const embed = new star.manager.ebl;
+      embed.title(`${ctx.idioma.message.e}`)
+      embed.description(`\`\`\`js\n${erro}\n\`\`\``)
+      embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e2}`)
+      embed.color('#ff0000')
+      embed.thumbnail(star.user.avatarURL)
+      return ctx.message.channel.createMessage(embed.create)
+        })
   }
 }  
 // ADG

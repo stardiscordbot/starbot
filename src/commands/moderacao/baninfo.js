@@ -26,13 +26,25 @@ module.exports = class PingCommand {
 
         if (!ctx.message.mentions[0]) {
             member = await star.getRESTUser(ctx.args[0]).then(info => info).catch(() => {
-                return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** Usuário desconhecido.`)
-            });
+                const embed = new star.manager.ebl;
+                embed.title(`${ctx.idioma.message.e}`)
+                embed.description(`\`\`\`js\n${err}\n\`\`\``)
+                embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e2}`)
+                embed.color('#ff0000')
+                embed.thumbnail(star.user.avatarURL)
+                return ctx.message.channel.createMessage(embed.create)
+                });
         } else {
             member = await ctx.message.mentions[0];
         }
         const banInfo = await ctx.message.channel.guild.getBan(member.id).catch((e) => {
-            return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.avatar.unknown}`)
+            const embed = new star.manager.ebl;
+            embed.title(`${ctx.idioma.message.e}`)
+            embed.description(`\`\`\`js\n${e}\n\`\`\``)
+            embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e2}`)
+            embed.color('#ff0000')
+            embed.thumbnail(star.user.avatarURL)
+            return ctx.message.channel.createMessage(embed.create)
         })
 
         const embed = new star.manager.ebl;

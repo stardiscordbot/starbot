@@ -24,7 +24,7 @@ const sharder = new Sharder(token, "/src/star.js", {
       }
   },
   clientOptions: {
-      messageLimit: 150,
+      messageLimit: 200,
       defaultImageFormat: "png"
   }
 });

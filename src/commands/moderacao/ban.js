@@ -40,11 +40,12 @@ module.exports = class BanCommand {
 
         ctx.message.channel.guild.banMember(member.id, 0, motivo).catch(err => {
             const embed = new star.manager.ebl;
-            embed.title('Oops, an error happened!')
+            embed.title(`${ctx.idioma.message.e}`)
             embed.description(`\`\`\`js\n${err}\n\`\`\``)
+            embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e2}`)
             embed.color('#ff0000')
             embed.thumbnail(star.user.avatarURL)
-            return ctx.message.channel.createMessage(embed.create);
+            return ctx.message.channel.createMessage(embed.create)
         });
         ctx.message.channel.createMessage(`:white_check_mark: ${ctx.message.author.mention} **|** ${ctx.idioma.ban.the} **${member.username}** ${ctx.idioma.ban.foi}`)
     }

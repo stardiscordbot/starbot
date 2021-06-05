@@ -30,8 +30,14 @@ module.exports = class BanCommand {
             member = await ctx.message.mentions[0];
         }
                 ctx.message.channel.guild.kickMember(member.id, `${ctx.idioma.ban.mot2} ${ctx.message.author.tag} - ${ctx.idioma.ban.mot3} ${banReason}`).catch(err => {
-                    return ctx.message.channel.createMessage(`\`\`\`js\n${err}\n\`\`\``);
-                  });
+					const embed = new star.manager.ebl;
+					embed.title(`${ctx.idioma.message.e}`)
+					embed.description(`\`\`\`js\n${err}\n\`\`\``)
+					embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e2}`)
+					embed.color('#ff0000')
+					embed.thumbnail(star.user.avatarURL)
+					return ctx.message.channel.createMessage(embed.create)
+				});
     }
 };
 

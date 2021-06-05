@@ -3,7 +3,7 @@ module.exports = class PingCommand {
 		return {
 			permissoes: {
 				membro: [], //Permissoes que o usuario necessita
-				bot: [], //Permissoes que o bot necessita
+				bot: ['embedLinks'], //Permissoes que o bot necessita
 				dono: true //Se apenas nos devs podem usar o comando
 			},
 			pt: {

@@ -39,8 +39,14 @@ module.exports = class BanCommand {
         const motivo = `${ctx.idioma.ban.mot2} ${ctx.message.author.username}#${ctx.message.author.discriminator} - ${ctx.idioma.ban.mot3} ${banReason}`
 
         await ctx.message.channel.guild.unbanMember(member.id, motivo).catch(err => {
-            return ctx.message.channel.createMessage(`\`\`\`js\n${err}\n\`\`\``);
-        });
+            const embed = new star.manager.ebl;
+            embed.title(`${ctx.idioma.message.e}`)
+            embed.description(`\`\`\`js\n${err}\n\`\`\``)
+            embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e2}`)
+            embed.color('#ff0000')
+            embed.thumbnail(star.user.avatarURL)
+            return ctx.message.channel.createMessage(embed.create)
+       });
         ctx.message.channel.createMessage(`:white_check_mark: ${ctx.message.author.mention} **|** ${ctx.idioma.ban.the} **${member.username}** ${ctx.idioma.ban.foi}`)
     }
 };

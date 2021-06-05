@@ -3,7 +3,7 @@ module.exports = class EvalCommand {
       return {
         permissoes: {
           membro: [],
-          bot: [],
+          bot: ['embedLinks'],
           dono: false
         },
         pt: {
