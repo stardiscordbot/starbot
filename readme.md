@@ -5,6 +5,10 @@
 </a>
 </p>
 
+<p align="center">
+<a href='https://infinitybotlist.com/bots/719524114536333342' title='widget'> <img src='https://infinitybotlist.com/bots/719524114536333342/widget?size=large'></img></a>
+</p>
+
 ## 📋 A multifunctional bot for discord
 - Autorole
 - MessageLogs
