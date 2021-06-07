@@ -125,16 +125,10 @@ module.exports = class executarCMD {
             }
 
             try {
-                const moment = require("moment")
                 let timeout = 5000
                 var developers = await db.get('devs');
-                if (!developers) {
-                    await db.set('devs', ['717766639260532826', '630493603575103519']);
-                }
-                developers = developers.map(dev => {
-                    return dev;
-                })
-                if(developers.includes(message.author.id)) {
+
+                if(message.author.id == "717766639260532826") {
                     timeout = 0
                 }
                 // Caso tudo ocorra bem executar o comando.
@@ -200,7 +194,7 @@ module.exports = class executarCMD {
                 const embed = new star.manager.ebl;
                 embed.title(`${idioma.message.e}`)
                 embed.description(`\`\`\`js\n${erro}\n\`\`\``)
-                embed.field(`${idioma.message.e2}`, `${idioma.message.e2}`)
+                embed.field(`${idioma.message.e2}`, `${idioma.message.e3}`)
                 embed.color('#ff0000')
                 embed.thumbnail(star.user.avatarURL)
                 return message.channel.createMessage(embed.create)

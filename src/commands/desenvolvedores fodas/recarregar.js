@@ -21,12 +21,12 @@ module.exports = class EvalCommand {
     }
   }
   async run(ctx) {
-    ctx.send('🔁 Recarregando arquivos...').then((m) => {
-      star.manager.reload().then(() => {
-        m.edit(`✅ Arquivos recarregados!\n⚠️ Entre esses arquivos haviam **${star.commands.size}** comandos e ${star.events.size} eventos!`);
-      });
-    });
-}
+    ctx.send('🔁 Recarregando arquivos...')
+    star.manager.reload()
+    setTimeout(()=>{
+      return ctx.message.channel.createMessage(`:white_check_mark: **|** ${ctx.message.author.mention} **${star.commands.size} comandos** e **${star._eventsCount} eventos** recarregados com sucesso.`)
+      },800)
+    }
 }
 
 // LRD

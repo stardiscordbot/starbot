@@ -1,4 +1,8 @@
-{ "message": {
+{ "invite": {
+  "add": "Add me to your server!",
+  "desc": "Yay, did you like my commands? Or my features? [Add me](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=805432446)\n\nYou need Help or something? Log into my [support server](https://discord.gg/2pFH6Yy), yay"
+  },
+  "message": {
   "view": "I don't have permission to read the message history!",
   "the": "The Command",
   "unk": "does not exist or cannot be run at the moment!",
