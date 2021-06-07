@@ -2,9 +2,9 @@
 require('colors');
 
 // Código rs
-const Eris = require("eris");
+const { Client, Collection } = require("eris");
 
-// Inciando a star.
+// Iniciando a star.
 const {
     token,
     prefix,
@@ -12,7 +12,7 @@ const {
     webhook
 } = require('./config/config.js');
 
-const client = new Eris(token, {
+const client = new Client(token, {
     restMode: true,
     defaultImageSize: 2048,
     defaultImageFormat: "png",
@@ -23,9 +23,9 @@ const client = new Eris(token, {
 });
 
 // Setando comandos.
-client.commands = new Eris.Collection();
-client.aliases = new Eris.Collection();
-client.events = new Eris.Collection();
+client.commands = new Collection();
+client.aliases = new Collection();
+client.events = new Collection();
 
 const Star = require('./client/starbot.js');
 
