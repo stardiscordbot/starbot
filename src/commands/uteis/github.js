@@ -16,27 +16,24 @@ module.exports = class PingCommand {
 				categoria: '🕰️ • Utility',
 				desc: 'The bot say'
 			},
-			aliases: ['git'],
+			aliases: ['git', 'gh'],
 			run: this.run
 		};
 	}
+	
 	async run(ctx) {
-        let badge;
-		const fetch = require("star-fetch");
-        const git = fetch(`https://api.github.com/users/${ctx.args.join(" ").replace(/ /g, "%20")}`)
-        if(git.site_admin == true) {
-            badge = "<:st_bots_certified:830834935605624867>"
-        } else {
-            badge = "<:st_bots_notcertified:830834979726426243>"
-        }
+	const fetch = require("star-fetch");
+        const git = fetch(`https://api.github.com/users/${encodeURIComponent(ctx.args.join(" "))}`)
         const embed = new star.manager.ebl;
-        embed.title(`<:st_github:850386245887852545> Github | ${git.login} ${badge}`)
+	
+        embed.title(`<:st_github:850386245887852545> Github | ${git.login} ${git.site_admin ? "<:st_bots_certified:830834935605624867>" : "<:st_bots_notcertified:830834979726426243>"}`)
         embed.url(git.html_url)
         embed.field(`📋 Name:`, `\`\`\`${git.name || git.login}\`\`\``)
-        embed.field(`📚 Bio:`, `\`\`\`md\n${git.bio || "Just a github to post projects and contribute :)"}\`\`\``)
+        embed.field(`📚 Bio:`, `\`\`\`md\n${git.bio || "User does not have a biography."}\`\`\``)
         embed.field(`<:st_membros:845390325638889482> Social:`, `\`\`\`md\n# Followers: ${git.followers}\n# Following: ${git.following}\`\`\``)
         embed.color('#dd3af0')
         embed.thumbnail(git.avatar_url || star.user.avatarURL)
+	
         ctx.message.channel.createMessage(embed.create)
     }
 };
