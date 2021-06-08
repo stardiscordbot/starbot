@@ -38,7 +38,7 @@ module.exports = class PingCommand {
         embed.field(`➕ ${ctx.idioma.botinfo.add}`, `${ctx.idioma.botinfo.textt}`, true)
         embed.field(`🎖️ ${ctx.idioma.botinfo.pessoas}`, `>>> • \`${dono.username}#${dono.discriminator}\` & \`${dono2.username}#${dono2.discriminator}\` ${ctx.idioma.botinfo.por}\n${ctx.idioma.botinfo.ded.replace("%u", ctx.message.author.mention)}`)
         embed.color('#dd3af0')
-        ctx.message.channel.createMessage(embed.create)
+        ctx.send(embed.create)
     }
 };
 

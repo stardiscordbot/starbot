@@ -36,7 +36,7 @@ module.exports = class DailyCommand {
             embed.color('#dd3af0')
             embed.thumbnail(star.user.avatarURL)
 
-            ctx.message.channel.createMessage(embed.create)
+            ctx.send(embed.create)
         } else {
             if(dailytime !== null && timeout - (Date.now() - dailytime) > 0) {
                 let tt = moment(timeout - (Date.now() - dailytime)).format('HH:mm:ss')
@@ -47,7 +47,7 @@ module.exports = class DailyCommand {
                 embed.color('#dd3af0')
                 embed.thumbnail(star.user.avatarURL)
 
-                ctx.message.channel.createMessage(embed.create)
+                ctx.send(embed.create)
             } else {
                 let q = await db.get(`money-${ctx.message.author.id}`)
                 await db.set(`money-${ctx.message.author.id}`, daily + q)
@@ -59,7 +59,7 @@ module.exports = class DailyCommand {
                 embed.description(`🌟 **${ctx.message.author.username}** ${ctx.idioma.daily.coletado.replace("%m", daily)}`)
                 embed.color('#dd3af0')
                 embed.thumbnail(star.user.avatarURL)
-                ctx.message.channel.createMessage(embed.create)
+                ctx.send(embed.create)
             }
         }
         

@@ -26,7 +26,7 @@ module.exports = class BanCommand {
 
         if (!ctx.message.mentions[0]) {
             member = await star.getRESTUser(ctx.args[0]).then(info => info).catch(() => {
-                return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** Usuário desconhecido.`)
+                return ctx.send(`:x: ${ctx.message.author.mention} **|** Usuário desconhecido.`)
             });
         } else {
             member = await ctx.message.mentions[0];
@@ -45,9 +45,9 @@ module.exports = class BanCommand {
             embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
             embed.color('#ff0000')
             embed.thumbnail(star.user.avatarURL)
-            return ctx.message.channel.createMessage(embed.create)
+            return ctx.send(embed.create)
        });
-        ctx.message.channel.createMessage(`:white_check_mark: ${ctx.message.author.mention} **|** ${ctx.idioma.ban.the} **${member.username}** ${ctx.idioma.ban.foi}`)
+        ctx.send(`:white_check_mark: ${ctx.message.author.mention} **|** ${ctx.idioma.ban.the} **${member.username}** ${ctx.idioma.ban.foi}`)
     }
 };
 //ADG, Davi e LRD

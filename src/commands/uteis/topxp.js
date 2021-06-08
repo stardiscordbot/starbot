@@ -37,7 +37,7 @@ module.exports = class PingCommand {
         embed.color('#dd3af0')
         embed.description(`${content.replace("undefined", "")}`)
         embed.thumbnail(ctx.message.guild.iconURL())
-        ctx.message.channel.createMessage(embed.create)
+        ctx.send(embed.create)
     }
 };
 

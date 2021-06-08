@@ -53,7 +53,7 @@ module.exports = class RbuserCommand {
         embed.field(`${ctx.idioma.roblox.criado}`, `\`\`\`🗓️ ${moment(inf.created).format('DD/MM/YYYY')}\n⏰ ${moment(inf.created).format('HH:mm:ss')}\`\`\``)
         embed.field(`<:st_membros:845390325638889482> Social:`, `\`\`\`${inf2.count} Friends\n${inf3.count} Followers\`\`\``)
         embed.thumbnail(avatar)
-        ctx.message.channel.createMessage(embed.create)
+        ctx.send(embed.create)
           }).catch((err) => {
             const embed = new star.manager.ebl;
             embed.title(`${ctx.idioma.message.e}`)
@@ -61,7 +61,7 @@ module.exports = class RbuserCommand {
             embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
             embed.color('#ff0000')
             embed.thumbnail(star.user.avatarURL)
-            return ctx.message.channel.createMessage(embed.create)
+            return ctx.send(embed.create)
           })
         }).catch((err) => {
           const embed = new star.manager.ebl;
@@ -70,7 +70,7 @@ module.exports = class RbuserCommand {
           embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
           embed.color('#ff0000')
           embed.thumbnail(star.user.avatarURL)
-          return ctx.message.channel.createMessage(embed.create)
+          return ctx.send(embed.create)
                 })
       }).catch((err) => {
         const embed = new star.manager.ebl;
@@ -79,7 +79,7 @@ module.exports = class RbuserCommand {
         embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
         embed.color('#ff0000')
         embed.thumbnail(star.user.avatarURL)
-        return ctx.message.channel.createMessage(embed.create)
+        return ctx.send(embed.create)
             })
     }).catch((err) => {
       const embed = new star.manager.ebl;
@@ -88,7 +88,7 @@ module.exports = class RbuserCommand {
       embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
       embed.color('#ff0000')
       embed.thumbnail(star.user.avatarURL)
-      return ctx.message.channel.createMessage(embed.create)
+      return ctx.send(embed.create)
         })
   }
 }  

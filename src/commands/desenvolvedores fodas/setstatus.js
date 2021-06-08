@@ -9,19 +9,19 @@ module.exports = class EvalCommand {
         pt: {
           nome: 'setstatus',
           categoria: '💻 • Desenvolvedor',
-          desc: 'Recarrega o bot'
+          desc: 'Atualiza o status do bot'
         },
         en: {
           nome: 'setstatus',
           categoria: '💻 • Developer',
-          desc: 'Reload bot'
+          desc: 'Update bot status'
         },
         aliases: ['setactivity', 'setgame', 'sa', 'status'],
         run: this.run
       }
     }
     async run(ctx) {
-        if(!ctx.args[0]) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** Eu preciso do status né? aff`)
+        if(!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** Eu preciso do status né? aff`)
         star.user.setActivity(`${ctx.args.join(" ")}`).then(a => {
             ctx.message.addMessageReaction("✅")
         })

@@ -28,7 +28,7 @@ module.exports = class PingCommand {
         embed.description(mineGen(10))
         embed.color('#dd3af0')
         embed.thumbnail(star.user.avatarURL)
-        ctx.message.channel.createMessage(embed.create);
+        ctx.send(embed.create);
     }
 };
 

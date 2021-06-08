@@ -46,7 +46,7 @@ module.exports = class PingCommand {
         .setDiscriminator(user.discriminator);
         rank.build().then(data => {
         const attachment = new MessageAttachment(data, "RankCard.png");
-        ctx.message.channel.createMessage(ctx.message.author, attachment);
+        ctx.send(ctx.message.author, attachment);
     });
     }
 };

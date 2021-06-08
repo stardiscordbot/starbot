@@ -34,7 +34,7 @@ module.exports = class EvalCommand {
         embed.description(`**${ctx.message.author.username}**, fiz o backup do banco de dados, ele foi enviado no meu servidor principal (aonde fica ligado os sistemas, **NÃO É O SERVIDOR DE SUPORTE**, para saber mais vá para o canal (<#850788451359522857> [\`${backupchannel.name}\`])).`)
         embed.thumbnail(star.user.avatarURL)
         embed.color('#dd3af0')
-        ctx.message.channel.createMessage(embed.create)
+        ctx.send(embed.create)
   }
 }
   

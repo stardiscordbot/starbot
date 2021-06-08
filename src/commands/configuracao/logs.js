@@ -24,7 +24,7 @@ module.exports = class EventlogCommand {
 	async run(ctx) {
 
         if (!ctx.args[0])
-        return ctx.message.channel.createMessage(
+        return ctx.send(
             `:x: ${ctx.message.author.mention} **|** ${ctx.idioma.guildLogs.insertChannel.replace(
                 '%p',
                 ctx.prefix
@@ -37,7 +37,7 @@ module.exports = class EventlogCommand {
 				ctx.args[0].toLowerCase() === 'disable')
 		) {
 			await db.del(`logs-${ctx.message.guildID}`);
-			return ctx.message.channel.createMessage(
+			return ctx.send(
 				`:white_check_mark: ${ctx.message.author.mention} **|** ${
 					ctx.idioma.guildLogs.disabled
 				}`
@@ -47,7 +47,7 @@ module.exports = class EventlogCommand {
         let logs = ctx.message.channelMentions[0] || await star.getRESTChannel(ctx.args[0]);
 
 		if (!logs)
-			return ctx.message.channel.createMessage(
+			return ctx.send(
 				`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.guildLogs.insertChannel.replace(
 					'%p',
 					ctx.prefix
@@ -61,6 +61,6 @@ module.exports = class EventlogCommand {
         embed.description(`<:st_config:845647892932067369> ${ctx.idioma.guildLogs.success.replace('%canal', logs.name)}`)
 		embed.thumbnail(star.user.avatarURL)
         embed.color('#dd3af0')
-        return ctx.message.channel.createMessage(embed.create)
+        return ctx.send(embed.create)
 	}
 };

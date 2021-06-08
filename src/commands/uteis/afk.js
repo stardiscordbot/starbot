@@ -8,12 +8,12 @@ module.exports = class AvatarCommand {
         },
         pt: {
           nome: 'afk',
-          categoria: '🕰️ • Util' ,
+          categoria: '🕰️ • Utilidades' ,
           desc: 'Use quando você estiver longe do teclado, quando você para participar de uma discussão em uma sala de bate-papo por um curto período, avise a seus amigos com esse comando ^-^'
         },
         en: {
           nome: 'afk',
-          categoria: '🕰️ • Util',
+          categoria: '🕰️ • Utility',
           desc: 'Use when you are away from the keyboard, when you want to join a discussion in a chat room for a short time, let your friends know with this command ^-^'
         },
       aliases: ['awayfromthekeyboard'],
@@ -26,11 +26,11 @@ module.exports = class AvatarCommand {
         if(!afk) {
             db.set(`afk-${ctx.message.author.id}`, `${ctx.args.join(" ") || "Não Definido"}`)
             ctx.message.member.setNickname(`AFK ${ctx.message.member.nickname || ctx.message.author.username}`)
-            ctx.message.channel.createMessage(`💤 ${ctx.message.author.mention} **|** ${ctx.idioma.afk.set} \`${ctx.args.join(" ").replace(/`/g, '') || "Não Definido"}\``)
+            ctx.send(`💤 ${ctx.message.author.mention} **|** ${ctx.idioma.afk.set} \`${ctx.args.join(" ").replace(/`/g, '') || "Não Definido"}\``)
         } else {
             db.del(`afk-${ctx.message.author.id}`)
             ctx.message.member.setNickname(`${ctx.message.member.nickname.replace(/AFK/g, "") || ctx.message.author.username}`)
-            ctx.message.channel.createMessage(`💤 ${ctx.message.author.mention} **|** ${ctx.idioma.afk.wel}`)
+            ctx.send(`💤 ${ctx.message.author.mention} **|** ${ctx.idioma.afk.wel}`)
         }
   }
 }

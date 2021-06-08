@@ -34,7 +34,7 @@ module.exports = class PingCommand {
         foto.drawImage(avatar, 50, 100, 150, 150);
 
         const attachment = new MessageAttachment(canvas.toBuffer(), `dieplague-${user.id}.png`)
-        ctx.message.channel.createMessage(ctx.message.author, attachment)
+        ctx.send(ctx.message.author, attachment)
     }
 };
 

@@ -63,6 +63,9 @@ module.exports = class executarCMD {
         if (message.content.startsWith(`<@!${star.user.id}>`)) {
             prefix = `<@!${star.user.id}>`;
         };
+        if(message.content.startsWith(`<@${star.user.id}>`)) {
+            prefix = `<@${star.user.id}>`
+        }
 
         // Definindo idioma.
         var idioma = require('../config/idiomas.js');
@@ -71,8 +74,14 @@ module.exports = class executarCMD {
         idioma = idioma[lang];
 
         // Responder menção.
-        if (message.content === `<@!${star.user.id}>`) {
-            return message.channel.createMessage(idioma.mention.response.replace('%u', message.author.username).replace("s!", prefix));
+        if (message.content === `<@!${star.user.id}>` || message.content === `<@${star.user.id}>`) {
+            const pr = await db.get(`prefix-${message.guildID}`) || 's!'
+            let embed = new star.manager.ebl;
+            embed.title(`<:st_wumpus:844541072855662593> ${idioma.message.P}`)
+            embed.color('#dd3af0')
+            embed.thumbnail(star.user.avatarURL)
+            embed.description(idioma.mention.response.replace('%u', message.author.username).replace("s!", pr))
+            return message.channel.createMessage(embed.create);
         }
 
         // Executar comando.  

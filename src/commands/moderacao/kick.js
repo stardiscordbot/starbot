@@ -22,7 +22,7 @@ module.exports = class BanCommand {
 	}
 	async run(ctx) {
         let member
-        if(!ctx.args[0]) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.ban.noarg}`)
+        if(!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.ban.noarg}`)
         
         if(!ctx.message.mentions[0]) {
             member = await star.getRESTUser(ctx.args[0])
@@ -36,7 +36,7 @@ module.exports = class BanCommand {
 					embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
 					embed.color('#ff0000')
 					embed.thumbnail(star.user.avatarURL)
-					return ctx.message.channel.createMessage(embed.create)
+					return ctx.send(embed.create)
 				});
     }
 };

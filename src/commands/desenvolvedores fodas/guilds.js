@@ -9,12 +9,12 @@ module.exports = class EvalCommand {
         pt: {
           nome: 'guilds',
           categoria: '💻 • Desenvolvedor',
-          desc: 'Recarrega o bot'
+          desc: 'Comando de testes'
         },
         en: {
           nome: 'guilds',
           categoria: '💻 • Developer',
-          desc: 'Reload bot'
+          desc: 'Test command'
         },
         aliases: ['servidores', 'guildsinfo'],
         run: this.run

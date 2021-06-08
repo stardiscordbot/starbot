@@ -1,8 +1,17 @@
-{ "invite": {
+{ "topgg": {
+  "men": "Mencione algum bot, ou dê o id do mesmo.",
+    "dono": "Dono:",
+    "prefix": "Prefixo:",
+    "votos": "Votos:",
+    "montly": "Mensal:",
+    "here": "Clique Aqui"
+  },
+  "invite": {
   "add": "Me Adicione ao seu servidor!",
   "desc": "Yay, gostou de meus comandos? Ou de minhas funcionalidades? Me [adicione](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=805432446)\n\nPrecisa de ajuda ou algo do tipo? Entre em meu [servidor de suporte](https://discord.gg/2pFH6Yy), yay"
   },
   "message": {
+  "P": "Olá, humano!",
   "view": "Eu não tenho permissão de ler o histórico de mensagens!",
   "the": "O Comando",
   "unk": "não existe ou não pode ser executado no momento!",
@@ -22,14 +31,18 @@
     "textt": "Com todas as permissões: **[clique aqui](https://top.gg/bot/719524114536333342/invite)**;\nSem nenhuma permissão: **[clique aqui](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=0)**.",
     "open": "Eu sou",
     "com": "Consumo:",
-    "text": "<:st_wumpus:844541072855662593> Olá, meu nome é **Star:tm:** tenho **13** anos, criei minha conta no dia **08/06/2020**, eu conheço mais de **%g** lugares diferentes e **%u** pessoas e seus estilos, é uma honra está em seu servidor! :)\n\n<:st_terminal:845647948335284235> Fui desenvolvida em **[javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)** utilizando **[eris](https://abal.moe/Eris/)** em meu client e comandos, yay"
+    "text": "<:st_wumpus:844541072855662593> Olá, meu nome é **Star:tm:** tenho **14** anos, criei minha conta no dia **08/06/2020**, eu conheço mais de **%g** lugares diferentes e **%u** pessoas e seus estilos, é uma honra está em seu servidor! :)\n\n<:st_terminal:845647948335284235> Fui desenvolvida em **[javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)** utilizando **[eris](https://abal.moe/Eris/)** em meu client e comandos, yay"
   },
   "afk": {
   "set": "Setei seu AFK com o motivo:",
   "wel": "Bem-vind de volta!"
   },
   "ship": {
-    "nou": "Mencione algum usuário para shippar"
+    "nou": "Mencione algum usuário para shippar",
+    "d1": "vocês 2 deles não são compatíveis, são muito diferentes um do outro. 😔",
+    "d2": "vocês podem ser amigos, mas não vejo um futuro melhor entre eles, eles vocês são parecidos um com o outro. 🤝",
+    "d3": "vocês podem ser um casal, os gostos são quase os mesmos, vocês se conhecem muito. 👀",
+    "d4": "são perfeitos, feitos um para o outro, vai em frente, vocês tem tudo para dar certo! ❤️"
   },
   "userinfo": {
     "inf": "Informações de:",

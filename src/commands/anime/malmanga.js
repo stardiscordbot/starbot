@@ -35,7 +35,7 @@ module.exports = class MangaCommand {
                 embed.field(`💻 Mal ID:`, `\`${anime.mal_id} [${anime.url}]\``)
                 embed.thumbnail(anime.image_url)
                 embed.color('#dd3af0')
-                ctx.message.channel.createMessage(embed.create)
+                ctx.send(embed.create)
         }
   }
 

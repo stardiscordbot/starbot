@@ -22,7 +22,7 @@ module.exports = class PingCommand {
     }
     async run(ctx) {
         let member
-        if (!ctx.args[0]) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.ban.noarg}`)
+        if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.ban.noarg}`)
 
         if (!ctx.message.mentions[0]) {
             member = await star.getRESTUser(ctx.args[0]).then(info => info).catch(() => {
@@ -32,7 +32,7 @@ module.exports = class PingCommand {
                 embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
                 embed.color('#ff0000')
                 embed.thumbnail(star.user.avatarURL)
-                return ctx.message.channel.createMessage(embed.create)
+                return ctx.send(embed.create)
                 });
         } else {
             member = await ctx.message.mentions[0];
@@ -44,7 +44,7 @@ module.exports = class PingCommand {
             embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
             embed.color('#ff0000')
             embed.thumbnail(star.user.avatarURL)
-            return ctx.message.channel.createMessage(embed.create)
+            return ctx.send(embed.create)
         })
 
         const embed = new star.manager.ebl;
@@ -53,7 +53,7 @@ module.exports = class PingCommand {
         embed.field(`${ctx.idioma.baninfo.user}`, `\`\`\`${member.username}#${member.discriminator} (${member.id})\`\`\``)
         embed.field(`${ctx.idioma.baninfo.reason}`, `\`\`\`${banInfo.reason}\`\`\``)
         embed.thumbnail(member.avatarURL)
-        ctx.message.channel.createMessage(embed.create)
+        ctx.send(embed.create)
     }
 };
 

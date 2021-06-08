@@ -31,7 +31,7 @@ module.exports = class PingCommand {
     embed.field(`📚 ❯ ${ctx.idioma.userinfo.id} __${user.username}__`, `\`${user.id}\``, true)
     embed.field(`📆 ❯ ${ctx.idioma.userinfo.create}`, `\`${moment(user.createdAt).format('📆 DD/MM/YYYY')}\n${moment(user.createdAt).format('⏰ HH:mm:ss')}\``, true)
     embed.thumbnail(user.avatarURL || "https://i.imgur.com/2dwGomm.png")
-    ctx.message.channel.createMessage(embed.create)
+    ctx.send(embed.create)
     }
 }
 

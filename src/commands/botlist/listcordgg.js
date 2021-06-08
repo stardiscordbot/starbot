@@ -9,12 +9,12 @@ module.exports = class EvalCommand {
         pt: {
           nome: 'listcord',
           categoria: '🤖 • Botlist',
-          desc: 'Recarrega o bot'
+          desc: 'Vê informações de um bot do listcord.gg'
         },
         en: {
           nome: 'listcord',
           categoria: '🤖 • Botlist',
-          desc: 'Reload bot'
+          desc: 'View information from a listcord.gg bot'
         },
         aliases: ['listcordgg', 'listcord.gg', 'lsc'],
         run: this.run
@@ -23,7 +23,7 @@ module.exports = class EvalCommand {
     async run(ctx) {
         const {request} = require("axios")
         const bl = require("../../botlists.json")
-        if(!ctx.args[0]) return ctx.addMessageReaction("❌")
+        if(!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.topgg.men}`)
         const user = ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0])
         
         request({
@@ -37,15 +37,21 @@ module.exports = class EvalCommand {
             embed.title(`<:st_listcord:845723224397709332> listcord.gg | ${user.username}#${user.discriminator}`)
             embed.url(`https://listcord.gg/bot/${user.id}`)
             embed.description(`${res.description.short}`)
-            embed.field(`<:st_owner:845713255670087690> Owner:`, `**Tag:** ${owner.username}#${owner.discriminator}\n**ID:** ${res.developers[0]}`, true)
-            embed.field(`<:st_botlist_editado:831131713219461160> Prefix:`, `${res.prefix}`, true)
-            embed.field(`<:st_like:845646603368661002> Votes:`, `Total: **${res.upvotes}**`, true)
-            embed.field(`<:st_link:845643800080416770> Links:`, `**Listcord.gg:** [Click Here](https://listcord.gg/bot/${user.id})\n**Invite:** [Click Here](https://discord.com/oauth2/authorize?client_id=${user.id}&scope=bot%20applications.commands&permissions=${res.required_permissions})\n**Github:** [Click Here](${res.github})\n**Website:** [Click Here](${res.website})`, true)
+            embed.field(`<:st_owner:845713255670087690> ${ctx.idioma.topgg.dono}`, `**Tag:** ${owner.username}#${owner.discriminator}\n**ID:** ${res.developers[0]}`, true)
+            embed.field(`<:st_botlist_editado:831131713219461160> ${ctx.idioma.topgg.prefix}`, `${res.prefix}`, true)
+            embed.field(`<:st_like:845646603368661002> ${ctx.idioma.topgg.votos}`, `Total: **${res.upvotes}**`, true)
+            embed.field(`<:st_link:845643800080416770> Links:`, `**Listcord.gg:** [${ctx.idioma.topgg.here}](https://listcord.gg/bot/${user.id})\n**Invite:** [${ctx.idioma.topgg.here}](https://discord.com/oauth2/authorize?client_id=${user.id}&scope=bot%20applications.commands&permissions=${res.required_permissions})\n**Github:** [${ctx.idioma.topgg.here}](${res.github || "https://github.com/stardiscordbot/starbot"})\n**Website:** [${ctx.idioma.topgg.here}](${res.website || "https://star-bot.tk"})`, true)
             embed.color('#dd3af0')
             embed.thumbnail(user.avatarURL)
-            ctx.message.channel.createMessage(embed.create)
+            ctx.send(embed.create)
         }).catch((e) => {
-            ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** \`${e}\``)
+          const embed = new star.manager.ebl;
+          embed.title(`${ctx.idioma.message.e}`)
+          embed.description(`\`\`\`js\n${err}\n\`\`\``)
+          embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
+          embed.color('#ff0000')
+          embed.thumbnail(star.user.avatarURL)
+          return ctx.send(embed.create)
         })
   }
 }

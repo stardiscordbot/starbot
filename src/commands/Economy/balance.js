@@ -32,7 +32,7 @@ module.exports = class EvalCommand {
         embed.field(`❯ Banco:`, `**${user.username}** tem **¥ ${banco.toLocaleString()}** no banco.`, true)
         embed.color('#dd3af0')
         embed.thumbnail('https://i.imgur.com/VW4x1en.png')
-        ctx.message.channel.createMessage(embed.create)
+        ctx.send(embed.create)
 
     }
 }

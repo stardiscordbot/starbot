@@ -8,12 +8,12 @@ module.exports = class AvatarCommand {
         },
         pt: {
           nome: 'avatar',
-          categoria: '🕰️ • Util' ,
+          categoria: '🕰️ • Utilidades' ,
           desc: 'Mostra seu avatar ou o avatar de algum usuário.'
         },
         en: {
           nome: 'avatar',
-          categoria: '🕰️ • Util',
+          categoria: '🕰️ • Utility',
           desc: 'Shows your avatar or a user\'s avatar.'
         },
       aliases: ['photo', 'av', 'picture', 'foto'],
@@ -28,9 +28,9 @@ module.exports = class AvatarCommand {
       embed.title(`${ctx.idioma.avatar.from} ${user.tag}`)
       embed.image(user.avatarURL)
       embed.color('#dd3af0')
-      return ctx.message.channel.createMessage(embed.create)
+      return ctx.send(embed.create)
       } catch {
-        return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.avatar.unknown}`)
+        return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.avatar.unknown}`)
       }
     
   }

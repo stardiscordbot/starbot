@@ -25,7 +25,7 @@ module.exports = class RbuserCommand {
       embed.title(`<a:st_fortnite:850423265540440074> Fortnite | Shop`)
       embed.image("https://fortool.fr/cm/assets/shop/en.png")
       embed.color('#dd3af0')
-      ctx.message.channel.createMessage(embed.create);
+      ctx.send(embed.create);
   }
 }  
 // ADG

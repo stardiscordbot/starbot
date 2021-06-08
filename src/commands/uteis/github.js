@@ -34,7 +34,7 @@ module.exports = class PingCommand {
         embed.color('#dd3af0')
         embed.thumbnail(git.avatar_url || star.user.avatarURL)
 	
-        ctx.message.channel.createMessage(embed.create)
+        ctx.send(embed.create)
     }
 };
 

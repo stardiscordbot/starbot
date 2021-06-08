@@ -21,8 +21,8 @@ module.exports = class PingCommand {
 		};
 	}
 	async run(ctx) {
-		if(!ctx.args[0]) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.say.noarg}`)
-        ctx.message.channel.createMessage(`${ctx.args.join(" ").replace(/@/g, '').replace(/#/g, '').replace(/`/g, '')}\n\n__<:st_wumpus:844541072855662593> ${ctx.idioma.say.enviada} ${ctx.message.author.mention}__`)
+		if(!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.say.noarg}`)
+        ctx.send(`${ctx.args.join(" ").replace(/@/g, '').replace(/#/g, '').replace(/`/g, '')}\n\n__<:st_wumpus:844541072855662593> ${ctx.idioma.say.enviada} ${ctx.message.author.mention}__`)
     }
 };
 

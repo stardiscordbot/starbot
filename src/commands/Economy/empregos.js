@@ -33,7 +33,7 @@ module.exports = class EvalCommand {
             embed.field(`🙋 ❯ Atendente:`, `<:st_util_info:835532528617259068> **Requisitos:**\n> Paciência de jó.\n> Salário: **500** a **5,000**`, true)
             embed.color('#dd3af0')
             embed.thumbnail(ctx.message.author.avatarURL || star.user.avatarURL)
-            ctx.message.channel.createMessage(ctx.message.author, embed.create).then(msg => {
+            ctx.send(ctx.message.author, embed.create).then(msg => {
                 msg.addMessageReaction("🚗");
                 msg.addMessageReaction("👮");
                 msg.addMessageReaction("🙋");
@@ -56,7 +56,7 @@ module.exports = class EvalCommand {
                         embed.description(`<:st_util_info:835532528617259068> Você foi contratado como **motorista** na empresa **${empresa.name}**\n> **Especificações:**\n- Salário: **¥ ${empresa.salario.min}/¥ ${empresa.salario.max}**`)
                         embed.color('#dd3af0')
                         embed.thumbnail(ctx.message.author.avatarURL || star.user.avatarURL)
-                        ctx.message.channel.createMessage(embed.create)
+                        ctx.send(embed.create)
                 })
             })
         } else {
@@ -68,7 +68,7 @@ module.exports = class EvalCommand {
             embed.field(`👷 ❯ Engenheiro:`, `<:st_util_info:835532528617259068> Profissão`)
             embed.color('#dd3af0')
             embed.thumbnail(ctx.message.author.avatarURL || star.user.avatarURL)
-            ctx.message.channel.createMessage(ctx.message.author, embed.create).then(msg => {
+            ctx.send(ctx.message.author, embed.create).then(msg => {
                 msg.addMessageReaction("👨‍✈️");
                 msg.addMessageReaction("💻");
                 msg.addMessageReaction("👷");

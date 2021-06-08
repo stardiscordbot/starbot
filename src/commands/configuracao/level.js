@@ -21,8 +21,8 @@ module.exports = class PingCommand {
 		};
 	}
 	async run(ctx) {
-        if(!ctx.args[0]) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** Siga o exemplo: \`role [@cargo|id] [level(ex:1)]\``)
-        if(!ctx.args[1]) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** Siga o exemplo: \`role [@cargo|id] [level(ex:1)]\``)
+        if(!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** Siga o exemplo: \`role [@cargo|id] [level(ex:1)]\``)
+        if(!ctx.args[1]) return ctx.send(`:x: ${ctx.message.author.mention} **|** Siga o exemplo: \`role [@cargo|id] [level(ex:1)]\``)
         const role = await ctx.message.mentions.roles.first() || ctx.message.guild.roles.fetch(ctx.args[0])
         //const carg = args[1]
         const level = ctx.args[1]

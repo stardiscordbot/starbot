@@ -1,8 +1,17 @@
-{ "invite": {
+{ "topgg": {
+  "men": "Mention a bot, or give its id.",
+  "owner": "Owner:",
+  "prefix": "Prefix:",
+  "votos": "Votes:",
+  "montly": "Monthly:",
+  "here": "Click Here"
+},
+  "invite": {
   "add": "Add me to your server!",
   "desc": "Yay, did you like my commands? Or my features? [Add me](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=805432446)\n\nYou need Help or something? Log into my [support server](https://discord.gg/2pFH6Yy), yay"
   },
   "message": {
+    "P": "Hello, human!",
   "view": "I don't have permission to read the message history!",
   "the": "The Command",
   "unk": "does not exist or cannot be run at the moment!",
@@ -20,7 +29,7 @@
   "por": "for having created me.",
   "ded": "• All the people who helped/helped me to develop;\n• All my team;\n• And you: %u for using my commands! :)",
   "textt": "With all permissions: **[click here](https://top.gg/bot/719524114536333342/invite)**;\nWithout any permissions: **[click here](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=0)**.",
-  "text": "<:st_wumpus:844541072855662593> Hi, my name is **Star:tm:** I'm **13** years old, I created my account on **06/08/2020**, I know more than **%g** different places and **%u** people and their styles, it's a honor is on your server! :)\n\n<:st_terminal:845647948335284235> I was developed in **[javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** using **[eris](https://abal.moe/Eris/)** in my client and commands, yay",
+  "text": "<:st_wumpus:844541072855662593> Hi, my name is **Star:tm:** I'm **14** years old, I created my account on **06/08/2020**, I know more than **%g** different places and **%u** people and their styles, it's a honor is on your server! :)\n\n<:st_terminal:845647948335284235> I was developed in **[javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** using **[eris](https://abal.moe/Eris/)** in my client and commands, yay",
   "open": "I am",
   "com": "Consumption:"
 },
@@ -29,7 +38,11 @@
     "wel": "Welcome back!"
   },
   "ship": {
-    "nou": "Mention a user to ship"
+    "nou": "Mention a user to ship",
+    "d1" : "you 2 of them are not compatible, they are very different from each other. 😔",
+   "d2": "you may be friends, but I don't see a better future between them, they you are similar to each other. 🤝",
+   "d3": "you can be a couple, tastes are almost the same, you know each other a lot. 👀",
+   "d4": "are perfect, made for each other, go ahead, you have everything to work out! ❤️"
   },
   "userinfo": {
     "inf": "Information:",

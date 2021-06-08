@@ -23,7 +23,7 @@ module.exports = class PingCommand {
 	async run(ctx) {
 		const jsonc = {}
         const {MessageAttachment} = require("discord.js-light")
-        ctx.message.channel.createMessage(`💥 ${ctx.message.author.mention} **|** Explodindo o canal...`)
+        ctx.send(`💥 ${ctx.message.author.mention} **|** Explodindo o canal...`)
         const channel = await star.channels.fetch(ctx.message.channel.id)
         jsonc.pos = channel.rawPosition
         

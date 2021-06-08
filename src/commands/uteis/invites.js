@@ -32,7 +32,7 @@ module.exports = class PingCommand {
             embed.title('📩 Invites')
             embed.color('#dd3af0')
             embed.description(`**${user.user.username}** tem **${c} invites**`)
-            ctx.message.channel.createMessage(embed.create);
+            ctx.send(embed.create);
 
         })
     }

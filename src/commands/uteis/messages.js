@@ -33,7 +33,7 @@ module.exports = class PingCommand {
             embed.title('💬 Messages')
             embed.color('#dd3af0')
             embed.description(`**${user.username}** tem **${valor} mensagens**`)
-            ctx.message.channel.createMessage(embed.create);
+            ctx.send(embed.create);
     }
 };
 

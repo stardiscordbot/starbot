@@ -24,7 +24,7 @@ module.exports = class EvalCommand {
     ctx.send('🔁 Recarregando arquivos...')
     star.manager.reload()
     setTimeout(()=>{
-      return ctx.message.channel.createMessage(`:white_check_mark: **|** ${ctx.message.author.mention} **${star.commands.size} comandos** e **${star._eventsCount} eventos** recarregados com sucesso.`)
+      return ctx.send(`:white_check_mark: **|** ${ctx.message.author.mention} **${star.commands.size} comandos** e **${star._eventsCount} eventos** recarregados com sucesso.`)
       },800)
     }
 }

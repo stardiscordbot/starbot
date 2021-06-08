@@ -21,9 +21,9 @@ module.exports = class PingCommand {
         };
     }
     async run(ctx) {
-        if (!ctx.args[0]) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.clear.no}`)
+        if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.clear.no}`)
         //ctx.message.delete()
-		if(Number(ctx.args[0]) > 2000 || Number(ctx.args[0]) < 2) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.clear.num}`)
+		if(Number(ctx.args[0]) > 2000 || Number(ctx.args[0]) < 2) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.clear.num}`)
             let ids = []
             let messages = await ctx.message.channel.getMessages(Number(ctx.args[0]));
 
@@ -32,7 +32,7 @@ module.exports = class PingCommand {
             })
 
             ctx.message.channel.deleteMessages(ids);
-            ctx.message.channel.createMessage(`:white_check_mark: ${ctx.message.author.mention} **|** **${ctx.args[0]} ${ctx.idioma.clear.msg}.`)
+            ctx.send(`:white_check_mark: ${ctx.message.author.mention} **|** **${ctx.args[0]} ${ctx.idioma.clear.msg}.`)
     }
 };
 

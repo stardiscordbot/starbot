@@ -19,9 +19,9 @@ module.exports = class Idioma {
       }
     }
     async run(ctx) {
-        if(!ctx.args[0]) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** Informe o novo prefixo.`)
+        if(!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** Informe o novo prefixo.`)
         db.set(`prefix-${ctx.message.guildID}`, ctx.args[0])
-        ctx.message.channel.createMessage(`:white_check_mark: ${ctx.message.author.mention} **|** Prefixo alterado para: \`${ctx.args[0].replace(/`/g, '')}\``)
+        ctx.send(`:white_check_mark: ${ctx.message.author.mention} **|** Prefixo alterado para: \`${ctx.args[0].replace(/`/g, '')}\``)
     }
   }
   

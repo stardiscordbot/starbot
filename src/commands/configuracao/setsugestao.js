@@ -22,7 +22,7 @@ module.exports = class PingCommand {
 	}
 	async run(ctx) {
 		if (!ctx.args[0])
-			return ctx.message.channel.createMessage(
+			return ctx.send(
 				`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.sugestao.insertChannel.replace(
 					'%p',
 					ctx.prefix
@@ -35,7 +35,7 @@ module.exports = class PingCommand {
                     ctx.args[0].toLowerCase() === 'disable')
             ) {
                 await db.del(`sugestao-${ctx.message.guildID}`);
-                return ctx.message.channel.createMessage(
+                return ctx.send(
                     `:white_check_mark: ${ctx.message.author.mention} **|** ${
                         ctx.idioma.sugestao.disabled
                   
@@ -49,7 +49,7 @@ module.exports = class PingCommand {
 			star.getRESTChannel(String(ctx.args[0]));
 
 		if (!logs)
-			return ctx.message.channel.createMessage(
+			return ctx.send(
 				`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.sugestao.insertChannel.replace(
 					'%p',
 					ctx.prefix
@@ -58,7 +58,7 @@ module.exports = class PingCommand {
 
 		await db.set(`sugestao-${ctx.message.guildID}`, logs.id);
 
-		return ctx.message.channel.createMessage(
+		return ctx.send(
 			`:white_check_mark: ${
 				ctx.message.author
 			} **|** ${ctx.idioma.sugestao.success.replace('%canal', logs.name)}`

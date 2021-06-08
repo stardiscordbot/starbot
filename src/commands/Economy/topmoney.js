@@ -48,7 +48,7 @@ module.exports = class PingCommand {
         embed.field(`❯ Top Money (Bank):`, ">>> " + content.replace("undefined", ""), true)
         embed.field(`❯ Top Money (Wallet):`, ">>> " + content2.replace("undefined", ""), true)
         embed.thumbnail(star.user.avatarURL)
-        ctx.message.channel.createMessage(embed.create)
+        ctx.send(embed.create)
     }
 };
 

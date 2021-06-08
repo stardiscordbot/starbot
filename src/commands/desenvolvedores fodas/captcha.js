@@ -9,12 +9,12 @@ module.exports = class EvalCommand {
         pt: {
           nome: 'captcha-test',
           categoria: '💻 • Desenvolvedor',
-          desc: 'Recarrega o bot'
+          desc: 'Comando de testes'
         },
         en: {
           nome: 'captcha-test',
           categoria: '💻 • Developer',
-          desc: 'Reload bot'
+          desc: 'Test command'
         },
         aliases: ['cap'],
         run: this.run
@@ -36,9 +36,9 @@ module.exports = class EvalCommand {
     cav.fillText(captcha, canvas.width / 5.5, canvas.height / 1.5)
     let cap = new MessageAttachment(canvas.toBuffer(), "captcha.jpg")
     
-    ctx.message.channel.createMessage(`${ctx.message.author.mention}, para liberar o servidor insira o conteúdo da mensagem a baixo`, cap).then(ms => {
+    ctx.send(`${ctx.message.author.mention}, para liberar o servidor insira o conteúdo da mensagem a baixo`, cap).then(ms => {
       const filter = m => m.content.includes(captcha);
-      const collector = ctx.message.channel.createMessageCollector(filter, { time: 60000 });
+      const collector = ctx.sendCollector(filter, { time: 60000 });
       
       collector.on('collect', m => {
         if(m.author.id !== ctx.message.author.id) return;

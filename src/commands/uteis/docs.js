@@ -30,14 +30,14 @@ module.exports = class PingCommand {
             embed.thumbnail(star.user.avatarURL)
             if(!res.fields) {
                 embed.description(`${res.description}`)
-                ctx.message.channel.createMessage(embed.create)
+                ctx.send(embed.create)
             } else {
             res.fields.map(resu => {
                 if(resu.value.includes("View source")) return;
                 embed.description(`>>> 📘 ${res.description}`)
                 embed.field(resu.name, resu.value)
             })
-            ctx.message.channel.createMessage(embed.create)
+            ctx.send(embed.create)
            }
     }
 };

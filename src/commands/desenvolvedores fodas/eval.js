@@ -44,7 +44,7 @@ module.exports = class EvalCommand {
       embed.field(`🚩 Saída`, `\`\`\`js\n${code.slice(0, 1010)}\n\`\`\``)
       embed.color('#dd3af0')
       embed.thumbnail(star.user.avatarURL)
-      ctx.message.channel.createMessage(embed.create)
+      ctx.send(embed.create)
 
     } catch(e) {
       const embed2 = new star.manager.ebl;
@@ -53,7 +53,7 @@ module.exports = class EvalCommand {
       embed2.field(`🚩 Saída`, `\`\`\`js\n${e}\n\`\`\``)
       embed2.color('#ff0000')
       embed2.thumbnail(star.user.avatarURL)
-      ctx.message.channel.createMessage(embed2.create)
+      ctx.send(embed2.create)
     }
   }
 }

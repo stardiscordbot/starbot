@@ -1,7 +1,7 @@
 {
     "votehook": {
         "id": "you vote webhook id",
-        "token":  "you vote webhook token",
+        "token":  "you vote webhook token"
     },
     "apikey": {
         "dbl": "https://top.gg",

@@ -41,7 +41,7 @@ module.exports = class PingCommand {
             embed.description(`${pdesc}`)
             embed.thumbnail(res.sprites.animated)
             embed.field(`📋 Pokémon Stats:`, `**Hp:** ${res.stats.hp}\n**Attack:** ${res.stats.attack}\n**Defense:** ${res.stats.defense}\n**Special Attack:** ${res.stats.sp_atk}\n**Special Defense:** ${res.stats.sp_def}\n**Speed:** ${res.stats.speed}`)
-            ctx.message.channel.createMessage(embed.create)
+            ctx.send(embed.create)
 			        
     }
 };

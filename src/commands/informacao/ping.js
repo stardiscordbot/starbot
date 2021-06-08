@@ -22,7 +22,7 @@ module.exports = class PingCommand {
 	}
 	async run(ctx) {
 		const ping = db.ping;
-		return ctx.message.channel.createMessage(`🏓 **|** ${ctx.message.author.mention} Pong!\n- **Websocket Ping:** \`${Date.now() - ctx.message.timestamp}ms\`\n- **API Ping:** \`${ctx.message.channel.guild.shard.latency}ms\`\n- **Database:** \`${ping.write}ms\``)}
+		return ctx.send(`🏓 **|** ${ctx.message.author.mention} Pong!\n- **Websocket Ping:** \`${Date.now() - ctx.message.timestamp}ms\`\n- **API Ping:** \`${ctx.message.channel.guild.shard.latency}ms\`\n- **Database:** \`${ping.write}ms\``)}
 };
 
 //ADG, Davi e LRD

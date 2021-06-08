@@ -8,12 +8,12 @@ module.exports = class AvatarCommand {
         },
         pt: {
           nome: 'encurtar',
-          categoria: '🕰️ • Util' ,
+          categoria: '🕰️ • Utilidades' ,
           desc: 'Encurta um link usando o bit.ly.'
         },
         en: {
           nome: 'shorten',
-          categoria: '🕰️ • Util',
+          categoria: '🕰️ • Utility',
           desc: 'Shortens a link using bit.ly.'
         },
       aliases: ['shorten', 'bitly'],
@@ -24,7 +24,7 @@ module.exports = class AvatarCommand {
     async run(ctx) {
         const {request} = require("axios")
         const config = require("../../config/config")
-        if(!ctx.args[0]) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.isgd.nolink}`)
+        if(!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.isgd.nolink}`)
         request({
             method: 'POST',
             url: 'https://api-ssl.bitly.com/v4/bitlinks',
@@ -43,7 +43,7 @@ module.exports = class AvatarCommand {
             embed.color('#dd3af0')
             embed.thumbnail(star.user.avatarURL)
             embed.description(`**${ctx.message.author.username}**, ${ctx.idioma.isgd.link} ${res.link}`)
-            ctx.message.channel.createMessage(embed.create)
+            ctx.send(embed.create)
         })
   }
 }

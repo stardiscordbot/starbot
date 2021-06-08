@@ -47,17 +47,17 @@ module.exports = class PingCommand {
         let emoji;
 
         if(porcentagem <= 23){
-            description = `> **${porcentagem}%** \`${nome.replace(/`/g, '')}\` vocês 2 deles não são compatíveis, são muito diferentes um do outro. 😔`
+            description = `> **${porcentagem}%** \`${nome.replace(/`/g, '')}\` ${ctx.idioma.ship.d1}`
             emoji = 'https://images.emojiterra.com/twitter/v13.0/512px/1f645-2640.png'
         }
 
         if(porcentagem > 23 && porcentagem <= 47){
-            description = `> **${porcentagem}%** \`${nome.replace(/`/g, '')}\` vocês podem ser amigos, mas não vejo um futuro melhor entre eles, eles vocês são parecidos um com o outro. 🤝`
+            description = `> **${porcentagem}%** \`${nome.replace(/`/g, '')}\` ${ctx.idioma.ship.d2}`
             emoji = 'https://images.emojiterra.com/twitter/v13.0/512px/1f91d.png'
         }
 
         if(porcentagem > 47 && porcentagem <= 80){
-            description = `> **${porcentagem}%** \`${nome.replace(/`/g, '')}\` vocês podem ser um casal, os gostos são quase os mesmos, vocês se conhecem muito. 👀`
+            description = `> **${porcentagem}%** \`${nome.replace(/`/g, '')}\` ${ctx.idioma.ship.d3}`
             emoji = 'https://images.emojiterra.com/twitter/v13.0/512px/1f440.png'
         }
 
@@ -66,7 +66,7 @@ module.exports = class PingCommand {
             emoji = 'https://images.emojiterra.com/twitter/v13.0/512px/2764.png'
         }
         
-        ctx.message.channel.createMessage(`💖 ${ctx.message.author.mention}\n${description}`).then(async msg => {
+        ctx.send(`💖 ${ctx.message.author.mention}\n${description}`).then(async msg => {
             if(!ship1 && !ship2) {
                 await db.set(`ship-${user1.id}-${user2.id}`, porcentagem)
                 await db.set(`ship-${user2.id}-${user1.id}`, porcentagem)

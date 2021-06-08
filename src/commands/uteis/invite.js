@@ -1,9 +1,9 @@
-module.exports = class PingCommand {
+module.exports = class InviteCommand {
 	constructor() {
 		return {
 			permissoes: {
 				membro: [], //Permissoes que o usuario necessita
-				bot: ['viewAuditLog'], //Permissoes que o bot necessita
+				bot: ['embedLinks'], //Permissoes que o bot necessita
 				dono: true //Se apenas nos devs podem usar o comando
 			},
 			pt: {
@@ -22,11 +22,11 @@ module.exports = class PingCommand {
 	}
 	async run(ctx) {
         const embed = new star.manager.ebl;
-        embed.title(`📩 ${ctx.idioma.desc.add}`)
-        embed.description(ctc.idioma.invite.desc)
+        embed.title(`📩 ${ctx.idioma.invite.add}`)
+        embed.description(ctx.idioma.invite.desc)
         embed.color('#dd3af0')
         embed.thumbnail(star.user.avatarURL)
-        ctx.message.channel.createMessage(embed.create)
+        ctx.send(embed.create)
     }
 };
 
