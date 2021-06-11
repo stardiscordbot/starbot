@@ -1,4 +1,4 @@
-module.exports = class RbuserCommand {
+module.exports = class StopCommand {
     constructor() {
         return {
             permissoes: {

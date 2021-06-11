@@ -1,4 +1,4 @@
-module.exports = class RbuserCommand {
+module.exports = class PlayCommand {
     constructor() {
         return {
             permissoes: {
@@ -9,14 +9,14 @@ module.exports = class RbuserCommand {
             pt: {
                 nome: 'play',
                 categoria: '🎵 • Música',
-                desc: 'Mostra a loja do Fortnite'
+                desc: 'Ouça músicas, yay'
             },
             en: {
                 nome: 'play',
                 categoria: '🎵 • Music',
-                desc: 'Show the Fortnite store'
+                desc: 'Listen musics, yay'
             },
-            aliases: ['p', 'tocar'],
+            aliases: ['p', 'tocar', 'som', 'somzao', 'somzão', 'dj'],
             run: this.run
         }
     }

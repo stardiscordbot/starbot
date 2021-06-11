@@ -19,7 +19,8 @@ const client = new Client(token, {
     autoreconnect: true,
     rest: {
         baseURL: "/api/v9"
-    }
+    },
+    maxShards: "auto"
 });
 
 // Setando comandos.

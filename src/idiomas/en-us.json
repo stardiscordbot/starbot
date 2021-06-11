@@ -158,7 +158,8 @@
       "noc1": ":x: You need to be on the same voice channel as me to perform music commands.",
       "noc2": ":x: You need to be connected to a voice channel to perform music commands.",
       "not": "I am not playing anything on this server.",
-      "stop": "I stopped playing, I'm leaving."
+      "stop": "I stopped playing, I'm leaving.",
+      "q": "Queue"
   },
   "perfil": {
       "ngm": "NOBODY",

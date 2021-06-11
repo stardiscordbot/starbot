@@ -158,7 +158,8 @@
       "noc1": "Você precisa estar no mesmo canal de voz que eu para executar comandos de música.",
       "noc2": "Você precisa estar conectado em algum canal de voz para executar comandos de música.",
       "not": "Não estou tocando nada neste servidor.",
-      "stop": "Parei de tocar, estou saindo"
+      "stop": "Parei de tocar, estou saindo",
+      "q": "Fila"
   },
   "perfil": {
       "ngm": "NINGUÉM",

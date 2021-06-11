@@ -12,7 +12,6 @@ module.exports = class MessageEvent {
     }
     async run(message) {
         if (message.channel.type === 'dm' || message.author.bot) return;
-
         let xpReward = Math.floor(Math.random() * 29) + 1;
         if (xpReward == 0) xpReward = 10
 
@@ -133,6 +132,27 @@ module.exports = class MessageEvent {
             }
 
             try {
+                const botban = await db.get(`blacklist-${message.author.id}`)
+                let pass = db.get(`pass-${message.author.id}`)
+
+                if(botban) {
+                    if(!pass) {
+                    const banem = new star.manager.ebl;
+                    banem.title(`🛠️ Oops, you're banned!`)
+                    banem.description(`You were banned from using me, for the reason: ${botban}, if you think your ban was unfair you can submit an [appeal](https://forms.gle/gQ1LT8LNX5LY3QYU9).`)
+                    banem.field(`Reason for ban:`, `\`\`\`\n${botban}\n\`\`\``)
+                    banem.thumbnail(star.user.avatarURL)
+                    banem.color('#ff0000')
+                    db.set(`pass-${message.author.id}`, Date.now())
+                    const dm = await star.getDMChannel(message.author.id)
+                    return dm.createMessage(banem.create).catch((e) => {
+                        message.channel.createMessage(banem.create)
+                    })
+                    } else {
+                        return;
+                    }
+                }
+
                 let timeout = 5000
                 var developers = await db.get('devs');
 
