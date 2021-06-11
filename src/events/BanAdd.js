@@ -6,7 +6,9 @@ module.exports = class guildBanAdd {
         }
     }
     async run(guild, user) {
-        const {Constants} = require("eris")
+        const {
+            Constants
+        } = require("eris")
         const fetchedLogs = await guild.getAuditLogs({
             limit: 1,
             type: Constants.AuditLogActions.MEMBER_BAN_ADD,
@@ -15,7 +17,7 @@ module.exports = class guildBanAdd {
         if (!fetchedLogs) return star.getRESTChannel("829534916765155358").createMessage(`[BAN] **${user.tag} (${user.id})** foi banido mais não achei o autor.`);
 
         let logs = await db.get(`logs-${guild.id}`)
-        if(!logs) return;
+        if (!logs) return;
         let canal = await star.getRESTChannel(logs);
 
         const embed = new star.manager.ebl;
@@ -26,5 +28,5 @@ module.exports = class guildBanAdd {
         embed.color('#dd3af0')
         canal.createMessage(embed.create)
 
-   }
+    }
 }

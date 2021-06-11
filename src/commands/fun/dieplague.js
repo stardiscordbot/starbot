@@ -22,7 +22,7 @@ module.exports = class PingCommand {
 	}
 	async run(ctx) {
         const {loadImage,createCanvas} = require("canvas");
-        const {MessageAttachment} = require("discord.js-light");
+        //const {MessageAttachment} = require("discord.js-light");
         const user = ctx.args[0] ? ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0]).catch(_ => ctx.message.author) : ctx.message.author
 
 		const background = await loadImage("https://i.imgur.com/7GAAf63.png");
@@ -33,8 +33,8 @@ module.exports = class PingCommand {
         const avatar = await loadImage(user.avatarURL);
         foto.drawImage(avatar, 50, 100, 150, 150);
 
-        const attachment = new MessageAttachment(canvas.toBuffer(), `dieplague-${user.id}.png`)
-        ctx.send(ctx.message.author, attachment)
+        //const attachment = new MessageAttachment(canvas.toBuffer(), `dieplague-${user.id}.png`)
+        //ctx.send(ctx.message.author, attachment)
     }
 };
 

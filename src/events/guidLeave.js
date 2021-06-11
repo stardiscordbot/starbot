@@ -1,5 +1,4 @@
-//🧭 → Servers [NaN]
-module.exports = class SetarStatus {
+module.exports = class GuildDelete {
     constructor() {
         return {
             nome: 'guildDelete',
@@ -8,7 +7,9 @@ module.exports = class SetarStatus {
     }
     async run(guild) {
         const ch = await star.getRESTChannel("848955667866976276")
-        ch.edit({name: `🧭 → Servers [${star.guilds.size}]`})
+        ch.edit({
+            name: `🧭 → Servers [${star.guilds.size}]`
+        })
 
         const moment = require("moment")
 

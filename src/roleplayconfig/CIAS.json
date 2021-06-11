@@ -1,6 +1,5 @@
 {
-    "aereas": [
-        {
+    "aereas": [{
             "nome": "Azul",
             "horas": 200,
             "logo": "",

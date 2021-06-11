@@ -2,14 +2,14 @@
 require('colors');
 
 // Código rs
-const { Client, Collection } = require("eris");
+const {
+    Client,
+    Collection
+} = require("eris");
 
 // Iniciando a star.
 const {
-    token,
-    prefix,
-    database,
-    webhook
+    token
 } = require('./config/config.js');
 
 const client = new Client(token, {
@@ -33,7 +33,7 @@ const StarBot = new Star(client);
 
 StarBot.iniciar().then((star) => {
     console.log(`[CLIENT] ${star}, Tudo Carregado!`.dim.brightMagenta);
-    StarBot.inlineReply();
+    //StarBot.inlineReply();
 });
 
 global.star = client;
@@ -49,5 +49,6 @@ global.db = require('star-database-manager');
 // Handler.
 require('./client/handler/comandos.js');
 require('./client/handler/eventos.js');
+require("./System/lavacord");
 
 // LRD

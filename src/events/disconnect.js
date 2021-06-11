@@ -1,5 +1,4 @@
-//🧭 → Servers [NaN]
-module.exports = class SetarStatus {
+module.exports = class Disconnect {
     constructor() {
         return {
             nome: 'disconnect',

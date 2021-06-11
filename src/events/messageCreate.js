@@ -1,16 +1,15 @@
 'use strict';
 
-const config = require('../../src/config/config');
+const config = require('../config/config');
 const cooldowns = {};
 
-module.exports = class executarCMD {
+module.exports = class MessageEvent {
     constructor() {
         return {
             nome: 'messageCreate',
             run: this.run
         }
     }
-
     async run(message) {
         if (message.channel.type === 'dm' || message.author.bot) return;
 

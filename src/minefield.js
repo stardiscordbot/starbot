@@ -72,34 +72,34 @@ function nthOpenSquare(mineField, n) {
 function codeToEmoji(n) {
     switch (n) {
         case 0:
-            return '||:zero:||';
+            return ' ||:zero:|| ';
             break;
         case 1:
-            return '||:one:||';
+            return ' ||:one:|| ';
             break;
         case 2:
-            return '||:two:||';
+            return ' ||:two:|| ';
             break;
         case 3:
-            return '||:three:||';
+            return ' ||:three:|| ';
             break;
         case 4:
-            return '||:four:||';
+            return ' ||:four:|| ';
             break;
         case 5:
-            return '||:five:||';
+            return ' ||:five:|| ';
             break;
         case 6:
-            return '||:six:||';
+            return ' ||:six:|| ';
             break;
         case 7:
-            return '||:seven:||';
+            return ' ||:seven:|| ';
             break;
         case 8:
-            return '||:eight:||';
+            return ' ||:eight:|| ';
             break;
         case -1:
-            return '||:boom:||';
+            return ' ||:boom:|| ';
             break;
     }
 }

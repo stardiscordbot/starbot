@@ -1,4 +1,4 @@
-module.exports = class SetarStatus {
+module.exports = class ReadyEvent {
     constructor() {
         return {
             nome: 'ready',
@@ -10,7 +10,12 @@ module.exports = class SetarStatus {
         console.log(`[CLIENT] ${star.user.username+"#"+star.user.discriminator} Iniciada!`.dim.brightMagenta)
 
         setTimeout(() => {
-            star.editStatus("online", {game: star.user.username, name: `s!help | ${star.guilds.size} guilds [v5.0.4]`, type: 5});
+            star.editStatus("online", {
+                game: star.user.username,
+                name: `s!help | ${star.guilds.size} guilds [v5.0.4]`,
+                type: 5
+            });
         }, 1000 * 30)
+        star.music.init(star.user.id)
     }
 }

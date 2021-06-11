@@ -1,5 +1,4 @@
-//🧭 → Servers [NaN]
-module.exports = class SetarStatus {
+module.exports = class GuildCreate {
     constructor() {
         return {
             nome: 'guildCreate',
@@ -8,14 +7,16 @@ module.exports = class SetarStatus {
     }
     async run(guild) {
         const ch = await star.getRESTChannel("848955667866976276")
-        ch.edit({name: `🧭 → Servers [${star.guilds.size}]`})
+        ch.edit({
+            name: `🧭 → Servers [${star.guilds.size}]`
+        })
 
         const moment = require("moment")
 
         const log = await star.getRESTChannel("829530462354538566")
         const owner = await star.getRESTUser(guild.ownerID)
 
-        if(guild.region !== "brazil") {
+        if (guild.region !== "brazil") {
             await db.set(`idioma-${guild.id}`, "en-us")
         }
 

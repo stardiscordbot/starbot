@@ -1,23 +1,21 @@
 {
     "en": {
-        "policial": [
-            {
+        "policial": [{
                 "name": ""
             },
             {
-    
+
             }
         ],
         "motorista": [
-    
+
         ],
         "atendente": [
-    
+
         ]
     },
     "pt": {
-        "policial": [
-            {
+        "policial": [{
                 "name": "Policia Federal",
                 "salario": {
                     "min": 5000,
@@ -34,8 +32,7 @@
                 "type": "police"
             }
         ],
-        "motorista": [
-            {
+        "motorista": [{
                 "name": "Uber",
                 "salario": {
                     "min": 500,
@@ -61,7 +58,7 @@
             }
         ],
         "atendente": [
-    
+
         ]
     }
 }
