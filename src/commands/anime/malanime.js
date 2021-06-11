@@ -21,7 +21,7 @@ module.exports = class AnimeCommand {
       }
   }
   async run(ctx) {
-      if (!ctx.args[0]) return ctx.addMessageReaction("❌")
+      if (!ctx.args[0]) return ctx.send(`❌ ${ctx.message.author.mention} **|** ${ctx.idioma.mal.term}`)
       const fetch = require("star-fetch")
       const res = await fetch(`https://api.jikan.moe/v3/search/anime?q=${ctx.args.join(" ").replace(/ /g, '%20')}`)
       let anime = res.results[0]

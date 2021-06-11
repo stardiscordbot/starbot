@@ -1,4 +1,7 @@
 {
+  "mal": {
+      "term": "Enter any search term."
+  },
   "topgg": {
       "men": "Mention a bot, or give its id.",
       "dono": "Owner:",

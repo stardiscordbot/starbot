@@ -1,4 +1,7 @@
 {
+  "mal": {
+      "term": "Insira algum termo para pesquisar."
+  },
   "topgg": {
       "men": "Mencione algum bot, ou dê o id do mesmo.",
       "dono": "Dono:",
