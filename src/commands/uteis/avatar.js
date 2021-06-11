@@ -25,7 +25,7 @@ module.exports = class AvatarCommand {
       try {
       const user = ctx.args[0] ? ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0]) : ctx.message.author
       const embed = new star.manager.ebl;
-      embed.title(`${ctx.idioma.avatar.from} ${user.tag}`)
+      embed.title(`${ctx.idioma.avatar.from} ${user.username}#${user.discriminator}`)
       embed.image(user.avatarURL)
       embed.color('#dd3af0')
       return ctx.send(embed.create)
