@@ -34,7 +34,7 @@ module.exports = class QueueCommand {
             embed.title(`🎵 ${ctx.idioma.queue.t} • ${ctx.message.channel.guild.name}`)
             embed.description(`${player.queue.map((track,i) => `**${i + 1}.** **[${track.title}](${track.uri})**\n`)}`)
             if (player.queue.current) {
-                embed.field(ctx.idioma.erela.np, `**[${player.queue.current.title}](${player.queue.current.uri})**`)
+                embed.field(ctx.idioma.erela.np.replace("🎵", "🎧").replace("!", ":"), `**[${player.queue.current.title}](${player.queue.current.uri})**`)
             }
             embed.color('#dd3af0')
             embed.thumbnail(star.user.avatarURL)

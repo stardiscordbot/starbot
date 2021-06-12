@@ -9,12 +9,12 @@ module.exports = class StopCommand {
             pt: {
                 nome: 'stop',
                 categoria: '🎵 • Música',
-                desc: 'Mostra a loja do Fortnite'
+                desc: 'Para a música'
             },
             en: {
                 nome: 'stop',
                 categoria: '🎵 • Music',
-                desc: 'Show the Fortnite store'
+                desc: 'Stop the music'
             },
             aliases: ['parar', 'leave'],
             run: this.run

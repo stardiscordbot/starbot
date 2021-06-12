@@ -1,4 +1,5 @@
-{   "vol": {
+{
+    "vol": {
         "noarg": "Insira um número entre 1 e 200.",
         "inv": "Número inválido.",
         "v": "Volume alterado para: `%v`"

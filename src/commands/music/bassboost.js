@@ -9,12 +9,12 @@ module.exports = class PlayCommand {
             pt: {
                 nome: 'bassboost',
                 categoria: '🎵 • Música',
-                desc: 'Ouça músicas, yay'
+                desc: 'Ativa o filtro bassboost'
             },
             en: {
                 nome: 'bassboost',
                 categoria: '🎵 • Music',
-                desc: 'Listen musics, yay'
+                desc: 'Activates the bassboost filter'
             },
             aliases: ['bass', 'boost', 'bb', 'bass-boost'],
             run: this.run

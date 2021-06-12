@@ -9,12 +9,12 @@ module.exports = class PlayCommand {
             pt: {
                 nome: 'volume',
                 categoria: '🎵 • Música',
-                desc: 'Ouça músicas, yay'
+                desc: 'Altera o volume da música'
             },
             en: {
                 nome: 'volume',
                 categoria: '🎵 • Music',
-                desc: 'Listen musics, yay'
+                desc: 'Change the music volume'
             },
             aliases: ['vol'],
             run: this.run

@@ -9,12 +9,12 @@ module.exports = class PlayCommand {
             pt: {
                 nome: 'vaporwave',
                 categoria: '🎵 • Música',
-                desc: 'Ouça músicas, yay'
+                desc: 'Ativa o filtro vaporwave'
             },
             en: {
                 nome: 'vaporwave',
                 categoria: '🎵 • Music',
-                desc: 'Listen musics, yay'
+                desc: 'Activates the vaporwave filter'
             },
             aliases: ['vapor', 'vp', 'wave', 'vapor-wave', 'vaporonda'],
             run: this.run
