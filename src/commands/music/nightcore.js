@@ -1,4 +1,4 @@
-module.exports = class StopCommand {
+module.exports = class PlayCommand {
     constructor() {
         return {
             permissoes: {
@@ -7,16 +7,16 @@ module.exports = class StopCommand {
                 dono: false
             },
             pt: {
-                nome: 'stop',
+                nome: 'nightcore',
                 categoria: '🎵 • Música',
-                desc: 'Mostra a loja do Fortnite'
+                desc: 'Ouça músicas, yay'
             },
             en: {
-                nome: 'stop',
+                nome: 'nightcore',
                 categoria: '🎵 • Music',
-                desc: 'Show the Fortnite store'
+                desc: 'Listen musics, yay'
             },
-            aliases: ['parar', 'leave'],
+            aliases: ['night', 'nc'],
             run: this.run
         }
     }
@@ -26,8 +26,14 @@ module.exports = class StopCommand {
         if (!player) {
             return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.not}`)
         } else {
-            player.destroy();
-            return ctx.send(`🛑 ${ctx.message.author.mention} **|** ${ctx.idioma.player.stop}`)
+            if(player.nightcore == false) {
+                await star.music.players.get(ctx.message.channel.guild.id).setNightcore(true)
+                return ctx.message.addReaction("✅")
+            }
+            if(player.nightcore == true) {
+                await star.music.players.get(ctx.message.channel.guild.id).setNightcore(false)
+                return ctx.message.addReaction("✅")
+            }
         }
     }
 }

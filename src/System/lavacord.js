@@ -17,7 +17,10 @@ const Spotify = require("erela.js-spotify");
 const clientID = spotify.id;
 const clientSecret = spotify.secret;
 
+require("./StarPlayer")
 star.music = new Manager({
+        nodes: nodes,
+
         plugins: [
             new Spotify({
                 clientID,
@@ -25,12 +28,14 @@ star.music = new Manager({
             }),
             new Deezer()
         ],
-        nodes: nodes,
+
+        autoPlay: true,
         send(id, payload) {
             const guild = star.guilds.get(id);
             if (guild) guild.shard.sendWS(payload.op, payload.d);
         },
-    }).on("nodeConnect", node => console.log(`[LAVALINK] Node ${node.options.identifier} conectado`.green))
+    })
+    .on("nodeConnect", node => console.log(`[LAVALINK] Node ${node.options.identifier} conectado`.green))
     .on("nodeError", (node, error) => console.log(`[LAVALINK] Node ${node.options.identifier} teve um erro: ${error.message}`.red))
     .on("trackStart", async (player, track) => {
         let ch = await star.getRESTChannel(player.textChannel)

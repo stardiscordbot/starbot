@@ -22,7 +22,7 @@ module.exports = class PingCommand {
 	}
 	async run(ctx) {
 		const fetch = require("star-fetch")
-        if(!ctx.args[0]) return ctx.addMessageReaction("❌");
+		if (!ctx.args[0]) return ctx.send(`❌ ${ctx.message.author.mention} **|** ${ctx.idioma.mal.term}`)
 		const res = fetch(`https://some-random-api.ml/pokedex?pokemon=${ctx.args.join(" ").replace(/ /g, '%20')}`)
 
 			const tr = fetch(`http://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=PT&dt=t&q=${res.description}&ie=UTF-8&oe=UTF-8`)

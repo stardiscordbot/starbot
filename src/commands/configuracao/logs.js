@@ -8,12 +8,12 @@ module.exports = class EventlogCommand {
 			},
 			pt: {
 				nome: 'logs',
-				categoria: '⚙️ • Config',
+				categoria: '⚙️ • Configuração',
 				desc: 'Define um canal para receber as logs do servidor.'
 			},
 			en: {
 				nome: 'logs',
-				categoria: '⚙️ • Config',
+				categoria: '⚙️ • Configuration',
 				desc: 'Set a channel to receive the server logs.'
 			},
 			aliases: ['serverlogs', 'messagelog', 'meblogs', 'guildlogs', 'eventlog'],
