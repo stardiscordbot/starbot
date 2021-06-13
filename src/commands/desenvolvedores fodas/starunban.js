@@ -25,8 +25,9 @@ module.exports = class EvalCommand {
         const user = ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0])
         if(!user) return ctx.send(`:x: ${ctx.message.author.mention} **|** Não encontrei o usuário.`)
         
-            //if(user.id == "717766639260532826") return ctx.send(`:x: ${ctx.message.author.mention} **|** Você não pode banir....`)
-            await db.delete(`blacklist-${user.id}`)
+            if(user.id == "717766639260532826") return ctx.send(`:x: ${ctx.message.author.mention} **|** Você não pode banir....`)
+            await db.del(`blacklist-${user.id}`)
+            await db.del(`pass-${user.id}`)
             let embed = new star.manager.ebl;
             embed.title(`🛠️ BotUnban | ${star.user.username}`)
             embed.description(`O Usuário **${user.username}#${user.discriminator}** foi desbanido de me utilizar.`)

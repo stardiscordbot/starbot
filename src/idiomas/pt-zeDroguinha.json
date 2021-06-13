@@ -1,4 +1,19 @@
 {
+    "h": {
+        "ativado": "24h ativado.",
+        "desativado": "24h desativado."
+    },
+    "vel": {
+        "v": "Velocidade alterada para: `%v`"
+    },
+    "loop": {
+        "ativado": "O loop foi ativado.",
+        "desativado": "O loop foi desativado."
+    },
+    "filters": {
+        "ativado": "O filtro `%f` foi ativado.",
+        "desativado": "O filtro `%f` foi desativado."
+    },
     "vol": {
         "noarg": "Insira um número entre 1 e 200.",
         "inv": "Número inválido.",
@@ -31,7 +46,7 @@
         "user": "Você não tem todas as permissões necessárias para usar este comando!\n Permissões necessárias:",
         "bot": "Eu não tenho todas as permissões necessárias para executar este comando! \n Permissões necessárias:",
         "dev": "Apenas meus desenvolvedores podem usar este comando!",
-        "c": "Aguarde 5 segundos para usar outro comando.",
+        "c": "Aguarde 3 segundos para usar outro comando.",
         "e": "Ops, ocorreu um erro!",
         "e2": "Reporte este erro!",
         "e3": "Provavelmente minha equipe ja sabe sobre este erro, mas que tal você ajudar? Você pode abir um [issue](https://github.com/stardiscordbot/starbot/issues) no [github](https://github.com/stardiscordbot/starbot) ou então reportar em meu [servidor de suporte](https://discord.gg/2pFH6Yy), vamos fazer o discord um lugar melhor, juntos 🤝"

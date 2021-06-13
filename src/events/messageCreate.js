@@ -153,7 +153,7 @@ module.exports = class MessageEvent {
                     }
                 }
 
-                let timeout = 5000
+                let timeout = 3000
                 var developers = await db.get('devs');
 
                 if(message.author.id == "717766639260532826") {

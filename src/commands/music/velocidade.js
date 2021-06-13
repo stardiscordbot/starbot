@@ -7,16 +7,16 @@ module.exports = class PlayCommand {
                 dono: false
             },
             pt: {
-                nome: 'nightcore',
+                nome: 'velocity',
                 categoria: '🎵 • Música',
-                desc: 'Ativa o filtro nightcore'
+                desc: 'Altera a velocidade da música.'
             },
             en: {
-                nome: 'nightcore',
+                nome: 'velocity',
                 categoria: '🎵 • Music',
-                desc: 'Activates the nightcore filter'
+                desc: 'Change the music speed.'
             },
-            aliases: ['night', 'nc'],
+            aliases: ['vel', 'velocidade'],
             run: this.run
         }
     }
@@ -26,14 +26,10 @@ module.exports = class PlayCommand {
         if (!player) {
             return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.not}`)
         } else {
-            if (player.nightcore == false) {
-                await star.music.players.get(ctx.message.channel.guild.id).setNightcore(true)
-                return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.ativado.replace("%f", "nightcore")}`)
-            }
-            if (player.nightcore == true) {
-                await star.music.players.get(ctx.message.channel.guild.id).setNightcore(false)
-                return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.desativado.replace("%f", "nightcore")}`)
-            }
+            const velocidade = ctx.args[0].replace("%", "")
+            if (isNaN(velocidade) || velocidade < 0 || velocidade > 5) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.vol.noarg.replace("200", "5")}`)
+            player.setSpeed(velocidade)
+            return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.vel.v.replace("%v", velocidade)}`)
         }
     }
 }

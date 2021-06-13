@@ -20,15 +20,13 @@ const clientSecret = spotify.secret;
 require("./StarPlayer")
 star.music = new Manager({
         nodes: nodes,
-
         plugins: [
+            new Deezer(),
             new Spotify({
                 clientID,
                 clientSecret
-            }),
-            new Deezer()
-        ],
-
+            })
+          ],
         autoPlay: true,
         send(id, payload) {
             const guild = star.guilds.get(id);
@@ -37,6 +35,10 @@ star.music = new Manager({
     })
     .on("nodeConnect", node => console.log(`[LAVALINK] Node ${node.options.identifier} conectado`.green))
     .on("nodeError", (node, error) => console.log(`[LAVALINK] Node ${node.options.identifier} teve um erro: ${error.message}`.red))
+    .on('playerCreate', (player) => {
+        player.set('rateLimitStatus', { status: false })
+        player.set('24h', { status: false })
+    })
     .on("trackStart", async (player, track) => {
         let ch = await star.getRESTChannel(player.textChannel)
         var idioma = require('../config/idiomas.js');

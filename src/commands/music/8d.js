@@ -7,16 +7,16 @@ module.exports = class PlayCommand {
                 dono: false
             },
             pt: {
-                nome: 'vaporwave',
+                nome: '8d',
                 categoria: '🎵 • Música',
-                desc: 'Ativa o filtro vaporwave'
+                desc: 'Ativa o filtro 8D'
             },
             en: {
-                nome: 'vaporwave',
+                nome: '8d',
                 categoria: '🎵 • Music',
-                desc: 'Activates the vaporwave filter'
+                desc: 'Activates the 8D filter'
             },
-            aliases: ['vapor', 'vp', 'wave', 'vapor-wave', 'vaporonda'],
+            aliases: ['fone', '8'],
             run: this.run
         }
     }
@@ -24,13 +24,13 @@ module.exports = class PlayCommand {
         const player = await star.music.players.get(ctx.message.channel.guild.id)
         if (!ctx.message.member.voiceState) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.noc2}`)
         if (!player) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.not}`)
-        if (player.vaporwave == false) {
-            await star.music.players.get(ctx.message.channel.guild.id).setVaporwave(true)
-            return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.ativado.replace("%f", "vaporwave")}`)
+        if (player._8d == false) {
+            await star.music.players.get(ctx.message.channel.guild.id).set8D(true)
+            return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.ativado.replace("%f", "8D")}`)
         }
-        if (player.vaporwave == true) {
-            await star.music.players.get(ctx.message.channel.guild.id).setVaporwave(false)
-            return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.desativado.replace("%f", "vaporwave")}`)
+        if (player._8d == true) {
+            await star.music.players.get(ctx.message.channel.guild.id).set8D(false)
+            return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.desativado.replace("%f", "8D")}`)
         }
     }
 }

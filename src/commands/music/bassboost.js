@@ -3,7 +3,7 @@ module.exports = class PlayCommand {
         return {
             permissoes: {
                 membro: [],
-                bot: ['embedLinks'],
+                bot: [],
                 dono: false
             },
             pt: {
@@ -26,13 +26,13 @@ module.exports = class PlayCommand {
         if (!player) {
             return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.not}`)
         } else {
-            if(player.bassboost == false) {
+            if (player.bassboost == false) {
                 await star.music.players.get(ctx.message.channel.guild.id).setBassboost(true)
-                return ctx.message.addReaction("✅")
+                return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.ativado.replace("%f", "bassboost")}`)
             }
-            if(player.bassboost == true) {
+            if (player.bassboost == true) {
                 await star.music.players.get(ctx.message.channel.guild.id).setBassboost(false)
-                return ctx.message.addReaction("✅")
+                return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.desativado.replace("%f", "bassboost")}`)
             }
         }
     }
