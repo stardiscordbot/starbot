@@ -15,7 +15,7 @@ module.exports = class ReadyEvent {
                 name: `s!help | ${star.guilds.size} guilds [v5.0.6]`,
                 type: 5
             });
-        }, 1000 * 100)
+        }, 1000 * 60)
         star.music.init(star.user.id)
     }
 }
