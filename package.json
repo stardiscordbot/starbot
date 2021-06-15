@@ -21,7 +21,7 @@
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
     "os-utils": "^0.0.14",
-    "star-database-manager": "^3.0.0",
+    "star-database-manager": "^3.0.2",
     "star-fetch": "^1.0.4"
   }
 }
