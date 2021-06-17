@@ -20,7 +20,7 @@ const client = new Client(token, {
     rest: {
         baseURL: "/api/v9"
     },
-    maxShards: "auto"
+    maxShards: "auto",
 });
 
 // Setando comandos.
@@ -39,17 +39,12 @@ StarBot.iniciar().then((star) => {
 
 global.star = client;
 star.manager = StarBot;
-// Setando database
 
 global.db = require('star-database-manager');
-
-//db.once('ready', () => {
-//  console.log('[DATABASE] Database iniciada com sucesso.'.brightYellow);
-//});
 
 // Handler.
 require('./client/handler/comandos.js');
 require('./client/handler/eventos.js');
-require("./System/lavacord");
+require("./client/plugins/lavalinkManager");
 
 // LRD

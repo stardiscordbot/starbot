@@ -107,7 +107,7 @@ module.exports = class Ajuda {
                     }
                     categorias[cmd.en.categoria].push(`\`${cmd.en.nome}\``)
                 })
-                embed.description(`> Hi, my name is: **${star.user.username}**!\nI currently have: **${star.commands.size}** commands;\nMe [add](https://discord .com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=805432446), or join my [support](https://discord.gg/2pFH6Yy) if you want!`)
+                embed.description(`>>> Hi, my name is: **${star.user.username}**!\nI currently have: **${star.commands.size}** commands;\nMe [add](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=805432446), or join my [support](https://discord.gg/2pFH6Yy) if you want!`)
                 embed.thumbnail(star.user.avatarURL)
                 for (var categoria in categorias) {
                     embed.field(categoria, `${categorias[categoria].join(', ')}`);

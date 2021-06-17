@@ -47,26 +47,44 @@ module.exports = class PingCommand {
         let emoji;
 
         if(porcentagem <= 23){
-            description = `> **${porcentagem}%** \`${nome.replace(/`/g, '')}\` ${ctx.idioma.ship.d1}`
+            description = `**${porcentagem}%** \`${nome.replace(/`/g, '')}\` ${ctx.idioma.ship.d1}`
             emoji = 'https://images.emojiterra.com/twitter/v13.0/512px/1f645-2640.png'
         }
 
         if(porcentagem > 23 && porcentagem <= 47){
-            description = `> **${porcentagem}%** \`${nome.replace(/`/g, '')}\` ${ctx.idioma.ship.d2}`
+            description = `**${porcentagem}%** \`${nome.replace(/`/g, '')}\` ${ctx.idioma.ship.d2}`
             emoji = 'https://images.emojiterra.com/twitter/v13.0/512px/1f91d.png'
         }
 
         if(porcentagem > 47 && porcentagem <= 80){
-            description = `> **${porcentagem}%** \`${nome.replace(/`/g, '')}\` ${ctx.idioma.ship.d3}`
+            description = `**${porcentagem}%** \`${nome.replace(/`/g, '')}\` ${ctx.idioma.ship.d3}`
             emoji = 'https://images.emojiterra.com/twitter/v13.0/512px/1f440.png'
         }
 
         if(porcentagem > 80){
-            description = `> **${porcentagem}%** \`${nome.replace(/`/g, '')}\` são perfeitos, feitos um para o outro, vai em frente, vocês tem tudo para dar certo! ❤️`
+            description = `**${porcentagem}%** \`${nome.replace(/`/g, '')}\` ${ctx.idioma.ship.d4}`
             emoji = 'https://images.emojiterra.com/twitter/v13.0/512px/2764.png'
         }
         
-        ctx.send(`💖 ${ctx.message.author.mention}\n${description}`).then(async msg => {
+        const {createCanvas,loadImage} = require('canvas')
+
+        const avatar1 = user1.avatarURL;
+        const avatar2 = user2.avatarURL;
+
+        const edit = createCanvas(700, 250)
+        const edita = edit.getContext('2d')
+        const img1 = await loadImage(avatar1)
+        const img2 = await loadImage(avatar2)
+        const emoji2 = await loadImage(emoji)
+
+        edita.drawImage(img1, 25, 25, 200, 200)
+        edita.drawImage(emoji2, 250, 25, 200, 200)
+        edita.drawImage(img2, 480, 25, 200, 200)
+
+        ctx.message.channel.createMessage(`💖 ${ctx.message.author.mention} 💖\n>>> ${description}`, {
+			file: edit.toBuffer(),
+            name: "ship.png"
+		}).then(async msg => {
             if(!ship1 && !ship2) {
                 await db.set(`ship-${user1.id}-${user2.id}`, porcentagem)
                 await db.set(`ship-${user2.id}-${user1.id}`, porcentagem)

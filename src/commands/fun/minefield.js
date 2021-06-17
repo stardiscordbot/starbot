@@ -21,7 +21,7 @@ module.exports = class PingCommand {
 		};
 	}
 	async run(ctx) {
-        const mineGen = require("../../minefield");
+        const mineGen = require("../../Helpers/MinefieldBuilder");
 
         const embed = new star.manager.ebl;
         embed.title('💥 MineField')

@@ -23,8 +23,6 @@ module.exports = class Idioma {
 
     if (!ctx.args[0]) {
       return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.multiLang.insertLang}`.replace('%p', ctx.prefix).replace('%langs', langs.join(', ')))
-
-      return ctx.send(`:x: ${message.author.mention} **|** ${ctx.idioma.multiLang.insertLang}`.replace('%p', ctx.prefix).replace('%langs', langs.join(', ')))
     }
 
     var langSelecionada = null;

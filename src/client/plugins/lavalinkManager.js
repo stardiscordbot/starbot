@@ -1,7 +1,7 @@
 require("colors")
 const {
     spotify
-} = require("../config/player")
+} = require("../../config/player")
 const {
     Manager
 } = require("erela.js");
@@ -41,7 +41,7 @@ star.music = new Manager({
     })
     .on("trackStart", async (player, track) => {
         let ch = await star.getRESTChannel(player.textChannel)
-        var idioma = require('../config/idiomas.js');
+        var idioma = require('../../config/idiomas.js');
         var lang = (await db.get(`idioma-${ch.guild.id}`)) || 'pt_br';
         lang = lang.replace(/-/g, '_');
         idioma = idioma[lang];
@@ -55,7 +55,7 @@ star.music = new Manager({
     })
     .on("queueEnd", async (player) => {
         let ch = await star.getRESTChannel(player.textChannel)
-        var idioma = require('../config/idiomas.js');
+        var idioma = require('../../config/idiomas.js');
         var lang = (await db.get(`idioma-${ch.guild.id}`)) || 'pt_br';
         lang = lang.replace(/-/g, '_');
         idioma = idioma[lang];

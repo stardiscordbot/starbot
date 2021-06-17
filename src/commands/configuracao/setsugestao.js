@@ -45,8 +45,8 @@ module.exports = class PingCommand {
             }
 
             let logs =
-			ctx.message.mentions.channels.first() ||
-			star.getRESTChannel(String(ctx.args[0]));
+			ctx.message.channelMentions[0] ||
+			star.getRESTChannel(ctx.args[0]);
 
 		if (!logs)
 			return ctx.send(
