@@ -1,7 +1,7 @@
 {
   "name": "star-bomba",
   "version": "1.0.0",
-  "description": "starboat",
+  "description": "starbot",
   "main": "src/star.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
