@@ -4,7 +4,7 @@ module.exports = class PingCommand {
             permissoes: {
                 membro: ['banMembers'], //Permissoes que o usuario necessita
                 bot: ['banMembers'], //Permissoes que o bot necessita
-                dono: true //Se apenas nos devs podem usar o comando
+                dono: false //Se apenas nos devs podem usar o comando
             },
             pt: {
                 nome: 'baninfo',

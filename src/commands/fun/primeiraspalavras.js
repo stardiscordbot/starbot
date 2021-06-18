@@ -29,7 +29,7 @@ module.exports = class PingCommand {
           const canvas = createCanvas(485, 450); 
           const foto = canvas.getContext('2d');
 
-          const background = await loadImage('https://i.imgur.com/T9CQliT.png');
+          const background = await loadImage('./assets/firstword.png');
           foto.drawImage(background, 0, 0, canvas.width, canvas.height);
 
           foto.font = '30px sans-serif';

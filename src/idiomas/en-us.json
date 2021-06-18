@@ -1,4 +1,9 @@
 {
+    "mcserver": {
+        "title": "Minecraft server",
+        "ver": "Versions:",
+        "p": "Online Players:"
+    },
     "h": {
         "enabled": "24h enabled.",
         "disabled": "24h disabled."

@@ -216,9 +216,17 @@ module.exports = class MessageEvent {
                 embed2.thumbnail(message.channel.guild.iconURL || star.user.avatarURL)
                 const log = await star.getRESTChannel("829530412350308392")
                 log.createMessage(embed2.create)
-                return command.run(this.ctx);
+                return command.run(this.ctx).catch((erro) => {
+                    console.log(`[ERRO] Deu ruim:\n${erro}`.red)
+                    const embed = new star.manager.ebl;
+                    embed.title(`${idioma.message.e}`)
+                    embed.description(`\`\`\`js\n${erro}\n\`\`\``)
+                    embed.field(`${idioma.message.e2}`, `${idioma.message.e3}`)
+                    embed.color('#ff0000')
+                    embed.thumbnail(star.user.avatarURL)
+                    return message.channel.createMessage(embed.create)
+                });
             } catch (erro) {
-                // Informar o erro ao executar o comando.
                 const embed = new star.manager.ebl;
                 embed.title(`${idioma.message.e}`)
                 embed.description(`\`\`\`js\n${erro}\n\`\`\``)

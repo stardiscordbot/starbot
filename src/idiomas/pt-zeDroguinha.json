@@ -1,4 +1,9 @@
 {
+    "mcserver": {
+        "title": "Servidor de Minecraft",
+        "ver": "Versões:",
+        "p": "Jogadores Online:"
+    },
     "h": {
         "ativado": "24h ativado.",
         "desativado": "24h desativado."
