@@ -22,7 +22,7 @@ module.exports = class PingCommand {
 	}
 	async run(ctx) {
         const {createCanvas,loadImage} = require("canvas");
-		const user = ctx.args[0] ? ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0]).catch(_ => ctx.message.author) : ctx.message.author
+		const user = ctx.args[0] ? ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0]).catch(_ => ctx.ctx.message.author.mention) : ctx.message.author
 
         const background = await loadImage("./assets/perfeito.png");
         const canvas = createCanvas(background.width, background.height);
