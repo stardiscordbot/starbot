@@ -1,4 +1,11 @@
 {
+    "cotacao": {
+        "t": "Real quotation in major currencies:",
+        "f1": "Dollar",
+        "f2": "Euro",
+        "f3": "Bitcoin",
+        "f4": "Canadian Dollar"
+    },
     "mcserver": {
         "title": "Minecraft server",
         "ver": "Versions:",

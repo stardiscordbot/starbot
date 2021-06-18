@@ -1,4 +1,11 @@
 {
+    "cotacao": {
+        "t": "Cotação do real nas principais moedas:",
+        "f1": "Dolar",
+        "f2": "Euro",
+        "f3": "Bitcoin",
+        "f4": "Dolar Canadense"
+    },
     "mcserver": {
         "title": "Servidor de Minecraft",
         "ver": "Versões:",

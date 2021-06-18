@@ -1,63 +1,117 @@
-// Criado por lrd#0007
-const { 
-    Message,
-    User
-} = require('eris');
+const CollectorBase = require('./Collector.js');
 
-const Event = require('events');
-const handler = new Event();
-var ended = false;
-var collected = [];
+module.exports = class MessageCollector extends CollectorBase {
+    /**
+     * Creates Message Reaction
+     * @param {Channel} channel
+     * @param {{
+     *     channel: Channel,
+     *     max: number,
+     *     user: User,
+     *     time: number,
+     *     ignoreBots: boolean,
+     *     stopOnCollect: boolean,
+     *     accept: {
+     *         deletedMessages: boolean,
+     *         editedMessages: boolean
+     *     },
+     *     rules: {
+     *         include: string,
+     *         equal: string,
+     *         start: string,
+     *         end: string
+     *     },
+     * }} options
+     */
+    constructor(channel, options) {
+        super(channel.client);
 
-function ErisMessageCollector(client, filter = {}, timeout = 150000) {
-    if (!filter) throw new Error('Please provide a filter.');
-    if (!client) throw new Error('Please provide the client for the collection.');
+        this.options = {
+            channel: options.channel ? options.channel : channel,
+            max: options?.max ?? 1,
+            user: options?.user,
+            time: options?.time ?? 90000,
+            ignoreBots: options?.ignoreBots ?? true,
+            stopOnCollect: !!options.stopOnCollect,
+            accept: {
+                deletedMessages: !!options.accept?.deletedMessages,
+                editedMessages: !!options.accept?.editedMessages,
+            },
+            rules: {
+                include: options.rules?.includes,
+                equal: options.rules?.equals,
+                start: options.rules?.starts,
+                end: options.rules?.ends,
+            },
+        };
 
-    if (!filter.user) throw new Error('Please provide a user to filter.');
-    if (!filter.types) throw new Error('Please provide a types array to filter.\nTypes: includes, equals, starts');
-
-    client.on('messageCreate', message => {
-        check(message, message.author, filter);
-    })
-
-    _timeout(client, timeout);
-    return handler;
-}
-
-function check(message = Message, user = User, filter = {}) {
-    if (ended) return;
-    if (filter.types.includes('includes')) {
-        if (!message.content.includes(filter.text)) return;
+        this.on('collect', (m, c, u) => {
+            this.collectedSize += 1;
+            this.collected.push({
+                message: m,
+                content: c,
+                user: u,
+            });
+            if (this.options.stopOnCollect) {
+                return this.stopAll();
+            }
+        });
+        this.client.on('messageCreate', (message) => {
+            this.collect(message);
+        });
+        if (this.options.accept.deletedMessages) {
+            this.client.on('messageDelete', (message) => {
+                this.collect(message);
+            });
+        }
+        if (this.options.accept.editedMessages) {
+            this.client.on('messageUpdate', (message) => {
+                this.collect(message);
+            });
+        }
     }
-    if (filter.types.includes('equals')) {
-        if (message.content !== filter.text) return;
+
+    collect(message) {
+        if (this.ended) return;
+        if (this.collectedSize >= this.options.max) {
+            return;
+        }
+
+        if (this.options.ignoreBots) {
+            if (message.author.bot) return;
+        }
+
+        if (
+            message.author.id !== this.options.user.id ||
+            message.channel.id !== this.options.channel.id
+        ) {
+            return null;
+        } else if (this.options.rules) {
+            const rules = this.options.rules;
+            if (rules.equal) {
+                if (message.content !== rules.equal) {
+                    return null;
+                }
+            }
+            if (rules.include) {
+                if (!message.content.includes(rules.include)) {
+                    return null;
+                }
+            }
+            if (rules.start) {
+                if (!message.content.startsWith(rules.start)) {
+                    return null;
+                }
+            }
+            if (rules.end) {
+                if (!message.content.endsWith(rules.end)) {
+                    return null;
+                }
+            }
+
+            return this.emit('collect', message, message.content, message.author);
+        } else {
+            return this.emit('collect', message, message.content, message.author);
+        }
     }
-    if (filter.types.includes('starts')) {
-        if (!message.content.startsWith(filter.text)) return;
-    }
-
-    if (user.id !== filter.user.id) return;
-    collected.push({
-        message: message,
-        user: user
-    });
-    
-    handler.emit('collect', message, user);
 }
-
-function _timeout(client, time) {
-    setTimeout(() => {
-        ended = true;
-        handler.emit('end', collected, 'timeout');
-        client.removeListener('messageCreate', message => {})
-    }, time)
-}
-
-function end(reason) {
-    ended = true
-    handler.emit('end', collected, (reason || 'none'));
-}
-
-handler.end = end;
-
-module.exports = ErisMessageCollector;
