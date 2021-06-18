@@ -12,7 +12,7 @@ module.exports = class ReadyEvent {
         setInterval(() => {
             star.editStatus("online", {
                 game: star.user.username,
-                name: `s!help | ${star.guilds.size} guilds [v5.0.6]`,
+                name: `s!help | ${star.guilds.size} guilds [v5.0.8]`,
                 type: 5
             });
         }, 1000 * 60)
