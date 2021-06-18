@@ -29,7 +29,7 @@ module.exports = class HugCommand {
         let res = fetch("https://nekos.life/api/v2/img/hug");
         const ReactionCollector = require("../../Helpers/ReactionCollector");
         let embed = new star.manager.ebl;
-        embed.description(`💖 **${ctx.message.author.username}** ${ctx.idioma.hug.acaba} **${user.username}**.`)
+        embed.description(`🫂 **${ctx.message.author.username}** ${ctx.idioma.hug.acaba} **${user.username}**.`)
         embed.image(res.url)
         embed.color('#dd3af0')
         ctx.message.channel.createMessage(embed.create).then(msg => {
@@ -46,7 +46,7 @@ module.exports = class HugCommand {
             c.on('collect', (message, emoji) => {
                 let res = fetch("https://nekos.life/api/v2/img/hug");
                 let embed = new star.manager.ebl;
-                embed.description(`💖 **${user.username}** ${ctx.idioma.hug.acaba} **${ctx.message.author.username}**.`)
+                embed.description(`🫂 **${user.username}** ${ctx.idioma.hug.acaba} **${ctx.message.author.username}**.`)
                 embed.image(res.url)
                 embed.color('#dd3af0')
                 message.channel.createMessage(embed.create);
