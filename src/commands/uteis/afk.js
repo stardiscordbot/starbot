@@ -25,11 +25,9 @@ module.exports = class AvatarCommand {
         const afk = await db.get(`afk-${ctx.message.author.id}`)
         if(!afk) {
             db.set(`afk-${ctx.message.author.id}`, `${ctx.args.join(" ") || "Não Definido"}`)
-            ctx.message.member.setNickname(`AFK ${ctx.message.member.nickname || ctx.message.author.username}`)
             ctx.send(`💤 ${ctx.message.author.mention} **|** ${ctx.idioma.afk.set} \`${ctx.args.join(" ").replace(/`/g, '') || "Não Definido"}\``)
         } else {
             db.del(`afk-${ctx.message.author.id}`)
-            ctx.message.member.setNickname(`${ctx.message.member.nickname.replace(/AFK/g, "") || ctx.message.author.username}`)
             ctx.send(`💤 ${ctx.message.author.mention} **|** ${ctx.idioma.afk.wel}`)
         }
   }

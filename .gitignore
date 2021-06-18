@@ -1,7 +1,13 @@
+# CONFIDENCIAL FOLDERS
 /lixeirinha
 /data
 /node_modules
+
+# INUTIL FILES
 package-lock.json
+
+# CONFIDENCIAL FILES
+afazeres.txt
 src/botlists.json
 src/config/config.js
 src/config/player.js

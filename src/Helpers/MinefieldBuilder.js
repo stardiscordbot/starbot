@@ -1,5 +1,4 @@
 function mineGen(mines) {
-    // Creating the minefield
     var mineField = [];
     var width = 9;
     var height = 9;
@@ -7,10 +6,8 @@ function mineGen(mines) {
         mineField.push(Array(width).fill(0));
     }
 
-    // Inserting each mine
     var squaresLeft = width * height;
     for (var i = 0; i < mines; ++i) {
-        // Finding where to insert the next mine
         var nextSquare = Math.floor(Math.random() * squaresLeft);
         var insertX = 0;
         var insertY = 0;
@@ -31,14 +28,12 @@ function mineGen(mines) {
             }
         }
 
-        // Decrementing the number of squares left, and checking to see if any more mines can be added
         --squaresLeft;
         if (squaresLeft == 0) {
             break;
         }
     }
 
-    // Translating the board into emojis
     var boardStr = '';
     for (var i = 0; i < height; ++i) {
         for (var j = 0; j < width; ++j) {
@@ -50,7 +45,6 @@ function mineGen(mines) {
     return boardStr;
 }
 
-// Finds the nth open square in a minefield, going top to bottom, left to right
 function nthOpenSquare(mineField, n) {
     var openSquaresSeen = 0;
     var height = mineField.length;
@@ -68,7 +62,6 @@ function nthOpenSquare(mineField, n) {
     }
 }
 
-// Translates a given numeric code to an emoji in a spoiler tag
 function codeToEmoji(n) {
     switch (n) {
         case 0:

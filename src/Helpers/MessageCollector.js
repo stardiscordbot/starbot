@@ -1,3 +1,4 @@
+// Criado por lrd#0007
 const { 
     Message,
     User

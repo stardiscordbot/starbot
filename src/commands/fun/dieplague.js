@@ -21,7 +21,7 @@ module.exports = class PingCommand {
 		};
 	}
 	async run(ctx) {
-        const {loadImage,createCanvas} = require("canvas");
+        const {createCanvas,loadImage} = require("canvas");
 		const user = ctx.args[0] ? ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0]).catch(_ => ctx.message.author) : ctx.message.author
 
 		const background = await loadImage("https://i.imgur.com/7GAAf63.png");
