@@ -167,7 +167,7 @@
     },
     "rr": {
         "noargs": "Estão faltando argumentos, utilize `%prr <tipo> <@cargo> <:emoji:> [ID DA MENSAGEM]`",
-        "desc": "Cria um addMessageReactionion Role onde membros podem ganhar determinados cargos reagindo na mensagem determinada.",
+        "desc": "Cria um addReactionion Role onde membros podem ganhar determinados cargos reagindo na mensagem determinada.",
         "normal": "Sistema de reação normal, onde o usuário pode pegar mais de um cargo que esteja configurado na mensagem.",
         "toggle": "Sistema de reação toggle, onde o usuário só pode pegar um cargo de todas as opções dadas.",
         "noargs2": "Estão faltando argumentos, utilize `%prr delete <:emoji:> <ID DA MENSAGEM>`",
@@ -211,7 +211,7 @@
         "host": "Sorteio de: {user}",
         "win": "ganhador(es)",
         "wins": "Parabéns, {winners}! Você ganhou {prize}!\n{messageURL}",
-        "addMessageReaction": "Reaja com 🎉 para participar!",
+        "addReaction": "Reaja com 🎉 para participar!",
         "restante": "Tempo Restante:",
         "no": "Sorteio cancelado, sem participações válidas",
         "give": "SORTEIO",
@@ -319,6 +319,11 @@
     "hug": {
         "acaba": "acaba de abraçar",
         "user": " Mencione um usuário para abraçar",
+        "em": "em"
+    },
+    "slap": {
+        "acaba": "deu um tapa em",
+        "user": " Mencione um usuário para bater",
         "em": "em"
     },
     "stonks": {

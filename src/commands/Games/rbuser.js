@@ -23,7 +23,7 @@ module.exports = class RbuserCommand {
     async run(ctx) {
       const {request} = require("axios")
       const moment = require("moment")
-      if(!ctx.args[0]) return ctx.addMessageReaction("❌")
+      if(!ctx.args[0]) return ctx.addReaction("❌")
       request({
         method: 'GET',
         url: `https://api.roblox.com/users/get-by-username?username=${ctx.args.join(" ").replace(/#/g, '').replace(/ /g, '_')}`

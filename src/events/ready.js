@@ -16,6 +16,16 @@ module.exports = class ReadyEvent {
                 type: 5
             });
         }, 1000 * 60)
+        setInterval(async () => {
+            const backupchannel = await star.getRESTChannel("850788451359522857")
+            const {readFile} = require("fs")
+            const util = require("util")
+            const read = util.promisify(readFile)
+            backupchannel.createMessage(`<:st_host:830841046153691197> Backup do banco de dados!`, {
+                file: await read("./data/base.json"),
+                name: "base.json"
+            })
+        }, 1000 * 60)
         star.music.init(star.user.id)
     }
 }

@@ -3,11 +3,11 @@ module.exports = class PingCommand {
 		return {
 			permissoes: {
 				membro: [], //Permissoes que o usuario necessita
-				bot: [], //Permissoes que o bot necessita
+				bot: ['attachFiles'], //Permissoes que o bot necessita
 				dono: true //Se apenas nos devs podem usar o comando
 			},
             pt: {
-                nome: 'primeiraspalavras',
+                nome: 'firstwords',
                 categoria: '🤣 • Fun',
                 desc: 'Ai meu deus... as primeiras palavras do bebê'
               },
@@ -16,7 +16,7 @@ module.exports = class PingCommand {
                 categoria: '🤣 • Fun',
                 desc: 'Oh my god... the baby\'s first words!'
               },
-			aliases: ['firstword', 'bebe'],
+			aliases: ['firstword', 'bebe', 'primeiraspalavras'],
 			run: this.run
 		};
 	}

@@ -197,8 +197,8 @@ module.exports = class MessageEvent {
                     reply: function(texto, mencionar) {
                         message.channel.createMessage(texto, mencionar);
                     },
-                    addMessageReaction: function(emoji) {
-                        message.addMessageReaction(emoji);
+                    addReaction: function(emoji) {
+                        message.addReaction(emoji);
                     },
                     fetch: async function(url) {
                         await star.manager.fetch(url);

@@ -34,18 +34,18 @@ module.exports = class EvalCommand {
             embed.color('#dd3af0')
             embed.thumbnail(ctx.message.author.avatarURL || star.user.avatarURL)
             ctx.send(ctx.message.author, embed.create).then(msg => {
-                msg.addMessageReaction("🚗");
-                msg.addMessageReaction("👮");
-                msg.addMessageReaction("🙋");
+                msg.addReaction("🚗");
+                msg.addReaction("👮");
+                msg.addReaction("🙋");
 
-                const motorfilter = (addMessageReactionion, user) => addMessageReactionion.emoji.name === '🚗' && user.id === ctx.message.author.id;
-                const polifilter = (addMessageReactionion, user) => addMessageReactionion.emoji.name === '👮' && user.id === ctx.message.author.id;
-                const atenfilter = (addMessageReactionion, user) => addMessageReactionion.emoji.name === '🙋' && user.id === ctx.message.author.id;
+                const motorfilter = (addReactionion, user) => addReactionion.emoji.name === '🚗' && user.id === ctx.message.author.id;
+                const polifilter = (addReactionion, user) => addReactionion.emoji.name === '👮' && user.id === ctx.message.author.id;
+                const atenfilter = (addReactionion, user) => addReactionion.emoji.name === '🙋' && user.id === ctx.message.author.id;
 
-                const motorista = msg.createaddMessageReactionionCollector(motorfilter, { time: 60000 });
-                const policial = msg.createaddMessageReactionionCollector(polifilter, { time: 60000 });
-                const atendente = msg.createaddMessageReactionionCollector(atenfilter, { time: 60000 });
-                motorista.on("collect", addMessageReactionion => {
+                const motorista = msg.createaddReactionionCollector(motorfilter, { time: 60000 });
+                const policial = msg.createaddReactionionCollector(polifilter, { time: 60000 });
+                const atendente = msg.createaddReactionionCollector(atenfilter, { time: 60000 });
+                motorista.on("collect", addReactionion => {
                     policial.stop()
                     atendente.stop()
                     motorista.stop()
@@ -69,9 +69,9 @@ module.exports = class EvalCommand {
             embed.color('#dd3af0')
             embed.thumbnail(ctx.message.author.avatarURL || star.user.avatarURL)
             ctx.send(ctx.message.author, embed.create).then(msg => {
-                msg.addMessageReaction("👨‍✈️");
-                msg.addMessageReaction("💻");
-                msg.addMessageReaction("👷");
+                msg.addReaction("👨‍✈️");
+                msg.addReaction("💻");
+                msg.addReaction("👷");
             })
         }
         

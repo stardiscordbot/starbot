@@ -3,7 +3,7 @@ module.exports = class PingCommand {
 		return {
 			permissoes: {
 				membro: [], //Permissoes que o usuario necessita
-				bot: [], //Permissoes que o bot necessita
+				bot: ['attachFiles'], //Permissoes que o bot necessita
 				dono: false //Se apenas nos devs podem usar o comando
 			},
 			pt: {
@@ -21,13 +21,13 @@ module.exports = class PingCommand {
 		};
 	}
 	async run(ctx) {
-        if(!ctx.args[0]) return ctx.addMessageReaction("❌")
+        if(!ctx.args[0]) return ctx.addReaction("❌")
         let porcentagem
         
         const user1 = ctx.message.author
         const user2 = ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0])
 
-        if(!user2) return ctx.addMessageReaction("❌")
+        if(!user2) return ctx.addReaction("❌")
 
         const ship1 = await db.get(`ship-${user1.id}-${user2.id}`)
         const ship2 = await db.get(`ship-${user1.id}-${user2.id}`)

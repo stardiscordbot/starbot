@@ -5,15 +5,15 @@ const StarEmbedPages = async (ctx, pages, emojiList = ['⏪', '⏩'], timeout = 
     if (emojiList.length !== 2) throw new Error('Precisa de dois emojis pra paginas né amigão?.');
     let page = 0;
     const curPage = await ctx.msg.channel.send(ctx.message.author, pages[page].create);
-    for (const emoji of emojiList) await curPage.addMessageReaction(emoji);
-    const addMessageReactionionCollector = curPage.createaddMessageReactionionCollector(
-        (addMessageReactionion, user) => emojiList.includes(addMessageReactionion.emoji.name) && user.id == ctx.message.author.id, {
+    for (const emoji of emojiList) await curPage.addReaction(emoji);
+    const addReactionionCollector = curPage.createaddReactionionCollector(
+        (addReactionion, user) => emojiList.includes(addReactionion.emoji.name) && user.id == ctx.message.author.id, {
             time: timeout
         }
     );
-    addMessageReactionionCollector.on('collect', addMessageReactionion => {
-        addMessageReactionion.users.remove(ctx.msg.author);
-        switch (addMessageReactionion.emoji.name) {
+    addReactionionCollector.on('collect', addReactionion => {
+        addReactionion.users.remove(ctx.msg.author);
+        switch (addReactionion.emoji.name) {
             case emojiList[0]:
                 page = page > 0 ? --page : pages.length - 1;
                 break;
@@ -25,9 +25,9 @@ const StarEmbedPages = async (ctx, pages, emojiList = ['⏪', '⏩'], timeout = 
         }
         curPage.edit(ctx.message.author, pages[page].create);
     });
-    addMessageReactionionCollector.on('end', () => {
+    addReactionionCollector.on('end', () => {
         if (!curPage.deleted) {
-            curPage.addMessageReactionions.removeAll()
+            curPage.addReactionions.removeAll()
         }
     });
     return curPage;

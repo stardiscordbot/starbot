@@ -22,9 +22,12 @@ module.exports = class EvalCommand {
     }
     async run(ctx) {
         if(!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** Eu preciso do status né? aff`)
-        star.user.setActivity(`${ctx.args.join(" ")}`).then(a => {
-            ctx.message.addMessageReaction("✅")
+        star.editStatus({
+          game: star.user.username,
+          name: `${ctx.args.join(" ")}`,
+          type: 5
         })
+        ctx.message.addReaction("✅")
   }
 }
   

@@ -23,7 +23,6 @@ const client = new Client(token, {
     maxShards: "auto",
 });
 
-// Setando comandos.
 client.commands = new Collection();
 client.aliases = new Collection();
 client.events = new Collection();
@@ -34,7 +33,6 @@ const StarBot = new Star(client);
 
 StarBot.iniciar().then((star) => {
     console.log(`[CLIENT] ${star}, Tudo Carregado!`.dim.brightMagenta);
-    //StarBot.inlineReply();
 });
 
 global.star = client;
@@ -46,5 +44,4 @@ global.db = require('star-database-manager');
 require('./client/handler/comandos.js');
 require('./client/handler/eventos.js');
 require("./client/plugins/lavalinkManager");
-
 // LRD

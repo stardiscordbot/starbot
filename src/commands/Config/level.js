@@ -27,7 +27,7 @@ module.exports = class PingCommand {
         //const carg = args[1]
         const level = ctx.args[1]
         db.set(`cargo-${ctx.message.guildID}-${level}`, role.id)
-        ctx.message.addMessageReaction("✅")
+        ctx.message.addReaction("✅")
     }
 };
 

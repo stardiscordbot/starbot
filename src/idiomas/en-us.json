@@ -87,7 +87,7 @@
     "baninfo": {
         "user": "User:",
         "reason": "Reason:",
-        "desban": "To unban, addMessageReaction with 🐹."
+        "desban": "To unban, addReaction with 🐹."
     },
     "say": {
         "noarg": "Insert something after the command to speak.",
@@ -167,11 +167,11 @@
     },
     "rr": {
         "noargs": "Arguments are missing, use `%prr <@cargo> <:emoji:> [MESSAGE ID]`",
-        "desc": "Creates a addMessageReactionion Role where members can win certain positions by addMessageReactioning on the given message.",
-        "normal": "Normal addMessageReactionion system, where the user can take more than one role that is configured in the message.",
-        "toggle": "Toggle addMessageReactionion system, where the user can only take a role of all the options given.",
+        "desc": "Creates a addReactionion Role where members can win certain positions by addReactioning on the given message.",
+        "normal": "Normal addReactionion system, where the user can take more than one role that is configured in the message.",
+        "toggle": "Toggle addReactionion system, where the user can only take a role of all the options given.",
         "noargs2": "Arguments are missing, use `%prr delete <:emoji:> <MESSAGE ID>`",
-        "delete": "Deletes some role from the addMessageReactionion system."
+        "delete": "Deletes some role from the addReactionion system."
     },
     "player": {
         "np": "🎧 Now Playing:",
@@ -211,7 +211,7 @@
         "host": "Hosted by: {user}",
         "win": "winner(s)",
         "wins": "Congratulations, {winners}! You won **{prize}**!\n{messageURL}",
-        "addMessageReaction": "addMessageReaction with 🎉 to participate!",
+        "addReaction": "addReaction with 🎉 to participate!",
         "restante": "Time remaining:",
         "no": "Giveaway cancelled, no valid participations",
         "give": "GIVEAWAY",
@@ -317,8 +317,13 @@
         "sim": "Ejection Simulator"
     },
     "hug": {
-        "acaba": "just hugged",
-        "user": "Mention a user to hug",
+        "acaba": "just hugging",
+        "user": "Name a user to hug",
+        "em": "in"
+    },
+    "slap": {
+        "ends": "slapped",
+        "user": "Name a user to hit",
         "em": "in"
     },
     "stonks": {
