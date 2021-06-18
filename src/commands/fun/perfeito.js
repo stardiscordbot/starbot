@@ -7,16 +7,16 @@ module.exports = class PingCommand {
 				dono: true //Se apenas nos devs podem usar o comando
 			},
 			pt: {
-				nome: 'morrepraga',
+				nome: 'perfect',
 				categoria: '😄 • Diversão',
-				desc: 'MORRE PRAGA'
+				desc: 'Quando alguém diz nada é perfeito'
 			},
 			en: {
-				nome: 'dieplague',
+				nome: 'perfect',
 				categoria: '😄 • Fun',
-				desc: 'DIE PLAGUE'
+				desc: 'When someone says nothing is perfect'
 			},
-			aliases: ['dp', 'mp'],
+			aliases: ['perfeito'],
 			run: this.run
 		};
 	}
@@ -24,19 +24,19 @@ module.exports = class PingCommand {
         const {createCanvas,loadImage} = require("canvas");
 		const user = ctx.args[0] ? ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0]).catch(_ => ctx.message.author) : ctx.message.author
 
-		const background = await loadImage("./assets/dieplague.jpg");
+        const background = await loadImage("./assets/perfeito.png");
         const canvas = createCanvas(background.width, background.height);
+        const avatar = await loadImage(user.avatarURL);
+        const redondo = await loadImage("./assets/mask.png");
         const foto = canvas.getContext('2d');
 
         foto.drawImage(background, 0, 0, canvas.width, canvas.height);
-        const avatar = await loadImage(user.avatarURL);
-        foto.drawImage(avatar, 50, 100, 150, 150);
-		
+        foto.drawImage(avatar, 250, 60, 200, 200);
+        foto.drawImage(redondo, 250, 60, 200, 200);
+
         ctx.message.channel.createMessage(ctx.message.author.mention, {
 			file: canvas.toBuffer(),
-            name: "dieplague.png"
+            name: "perfeito.png"
 		})
     }
-};
-
-//ADG, Davi e LRD
+}
