@@ -39,6 +39,7 @@ module.exports = class PingCommand {
           foto.font = '30px sans-serif';
           foto.fillStyle = '#000';
           foto.fillText(ctx.args.join(" ").match(/.{1,20}/g).join("\n"), canvas.width / 50.9, canvas.height / 1.7, 330)
+          
           ctx.message.channel.createMessage(ctx.message.author.mention, {
 			file: canvas.toBuffer(),
             name: "firstwords.png"
