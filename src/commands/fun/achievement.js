@@ -4,7 +4,7 @@ module.exports = class PingCommand {
 			permissoes: {
 				membro: [], //Permissoes que o usuario necessita
 				bot: ['attachFiles'], //Permissoes que o bot necessita
-				dono: true //Se apenas nos devs podem usar o comando
+				dono: false //Se apenas nos devs podem usar o comando
 			},
 			pt: {
 				nome: 'achievement',

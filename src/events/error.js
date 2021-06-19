@@ -1,4 +1,3 @@
-//🧭 → Servers [NaN]
 module.exports = class ErrorEvent {
     constructor() {
         return {

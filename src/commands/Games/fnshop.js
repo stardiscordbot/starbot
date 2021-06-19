@@ -21,11 +21,10 @@ module.exports = class RbuserCommand {
       }
     }
     async run(ctx) {
-      const embed = new star.manager.ebl;
-      embed.title(`<a:st_fortnite:850423265540440074> Fortnite | Shop`)
-      embed.image("https://fortool.fr/cm/assets/shop/en.png")
-      embed.color('#dd3af0')
-      ctx.send(embed.create);
+      ctx.message.channel.createMessage(ctx.message.author.mention, {
+        file: "https://fortool.fr/cm/assets/shop/en.png",
+        name: "en.png"
+      });
   }
 }  
 // ADG
