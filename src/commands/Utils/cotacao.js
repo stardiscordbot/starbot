@@ -16,7 +16,7 @@ module.exports = class CotacaoCommand {
                 categoria: '🕰️ • Utility',
                 desc: 'Track the quote of currencies'
             },
-            aliases: ['corretora', 'cambio'],
+            aliases: ['corretora', 'cambio', 'cotação', 'câmbio', 'dolar', 'real', 'bitcoin'],
             run: this.run
         }
     }

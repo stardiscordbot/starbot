@@ -10,11 +10,11 @@ module.exports = class Idioma {
           desc: 'Altera o idioma do bot.' 
         },
         en: {
-          nome: 'prefi',
+          nome: 'prefix',
           categoria: '⚙️ • Configuration',
           desc: 'Changes the bot language.'
         },
-        aliases: ['pr', 'prefixo', 'setprefix', 'prefix'],
+        aliases: ['pr', 'prefixo', 'setprefix', 'prefixamento', 'responder'],
         run: this.run
       }
     }

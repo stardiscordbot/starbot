@@ -270,10 +270,16 @@
         "unknownLanguage": "Idioma desconhecido.\nℹ️ Idiomas disponíveis: %langs",
         "insertLang": "Você não específicou um idioma. Para alterar o idioma do bot, utilize `%pidioma %langs`"
     },
-    "autoRole": {
+    "autorole": {
         "insertRole": "Você não especificou um cargo, utilize: `%pautorole <@cargo | cargo id | desativar>.`",
         "success": "Certo, agora membros que entrarem no servidor terão o cargo `%cargo` adicionado automaticamente.",
-        "disabled": "AutoRole foi desativado com sucesso."
+        "disabled": "AutoRole foi desativado com sucesso.",
+        "noset": "Não Setado",
+        "bot": "Mencione o cargo que será dado quando algum BOT entrar no servidor.",
+        "botset": "O Autorole de bots foi setado para os cargos:",
+        "user": "Mencione o cargo que será dado quando algum usuário entrar no servidor.",
+        "userset": "O Autorole de usuários foi setado para os cargos:",
+        "mem": "Membros"
     },
     "welcome": {
         "insertChannel": "Você não especificou um canal, utilize: `%pwelcome <#canal | canal id | desativar>`.",

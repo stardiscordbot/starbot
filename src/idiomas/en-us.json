@@ -270,10 +270,16 @@
         "unknownLanguage": "Unknown language.\nℹ️ Available languages: %langs",
         "insertLang": "You did not specify a language. To change the bot language, run `%planguage %langs`"
     },
-    "autoRole": {
-        "insertRole": "You did not specify a role, run: `%pautorole <@role | role id | disable>.`",
-        "success": "Alright, now members that join server, will get the role `%cargo` added automatically.",
-        "disabled": "AutoRole was disabled successfully."
+    "autorole": {
+        "insertRole": "You did not specify a role, use: `%pautorole <@job | role id | disable>.`",
+        "success": "Okay, now members who join the server will have the `%cargo` post automatically added.",
+        "disabled": "AutoRole has been successfully disabled.",
+        "noset": "Not Set",
+        "bot": "Mention the roles that will be given when any BOT enters the server.",
+        "botset": "The bots Autorole has been set to the roles:",
+        "user": "Mention the roles that will be given when any user enters the server.",
+        "userset": "Users Autorole has been set for the roles:",
+        "mem": "Members"
     },
     "welcome": {
         "insertChannel": "You have not specified a channel, use: `%pwelcome <#channel | id channel | disable>`.",
