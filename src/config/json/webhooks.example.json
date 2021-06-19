@@ -9,6 +9,6 @@
     },
     "commands": {
         "id": "the logcommand webhook id",
-        "token":  "the logcommand webhook token",
+        "token":  "the logcommand webhook token"
     }
 }
