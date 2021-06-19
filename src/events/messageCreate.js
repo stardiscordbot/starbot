@@ -15,17 +15,17 @@ module.exports = class MessageEvent {
         let xpReward = Math.floor(Math.random() * 29) + 1;
         if (xpReward == 0) xpReward = 10
 
-        let xp = await db.get(`xp-${message.guildID}-${message.author.id}`)
-        let level = await db.get(`level-${message.guildID}-${message.author.id}`) || 0
-        let level2 = level + 1
-        let levels = level2 * 1000
+        //let xp = await db.get(`xp-${message.guildID}-${message.author.id}`)
+        //let level = await db.get(`level-${message.guildID}-${message.author.id}`) || 0
+        //let level2 = level + 1
+        //let levels = level2 * 1000
 
-        if (!xp) {
-            await db.set(`xp-${message.guildID}-${message.author.id}`, xpReward)
-        } else {
-            await db.set(`xp-${message.guildID}-${message.author.id}`, xp + xpReward)
-        }
-
+        //if (!xp) {
+        //   await db.set(`xp-${message.guildID}-${message.author.id}`, xpReward)
+        //} else {
+        //    await db.set(`xp-${message.guildID}-${message.author.id}`, xp + xpReward)
+        //}
+        /*
         if (xp > levels) {
             const cg = await db.get(`cargo-${message.guildID}-${level + 1}`)
             await db.set(`level-${message.guildID}-${message.author.id}`, level + 1)
@@ -38,8 +38,8 @@ module.exports = class MessageEvent {
             } else {
                 //message.channel.createMessage(`🥳 ${message.author.mention} **|** Você avançou para o nível **${lv}**!`)
             }
-
         }
+        */
         const messages = await db.get(`messages-${message.guildID}-${message.author.id}`)
         if (messages) {
             await db.set(`messages-${message.guildID}-${message.author.id}`, messages + 1)
