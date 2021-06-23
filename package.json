@@ -1,11 +1,10 @@
 {
-  "name": "star-bomba",
-  "version": "1.0.0",
-  "description": "starboat",
+  "name": "star",
+  "version": "5.0.9",
+  "description": "Helping servers grow exponentially with a simple solution. Make your server active and entertain your community with a simple solution - A unique discord bot, Star!",
   "main": "src/star.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/star.js"
+    "start": "node ."
   },
   "keywords": [],
   "author": "",
