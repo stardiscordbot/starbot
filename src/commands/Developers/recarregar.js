@@ -1,5 +1,5 @@
 module.exports = class EvalCommand {
-  constructor() {
+  constructor () {
     return {
       permissoes: {
         membro: [],
@@ -20,13 +20,14 @@ module.exports = class EvalCommand {
       run: this.run
     }
   }
-  async run(ctx) {
+
+  async run (ctx) {
     ctx.send('🔁 Recarregando arquivos...')
     star.manager.reload()
-    setTimeout(()=>{
+    setTimeout(() => {
       return ctx.send(`:white_check_mark: **|** ${ctx.message.author.mention} **${star.commands.size} comandos** e **${star._eventsCount} eventos** recarregados com sucesso.`)
-      },800)
-    }
+    }, 800)
+  }
 }
 
 // LRD
