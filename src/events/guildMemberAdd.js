@@ -5,10 +5,11 @@ module.exports = class guildMemberAdd {
             run: this.run
         }
     }
-    async run(guild,member) {
+    async run(guild, member) {
         const autorolebot = await db.get(`autorolebot-${guild.id}`)
         const autoroleuser = await db.get(`autoroleuser-${guild.id}`)
-        if(member.bot) {
+
+        if(member.user.bot) {
             return autorolebot.map(async (role) => {
                 member.addRole(role, 'AutoRole - Bot')
             })
