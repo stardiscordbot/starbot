@@ -8,7 +8,7 @@
   },
   "keywords": ["bot", "discord", "eris"],
   "author": "yADG",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
     "canvas": "^2.8.0",
