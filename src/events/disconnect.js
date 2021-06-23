@@ -1,11 +1,12 @@
 module.exports = class Disconnect {
-    constructor() {
-        return {
-            nome: 'disconnect',
-            run: this.run
-        }
+  constructor () {
+    return {
+      nome: 'disconnect',
+      run: this.run
     }
-    async run() {
-        star.connect()
-    }
+  }
+
+  async run () {
+    star.connect()
+  }
 }
