@@ -2,10 +2,11 @@
 # CONFIDENCIAL FOLDERS
 /lixeirinha
 /data
-/node_modules
+node_modules
 
 # INUTIL FILES
 package-lock.json
+*.log
 
 # CONFIDENCIAL FILES
 afazeres.txt
