@@ -7,9 +7,16 @@
     "start": "node .",
     "lint": "eslint --ext .js --ignore-path .gitignore ."
   },
-  "keywords": ["bot", "discord", "eris"],
+  "keywords": [
+    "star",
+    "discord bot",
+    "fun",
+    "bot",
+    "discord",
+    "eris"
+  ],
   "author": "yADG",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "axios": "^0.21.1",
     "canvas": "^2.8.0",
