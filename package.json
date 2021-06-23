@@ -1,6 +1,6 @@
 {
   "name": "star-bomba",
-  "version": "1.0.0",
+  "version": "5.0.9",
   "description": "starboat",
   "main": "src/star.js",
   "scripts": {
