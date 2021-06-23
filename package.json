@@ -24,6 +24,6 @@
     "star-fetch": "^1.0.4"
   },
   "devDependencies": {
-    "eslint": "^7.28.0"
+    "eslint": "^7.29.0"
   }
 }
