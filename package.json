@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node ."
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["bot", "discord", "eris"],
+  "author": "yADG",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
