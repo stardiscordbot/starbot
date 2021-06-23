@@ -1,7 +1,7 @@
 {
   "name": "star-bomba",
   "version": "5.0.9",
-  "description": "starboat",
+  "description": "Helping servers grow exponentially with a simple solution. Make your server active and entertain your community with a simple solution - A unique discord bot, Star!",
   "main": "src/star.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
