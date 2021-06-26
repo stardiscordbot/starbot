@@ -3,7 +3,7 @@ module.exports = class Autorole {
     return {
       permissoes: {
         membro: ['manageGuild'],
-        bot: ['manageRoles']
+        bot: ['manageRoles', 'useExternalEmojis', 'addReactions', 'manageMessages']
       },
       pt: {
         nome: 'autorole',
@@ -46,6 +46,8 @@ module.exports = class Autorole {
       // SE NÃO TIVER
       embed.field(`<:st_membros:845390325638889482> ${ctx.idioma.autorole.mem}`, `${ctx.idioma.autorole.noset}`, true)
     }
+    // FIELD PARA DELETAR
+    embed.field(`❌ ${ctx.idioma.autorole.del}`, ctx.idioma.autorole.del2)
     // COR DA EMBED
     embed.color('#dd3af0')
     // CRIANDO OS NEGOCIO
@@ -53,6 +55,7 @@ module.exports = class Autorole {
       // ADICIONANDO REAÇÕES
       msg.addReaction('🤖')
       msg.addReaction(':st_membros:845390325638889482')
+      msg.addReaction('❌')
       // CRIANDO COLETOR DE AUTOROLE BOT
       const bot = new ReactionCollector(msg, {
         user: ctx.message.author,
@@ -68,6 +71,16 @@ module.exports = class Autorole {
         user: ctx.message.author,
         ignoreBot: true,
         emoji: 'st_membros',
+        time: 60000,
+        max: 1,
+        acceptReactionRemove: false,
+        stopOnCollect: true
+      })
+      // CRIANDO COLETOR PARA DELETAR
+      const del = new ReactionCollector(msg, {
+        user: ctx.message.author,
+        ignoreBot: true,
+        emoji: '❌',
         time: 60000,
         max: 1,
         acceptReactionRemove: false,
@@ -153,6 +166,19 @@ module.exports = class Autorole {
             // DELETANDO PARA DEIXAR O CHAT LIMPO OK?
             m.delete()
           })
+        })
+      })
+      // CASO O USER DELETE O AUTOROLE
+      del.on('collect', async (message) => {
+        await global.db.del(`autoroleuser-${ctx.message.guildID}`)
+        await global.db.del(`autorolebot-${ctx.message.guildID}`)
+        // EMBED DE AUTOROLE-DELETED
+        const delb = new global.star.manager.Ebl()
+        delb.title(`📋 Autorole | ${global.star.user.username}`)
+        delb.description(`:white_check_mark: ${ctx.message.author.mention} **|** ${ctx.idioma.autorole.disabled}`)
+        delb.color('#dd3af0')
+        return message.channel.createMessage(delb.create).then(gda => {
+          msg.delete()
         })
       })
     })

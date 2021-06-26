@@ -273,13 +273,15 @@
     "autorole": {
         "insertRole": "You did not specify a role, use: `%pautorole <@job | role id | disable>.`",
         "success": "Okay, now members who join the server will have the `%cargo` post automatically added.",
-        "disabled": "AutoRole has been successfully disabled.",
+        "disabled": "Autorole has been successfully disabled.",
         "noset": "Not Set",
         "bot": "Mention the roles that will be given when any BOT enters the server.",
         "botset": "The bots Autorole has been set to the roles:",
         "user": "Mention the roles that will be given when any user enters the server.",
         "userset": "Users Autorole has been set for the roles:",
-        "mem": "Members"
+        "mem": "Members",
+        "del": "Disable",
+        "del2": "React with ❌ to disable/delete"
     },
     "welcome": {
         "insertChannel": "You have not specified a channel, use: `%pwelcome <#channel | id channel | disable>`.",
@@ -337,12 +339,14 @@
     "hug": {
         "acaba": "just hugging",
         "user": "Name a user to hug",
-        "em": "in"
+        "em": "in",
+        "r": "react with 🔁 to reciprocate"
     },
     "slap": {
         "ends": "slapped",
         "user": "Name a user to hit",
-        "em": "in"
+        "em": "in",
+        "r": "react with 🔁 to reciprocate"
     },
     "stonks": {
         "limit": "you have exceeded the 50 character limit."

@@ -33,6 +33,7 @@ module.exports = class SlapCommand {
     embed.description(`👊 **${ctx.message.author.username}** ${ctx.idioma.hug.acaba.replace('acaba de abraçar', 'bateu em').replace('just hugging', 'slapped')} **${user.username}**.`)
     embed.image(res.url)
     embed.color('#dd3af0')
+    embed.footer(ctx.idioma.hug.r)
     ctx.message.channel.createMessage(embed.create).then(msg => {
       msg.addReaction('🔁')
       const c = new ReactionCollector(msg, {
