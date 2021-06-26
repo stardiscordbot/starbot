@@ -23,48 +23,23 @@ module.exports = class PingCommand {
 
   async run (ctx) {
     if (!ctx.args[0]) {
-      return ctx.send(
-				`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.sugestao.insertChannel.replace(
-					'%p',
-					ctx.prefix
-				)}`
-      )
+      return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.sugestao.insertChannel.replace('%p', ctx.prefix)}`)
     }
 
-    if (
-      ctx.args[0] &&
-                (ctx.args[0].toLowerCase() == 'desativar' ||
-                    ctx.args[0].toLowerCase() == 'disable')
-    ) {
+    if (ctx.args[0] && (ctx.args[0].toLowerCase() === 'desativar' || ctx.args[0].toLowerCase() === 'disable')) {
       await global.db.del(`sugestao-${ctx.message.guildID}`)
-      return ctx.send(
-                    `:white_check_mark: ${ctx.message.author.mention} **|** ${
-                        ctx.idioma.sugestao.disabled
-
-					}`
-      )
+      return ctx.send(`:white_check_mark: ${ctx.message.author.mention} **|** ${ctx.idioma.sugestao.disabled}`)
     }
 
-    const logs =
-			ctx.message.channelMentions[0] ||
-			star.getRESTChannel(ctx.args[0])
+    const logs = ctx.message.channelMentions[0] || global.star.getRESTChannel(ctx.args[0])
 
     if (!logs) {
-      return ctx.send(
-				`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.sugestao.insertChannel.replace(
-					'%p',
-					ctx.prefix
-				)}`
-      )
+      return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.sugestao.insertChannel.replace('%p', ctx.prefix)}`)
     }
 
     await global.db.set(`sugestao-${ctx.message.guildID}`, logs.id)
 
-    return ctx.send(
-			`:white_check_mark: ${
-				ctx.message.author
-			} **|** ${ctx.idioma.sugestao.success.replace('%canal', logs.name)}`
-    )
+    return ctx.send(`:white_check_mark: ${ctx.message.author} **|** ${ctx.idioma.sugestao.success.replace('%canal', logs.name)}`)
   }
 }
 

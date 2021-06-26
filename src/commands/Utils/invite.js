@@ -26,7 +26,7 @@ module.exports = class InviteCommand {
     embed.title(`📩 ${ctx.idioma.invite.add}`)
     embed.description(ctx.idioma.invite.desc)
     embed.color('#dd3af0')
-    embed.thumbnail(star.user.avatarURL)
+    embed.thumbnail(global.star.user.avatarURL)
     ctx.send(embed.create)
   }
 }

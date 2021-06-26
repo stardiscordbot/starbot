@@ -26,7 +26,7 @@ module.exports = class BanCommand {
     if (!ctx.args[0]) return ctx.reply(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.ban.noarg}`)
 
     if (!ctx.message.mentions[0]) {
-      member = await star.getRESTUser(ctx.args[0]).then(info => info).catch(() => {
+      member = await global.star.getRESTUser(ctx.args[0]).then(info => info).catch(() => {
         return ctx.send(`:x: ${ctx.message.author.mention} **|** Usuário desconhecido.`)
       })
     } else {
@@ -45,7 +45,7 @@ module.exports = class BanCommand {
       embed.description(`\`\`\`js\n${err}\n\`\`\``)
       embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
       embed.color('#ff0000')
-      embed.thumbnail(star.user.avatarURL)
+      embed.thumbnail(global.star.user.avatarURL)
       return ctx.send(embed.create)
     })
     ctx.send(`:white_check_mark: ${ctx.message.author.mention} **|** ${ctx.idioma.ban.the} **${member.username}** ${ctx.idioma.ban.foi}`)

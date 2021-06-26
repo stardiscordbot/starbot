@@ -23,7 +23,7 @@ module.exports = class PingCommand {
 
   async run (ctx) {
     const { createCanvas, loadImage } = require('canvas')
-    const user = ctx.args[0] ? ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0]).catch(_ => ctx.ctx.message.author.mention) : ctx.message.author
+    const user = ctx.args[0] ? ctx.message.mentions[0] || await global.star.getRESTUser(ctx.args[0]).catch(_ => ctx.ctx.message.author.mention) : ctx.message.author
 
     const background = await loadImage('./assets/dieplague.jpg')
     const canvas = createCanvas(background.width, background.height)

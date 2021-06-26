@@ -22,17 +22,17 @@ module.exports = class PlayCommand {
   }
 
   async run (ctx) {
-    const player = await star.music.players.get(ctx.message.channel.guild.id)
+    const player = await global.star.music.players.get(ctx.message.channel.guild.id)
     if (!ctx.message.member.voiceState) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.noc2}`)
     if (!player) {
       return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.not}`)
     } else {
-      if (player.bassboost == false) {
-        await star.music.players.get(ctx.message.channel.guild.id).setBassboost(true)
+      if (player.bassboost === false) {
+        await global.star.music.players.get(ctx.message.channel.guild.id).setBassboost(true)
         return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.ativado.replace('%f', 'bassboost')}`)
       }
-      if (player.bassboost == true) {
-        await star.music.players.get(ctx.message.channel.guild.id).setBassboost(false)
+      if (player.bassboost === true) {
+        await global.star.music.players.get(ctx.message.channel.guild.id).setBassboost(false)
         return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.desativado.replace('%f', 'bassboost')}`)
       }
     }

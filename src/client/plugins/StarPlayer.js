@@ -141,7 +141,7 @@ module.exports = Structure.extend('Player', player => {
     }
 
     async skip () {
-      if (this.queue.length == 0) throw new Error('Queue is empty to skip')
+      if (this.queue.length === 0) throw new Error('Queue is empty to skip')
       const current = this.queue.current
       this.play(this.queue[0])
       if (this.queueRepeat) {
@@ -167,7 +167,7 @@ module.exports = Structure.extend('Player', player => {
 
     async skipto (target) {
       if (typeof target !== 'number') throw new RangeError('<Player>#skipto() must be a number.')
-      if (this.queue.length == 0) throw new Error('Queue is empty to skip')
+      if (this.queue.length === 0) throw new Error('Queue is empty to skip')
       if (target > this.queue.size) throw new Error('There\'s only ' + this.queue.size + ' songs in queue.')
       const current = this.queue.current
       this.play(this.queue[parseInt(`${target}`) - 1])
@@ -204,13 +204,13 @@ module.exports = Structure.extend('Player', player => {
 
       if (first && !second) {
         if ((parseInt(`${first}`) - 1) > this.queue.size) throw new Error('There\'s only ' + this.queue.size + ' songs in queue.')
-        this.array_move(this.queue, parseInt(`${first}`) - 1, 0)
+        this.arraymove(this.queue, parseInt(`${first}`) - 1, 0)
         return this
       } else {
         if (typeof second !== 'number') throw new RangeError('<Player>#move() second must be a number.')
         if ((parseInt(`${first}`) - 1) > this.queue.size) throw new Error('There\'s only ' + this.queue.size + ' songs in queue.')
         if ((parseInt(`${second}`) - 1) > this.queue.size) throw new Error('There\'s only ' + this.queue.size + ' songs in queue.')
-        this.array_move(this.queue, parseInt(`${first}`) - 1, parseInt(`${second}`) - 1)
+        this.arraymove(this.queue, parseInt(`${first}`) - 1, parseInt(`${second}`) - 1)
         return this
       }
     }
@@ -263,14 +263,14 @@ module.exports = Structure.extend('Player', player => {
       return this
     }
 
-    array_move (arr, old_index, new_index) {
-      if (new_index >= arr.length) {
-        let k = new_index - arr.length + 1
+    arraymove (arr, oldi, newi) {
+      if (newi >= arr.length) {
+        let k = newi - arr.length + 1
         while (k--) {
           arr.push(undefined)
         }
       }
-      arr.splice(new_index, 0, arr.splice(old_index, 1)[0])
+      arr.splice(newi, 0, arr.splice(oldi, 1)[0])
       return arr
     }
   }

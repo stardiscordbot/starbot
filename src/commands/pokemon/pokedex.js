@@ -29,7 +29,7 @@ module.exports = class PingCommand {
     const tr = fetch(`http://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=PT&dt=t&q=${res.description}&ie=UTF-8&oe=UTF-8`)
     let pdesc
 
-    if (ctx.idioma.pdex.lang != 'en') {
+    if (ctx.idioma.pdex.lang !== 'en') {
       pdesc = tr[0][0][0]
     } else {
       pdesc = res.description

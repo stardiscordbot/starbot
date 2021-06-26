@@ -41,7 +41,7 @@ module.exports = class AvatarCommand {
       const embed = new global.star.manager.Ebl()
       embed.title('<:st_link:845643800080416770> bit.ly')
       embed.color('#dd3af0')
-      embed.thumbnail(star.user.avatarURL)
+      embed.thumbnail(global.star.user.avatarURL)
       embed.description(`**${ctx.message.author.username}**, ${ctx.idioma.isgd.link} ${res.link}`)
       ctx.send(embed.create)
     })

@@ -28,7 +28,7 @@ module.exports = class PingCommand {
     embed.title('💥 MineField')
     embed.description(mineGen(10))
     embed.color('#dd3af0')
-    embed.thumbnail(star.user.avatarURL)
+    embed.thumbnail(global.star.user.avatarURL)
     ctx.send(embed.create)
   }
 }

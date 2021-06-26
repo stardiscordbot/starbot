@@ -27,10 +27,10 @@ module.exports = class PingCommand {
     const musica = fetch(`https://lyrics-api.powercord.dev/lyrics?input=${ctx.args.join(' ').replace(/ /g, '%20')}`).data[0]
 
     const embed = new global.star.manager.Ebl()
-        	embed.title(`<a:st_disco:830835645232316497> Lyrics | ${star.user.username}`)
+    embed.title(`<a:st_disco:830835645232316497> Lyrics | ${global.star.user.username}`)
     embed.description(`${musica.lyrics}`)
     embed.color('#dd3af0')
-    embed.thumbnail(star.user.avatarURL)
+    embed.thumbnail(global.star.user.avatarURL)
     ctx.send(embed.create)
   }
 }

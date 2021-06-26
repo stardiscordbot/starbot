@@ -82,14 +82,14 @@ module.exports = class MessageCollector extends CollectorBase {
     }
 
     if (
-      message.author.id != this.options.user.id ||
-            message.channel.id != this.options.channel.id
+      message.author.id !== this.options.user.id ||
+            message.channel.id !== this.options.channel.id
     ) {
       return null
     } else if (this.options.rules) {
       const rules = this.options.rules
       if (rules.equal) {
-        if (message.content != rules.equal) {
+        if (message.content !== rules.equal) {
           return null
         }
       }

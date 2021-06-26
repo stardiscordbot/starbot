@@ -26,7 +26,7 @@ module.exports = class AnimeCommand {
     const fetch = require('star-fetch')
     const res = await fetch(`https://api.jikan.moe/v3/search/anime?q=${ctx.args.join(' ').replace(/ /g, '%20')}`)
     let anime = res.results[0]
-    if (anime.rated == 'Rx' && !ctx.message.channel.nsfw) {
+    if (anime.rated === 'Rx' && !ctx.message.channel.nsfw) {
       anime = res.results[1]
     }
     const embed = new global.star.manager.Ebl()

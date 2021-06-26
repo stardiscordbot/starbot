@@ -22,15 +22,15 @@ module.exports = class PlayCommand {
   }
 
   async run (ctx) {
-    const player = await star.music.players.get(ctx.message.channel.guild.id)
+    const player = await global.star.music.players.get(ctx.message.channel.guild.id)
     if (!player) {
       return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.not}`)
     } else {
-      if (player.trackRepeat == false) {
+      if (player.trackRepeat === false) {
         player.setTrackRepeat(true)
         return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.loop.ativado}`)
       }
-      if (player.trackRepeat == true) {
+      if (player.trackRepeat === true) {
         player.setTrackRepeat(false)
         return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.loop.desativado}`)
       }

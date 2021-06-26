@@ -23,7 +23,7 @@ module.exports = class SlapCommand {
 
   async run (ctx) {
     if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.hug.user}`)
-    const user = ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0]).catch((e) => {
+    const user = ctx.message.mentions[0] || await global.star.getRESTUser(ctx.args[0]).catch((e) => {
       return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.hug.user}`)
     })
     const fetch = require('star-fetch')

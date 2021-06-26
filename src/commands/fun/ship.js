@@ -26,7 +26,7 @@ module.exports = class PingCommand {
     let porcentagem
 
     const user1 = ctx.message.author
-    const user2 = ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0])
+    const user2 = ctx.message.mentions[0] || await global.star.getRESTUser(ctx.args[0])
 
     if (!user2) return ctx.addReaction('❌')
 
@@ -41,7 +41,7 @@ module.exports = class PingCommand {
       porcentagem = ship1
     }
 
-    if (user1.id == user2.id) {
+    if (user1.id === user2.id) {
       porcentagem = 50
     }
     let description
@@ -89,8 +89,6 @@ module.exports = class PingCommand {
       if (!ship1 && !ship2) {
         await global.db.set(`ship-${user1.id}-${user2.id}`, porcentagem)
         await global.db.set(`ship-${user2.id}-${user1.id}`, porcentagem)
-      } else {
-
       }
     })
   }

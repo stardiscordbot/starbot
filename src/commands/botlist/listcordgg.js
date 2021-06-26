@@ -25,7 +25,7 @@ module.exports = class EvalCommand {
     const { request } = require('axios')
     const bl = require('../../botlists.json')
     if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.topgg.men}`)
-    const user = ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0])
+    const user = ctx.message.mentions[0] || await global.star.getRESTUser(ctx.args[0])
 
     request({
       method: 'GET',
@@ -33,7 +33,7 @@ module.exports = class EvalCommand {
       headers: { Authorization: bl.lsc }
     }).then(async response => {
       const res = response.data
-      const owner = await star.getRESTUser(res.developers[0])
+      const owner = await global.star.getRESTUser(res.developers[0])
       const embed = new global.star.manager.Ebl()
       embed.title(`<:st_listcord:845723224397709332> listcord.gg | ${user.username}#${user.discriminator}`)
       embed.url(`https://listcord.gg/bot/${user.id}`)
@@ -45,13 +45,13 @@ module.exports = class EvalCommand {
       embed.color('#dd3af0')
       embed.thumbnail(user.avatarURL)
       ctx.send(embed.create)
-    }).catch((e) => {
+    }).catch((err) => {
       const embed = new global.star.manager.Ebl()
       embed.title(`${ctx.idioma.message.e}`)
       embed.description(`\`\`\`js\n${err}\n\`\`\``)
       embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
       embed.color('#ff0000')
-      embed.thumbnail(star.user.avatarURL)
+      embed.thumbnail(global.star.user.avatarURL)
       return ctx.send(embed.create)
     })
   }

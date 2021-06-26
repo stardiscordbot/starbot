@@ -23,9 +23,9 @@ module.exports = class EvalCommand {
 
   async run (ctx) {
     ctx.send('🔁 Recarregando arquivos...')
-    star.manager.reload()
+    global.star.manager.reload()
     setTimeout(() => {
-      return ctx.send(`:white_check_mark: **|** ${ctx.message.author.mention} **${star.commands.size} comandos** e **${star._eventsCount} eventos** recarregados com sucesso.`)
+      return ctx.send(`:white_check_mark: **|** ${ctx.message.author.mention} **${global.star.commands.size} comandos** e **${global.star._eventsCount} eventos** recarregados com sucesso.`)
     }, 800)
   }
 }

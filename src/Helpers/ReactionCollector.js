@@ -59,14 +59,14 @@ module.exports = class ReactionCollector extends CollectorBase {
     }
 
     if (
-      message.id != this.options.message.id ||
-            reactor.id != this.options.user.id
+      message.id !== this.options.message.id ||
+            reactor.id !== this.options.user.id
     ) {
       return null
-    } else if (emoji == this.options.emoji) {
+    } else if (emoji === this.options.emoji) {
       return this.emit('collect', message, emoji, reactor)
-    } else if (emoji.name != this.options.emoji) {
-      if (emoji.id != this.options.emoji) {
+    } else if (emoji.name !== this.options.emoji) {
+      if (emoji.id !== this.options.emoji) {
         return null
       }
     } else {

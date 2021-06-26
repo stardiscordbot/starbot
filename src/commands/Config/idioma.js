@@ -27,8 +27,8 @@ module.exports = class Idioma {
     }
 
     let langSelecionada = null
-    langs.map(lang => {
-      if (ctx.args[0] == lang) {
+    langs.forEach(lang => {
+      if (ctx.args[0] === lang) {
         langSelecionada = lang
       }
     })
@@ -40,15 +40,12 @@ module.exports = class Idioma {
         case langs[0]:
           await global.db.set(`idioma-${ctx.message.guildID}`, langs[0])
           return ctx.send(':white_check_mark: **|** Agora irei falar `português-brasileiro` neste servidor!')
-          break
         case langs[1]:
           await global.db.set(`idioma-${ctx.message.guildID}`, langs[1])
           return ctx.send(':white_check_mark: **|** Now I will speak `english-us` on this guild!')
-          break
         case langs[2]:
           await global.db.set(`idioma-${ctx.message.guildID}`, langs[2])
           return ctx.send(':white_check_mark: **|** Qual é meno agora irei falar `português-zé-droguinha` nesse servidor tlgd?')
-          break
       }
     }
   }

@@ -26,9 +26,15 @@ module.exports = class BanCommand {
     if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.ban.noarg}`)
 
     if (!ctx.message.mentions[0]) {
-      member = await star.getRESTUser(ctx.args[0])
+      member = await global.star.getRESTUser(ctx.args[0])
     } else {
       member = await ctx.message.mentions[0]
+    }
+    let banReason
+    if (ctx.args[1]) {
+      banReason = ctx.args.slice(1).join(' ')
+    } else {
+      banReason = ctx.idioma.ban.mot
     }
     ctx.message.channel.guild.kickMember(member.id, `${ctx.idioma.ban.mot2} ${ctx.message.author.tag} - ${ctx.idioma.ban.mot3} ${banReason}`).catch(err => {
       const embed = new global.star.manager.Ebl()
@@ -36,7 +42,7 @@ module.exports = class BanCommand {
       embed.description(`\`\`\`js\n${err}\n\`\`\``)
       embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
       embed.color('#ff0000')
-      embed.thumbnail(star.user.avatarURL)
+      embed.thumbnail(global.star.user.avatarURL)
       return ctx.send(embed.create)
     })
   }

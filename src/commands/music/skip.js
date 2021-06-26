@@ -22,7 +22,7 @@ module.exports = class SkipCommand {
   }
 
   async run (ctx) {
-    const player = star.music.players.get(ctx.message.channel.guild.id)
+    const player = global.star.music.players.get(ctx.message.channel.guild.id)
     if (!player) {
       return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.not}`)
     } else {

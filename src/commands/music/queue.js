@@ -22,12 +22,12 @@ module.exports = class QueueCommand {
   }
 
   async run (ctx) {
-    const player = await star.music.players.get(ctx.message.channel.guild.id)
+    const player = await global.star.music.players.get(ctx.message.channel.guild.id)
     if (!player) {
       const embed = new global.star.manager.Ebl()
       embed.title(`🎵 ${ctx.idioma.queue.t} • ${ctx.message.channel.guild.name}`)
       embed.description(ctx.idioma.queue.n)
-      embed.thumbnail(star.user.avatarURL)
+      embed.thumbnail(global.star.user.avatarURL)
       embed.color('#dd3af0')
       return ctx.send(embed.create)
     } else {
@@ -38,7 +38,7 @@ module.exports = class QueueCommand {
         embed.field(ctx.idioma.erela.np.replace('🎵', '🎧').replace('!', ':'), `**[${player.queue.current.title}](${player.queue.current.uri})**`)
       }
       embed.color('#dd3af0')
-      embed.thumbnail(star.user.avatarURL)
+      embed.thumbnail(global.star.user.avatarURL)
       ctx.send(embed.create)
     }
   }

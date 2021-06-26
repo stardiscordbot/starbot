@@ -22,13 +22,13 @@ module.exports = class EvalCommand {
   }
 
   async run (ctx) {
-    const user = ctx.args[0] ? ctx.message.mentions[0] || await star.user.fetch(ctx.args[0]) : ctx.message.author
+    const user = ctx.args[0] ? ctx.message.mentions[0] || await global.star.user.fetch(ctx.args[0]) : ctx.message.author
 
     const money = await global.db.get(`money-${user.id}`) || 0
     const banco = await global.db.get(`banco-${user.id}`) || 0
 
     const embed = new global.star.manager.Ebl()
-    embed.title(`💸 Banco | ${star.user.username}`)
+    embed.title(`💸 Banco | ${global.star.user.username}`)
     embed.field('❯ Carteira:', `**${user.username}** tem **¥ ${money.toLocaleString()}** em sua carteira.`, true)
     embed.field('❯ Banco:', `**${user.username}** tem **¥ ${banco.toLocaleString()}** no banco.`, true)
     embed.color('#dd3af0')

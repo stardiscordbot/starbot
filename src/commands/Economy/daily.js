@@ -32,10 +32,10 @@ module.exports = class DailyCommand {
       await global.db.set(`dailytime-${ctx.message.author.id}`, Date.now())
 
       const embed = new global.star.manager.Ebl()
-      embed.title(`💸 Daily | ${star.user.username}`)
+      embed.title(`💸 Daily | ${global.star.user.username}`)
       embed.description(`🌟 **${ctx.message.author.username}** ${ctx.idioma.daily.coletado.replace('%m', daily)}`)
       embed.color('#dd3af0')
-      embed.thumbnail(star.user.avatarURL)
+      embed.thumbnail(global.star.user.avatarURL)
 
       ctx.send(embed.create)
     } else {
@@ -43,10 +43,10 @@ module.exports = class DailyCommand {
         const tt = moment(timeout - (Date.now() - dailytime)).format('HH:mm:ss')
 
         const embed = new global.star.manager.Ebl()
-        embed.title(`💸 Daily | ${star.user.username}`)
+        embed.title(`💸 Daily | ${global.star.user.username}`)
         embed.description(`<:st_util_info:835532528617259068> **${ctx.message.author.username}** ${ctx.idioma.daily.coletou.replace('%time', tt)}.`)
         embed.color('#dd3af0')
-        embed.thumbnail(star.user.avatarURL)
+        embed.thumbnail(global.star.user.avatarURL)
 
         ctx.send(embed.create)
       } else {
@@ -56,10 +56,10 @@ module.exports = class DailyCommand {
         await global.db.set(`banco-${ctx.message.author.id}`, 0)
 
         const embed = new global.star.manager.Ebl()
-        embed.title(`💸 Daily | ${star.user.username}`)
+        embed.title(`💸 Daily | ${global.star.user.username}`)
         embed.description(`🌟 **${ctx.message.author.username}** ${ctx.idioma.daily.coletado.replace('%m', daily)}`)
         embed.color('#dd3af0')
-        embed.thumbnail(star.user.avatarURL)
+        embed.thumbnail(global.star.user.avatarURL)
         ctx.send(embed.create)
       }
     }

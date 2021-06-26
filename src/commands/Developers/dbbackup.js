@@ -22,7 +22,7 @@ module.exports = class EvalCommand {
   }
 
   async run (ctx) {
-    const backupchannel = await star.getRESTChannel('850788451359522857')
+    const backupchannel = await global.star.getRESTChannel('850788451359522857')
     const { readFile } = require('fs')
     const util = require('util')
     const read = util.promisify(readFile)
@@ -33,7 +33,7 @@ module.exports = class EvalCommand {
     const embed = new global.star.manager.Ebl()
     embed.title('<:st_host:830841046153691197> Banco de Dados')
     embed.description(`**${ctx.message.author.username}**, fiz o backup do banco de dados, ele foi enviado no meu servidor principal (aonde fica ligado os sistemas, **NÃO É O SERVIDOR DE SUPORTE**, para saber mais vá para o canal (<#850788451359522857> [\`${backupchannel.name}\`])).`)
-    embed.thumbnail(star.user.avatarURL)
+    embed.thumbnail(global.star.user.avatarURL)
     embed.color('#dd3af0')
     ctx.send(embed.create)
   }

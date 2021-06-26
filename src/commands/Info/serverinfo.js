@@ -23,13 +23,13 @@ module.exports = class PingCommand {
 
   async run (ctx) {
     const moment = require('moment')
-    let guild = ctx.args[0] ? star.guilds.get(ctx.args[0], true) : ctx.message.channel.guild
+    let guild = ctx.args[0] ? global.star.guilds.get(ctx.args[0], true) : ctx.message.channel.guild
 
     if (!guild) {
       guild = ctx.message.channel.guild
     }
 
-    const owner = await star.getRESTUser(guild.ownerID)
+    const owner = await global.star.getRESTUser(guild.ownerID)
     const embed = new global.star.manager.Ebl()
 
     embed.title(`<:st_discord:847806904808898600> ${guild.name}`)

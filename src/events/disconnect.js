@@ -7,6 +7,6 @@ module.exports = class Disconnect {
   }
 
   async run () {
-    star.connect()
+    global.star.connect()
   }
 }

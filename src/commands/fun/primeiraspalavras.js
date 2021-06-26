@@ -22,8 +22,8 @@ module.exports = class PingCommand {
   }
 
   async run (ctx) {
-    if (!ctx.args[0]) return ctx.send(`${idioma.image.args.replace('%u', ctx.message.author.mention)}`)
-    if ((ctx.args.join(' ').length) > 300) return ctx.send(`${idioma.image.long.replace('%u', ctx.message.author.mention)}`)
+    if (!ctx.args[0]) return ctx.send(`${ctx.idioma.image.args.replace('%u', ctx.message.author.mention)}`)
+    if ((ctx.args.join(' ').length) > 300) return ctx.send(`${ctx.idioma.image.long.replace('%u', ctx.message.author.mention)}`)
     const { createCanvas, loadImage } = require('canvas')
     const baby = `${ctx.args.join(' ').slice(0, 1)}.. ${ctx.args.join(' ').slice(0, 2)}...`
 

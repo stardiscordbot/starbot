@@ -22,7 +22,7 @@ module.exports = class PingCommand {
   }
 
   async run (ctx) {
-    const user = ctx.args[0] ? ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0]) : ctx.message.author
+    const user = ctx.args[0] ? ctx.message.mentions[0] || await global.star.getRESTUser(ctx.args[0]) : ctx.message.author
     let valor
     const mensagens = await global.db.get(`messages-${ctx.message.guildID}-${user.id}`)
     if (mensagens) {

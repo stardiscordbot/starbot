@@ -26,13 +26,13 @@ module.exports = class PingCommand {
     if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.ban.noarg}`)
 
     if (!ctx.message.mentions[0]) {
-      member = await star.getRESTUser(ctx.args[0]).then(info => info).catch(() => {
+      member = await global.star.getRESTUser(ctx.args[0]).then(info => info).catch((err) => {
         const embed = new global.star.manager.Ebl()
         embed.title(`${ctx.idioma.message.e}`)
         embed.description(`\`\`\`js\n${err}\n\`\`\``)
         embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
         embed.color('#ff0000')
-        embed.thumbnail(star.user.avatarURL)
+        embed.thumbnail(global.star.user.avatarURL)
         return ctx.send(embed.create)
       })
     } else {
@@ -44,7 +44,7 @@ module.exports = class PingCommand {
       embed.description(`\`\`\`js\n${e}\n\`\`\``)
       embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
       embed.color('#ff0000')
-      embed.thumbnail(star.user.avatarURL)
+      embed.thumbnail(global.star.user.avatarURL)
       return ctx.send(embed.create)
     })
 

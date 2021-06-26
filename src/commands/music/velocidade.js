@@ -22,7 +22,7 @@ module.exports = class PlayCommand {
   }
 
   async run (ctx) {
-    const player = await star.music.players.get(ctx.message.channel.guild.id)
+    const player = await global.star.music.players.get(ctx.message.channel.guild.id)
     if (!ctx.message.member.voiceState) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.noc2}`)
     if (!player) {
       return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.not}`)

@@ -36,7 +36,7 @@ module.exports = class McserverCommand {
     embed.field(`🎮 ${ctx.idioma.mcserver.p}`, `\`${res.players.online}/${res.players.max}\``)
     embed.color('#dd3af0')
     embed.image(banner)
-    embed.thumbnail(icon || star.user.avatarURL)
+    embed.thumbnail(icon || global.star.user.avatarURL)
     ctx.send(embed.create)
   }
 }

@@ -2,12 +2,12 @@ const StarEmbedPages = async (ctx, pages, emojiList = ['⏪', '⏩'], timeout = 
   ctx.msg = ctx.message
   if (!ctx.msg && !ctx.msg.channel) throw new Error('Canal inacessível.')
   if (!pages) throw new Error('Amas cadê as paginas?.')
-  if (emojiList.length != 2) throw new Error('Precisa de dois emojis pra paginas né amigão?.')
+  if (emojiList.length !== 2) throw new Error('Precisa de dois emojis pra paginas né amigão?.')
   let page = 0
   const curPage = await ctx.msg.channel.send(ctx.message.author, pages[page].create)
   for (const emoji of emojiList) await curPage.addReaction(emoji)
   const addReactionionCollector = curPage.createaddReactionionCollector(
-    (addReactionion, user) => emojiList.includes(addReactionion.emoji.name) && user.id == ctx.message.author.id, {
+    (addReactionion, user) => emojiList.includes(addReactionion.emoji.name) && user.id === ctx.message.author.id, {
       time: timeout
     }
   )

@@ -1,9 +1,11 @@
 const { createCanvas } = require('canvas')
 
+let i
+
 module.exports = class CanvasUtil {
   static greyscale (ctx, x, y, width, height) {
     const data = ctx.getImageData(x, y, width, height)
-    for (let i = 0; i < data.data.length; i += 4) {
+    for (i = 0; i < data.data.length; i += 4) {
       const brightness = (0.34 * data.data[i]) + (0.5 * data.data[i + 1]) + (0.16 * data.data[i + 2])
       data.data[i] = brightness
       data.data[i + 1] = brightness
@@ -15,7 +17,7 @@ module.exports = class CanvasUtil {
 
   static invert (ctx, x, y, width, height) {
     const data = ctx.getImageData(x, y, width, height)
-    for (let i = 0; i < data.data.length; i += 4) {
+    for (i = 0; i < data.data.length; i += 4) {
       data.data[i] = 255 - data.data[i]
       data.data[i + 1] = 255 - data.data[i + 1]
       data.data[i + 2] = 255 - data.data[i + 2]
@@ -26,7 +28,7 @@ module.exports = class CanvasUtil {
 
   static silhouette (ctx, x, y, width, height) {
     const data = ctx.getImageData(x, y, width, height)
-    for (let i = 0; i < data.data.length; i += 4) {
+    for (i = 0; i < data.data.length; i += 4) {
       data.data[i] = 0
       data.data[i + 1] = 0
       data.data[i + 2] = 0
@@ -37,7 +39,7 @@ module.exports = class CanvasUtil {
 
   static sepia (ctx, x, y, width, height) {
     const data = ctx.getImageData(x, y, width, height)
-    for (let i = 0; i < data.data.length; i += 4) {
+    for (i = 0; i < data.data.length; i += 4) {
       const brightness = (0.34 * data.data[i]) + (0.5 * data.data[i + 1]) + (0.16 * data.data[i + 2])
       data.data[i] = brightness + 100
       data.data[i + 1] = brightness + 50
@@ -51,7 +53,7 @@ module.exports = class CanvasUtil {
     const data = ctx.getImageData(x, y, width, height)
     const factor = (259 / 100) + 1
     const intercept = 128 * (1 - factor)
-    for (let i = 0; i < data.data.length; i += 4) {
+    for (i = 0; i < data.data.length; i += 4) {
       data.data[i] = (data.data[i] * factor) + intercept
       data.data[i + 1] = (data.data[i + 1] * factor) + intercept
       data.data[i + 2] = (data.data[i + 2] * factor) + intercept
@@ -62,7 +64,7 @@ module.exports = class CanvasUtil {
 
   static desaturate (ctx, level, x, y, width, height) {
     const data = ctx.getImageData(x, y, width, height)
-    for (let i = 0; i < height; i++) {
+    for (i = 0; i < height; i++) {
       for (let j = 0; j < width; j++) {
         const dest = ((i * width) + j) * 4
         const grey = Number.parseInt(
@@ -81,7 +83,7 @@ module.exports = class CanvasUtil {
     const data = ctx.getImageData(x, y, width, height)
     const temp = ctx.getImageData(x, y, width, height)
     const stride = width * strideLevel
-    for (let i = 0; i < width; i++) {
+    for (i = 0; i < width; i++) {
       for (let j = 0; j < height; j++) {
         const xs = Math.round(amplitude * Math.sin(2 * Math.PI * 3 * (j / height)))
         const ys = Math.round(amplitude * Math.cos(2 * Math.PI * 3 * (i / width)))
@@ -99,7 +101,7 @@ module.exports = class CanvasUtil {
   static fishEye (ctx, level, x, y, width, height) {
     const frame = ctx.getImageData(x, y, width, height)
     const source = new Uint8Array(frame.data)
-    for (let i = 0; i < frame.data.length; i += 4) {
+    for (i = 0; i < frame.data.length; i += 4) {
       const sx = (i / 4) % frame.width
       const sy = Math.floor(i / 4 / frame.width)
       const dx = Math.floor(frame.width / 2) - sx
@@ -128,7 +130,7 @@ module.exports = class CanvasUtil {
   static motionBlur (ctx, image, x, y, width, height) {
     ctx.drawImage(image, x, y, width, height)
     ctx.globalAlpha = 0.2
-    for (let i = 0; i < 10; i += 2) ctx.drawImage(image, x + i, y, width, height)
+    for (i = 0; i < 10; i += 2) ctx.drawImage(image, x + i, y, width, height)
     ctx.globalAlpha = 1
     return ctx
   }
@@ -139,7 +141,7 @@ module.exports = class CanvasUtil {
     ctx.drawImage(image, 0, 0)
     const data = ctx.getImageData(0, 0, canvas.width, canvas.height)
     let hasAlphaPixels = false
-    for (let i = 3; i < data.data.length; i += 4) {
+    for (i = 3; i < data.data.length; i += 4) {
       if (data.data[i] < 255) {
         hasAlphaPixels = true
         break
@@ -193,7 +195,7 @@ module.exports = class CanvasUtil {
           lines.push(line.trim())
           line = ''
         }
-        if (words.length == 0) lines.push(line.trim())
+        if (words.length === 0) lines.push(line.trim())
       }
       return resolve(lines)
     })

@@ -22,8 +22,8 @@ module.exports = class PingCommand {
   }
 
   async run (ctx) {
-    if (!ctx.args[0]) return ctx.send(`${idioma.image.args.replace('%u', ctx.message.author.mention)}`)
-    if ((ctx.args.join(' ').length) > 300) return ctx.send(`${idioma.image.long.replace('%u', ctx.message.author.mention)}`)
+    if (!ctx.args[0]) return ctx.send(`${ctx.idioma.image.args.replace('%u', ctx.message.author.mention)}`)
+    if ((ctx.args.join(' ').length) > 300) return ctx.send(`${ctx.idioma.image.long.replace('%u', ctx.message.author.mention)}`)
     const { createCanvas, loadImage, registerFont } = require('canvas')
     const { shortenText } = require('../../Helpers/Canvas')
     registerFont('./assets/Minecraft.ttf', { family: 'Minecraft' })

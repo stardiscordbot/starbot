@@ -22,8 +22,8 @@ module.exports = class LaranjoCommand {
   }
 
   async run (ctx) {
-    if (!ctx.args[0]) return ctx.send(`${idioma.image.args.replace('%u', ctx.message.author.mention)}`)
-    if ((ctx.args.join(' ').length) > 300) return ctx.send(`${idioma.image.long.replace('%u', ctx.message.author.mention)}`)
+    if (!ctx.args[0]) return ctx.send(`${ctx.idioma.image.args.replace('%u', ctx.message.author.mention)}`)
+    if ((ctx.args.join(' ').length) > 300) return ctx.send(`${ctx.idioma.image.long.replace('%u', ctx.message.author.mention)}`)
     const { createCanvas, loadImage } = require('canvas')
     const canvas = createCanvas(685, 494)
     const foto = canvas.getContext('2d')

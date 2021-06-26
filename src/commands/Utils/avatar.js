@@ -23,7 +23,7 @@ module.exports = class AvatarCommand {
 
   async run (ctx) {
     try {
-      const user = ctx.args[0] ? ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0]) : ctx.message.author
+      const user = ctx.args[0] ? ctx.message.mentions[0] || await global.star.getRESTUser(ctx.args[0]) : ctx.message.author
       const embed = new global.star.manager.Ebl()
       embed.title(`${ctx.idioma.avatar.from} ${user.username}#${user.discriminator}`)
       embed.image(user.avatarURL)

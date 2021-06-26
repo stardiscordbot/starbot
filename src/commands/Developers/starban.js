@@ -23,16 +23,16 @@ module.exports = class EvalCommand {
 
   async run (ctx) {
     if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** Mencione algum usuário ou dê o id dele.`)
-    const user = ctx.message.mentions[0] || await star.getRESTUser(ctx.args[0])
+    const user = ctx.message.mentions[0] || await global.star.getRESTUser(ctx.args[0])
     if (!user) return ctx.send(`:x: ${ctx.message.author.mention} **|** Não encontrei o usuário.`)
     const motivo = ctx.args.slice(1).join(' ') || 'Not specified'
 
-    if (user.id == '717766639260532826') return ctx.send(`:x: ${ctx.message.author.mention} **|** Você não pode banir....`)
+    if (user.id === '717766639260532826') return ctx.send(`:x: ${ctx.message.author.mention} **|** Você não pode banir....`)
     await global.db.set(`blacklist-${user.id}`, motivo)
     const embed = new global.star.manager.Ebl()
-    embed.title(`🛠️ BotBan | ${star.user.username}`)
+    embed.title(`🛠️ BotBan | ${global.star.user.username}`)
     embed.description(`O Usuário **${user.username}#${user.discriminator}** foi banido de me utilizar.`)
-    embed.thumbnail(star.user.avatarURL)
+    embed.thumbnail(global.star.user.avatarURL)
     embed.color('#dd3af0')
     ctx.send(embed.create)
   }

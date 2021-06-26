@@ -32,7 +32,7 @@ module.exports = class PingCommand {
     embed.field('📚 Bio:', `\`\`\`md\n${git.bio || 'User does not have a biography.'}\`\`\``)
     embed.field('<:st_membros:845390325638889482> Social:', `\`\`\`md\n# Followers: ${git.followers}\n# Following: ${git.following}\`\`\``)
     embed.color('#dd3af0')
-    embed.thumbnail(git.avatar_url || star.user.avatarURL)
+    embed.thumbnail(git.avatar_url || global.star.user.avatarURL)
 
     ctx.send(embed.create)
   }

@@ -28,12 +28,12 @@ module.exports = class PingCommand {
     const embed = new global.star.manager.Ebl()
     embed.title('<:st_djs:847082239975882752> Discord.js Docs')
     embed.color('#dd3af0')
-    embed.thumbnail(star.user.avatarURL)
+    embed.thumbnail(global.star.user.avatarURL)
     if (!res.fields) {
       embed.description(`${res.description}`)
       ctx.send(embed.create)
     } else {
-      res.fields.map(resu => {
+      res.fields.forEach(resu => {
         if (resu.value.includes('View source')) return
         embed.description(`>>> 📘 ${res.description}`)
         embed.field(resu.name, resu.value)

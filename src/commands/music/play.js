@@ -24,11 +24,11 @@ module.exports = class PlayCommand {
   async run (ctx) {
     if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.play.nada.replace('%p', ctx.prefix)}`)
     if (!ctx.message.member.voiceState) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.noc2}`)
-    const res = await star.music.search(
+    const res = await global.star.music.search(
       ctx.args.join(' '),
       ctx.message.author
     )
-    const player = star.music.create({
+    const player = global.star.music.create({
       guild: ctx.message.channel.guild.id,
       voiceChannel: ctx.message.member.voiceState.channelID,
       textChannel: ctx.message.channel.id,
@@ -41,13 +41,13 @@ module.exports = class PlayCommand {
     if (!player.playing && !player.paused && !player.queue.size) {
       player.play()
     }
-    if (!player.playing && !player.paused && player.queue.totalSize == res.tracks.length) {
+    if (!player.playing && !player.paused && player.queue.totalSize === res.tracks.length) {
       player.play()
     }
     const embed = new global.star.manager.Ebl()
     embed.title(`<:st_music_adicionado:830833070252097596> ${ctx.idioma.play.add}`)
     embed.description(`> \`${track.title}: ${ctx.message.author.username}#${ctx.message.author.discriminator}\``)
-    embed.thumbnail(star.user.avatarURL)
+    embed.thumbnail(global.star.user.avatarURL)
     embed.color('#dd3af0')
     ctx.send(embed.create)
   }

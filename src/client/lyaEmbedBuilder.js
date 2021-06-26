@@ -69,7 +69,7 @@ module.exports = class LyaEmbedBuilder {
   }
 
   color (color) {
-    this._color = star.manager.color(color)
+    this._color = global.star.manager.color(color)
     return this
   }
 

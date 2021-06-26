@@ -60,7 +60,7 @@ module.exports = class RbuserCommand {
             embed.description(`\`\`\`js\n${err}\n\`\`\``)
             embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
             embed.color('#ff0000')
-            embed.thumbnail(star.user.avatarURL)
+            embed.thumbnail(global.star.user.avatarURL)
             return ctx.send(embed.create)
           })
         }).catch((err) => {
@@ -69,7 +69,7 @@ module.exports = class RbuserCommand {
           embed.description(`\`\`\`js\n${err}\n\`\`\``)
           embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
           embed.color('#ff0000')
-          embed.thumbnail(star.user.avatarURL)
+          embed.thumbnail(global.star.user.avatarURL)
           return ctx.send(embed.create)
         })
       }).catch((err) => {
@@ -78,16 +78,16 @@ module.exports = class RbuserCommand {
         embed.description(`\`\`\`js\n${err}\n\`\`\``)
         embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
         embed.color('#ff0000')
-        embed.thumbnail(star.user.avatarURL)
+        embed.thumbnail(global.star.user.avatarURL)
         return ctx.send(embed.create)
       })
     }).catch((err) => {
       const embed = new global.star.manager.Ebl()
       embed.title(`${ctx.idioma.message.e}`)
-      embed.description(`\`\`\`js\n${erro}\n\`\`\``)
+      embed.description(`\`\`\`js\n${err}\n\`\`\``)
       embed.field(`${ctx.idioma.message.e2}`, `${ctx.idioma.message.e3}`)
       embed.color('#ff0000')
-      embed.thumbnail(star.user.avatarURL)
+      embed.thumbnail(global.star.user.avatarURL)
       return ctx.send(embed.create)
     })
   }
