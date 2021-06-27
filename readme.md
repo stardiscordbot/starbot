@@ -45,4 +45,11 @@ Thanks [www.openode.io](https://www.openode.io) for the hosting!
 ## 🐦 Github Status
 
 [![Node Version](https://img.shields.io/badge/Node.JS-43853D.svg?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/download/) [![Issues](https://img.shields.io/github/issues/yADGithub/starbot?style=for-the-badge&color=green)](https://github.com/yADGithub/starbot/issues) [![](https://img.shields.io/github/issues-pr/yADGithub/starbot?style=for-the-badge&color=green)](https://github.com/yADGithub/starbot/pulls)
+
+## ✨ Stargazers
+
 [![Stargazers](https://reporoster.com/stars/stardiscordbot/starbot)](https://github.com/stardiscordbot/starbot/stargazers)
+
+## ✨ Forkers
+
+[![Forkers](https://reporoster.com/forks/stardiscordbot/starbot)](https://github.com/stardiscordbot/starbot/network/members)
