@@ -16,7 +16,7 @@ module.exports = class MetarCommand {
         categoria: '🤖 • Botlist',
         desc: 'View information from a bestlist.online bot'
       },
-      aliases: ['met', 'airport', 'best'],
+      aliases: ['met', 'airport', 'atis'],
       run: this.run
     }
   }
@@ -28,7 +28,6 @@ module.exports = class MetarCommand {
 
     get(`https://api.checkwx.com/metar/${ctx.args[0].toUpperCase()}/decoded`, { headers: { 'X-API-Key': pkey.checkwx } }).then(resp => {
       resp.data.data.forEach(metar => {
-        console.log(metar.clouds)
         const embed = new global.star.manager.Ebl()
         embed.title(`🌎 ${metar.station.name}`)
         embed.field('🛩️ Icao Code:', `\`\`\`${metar.icao}\`\`\``)

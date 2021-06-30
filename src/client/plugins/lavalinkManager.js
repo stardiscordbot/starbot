@@ -48,10 +48,14 @@ global.star.music = new Manager({
 
     const embed = new global.star.manager.Ebl()
     embed.title(idioma.erela.np)
-    embed.description(`> \`${track.title}: ${track.requester.username}#${track.requester.discriminator}\``)
+    embed.description(`\`${track.title}: ${track.requester.username}#${track.requester.discriminator}\``)
     embed.color('#dd3af0')
     embed.thumbnail(global.star.user.avatarURL)
-    ch.createMessage(embed.create)
+    ch.createMessage(embed.create).then(a => {
+      setTimeout(() => {
+        a.delete()
+      }, 3000)
+    })
   })
   .on('queueEnd', async (player) => {
     const ch = await global.star.getRESTChannel(player.textChannel)
@@ -62,7 +66,7 @@ global.star.music = new Manager({
 
     const embed = new global.star.manager.Ebl()
     embed.title(`🛑 ${idioma.erela.endt}`)
-    embed.description(`> ${idioma.erela.end}`)
+    embed.description(`${idioma.erela.end}`)
     embed.color('#dd3af0')
     embed.thumbnail(global.star.user.avatarURL)
     ch.createMessage(embed.create)
