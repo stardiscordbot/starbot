@@ -27,6 +27,7 @@ module.exports = class InfoCommand {
     if (ctx.args[1] === undefined) {
       return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.tradutor.text.replace('%', ctx.prefix)}`)
     }
+    // eslint-disable-next-line no-useless-escape
     const regex = /[!*();,:@&=+$.\/?%#[\]]/g
     const lang = ctx.args[0]
     const msg = ctx.args.slice(1).join(' ').replace(regex, '')
