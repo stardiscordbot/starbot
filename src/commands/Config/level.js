@@ -3,7 +3,7 @@ module.exports = class PingCommand {
     return {
       permissoes: {
         membro: ['manageGuild'], // Permissoes que o usuario necessita
-        bot: ['MANAGE_ROLES'], // Permissoes que o bot necessita
+        bot: ['manageRoles'], // Permissoes que o bot necessita
         dono: false // Se apenas nos devs podem usar o comando
       },
       pt: {

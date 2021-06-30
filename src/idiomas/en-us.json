@@ -147,7 +147,7 @@
         "link": "here's your link:"
     },
     "welmsg": {
-        "noargs": "Você precisa setar uma mensagem, utilize: `%pwelcome-message <mensagem>`\n\n// <:st_util_info:835532528617259068> Você pode customizar ela usando **PlaceHolders:**\n**{guild}** - Mostra o nome do servidor (Exemplo: **%g**)\n**{member}** - Mostra o Username do membro (Exemplo: **%use**)\n**{@member}** - Menciona o Membro (Exemplo: **%author**})\n**{memberCount}** - Mostra a quantidade de Membros do servidor (Exemplo: **%mc**)\n**{member.discrim}** - Mostra a tag do Membro (Exemplo: **%ut**)\n**{member.id}** - Mostra o ID do membro (Exemplo: **%id**)"
+        "noargs": "// <:st_util_info:835532528617259068> Você pode customizar ela usando **PlaceHolders:**\n**{guild}** - Mostra o nome do servidor (Exemplo: **%g**)\n**{member}** - Mostra o Username do membro (Exemplo: **%use**)\n**{@member}** - Menciona o Membro (Exemplo: **%author**})\n**{memberCount}** - Mostra a quantidade de Membros do servidor (Exemplo: **%mc**)\n**{member.discrim}** - Mostra a tag do Membro (Exemplo: **%ut**)\n**{member.id}** - Mostra o ID do membro (Exemplo: **%id**)"
     },
     "fst": {
         "arg": "Use: `%pfst on` to enable and `%pfst off` to disable"
