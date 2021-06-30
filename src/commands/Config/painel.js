@@ -9,7 +9,7 @@ module.exports = class Idioma {
       pt: {
         nome: 'painel',
         categoria: '⚙️ • Configuração',
-        desc: 'Altera o idioma do bot.'
+        desc: 'Configura o bot.'
       },
       en: {
         nome: 'panel',
@@ -22,9 +22,9 @@ module.exports = class Idioma {
   }
 
   async run (ctx) {
-    // eslint-disable-next-line no-unused-vars
     const ReactionCollector = require('../../Helpers/ReactionCollector')
     const MessageCollector = require('../../Helpers/MessageCollector')
+    const config = {}
     const embed = new global.star.manager.Ebl()
     embed.title(`<:st_config:845647892932067369> Config Panel • ${global.star.user.username}`)
     embed.description(`**${ctx.message.author.username}** Configure seu servidor por aqui!`)
@@ -34,6 +34,7 @@ module.exports = class Idioma {
     embed.field('<:st_four:859833018901069854> Sistema de Boas-Vindas:', 'Customize as mensagens de entrada de seu servidor, escolhendo canal, mensagem, embed, não-embed e cor da embed :)')
     embed.thumbnail(global.star.user.avatarURL)
     embed.color('#dd3af0')
+    // Enviando a primeira mensagem
     ctx.message.channel.createMessage(embed.create).then(msg => {
       msg.addReaction(':st_one:859832790726737981')
       msg.addReaction(':st_two:859832872868118558')
@@ -64,6 +65,7 @@ module.exports = class Idioma {
             stopOnCollect: true
           })
           welmsg.on('collect', (message) => {
+            config.welmsg = message.content
             const embed3 = new global.star.manager.Ebl()
             embed3.title('📋 Passo 2: Embed ou Não?')
             embed3.description(`✅ ${message.author.mention} **|** Mensagem de boas vindas setada para:\n\n>>> ${message.content.replace(/{guild}/g, message.channel.guild.name).replace(/{member}/g, message.author.username).replace(/{@member}/g, message.author.mention).replace(/{memberCount}/g, message.channel.guild.memberCount).replace(/{member.discrim}/g, '').replace(/{member.id}/g, message.author.id)}`)
