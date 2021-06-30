@@ -1,4 +1,4 @@
-module.exports = class Idioma {
+module.exports = class DashboardCommand {
   constructor () {
     return {
       permissoes: {
@@ -24,7 +24,9 @@ module.exports = class Idioma {
   async run (ctx) {
     const ReactionCollector = require('../../Helpers/ReactionCollector')
     const MessageCollector = require('../../Helpers/MessageCollector')
+
     const config = {}
+
     const embed = new global.star.manager.Ebl()
     embed.title(`<:st_config:845647892932067369> Config Panel • ${global.star.user.username}`)
     embed.description(`**${ctx.message.author.username}** Configure seu servidor por aqui!`)
@@ -76,6 +78,40 @@ module.exports = class Idioma {
               m2.addReaction(':st_deslike:845646620044951562')
               message.delete()
               m1.delete()
+              // CASO SEJA EM EMBED
+              const emb = new ReactionCollector(m2, {
+                user: ctx.message.author,
+                ignoreBot: true,
+                emoji: 'st_like',
+                time: 60000,
+                max: 1,
+                acceptReactionRemove: false,
+                stopOnCollect: true
+              })
+              // CASO SEJA EMBED (PT 2)
+              emb.on('collect', (message) => {
+                const embed4 = new global.star.manager.Ebl()
+                embed4.title('📋 Passo 3: Cor da embed')
+                embed4.description('Envie uma cor em HEX para ser usada na embed, exemplo: **#dd3af0**')
+                embed4.color('#dd3af0')
+                message.channel.createMessage(embed4.create).then(m3 => {
+                  m2.delete()
+                })
+              })
+              // CASO NÃO SEJA EM EMBED
+              const noemb = new ReactionCollector(m2, {
+                user: ctx.message.author,
+                ignoreBot: true,
+                emoji: 'st_deslike',
+                time: 60000,
+                max: 1,
+                acceptReactionRemove: false,
+                stopOnCollect: true
+              })
+              // CASO NÃO SEJA EMBED (PT 2)
+              noemb.on('collect', (message) => {
+                message.channel.createMessage('você escolheu não embed')
+              })
             })
           })
         })
