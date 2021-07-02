@@ -131,7 +131,9 @@
     "vip": "Comando só disponível para doadores a partir do nível básico."
   },
   "metar": {
-    "ft": "Informações da api: https://www.checkwxapi.com"
+    "ft": "Informações da api: https://www.checkwxapi.com",
+    "invalid": "O ICAO de um aeroporto possui apenas 4 letras.",
+    "noarg": "Faltou especificar o ICAO do aeroporto, exemplo: SBRJ"
   },
   "erela": {
     "np": "🎵 Tocando Agora!",

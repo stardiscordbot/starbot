@@ -131,7 +131,9 @@
         "vip": "Command only available to donors from basic level."
     },
     "metar": {
-        "ft": "Api information: https://www.checkwxapi.com/"
+        "ft": "Api information: https://www.checkwxapi.com/",
+        "invalid": "The ICAO of an airport has only 4 letters",
+        "noarg": "It was necessary to specify the ICAO, of the example airport SBRJ"
     },
     "erela": {
         "np": "🎵 Now Playing!",

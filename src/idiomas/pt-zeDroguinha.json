@@ -131,7 +131,9 @@
     "vip": "Qual é meno esse comando só é disponível para doadores a partir do nível maix maixo tlgd."
   },
   "metar": {
-    "ft": "Informações desse site que puxo os coiso: https://www.checkwxapi.com"
+    "ft": "Informações desse site que puxo os coiso: https://www.checkwxapi.com",
+    "invalid": "O ICAO do um aeroporto possui apenas 4 letras bixo.",
+    "noarg": "Cadê o aeroporto? nn sei"
   },
   "erela": {
     "np": "🎵 Tocando Agora!",
