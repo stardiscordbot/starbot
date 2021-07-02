@@ -41,12 +41,14 @@ module.exports = class MessageEvent {
             }
         }
         */
+    /*
     const messages = await global.db.get(`messages-${message.guildID}-${message.author.id}`)
     if (messages) {
       await global.db.set(`messages-${message.guildID}-${message.author.id}`, messages + 1)
     } else {
       await global.db.set(`messages-${message.guildID}-${message.author.id}`, 1)
     }
+    */
     let prefix = config.prefix
     const preDb = await global.db.get(`prefix-${message.guildID}`)
     if (preDb) {
