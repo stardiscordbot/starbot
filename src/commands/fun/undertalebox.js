@@ -9,12 +9,12 @@ module.exports = class PingCommand {
       pt: {
         nome: 'undertalebox',
         categoria: '😄 • Diversão',
-        desc: 'Quando alguém diz nada é perfeito'
+        desc: 'Cria uma caixa de diálogo igual ao do Undertale'
       },
       en: {
         nome: 'undertalebox',
         categoria: '😄 • Fun',
-        desc: 'When someone says nothing is perfect'
+        desc: 'Creates a dialog just like Undertale'
       },
       aliases: ['utbox'],
       run: this.run

@@ -1,6 +1,11 @@
 module.exports = class Ajuda {
   constructor () {
     return {
+      permissoes: {
+        membro: [], // Permissoes que o usuario necessita
+        bot: ['embedLinks'], // Permissoes que o bot necessita
+        dono: false // Se apenas nos devs podem usar o comando
+      },
       pt: {
         nome: 'ajuda',
         categoria: '📖 • Informação',
@@ -66,6 +71,11 @@ module.exports = class Ajuda {
         }
 
         global.star.commands.forEach(comando => {
+          if (!comando.permissoes.dono) {
+            console.log('[HELP] Passou')
+          } else {
+            return console.log('[HELP] Cmd de dono')
+          }
           if (!categorias[comando.pt.categoria]) { categorias[comando.pt.categoria] = [] }
           categorias[comando.pt.categoria].push(
                         `\`${comando.pt.nome}\``
@@ -101,6 +111,11 @@ module.exports = class Ajuda {
           return ctx.send(help.create)
         }
         global.star.commands.forEach(cmd => {
+          if (!cmd.permissoes.dono) {
+            console.log('[HELP] Passou')
+          } else {
+            return console.log('[HELP] Cmd de dono')
+          }
           if (!categorias[cmd.en.categoria]) {
             categorias[cmd.en.categoria] = []
           }

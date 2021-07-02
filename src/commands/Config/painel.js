@@ -4,7 +4,7 @@ module.exports = class DashboardCommand {
       permissoes: {
         membro: ['manageGuild'],
         bot: ['embedLinks', 'addReactions', 'useExternalEmojis', 'manageMessages'], // Permissoes que o bot necessita
-        dono: false // Se apenas nos devs podem usar o comando
+        dono: true // Se apenas nos devs podem usar o comando
       },
       pt: {
         nome: 'painel',
