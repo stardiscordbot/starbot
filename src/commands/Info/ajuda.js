@@ -32,6 +32,7 @@ module.exports = class Ajuda {
   async run (ctx) {
     // const lang = `${await global.db.get(`idioma-${ctx.message.guildID}`)}`.split('-').filter(a => a.length > 0);
     let idioma = await global.db.get(`idioma-${ctx.message.guildID}`) || 'pt-br'
+    require('colors')
     const devs = []
 
     if (idioma === 'pt-zeDroguinha') {
@@ -72,9 +73,9 @@ module.exports = class Ajuda {
 
         global.star.commands.forEach(comando => {
           if (!comando.permissoes.dono) {
-            console.log('[HELP] Passou')
+            console.log(`[HELP] Commando ${comando.pt.nome} foi exbido no ajuda`.brightCyan)
           } else {
-            return console.log('[HELP] Cmd de dono')
+            return console.log(`[HELP] Comando ${comando.pt.nome} não foi exibido no ajuda por ser de desenvolvedor.`.brightRed)
           }
           if (!categorias[comando.pt.categoria]) { categorias[comando.pt.categoria] = [] }
           categorias[comando.pt.categoria].push(
@@ -114,7 +115,7 @@ module.exports = class Ajuda {
           if (!cmd.permissoes.dono) {
             console.log('[HELP] Passou')
           } else {
-            return console.log('[HELP] Cmd de dono')
+            return console.log(`[HELP] Comando ${cmd.pt.nome} não foi exibido no ajuda por ser de desenvolvedor.`.brightRed)
           }
           if (!categorias[cmd.en.categoria]) {
             categorias[cmd.en.categoria] = []

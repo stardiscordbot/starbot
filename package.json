@@ -1,6 +1,6 @@
 {
   "name": "star",
-  "version": "5.0.10",
+  "version": "5.0.2",
   "description": "Helping servers grow exponentially with a simple solution. Make your server active and entertain your community with a simple solution - A unique discord bot, Star!",
   "main": "src/star.js",
   "scripts": {
