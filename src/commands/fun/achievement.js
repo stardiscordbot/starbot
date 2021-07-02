@@ -7,16 +7,16 @@ module.exports = class UndertaleBox {
         dono: false // Se apenas nos devs podem usar o comando
       },
       pt: {
-        nome: 'undertalebox',
+        nome: 'mcconquista',
         categoria: '😄 • Diversão',
-        desc: 'Cria uma caixa de diálogo igual ao do Undertale'
+        desc: 'Cria uma conquista do minecraft'
       },
       en: {
-        nome: 'undertalebox',
+        nome: 'achievement',
         categoria: '😄 • Fun',
-        desc: 'Creates a dialog just like Undertale'
+        desc: 'Create a minecraft achievement'
       },
-      aliases: ['utbox'],
+      aliases: ['mcachievement', 'achievement'],
       run: this.run
     }
   }

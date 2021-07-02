@@ -106,12 +106,12 @@ module.exports = class MessageEvent {
       }
 
       if (command.permissoes) {
-        if (!command.permissoes.membro === []) {
+        if (command.permissoes.membro.length) {
           if (!command.permissoes.membro.every(p => message.channel.guild.members.get(message.author.id).permissions.has(p))) {
             return message.channel.createMessage(`:x: ${message.author.mention} **|** ${idioma.message.user} \`${command.permissoes.membro}\`.`)
           }
         }
-        if (!command.permissoes.bot === []) {
+        if (command.permissoes.bot.length) {
           if (!command.permissoes.bot.every(p => message.channel.guild.members.get(global.star.user.id).permissions.has(p))) {
             return message.channel.createMessage(`:x: ${message.author.mention} **|** ${idioma.message.bot} \`${command.permissoes.bot}\`.`)
           }

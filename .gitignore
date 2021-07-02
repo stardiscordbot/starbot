@@ -16,3 +16,4 @@ src/config/config.js
 src/config/player.js
 src/System/webhooks.json
 src/apikey.json
+painel.js
