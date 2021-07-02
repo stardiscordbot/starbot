@@ -1,4 +1,4 @@
-module.exports = class PingCommand {
+module.exports = class UndertaleBox {
   constructor () {
     return {
       permissoes: {
@@ -7,16 +7,16 @@ module.exports = class PingCommand {
         dono: false // Se apenas nos devs podem usar o comando
       },
       pt: {
-        nome: 'achievement',
+        nome: 'undertalebox',
         categoria: '😄 • Diversão',
-        desc: 'MORRE PRAGA'
+        desc: 'Cria uma caixa de diálogo igual ao do Undertale'
       },
       en: {
-        nome: 'achievement',
+        nome: 'undertalebox',
         categoria: '😄 • Fun',
-        desc: 'DIE PLAGUE'
+        desc: 'Creates a dialog just like Undertale'
       },
-      aliases: ['mcconquista', 'mcachievement', 'ma', 'mconquista', 'machievement', 'progresso', 'progressofeito'],
+      aliases: ['utbox'],
       run: this.run
     }
   }
@@ -25,25 +25,23 @@ module.exports = class PingCommand {
     if (!ctx.args[0]) return ctx.send(`${ctx.idioma.image.args.replace('%u', ctx.message.author.mention)}`)
     if ((ctx.args.join(' ').length) > 300) return ctx.send(`${ctx.idioma.image.long.replace('%u', ctx.message.author.mention)}`)
     const { createCanvas, loadImage, registerFont } = require('canvas')
-    const { shortenText } = require('../../Helpers/Canvas')
-    registerFont('./assets/Minecraft.ttf', { family: 'Minecraft' })
-    if ((ctx.args.join(' ').length) > 300) return ctx.send(ctx.idioma.image.long.replace('%u', ctx.message.author.mention))
-    if (!ctx.args[0]) return ctx.send(`${ctx.idioma.image.args.replace('%u', ctx.message.author.mention)}`)
-    const text = ctx.args.join(' ')
+    const { greyscale } = require('../../Helpers/Canvas')
 
-    const base = await loadImage('./assets/achievement.png')
+    registerFont('./assets/Minecraftia.ttf', { family: 'Minecraft' })
+    const base = await loadImage('./assets/undertalebox.png')
+    const avatar = await loadImage(ctx.message.author.avatarURL)
     const canvas = createCanvas(base.width, base.height)
     const foto = canvas.getContext('2d')
+    const text = ctx.args.join(' ')
     foto.drawImage(base, 0, 0)
     foto.font = '17px Minecraftia'
-    foto.fillStyle = '#ffff00'
-    foto.fillText(`${ctx.idioma.image.achivment}`, 60, 40)
+    foto.drawImage(avatar, 15, 15, 120, 120)
     foto.fillStyle = '#ffffff'
-    foto.fillText(shortenText(foto, text, 230), 60, 60)
-
+    foto.fillText(`${text}`.match(/.{1,35}/g).join('\n'), canvas.width / 3.4, canvas.height / 2.7, 655)
+    greyscale(foto, 0, 0, base.width, base.height)
     ctx.message.channel.createMessage(ctx.message.author.mention, {
       file: canvas.toBuffer(),
-      name: 'mcconquista.png'
+      name: 'undertalebox.png'
     })
   }
 }
