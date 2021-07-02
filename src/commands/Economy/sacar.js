@@ -22,26 +22,26 @@ module.exports = class DailyCommand {
   }
 
   async run (ctx) {
-    if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** Insira um quantia **válida** para sacar.`)
+    if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.economy.sac.sc1}`)
 
-    const money = await global.db.get(`money-${ctx.message.author.id}`) || 0
-    const banco = await global.db.get(`banco-${ctx.message.author.id}`) || 0
+    const money = await global.db.get(`money-${ctx.message.author.id}`) || Number(0)
+    const banco = await global.db.get(`banco-${ctx.message.author.id}`) || Number(0)
 
-    if (banco === 0 || banco < 0) return ctx.send(`:x: ${ctx.message.author.mention} **|** Você não dinheiro em seu banco.`)
+    if (banco === 0 || banco < 0) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.economy.sac.nomoney}`)
 
     if (ctx.args[0] === 'all' || ctx.args[0] === 'tudo') {
-      await global.db.set(`banco-${ctx.message.author.id}`, banco - money)
-      await global.db.set(`money-${ctx.message.author.id}`, money + banco) // Vai dar 0 mas eu quero fazer assim então ;p
-      ctx.send(`:white_check_mark: ${ctx.message.author.mention} **|** Você sacou **¥ ${money.toLocaleString()}** em seu banco.`)
+      await global.db.set(`banco-${ctx.message.author.id}`, Number(banco) - Number(money))
+      await global.db.set(`money-${ctx.message.author.id}`, Number(money) + Number(banco)) // Vai dar 0 mas eu quero fazer assim então ;p
+      ctx.send(`:white_check_mark: ${ctx.message.author.mention} **|** ${ctx.idioma.economy.sac.sc1} **¥ ${money.toLocaleString()}** ${ctx.idioma.economy.sac.sc2}`)
     } else {
-      if (isNaN(ctx.args[0])) return ctx.send(`:x: ${ctx.message.author.mention} **|** Insira um quantia **válida** para depositar.`)
+      if (isNaN(ctx.args[0])) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.economy.sac.inv}`)
 
-      if (ctx.args[0] < 0 || ctx.args[0] > money) return ctx.send(`:x: ${ctx.message.author.mention} **|** Você não tem esse valor.`)
+      if (Number(ctx.args[0]) < 0 || Number(ctx.args[0]) > Number(banco)) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.economy.sac.nomoney}`)
 
-      await global.db.set(`banco-${ctx.message.author.id}`, banco - ctx.args[0])
-      await global.db.set(`money-${ctx.message.author.id}`, money + ctx.args[0]) // Vai dar 0 mas eu quero fazer assim então ;p
+      await global.db.set(`banco-${ctx.message.author.id}`, Number(banco) - Number(ctx.args[0]))
+      await global.db.set(`money-${ctx.message.author.id}`, Number(money) + Number(ctx.args[0])) // Vai dar 0 mas eu quero fazer assim então ;p
 
-      ctx.send(`:white_check_mark: ${ctx.message.author.mention} **|** Você sacou **¥ ${ctx.args[0].toLocaleString()}** em seu banco.`)
+      ctx.send(`:white_check_mark: ${ctx.message.author.mention} **|** ${ctx.idioma.economy.sac.sc1} **¥ ${ctx.args[0].toLocaleString()}** ${ctx.idioma.economy.sac.sc2}`)
     }
   }
 }

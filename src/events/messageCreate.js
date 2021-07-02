@@ -97,6 +97,14 @@ module.exports = class MessageEvent {
       const cmd = argumentos.shift().toLowerCase()
       const command = global.star.commands.get(cmd) || global.star.aliases.get(cmd)
 
+      if (!command) {
+        if (await global.db.get(`mensagem-comando-${message.guildID}`)) {
+          message.channel.createMessage(`:x: ${message.author} **|** ${idioma.message.the} \`${cmd.replace(/@/g, '').replace(/#/g, '').replace(/`/g, '')}\` ${idioma.message.unk}`)
+        } else {
+          return
+        }
+      }
+
       if (command.permissoes) {
         if (command.permissoes.membro.length) {
           if (!command.permissoes.membro.every(p => message.channel.guild.members.get(message.author.id).permissions.has(p))) {

@@ -1,4 +1,20 @@
 {
+  "economy": {
+    "carteira": "Carteira:",
+    "banco": "Banco:",
+    "dep": {
+      "inv": "Insira um quantia **válida** para depositar.",
+      "nomoney": "Você não tem dinheiro em sua carteira.",
+      "dp1": "Você depositou",
+      "dp2": "em seu banco."
+    },
+    "sac": {
+      "inv": "Insira um quantia **válida** para sacar.",
+      "nomoney": "Você não tem dinheiro em seu banco.",
+      "sc1": "Você sacou",
+      "sc2": "de seu banco."
+    }
+  },
   "cotacao": {
     "t": "Cotação do real nas principais moedas:",
     "f1": "Dolar",

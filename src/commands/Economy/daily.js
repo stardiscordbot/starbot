@@ -51,9 +51,9 @@ module.exports = class DailyCommand {
         ctx.send(embed.create)
       } else {
         const q = await global.db.get(`money-${ctx.message.author.id}`)
-        await global.db.set(`money-${ctx.message.author.id}`, daily + q)
-        await global.db.set(`dailytime-${ctx.message.author.id}`, Date.now())
-        await global.db.set(`banco-${ctx.message.author.id}`, 0)
+        await global.db.set(`money-${ctx.message.author.id}`, Number(daily + q))
+        await global.db.set(`dailytime-${ctx.message.author.id}`, Number(Date.now()))
+        await global.db.set(`banco-${ctx.message.author.id}`, Number(0))
 
         const embed = new global.star.manager.Ebl()
         embed.title(`💸 Daily | ${global.star.user.username}`)

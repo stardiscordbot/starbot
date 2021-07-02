@@ -2,7 +2,8 @@ module.exports = class Idioma {
   constructor () {
     return {
       permissoes: {
-        membro: ['manageGuild']
+        membro: ['manageGuild'],
+        bot: []
       },
       pt: {
         nome: 'prefix',

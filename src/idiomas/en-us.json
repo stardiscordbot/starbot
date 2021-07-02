@@ -1,4 +1,20 @@
 {
+  "economy": {
+    "carteira": "Wallet:",
+    "banco": "Bank:",
+    "dep": {
+      "inv": "Enter a **valid** amount to deposit.",
+      "nomoney": "You don't have money in your wallet.",
+      "dp1": "You deposited",
+      "dp2": "in your bank."
+    },
+    "sac": {
+      "inv": "Enter a **valid** amount to withdraw.",
+      "nomoney": "You don't money in your bank.",
+      "sc1": "You got it",
+      "sc2": "from your bank."
+    }
+  },
     "cotacao": {
         "t": "Real quotation in major currencies:",
         "f1": "Dollar",

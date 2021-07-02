@@ -29,8 +29,8 @@ module.exports = class EvalCommand {
 
     const embed = new global.star.manager.Ebl()
     embed.title(`💸 Banco | ${global.star.user.username}`)
-    embed.field('❯ Carteira:', `**${user.username}** tem **¥ ${money.toLocaleString()}** em sua carteira.`, true)
-    embed.field('❯ Banco:', `**${user.username}** tem **¥ ${banco.toLocaleString()}** no banco.`, true)
+    embed.field(`❯ ${ctx.idioma.economy.carteira}`, `**${user.username}:** **¥ ${money.toLocaleString()}**`, true)
+    embed.field(`❯ ${ctx.idioma.economy.banco}`, `**${user.username}:** **¥ ${banco.toLocaleString()}**`, true)
     embed.color('#dd3af0')
     embed.thumbnail('https://i.imgur.com/VW4x1en.png')
     ctx.send(embed.create)
