@@ -54,7 +54,7 @@ module.exports = class Ajuda {
         if (ctx.args[0]) {
           const cmd = await global.star.commands.get(ctx.args[0]) || global.star.commands.find(cmd => cmd.aliases.includes(ctx.args[0]))
 
-          if (!cmd) return ctx.message.quote(`:x: ${ctx.message.author.mention} **|** Esse comando não existe`)
+          if (!cmd) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** Esse comando não existe`)
           const help = new global.global.star.manager.Ebl()
           help.title('<:st_util_info:835532528617259068> ' + `Informações do comando: \`${ctx.prefix}${cmd.pt.nome.toLowerCase()}\``) // .split(' ').map(str => str.slice(0, 1).toUpperCase() + str.slice(1)).join(' '))
           help.field('📚 Descrição:', `\`${cmd.pt.desc}\``, false)
@@ -95,7 +95,7 @@ module.exports = class Ajuda {
         if (ctx.args[0]) {
           const cmd = await global.star.commands.get(ctx.args[0]) || global.star.commands.find(cmd => cmd.aliases.includes(ctx.args[0]))
 
-          if (!cmd) return ctx.message.quote(`:x: ${ctx.message.author.mention} **|** This command does not exist`)
+          if (!cmd) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** This command does not exist`)
           const help = new global.global.star.manager.Ebl()
           help.title('<:st_util_info:835532528617259068> ' + `Command information: \`${ctx.prefix}${cmd.pt.nome.toLowerCase()}\``) // .split(' ').map(str => str.slice(0, 1).toUpperCase() + str.slice(1)).join(' '))
           help.field('📚 Description:', `\`${cmd.en.desc}\``, false)
