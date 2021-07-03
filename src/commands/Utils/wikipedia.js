@@ -9,14 +9,14 @@ module.exports = class AnimeCommand {
       pt: {
         nome: 'wikipedia',
         categoria: '🕰️ • Utilidades',
-        desc: 'Para pesquisar anime no MAL'
+        desc: 'Para pesquisar algum artigo no wikipedia'
       },
       en: {
         nome: 'wikipedia',
         categoria: '🕰️ • Utility',
-        desc: 'To search anime on MAL'
+        desc: 'To search for an article on wikipedia'
       },
-      aliases: ['manime', 'malanime'],
+      aliases: ['wiki', 'wp', 'wkp'],
       run: this.run
     }
   }
@@ -36,12 +36,14 @@ module.exports = class AnimeCommand {
       const res = tes.data
       // console.log(res)
       const embed = new global.star.manager.Ebl()
-      embed.title(`📚 Wikipedia • ${res.title}`)
+      embed.title(`<:st_wiki:860857720276779029> Wikipedia • ${res.title}`)
       embed.url(res.content_urls.desktop.page)
       embed.description(res.extract)
       embed.color('#dd3af0')
       embed.thumbnail(global.star.user.avatarURL)
       ctx.send(embed.create)
+    }).catch((e) => {
+      ctx.send(`:x: ${ctx.message.author.mention} **|** No results for: \`${ctx.args.join(' ').replace(/`/g, '')}\``)
     })
   }
 }
