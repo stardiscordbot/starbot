@@ -1,4 +1,4 @@
-module.exports = class AnimeCommand {
+module.exports = class WikipediaCommand {
   constructor () {
     return {
       permissoes: {
