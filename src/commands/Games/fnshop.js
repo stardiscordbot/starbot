@@ -22,8 +22,14 @@ module.exports = class RbuserCommand {
   }
 
   async run (ctx) {
+    const { FortniteShop } = require('discord-canvas')
+
+    const foto = new FortniteShop()
+      .setToken('')
+      .setText('FORTNITE ITEMS SHOP')
+      .toAttachment()
     ctx.message.channel.createMessage(ctx.message.author.mention, {
-      file: 'https://fortool.fr/cm/assets/shop/en.png',
+      file: foto,
       name: 'en.png'
     })
   }

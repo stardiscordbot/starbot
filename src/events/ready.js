@@ -29,6 +29,8 @@ module.exports = class ReadyEvent {
         name: 'base.json'
       })
     }, 1000 * 60)
+    // Rifa
+    // Iniciando Música
     global.star.music.init(global.star.user.id)
   }
 }
