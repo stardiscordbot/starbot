@@ -73,9 +73,9 @@ module.exports = class Ajuda {
 
         global.star.commands.forEach(comando => {
           if (!comando.permissoes.dono) {
-            console.log(`[HELP] Commando ${comando.pt.nome} foi exbido no ajuda`.brightCyan)
+            // console.log(`[HELP] Commando ${comando.pt.nome} foi exbido no ajuda`.brightCyan)
           } else {
-            return console.log(`[HELP] Comando ${comando.pt.nome} não foi exibido no ajuda por ser de desenvolvedor.`.brightRed)
+            return // console.log(`[HELP] Comando ${comando.pt.nome} não foi exibido no ajuda por ser de desenvolvedor.`.brightRed)
           }
           if (!categorias[comando.pt.categoria]) { categorias[comando.pt.categoria] = [] }
           categorias[comando.pt.categoria].push(
@@ -113,9 +113,9 @@ module.exports = class Ajuda {
         }
         global.star.commands.forEach(cmd => {
           if (!cmd.permissoes.dono) {
-            console.log('[HELP] Passou')
+            // console.log('[HELP] Passou')
           } else {
-            return console.log(`[HELP] Comando ${cmd.pt.nome} não foi exibido no ajuda por ser de desenvolvedor.`.brightRed)
+            return // console.log(`[HELP] Comando ${cmd.pt.nome} não foi exibido no ajuda por ser de desenvolvedor.`.brightRed)
           }
           if (!categorias[cmd.en.categoria]) {
             categorias[cmd.en.categoria] = []

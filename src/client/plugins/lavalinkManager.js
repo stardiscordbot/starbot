@@ -48,7 +48,7 @@ global.star.music = new Manager({
 
     const embed = new global.star.manager.Ebl()
     embed.title(idioma.erela.np)
-    embed.description(`\`${track.title}: ${track.requester.username}#${track.requester.discriminator}\``)
+    embed.description(`<:st_playing:861592704958201896> \`${track.title}: ${track.requester.username}#${track.requester.discriminator}\``)
     embed.color('#dd3af0')
     embed.thumbnail(global.star.user.avatarURL)
     ch.createMessage(embed.create).then(a => {

@@ -31,7 +31,7 @@ module.exports = class PingCommand {
       return ctx.send(`:white_check_mark: ${ctx.message.author.mention} **|** ${ctx.idioma.sugestao.disabled}`)
     }
 
-    const logs = ctx.message.channelMentions[0] || global.star.getRESTChannel(ctx.args[0])
+    const logs = ctx.message.channelMentions[0] || await global.star.getRESTChannel(ctx.args[0])
 
     if (!logs) {
       return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.sugestao.insertChannel.replace('%p', ctx.prefix)}`)

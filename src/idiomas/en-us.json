@@ -74,7 +74,7 @@
         "user": "You don 't have all the necessary permissions to use this command!\nNeeded permissions:",
         "bot": "I don't have all the necessary permissions to run this command!\nNeeded permissions:",
         "dev": "Only my developers can use this command!",
-        "c": "Wait 3 seconds to use another command.",
+        "c": "Wait %t seconds to use another command.",
         "e": "Oops, an error happened!",
         "e2": "Report this error!",
         "e3": "My team probably already knows about this error, but how about you help? You can open an [issue](https://github.com/stardiscordbot/starbot/issues) in [github](https://github.com/stardiscordbot/starbot) or report it to my [support server](https://discord.gg/2pFH6Yy), let's make the discord a better place, together 🤝"

@@ -1,8 +1,6 @@
 'use strict'
 
 const config = require('../config/config')
-const cooldowns = {}
-
 module.exports = class MessageEvent {
   constructor () {
     return {
@@ -152,29 +150,42 @@ module.exports = class MessageEvent {
           }
         }
 
-        let timeout = 3000
-        if (message.author.id === '717766639260532826') {
-          timeout = 0
-        }
-        // Caso tudo ocorra bem executar o comando.
-        if (!cooldowns[message.author.id]) {
-          cooldowns[message.author.id] = {
-            lastCmd: null
-          }
-        }
-        const ultimoCmd = cooldowns[message.author.id].lastCmd
-        if (ultimoCmd != null && timeout - (Date.now() - ultimoCmd) > 0) {
-          return message.channel.createMessage(`:x: ${message.author.mention} **|** ${idioma.message.c}`)
-        } else {
-          cooldowns[message.author.id].lastCmd = Date.now()
+        const { Collection } = require('eris')
+        const now = Date.now()
+
+        if (!global.star.cooldowns2.has(command.pt.nome)) {
+          await global.star.cooldowns2.set(command.pt.nome, new Collection())
         }
 
-        const cmds = await global.db.get('comandos')
-        if (!cmds) {
-          await global.db.set('comandos', 1)
-        } else {
-          await global.db.set('comandos', cmds + 1)
+        const timestamps = global.star.cooldowns2.get(command.pt.nome)
+        const cooldownAmoun = 5000
+        const cooldownAmount = (timestamps.has(message.author.id) ? (Number(cooldownAmoun)) + cooldownAmoun : cooldownAmoun)
+
+        if (timestamps.has(message.author.id)) {
+          const expirationTime = timestamps.get(message.author.id) + cooldownAmount
+
+          if (now < expirationTime) {
+            if (global.star.cooldowns.has(message.author.id)) {
+              const time = await global.star.cooldowns.get(message.author.id)
+              if (time > 35) {
+                await global.star.cooldowns.delete(message.author.id)
+                await global.db.set(`blacklist-${message.author.id}`, 'Automatically - antispam system')
+              }
+            }
+
+            const quantidade = (global.star.cooldowns.has(message.author.id) ? global.star.cooldowns.get(message.author.id) : 0)
+
+            await global.star.cooldowns.set(message.author.id, quantidade + 1)
+            const timeLeft = (expirationTime - now) / 1000
+
+            return message.channel.createMessage(`:x: ${message.author.mention} **|** ${idioma.message.c.replace('%t', `**${timeLeft.toFixed(1)}**`)}`)
+          }
         }
+        timestamps.set(message.author.id, now)
+        setTimeout(() => timestamps.delete(message.author.id), cooldownAmount)
+        setTimeout(() => {
+          global.star.cooldowns.delete(message.author.id)
+        }, 120000)
 
         this.ctx = {
           id: message.id,
@@ -226,6 +237,7 @@ module.exports = class MessageEvent {
           return message.channel.createMessage(embed.create)
         })
       } catch (erro) {
+        console.log(`[ERRO] Deu ruim:\n${erro}`.red)
         const embed = new global.star.manager.Ebl()
         embed.title(`${idioma.message.e}`)
         embed.description(`\`\`\`js\n${erro}\n\`\`\``)

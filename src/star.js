@@ -26,6 +26,8 @@ const client = new Client(token, {
 client.commands = new Collection()
 client.aliases = new Collection()
 client.events = new Collection()
+client.cooldowns = new Collection()
+client.cooldowns2 = new Collection()
 
 const Star = require('./client/starbot.js')
 
