@@ -1,6 +1,7 @@
 'use strict'
 
 const config = require('../config/config')
+const system = require('../config/system')
 module.exports = class MessageEvent {
   constructor () {
     return {
@@ -10,7 +11,7 @@ module.exports = class MessageEvent {
   }
 
   async run (message) {
-    if (message.channel.type === 'dm' || message.author.bot) return
+    if (message.channel.type === 1 || message.author.bot) return
     let xpReward = Math.floor(Math.random() * 29) + 1
     if (xpReward === 0) xpReward = 10
 
@@ -216,16 +217,34 @@ module.exports = class MessageEvent {
         }
         const owner = await global.star.getRESTUser(message.channel.guild.ownerID)
         const moment = require('moment')
-        const embed2 = new global.star.manager.Ebl()
-        embed2.title('<:st_website:830841154203025439> Log de Comandos')
-        embed2.field('<:st_membros:845390325638889482> Usuário:', `\`\`\`${message.author.username}#${message.author.discriminator} (${message.author.id})\`\`\``)
-        embed2.field('<:st_util_info:835532528617259068> Comando:', `\`\`\`${message.content.slice(0, 1010)}\`\`\``)
-        embed2.field('<:st_link:845643800080416770> Link da mensagem:', `\`\`\`${message.jumpLink}\`\`\``)
-        embed2.field('<:st_like:845646603368661002> GuildInfo:', `\`\`\`📋 Nome: ${message.channel.guild.name}\n🧭 ID: ${message.channel.guild.id} [${message.channel.guild.shard.id}]\n👑 ${owner.username}#${owner.discriminator}\n🧑 Membros: ${message.channel.guild.memberCount}\n📅 Criado há dias/horas: ${moment(message.channel.guild.createdAt).format('📆 DD/MM/YY')}\n${moment(message.channel.guild.createdAt).format('⏰ HH:mm:ss')}\n🗺️ Região: ${message.channel.guild.region}\`\`\``)
-        embed2.color('#dd3af0')
-        embed2.thumbnail(message.channel.guild.iconURL || global.star.user.avatarURL)
-        const log = await global.star.getRESTChannel('829530412350308392')
-        log.createMessage(embed2.create)
+
+        global.star.executeWebhook(system.command.id, system.command.token, {
+          avatarURL: global.star.user.avatarURL,
+          username: global.star.user.username,
+          embeds: [{
+            title: '<:st_website:830841154203025439> Log de Comandos',
+            color: 14498544,
+            fields: [
+              {
+                name: '<:st_membros:845390325638889482> Usuário:',
+                value: `\`\`\`${message.author.username}#${message.author.discriminator} (${message.author.id})\`\`\``
+              },
+              {
+                name: '<:st_util_info:835532528617259068> Comando:',
+                value: `\`\`\`${message.content.slice(0, 1010)}\`\`\``
+              },
+              {
+                name: '<:st_link:845643800080416770> Link da mensagem:',
+                value: `\`\`\`${message.jumpLink}\`\`\``
+              },
+              {
+                name: '<:st_like:845646603368661002> GuildInfo:',
+                value: `\`\`\`📋 Nome: ${message.channel.guild.name}\n🧭 ID: ${message.channel.guild.id} [${message.channel.guild.shard.id}]\n👑 ${owner.username}#${owner.discriminator}\n🧑 Membros: ${message.channel.guild.memberCount}\n📅 Criado há dias/horas: ${moment(message.channel.guild.createdAt).format('📆 DD/MM/YY')}\n${moment(message.channel.guild.createdAt).format('⏰ HH:mm:ss')}\n🗺️ Região: ${message.channel.guild.region}\`\`\``
+              }
+            ]
+          }]
+        })
+
         return command.run(this.ctx).catch((erro) => {
           console.log(`[ERRO] Deu ruim:\n${erro}`.red)
           const embed = new global.star.manager.Ebl()

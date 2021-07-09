@@ -21,7 +21,7 @@ module.exports = class Idioma {
   }
 
   async run (ctx) {
-    const langs = ['pt-br', 'en-us', 'pt-zeDroguinha', 'ja-jp']
+    const langs = ['pt-br', 'en-us', 'pt-zeDroguinha']
 
     if (!ctx.args[0]) {
       return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.multiLang.insertLang}`.replace('%p', ctx.prefix).replace('%langs', langs.join(', ')))
@@ -47,9 +47,6 @@ module.exports = class Idioma {
         case langs[2]:
           await global.db.set(`idioma-${ctx.message.guildID}`, langs[2])
           return ctx.send(':white_check_mark: **|** Qual é meno agora irei falar `português-zé-droguinha` nesse servidor tlgd?')
-        case langs[3]:
-          await global.db.set(`idioma-${ctx.message.guildID}`, langs[3])
-          return ctx.send(':white_check_mark: **|** このサーバーで「japan-japan」と言います！')
       }
     }
   }

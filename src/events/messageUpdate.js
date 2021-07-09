@@ -1,8 +1,7 @@
 'use strict'
 
 const config = require('../config/config')
-const cooldowns = {}
-
+const system = require('../config/system')
 module.exports = class MessageEvent {
   constructor () {
     return {
@@ -11,10 +10,9 @@ module.exports = class MessageEvent {
     }
   }
 
-  async run (oldMessage, newMessage) {
-    const message = oldMessage
-    if (oldMessage.content === newMessage.content) return
-    if (message.channel.type === 'dm' || message.author.bot) return
+  async run (message, newMessage) {
+    if (message.content === newMessage.content) return
+    if (message.channel.type === 1 || message.author.bot) return
     let xpReward = Math.floor(Math.random() * 29) + 1
     if (xpReward === 0) xpReward = 10
 
@@ -43,12 +41,14 @@ module.exports = class MessageEvent {
             }
         }
         */
+    /*
     const messages = await global.db.get(`messages-${message.guildID}-${message.author.id}`)
     if (messages) {
       await global.db.set(`messages-${message.guildID}-${message.author.id}`, messages + 1)
     } else {
       await global.db.set(`messages-${message.guildID}-${message.author.id}`, 1)
     }
+    */
     let prefix = config.prefix
     const preDb = await global.db.get(`prefix-${message.guildID}`)
     if (preDb) {
@@ -152,29 +152,42 @@ module.exports = class MessageEvent {
           }
         }
 
-        let timeout = 3000
-        if (message.author.id === '717766639260532826') {
-          timeout = 0
-        }
-        // Caso tudo ocorra bem executar o comando.
-        if (!cooldowns[message.author.id]) {
-          cooldowns[message.author.id] = {
-            lastCmd: null
-          }
-        }
-        const ultimoCmd = cooldowns[message.author.id].lastCmd
-        if (ultimoCmd != null && timeout - (Date.now() - ultimoCmd) > 0) {
-          return message.channel.createMessage(`:x: ${message.author.mention} **|** ${idioma.message.c}`)
-        } else {
-          cooldowns[message.author.id].lastCmd = Date.now()
+        const { Collection } = require('eris')
+        const now = Date.now()
+
+        if (!global.star.cooldowns2.has(command.pt.nome)) {
+          await global.star.cooldowns2.set(command.pt.nome, new Collection())
         }
 
-        const cmds = await global.db.get('comandos')
-        if (!cmds) {
-          await global.db.set('comandos', 1)
-        } else {
-          await global.db.set('comandos', cmds + 1)
+        const timestamps = global.star.cooldowns2.get(command.pt.nome)
+        const cooldownAmoun = 5000
+        const cooldownAmount = (timestamps.has(message.author.id) ? (Number(cooldownAmoun)) + cooldownAmoun : cooldownAmoun)
+
+        if (timestamps.has(message.author.id)) {
+          const expirationTime = timestamps.get(message.author.id) + cooldownAmount
+
+          if (now < expirationTime) {
+            if (global.star.cooldowns.has(message.author.id)) {
+              const time = await global.star.cooldowns.get(message.author.id)
+              if (time > 35) {
+                await global.star.cooldowns.delete(message.author.id)
+                await global.db.set(`blacklist-${message.author.id}`, 'Automatically - antispam system')
+              }
+            }
+
+            const quantidade = (global.star.cooldowns.has(message.author.id) ? global.star.cooldowns.get(message.author.id) : 0)
+
+            await global.star.cooldowns.set(message.author.id, quantidade + 1)
+            const timeLeft = (expirationTime - now) / 1000
+
+            return message.channel.createMessage(`:x: ${message.author.mention} **|** ${idioma.message.c.replace('%t', `**${timeLeft.toFixed(1)}**`)}`)
+          }
         }
+        timestamps.set(message.author.id, now)
+        setTimeout(() => timestamps.delete(message.author.id), cooldownAmount)
+        setTimeout(() => {
+          global.star.cooldowns.delete(message.author.id)
+        }, 120000)
 
         this.ctx = {
           id: message.id,
@@ -205,16 +218,34 @@ module.exports = class MessageEvent {
         }
         const owner = await global.star.getRESTUser(message.channel.guild.ownerID)
         const moment = require('moment')
-        const embed2 = new global.star.manager.Ebl()
-        embed2.title('<:st_website:830841154203025439> Log de Comandos')
-        embed2.field('<:st_membros:845390325638889482> Usuário:', `\`\`\`${message.author.username}#${message.author.discriminator} (${message.author.id})\`\`\``)
-        embed2.field('<:st_util_info:835532528617259068> Comando:', `\`\`\`${message.content.slice(0, 1010)}\`\`\``)
-        embed2.field('<:st_link:845643800080416770> Link da mensagem:', `\`\`\`${message.jumpLink}\`\`\``)
-        embed2.field('<:st_like:845646603368661002> GuildInfo:', `\`\`\`📋 Nome: ${message.channel.guild.name}\n🧭 ID: ${message.channel.guild.id} [${message.channel.guild.shard.id}]\n👑 ${owner.username}#${owner.discriminator}\n🧑 Membros: ${message.channel.guild.memberCount}\n📅 Criado há dias/horas: ${moment(message.channel.guild.createdAt).format('📆 DD/MM/YY')}\n${moment(message.channel.guild.createdAt).format('⏰ HH:mm:ss')}\n🗺️ Região: ${message.channel.guild.region}\`\`\``)
-        embed2.color('#dd3af0')
-        embed2.thumbnail(message.channel.guild.iconURL || global.star.user.avatarURL)
-        const log = await global.star.getRESTChannel('829530412350308392')
-        log.createMessage(embed2.create)
+
+        global.star.executeWebhook(system.command.id, system.command.token, {
+          avatarURL: global.star.user.avatarURL,
+          username: global.star.user.username,
+          embeds: [{
+            title: '<:st_website:830841154203025439> Log de Comandos',
+            color: 14498544,
+            fields: [
+              {
+                name: '<:st_membros:845390325638889482> Usuário:',
+                value: `\`\`\`${message.author.username}#${message.author.discriminator} (${message.author.id})\`\`\``
+              },
+              {
+                name: '<:st_util_info:835532528617259068> Comando:',
+                value: `\`\`\`${message.content.slice(0, 1010)}\`\`\``
+              },
+              {
+                name: '<:st_link:845643800080416770> Link da mensagem:',
+                value: `\`\`\`${message.jumpLink}\`\`\``
+              },
+              {
+                name: '<:st_like:845646603368661002> GuildInfo:',
+                value: `\`\`\`📋 Nome: ${message.channel.guild.name}\n🧭 ID: ${message.channel.guild.id} [${message.channel.guild.shard.id}]\n👑 ${owner.username}#${owner.discriminator}\n🧑 Membros: ${message.channel.guild.memberCount}\n📅 Criado há dias/horas: ${moment(message.channel.guild.createdAt).format('📆 DD/MM/YY')}\n${moment(message.channel.guild.createdAt).format('⏰ HH:mm:ss')}\n🗺️ Região: ${message.channel.guild.region}\`\`\``
+              }
+            ]
+          }]
+        })
+
         return command.run(this.ctx).catch((erro) => {
           console.log(`[ERRO] Deu ruim:\n${erro}`.red)
           const embed = new global.star.manager.Ebl()
@@ -226,6 +257,7 @@ module.exports = class MessageEvent {
           return message.channel.createMessage(embed.create)
         })
       } catch (erro) {
+        console.log(`[ERRO] Deu ruim:\n${erro}`.red)
         const embed = new global.star.manager.Ebl()
         embed.title(`${idioma.message.e}`)
         embed.description(`\`\`\`js\n${erro}\n\`\`\``)
