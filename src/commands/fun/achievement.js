@@ -1,4 +1,4 @@
-module.exports = class UndertaleBox {
+module.exports = class Achievement {
   constructor () {
     return {
       permissoes: {
@@ -41,7 +41,7 @@ module.exports = class UndertaleBox {
     greyscale(foto, 0, 0, base.width, base.height)
     ctx.message.channel.createMessage(ctx.message.author.mention, {
       file: canvas.toBuffer(),
-      name: 'undertalebox.png'
+      name: 'minecraft.png'
     })
   }
 }

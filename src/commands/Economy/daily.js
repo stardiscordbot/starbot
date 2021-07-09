@@ -22,18 +22,18 @@ module.exports = class DailyCommand {
   }
 
   async run (ctx) {
-    const timeout = 86400000
+    const timeout = Number(86400000)
     const moment = require('moment')
-    const daily = Math.floor(Math.random() * 6500) + 1000 // Minimo 1000, Máximo 7500
+    const daily = Number(Math.floor(Math.random() * 6500) + 1000) // Minimo 1000, Máximo 7500
     const dailytime = await global.db.get(`dailytime-${ctx.message.author.id}`)
 
     if (!dailytime) {
-      await global.db.set(`money-${ctx.message.author.id}`, daily)
-      await global.db.set(`dailytime-${ctx.message.author.id}`, Date.now())
+      await global.db.set(`money-${ctx.message.author.id}`, Number(daily))
+      await global.db.set(`dailytime-${ctx.message.author.id}`, Number(Date.now()))
 
       const embed = new global.star.manager.Ebl()
       embed.title(`💸 Daily | ${global.star.user.username}`)
-      embed.description(`🌟 **${ctx.message.author.username}** ${ctx.idioma.daily.coletado.replace('%m', daily)}`)
+      embed.description(`🌟 **${ctx.message.author.username}** ${ctx.idioma.daily.coletado.replace('%m', Number(daily))}`)
       embed.color('#dd3af0')
       embed.thumbnail(global.star.user.avatarURL)
 
@@ -57,7 +57,7 @@ module.exports = class DailyCommand {
 
         const embed = new global.star.manager.Ebl()
         embed.title(`💸 Daily | ${global.star.user.username}`)
-        embed.description(`🌟 **${ctx.message.author.username}** ${ctx.idioma.daily.coletado.replace('%m', daily)}`)
+        embed.description(`🌟 **${ctx.message.author.username}** ${ctx.idioma.daily.coletado.replace('%m', Number(daily))}`)
         embed.color('#dd3af0')
         embed.thumbnail(global.star.user.avatarURL)
         ctx.send(embed.create)

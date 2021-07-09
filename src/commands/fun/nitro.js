@@ -1,4 +1,4 @@
-module.exports = class UndertaleBox {
+module.exports = class Nitro {
   constructor () {
     return {
       permissoes: {

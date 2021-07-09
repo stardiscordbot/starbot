@@ -27,7 +27,7 @@ module.exports = class DailyCommand {
     const money = await global.db.get(`money-${ctx.message.author.id}`) || Number(0)
     const banco = await global.db.get(`banco-${ctx.message.author.id}`) || Number(0)
 
-    if (banco === 0 || banco < 0) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.economy.sac.nomoney}`)
+    if (Number(banco) === Number(0) || Number(banco) < Number(0)) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.economy.sac.nomoney}`)
 
     if (ctx.args[0] === 'all' || ctx.args[0] === 'tudo') {
       await global.db.set(`banco-${ctx.message.author.id}`, Number(banco) - Number(money))
@@ -36,7 +36,7 @@ module.exports = class DailyCommand {
     } else {
       if (isNaN(ctx.args[0])) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.economy.sac.inv}`)
 
-      if (Number(ctx.args[0]) < 0 || Number(ctx.args[0]) > Number(banco)) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.economy.sac.nomoney}`)
+      if (Number(ctx.args[0]) < Number(0) || Number(ctx.args[0]) > Number(banco)) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.economy.sac.nomoney}`)
 
       await global.db.set(`banco-${ctx.message.author.id}`, Number(banco) - Number(ctx.args[0]))
       await global.db.set(`money-${ctx.message.author.id}`, Number(money) + Number(ctx.args[0])) // Vai dar 0 mas eu quero fazer assim então ;p

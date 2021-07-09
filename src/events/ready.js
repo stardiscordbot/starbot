@@ -13,7 +13,7 @@ module.exports = class ReadyEvent {
     setInterval(() => {
       global.star.editStatus('online', {
         game: global.star.user.username,
-        name: `s!help | ${global.star.guilds.size} guilds [v5.1.2]`,
+        name: `s!help | ${global.star.guilds.size} guilds [v5.1.5]`,
         type: 5
       })
     }, 1000 * 60)
@@ -28,8 +28,7 @@ module.exports = class ReadyEvent {
         file: await read('./data/base.json'),
         name: 'base.json'
       })
-    }, 1000 * 60)
-    // Rifa
+    }, 1000 * 180)
     // Iniciando Música
     global.star.music.init(global.star.user.id)
   }

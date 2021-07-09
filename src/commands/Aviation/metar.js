@@ -27,7 +27,7 @@ module.exports = class MetarCommand {
     const {
       get
     } = require('axios')
-    const pkey = require('../../apikeys.json')
+    const pkey = require('../../apikeys.js')
     get(`https://api.checkwx.com/metar/${ctx.args[0].toUpperCase()}/decoded`, { headers: { 'X-API-Key': pkey.checkwx } }).then(resp => {
       resp.data.data.forEach(metar => {
         const embed = new global.star.manager.Ebl()

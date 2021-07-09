@@ -23,7 +23,7 @@ module.exports = class EvalCommand {
 
   async run (ctx) {
     const { request } = require('axios')
-    const bl = require('../../botlists.json')
+    const bl = require('../../botlists.js')
     if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.topgg.men}`)
     const user = ctx.message.mentions[0] || await global.star.getRESTUser(ctx.args[0])
 

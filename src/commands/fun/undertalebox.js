@@ -16,7 +16,7 @@ module.exports = class PingCommand {
         categoria: '😄 • Fun',
         desc: 'Creates a dialog just like Undertale'
       },
-      aliases: ['utbox'],
+      aliases: ['utbox', 'ubox', 'undertale', 'undertalechat'],
       run: this.run
     }
   }

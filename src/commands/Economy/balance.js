@@ -24,13 +24,16 @@ module.exports = class EvalCommand {
   async run (ctx) {
     const user = ctx.args[0] ? ctx.message.mentions[0] || await global.star.user.fetch(ctx.args[0]) : ctx.message.author
 
-    const money = await global.db.get(`money-${user.id}`) || 0
-    const banco = await global.db.get(`banco-${user.id}`) || 0
+    const money = await global.db.get(`money-${user.id}`) || Number(0)
+    const banco = await global.db.get(`banco-${user.id}`) || Number(0)
+
+    const num1 = Number(money)
+    const num2 = Number(banco)
 
     const embed = new global.star.manager.Ebl()
     embed.title(`💸 Banco | ${global.star.user.username}`)
-    embed.field(`❯ ${ctx.idioma.economy.carteira}`, `**${user.username}:** **¥ ${money.toLocaleString()}**`, true)
-    embed.field(`❯ ${ctx.idioma.economy.banco}`, `**${user.username}:** **¥ ${banco.toLocaleString()}**`, true)
+    embed.field(`❯ ${ctx.idioma.economy.carteira}`, `**${user.username}:** **¥ ${num1.toLocaleString()}**`, true)
+    embed.field(`❯ ${ctx.idioma.economy.banco}`, `**${user.username}:** **¥ ${num2.toLocaleString()}**`, true)
     embed.color('#dd3af0')
     embed.thumbnail('https://i.imgur.com/VW4x1en.png')
     ctx.send(embed.create)

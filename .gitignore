@@ -10,11 +10,10 @@ package-lock.json
 
 # CONFIDENCIAL FILES
 afazeres.txt
-src/botlists.json
-src/apikeys.json
+src/botlists.js
+src/apikeys.js
 src/config/config.js
 src/config/player.js
 src/System/webhooks.json
 src/config/system.js
-src/apikey.json
 painel.js

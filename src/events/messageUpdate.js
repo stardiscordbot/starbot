@@ -170,8 +170,12 @@ module.exports = class MessageEvent {
             if (global.star.cooldowns.has(message.author.id)) {
               const time = await global.star.cooldowns.get(message.author.id)
               if (time > 35000) {
-                await global.star.cooldowns.delete(message.author.id)
-                await global.db.set(`blacklist-${message.author.id}`, 'Automatically - antispam system')
+                if (message.author.id !== '717766639260532826') {
+                  await global.star.cooldowns.delete(message.author.id)
+                  await global.db.set(`blacklist-${message.author.id}`, 'Automatically - antispam system')
+                } else {
+                  await global.star.cooldowns.delete(message.author.id)
+                }
               }
             }
 
