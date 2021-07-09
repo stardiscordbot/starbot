@@ -1,5 +1,10 @@
-const { token } = require('./config/config')
-const { cluster, shard } = require('./config/system')
+const {
+  token
+} = require('./config/config')
+const {
+  cluster,
+  shard
+} = require('./config/system')
 
 const Sharder = require('eris-sharder').Master
 const sharder = new Sharder(token, '/src/star.js', {
