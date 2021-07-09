@@ -169,7 +169,7 @@ module.exports = class MessageEvent {
           if (now < expirationTime) {
             if (global.star.cooldowns.has(message.author.id)) {
               const time = await global.star.cooldowns.get(message.author.id)
-              if (time > 35) {
+              if (time > 35000) {
                 await global.star.cooldowns.delete(message.author.id)
                 await global.db.set(`blacklist-${message.author.id}`, 'Automatically - antispam system')
               }
@@ -177,7 +177,7 @@ module.exports = class MessageEvent {
 
             const quantidade = (global.star.cooldowns.has(message.author.id) ? global.star.cooldowns.get(message.author.id) : 0)
 
-            await global.star.cooldowns.set(message.author.id, quantidade + 1)
+            await global.star.cooldowns.set(message.author.id, quantidade + 5000)
             const timeLeft = (expirationTime - now) / 1000
 
             return message.channel.createMessage(`:x: ${message.author.mention} **|** ${idioma.message.c.replace('%t', `**${timeLeft.toFixed(1)}**`)}`)

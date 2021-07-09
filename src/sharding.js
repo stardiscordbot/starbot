@@ -22,3 +22,6 @@ const sharder = new Sharder(token, '/src/star.js', {
     defaultImageFormat: 'png'
   }
 })
+sharder.on('stats', stats => {
+  console.log(stats)
+})
