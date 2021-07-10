@@ -24,7 +24,7 @@ module.exports = class TradutorCommand {
   async run (ctx) {
     const fetch = require('star-fetch')
     if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.tradutor.text.replace('%', ctx.prefix)}`)
-    if (ctx.args[1] === undefined) {
+    if (!ctx.args[1]) {
       return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.tradutor.text.replace('%', ctx.prefix)}`)
     }
     const regex = /[!*();,:@&=+$.\\/?%#[\]]/g
