@@ -86,7 +86,7 @@ module.exports = class MessageEvent {
     }
 
     // Executar comando.
-    if (message.content.startsWith(prefix)) {
+    if (message.content.startsWith(prefix.toLowerCase())) {
       // const bot = message.guild.me
 
       if (!message.channel.guild.members.get(global.star.user.id).permissions.has('readMessageHistory')) {

@@ -16,7 +16,7 @@ module.exports = class EnfimCommand {
         categoria: '🤣 • Fun',
         desc: 'Finally the hypocrisy'
       },
-      aliases: ['laranjo', 'laranja'],
+      aliases: ['fim', 'hypocrisy', 'hipocrisia'],
       run: this.run
     }
   }

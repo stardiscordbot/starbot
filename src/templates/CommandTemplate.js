@@ -16,11 +16,6 @@ module.exports = class ExampleCommand {
         categoria: '📖 • Information',
         desc: 'Example Command'
       },
-      ja: {
-        nome: '例',
-        categoria: '📖 • 情報',
-        desc: 'コマンドの例'
-      },
       aliases: ['ex', 'example'],
       run: this.run
     }
@@ -31,4 +26,4 @@ module.exports = class ExampleCommand {
   }
 }
 
-// ADG, Davi e LRD
+// starbot 2020 ~ 2021

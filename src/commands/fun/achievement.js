@@ -25,23 +25,25 @@ module.exports = class Achievement {
     if (!ctx.args[0]) return ctx.send(`${ctx.idioma.image.args.replace('%u', ctx.message.author.mention)}`)
     if ((ctx.args.join(' ').length) > 300) return ctx.send(`${ctx.idioma.image.long.replace('%u', ctx.message.author.mention)}`)
     const { createCanvas, loadImage, registerFont } = require('canvas')
-    const { greyscale } = require('../../Helpers/Canvas')
+    const { shortenText } = require('../../Helpers/Canvas')
+    registerFont('./assets/Minecraft.ttf', { family: 'Minecraft' })
+    if ((ctx.args.join(' ').length) > 300) return ctx.send(ctx.idioma.image.long.replace('%u', ctx.message.author.mention))
+    if (!ctx.args[0]) return ctx.send(`${ctx.idioma.image.args.replace('%u', ctx.message.author.mention)}`)
+    const text = ctx.args.join(' ')
 
-    registerFont('./assets/Minecraftia.ttf', { family: 'Minecraft' })
-    const base = await loadImage('./assets/undertalebox.png')
-    const avatar = await loadImage(ctx.message.author.avatarURL)
+    const base = await loadImage('./assets/achievement.png')
     const canvas = createCanvas(base.width, base.height)
     const foto = canvas.getContext('2d')
-    const text = ctx.args.join(' ')
     foto.drawImage(base, 0, 0)
     foto.font = '17px Minecraftia'
-    foto.drawImage(avatar, 15, 15, 120, 120)
+    foto.fillStyle = '#ffff00'
+    foto.fillText(`${ctx.idioma.image.achivment}`, 60, 40)
     foto.fillStyle = '#ffffff'
-    foto.fillText(`${text}`.match(/.{1,35}/g).join('\n'), canvas.width / 3.4, canvas.height / 2.7, 655)
-    greyscale(foto, 0, 0, base.width, base.height)
+    foto.fillText(shortenText(foto, text, 230), 60, 60)
+
     ctx.message.channel.createMessage(ctx.message.author.mention, {
       file: canvas.toBuffer(),
-      name: 'minecraft.png'
+      name: 'mcconquista.png'
     })
   }
 }
