@@ -15,6 +15,12 @@
           "sc2": "from your bank."
       }
   },
+  "b": {
+    "title": "Magic Ball",
+    "per": "Question:",
+    "res": "Answer:",
+    "id": "pt"
+  },
   "npm": {
       "licença": "License:",
       "dono": "Owner:",
