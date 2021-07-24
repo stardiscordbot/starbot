@@ -25,7 +25,6 @@ module.exports = class NpmCommand {
     if (!ctx.args[0]) return ctx.send(`❌ ${ctx.message.author.mention} **|** ${ctx.idioma.mal.term}`)
     const fetch = require('star-fetch')
     const res = fetch(`https://api.tovade.xyz/v1/info/npm?package=${encodeURIComponent(ctx.args.join(' '))}`)
-    console.log(res)
     const embed = new global.star.manager.Ebl()
     embed.title(`<:st_npm:867798249371992084> ${ctx.args.join(' ').toLowerCase()} [ v${res.version} ]`)
     embed.description(res.description)

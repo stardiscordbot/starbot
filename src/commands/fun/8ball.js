@@ -43,21 +43,17 @@ module.exports = class MagicBallCommand {
     ]
     const pt = respostas.pt[Math.floor(Math.random() * respostas.pt.length)]
     const en = respostas.en[Math.floor(Math.random() * respostas.en.length)]
-    console.log(pt)
-    console.log(en)
 
-    let resu
     const pergunta = ctx.args.join(' ').toLowerCase()
 
     const embed = new global.star.manager.Ebl()
     embed.title(`🔮 ${ctx.idioma.b.title}`)
-    embed.field(`${ctx.idioma.b.per}`, pergunta)
+    embed.field(`🤔 ${ctx.idioma.b.per}`, pergunta)
+
     if (ctx.idioma.b.id === 'pt') {
-      resu = pt
-      embed.field(`${ctx.idioma.b.res}`, resu)
+      embed.field(`📝 ${ctx.idioma.b.res}`, pt)
     } else {
-      resu = en
-      embed.field(`${ctx.idioma.b.res}`, resu)
+      embed.field(`📝 ${ctx.idioma.b.res}`, en)
     }
 
     embed.thumbnail(global.star.user.avatarURL)
