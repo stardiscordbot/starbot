@@ -27,7 +27,7 @@ module.exports = class EvalCommand {
     if (!user) return ctx.send(`:x: ${ctx.message.author.mention} **|** Não encontrei o usuário.`)
     const motivo = ctx.args.slice(1).join(' ') || 'Not specified'
 
-    if (user.id === '717766639260532826') return ctx.send(`:x: ${ctx.message.author.mention} **|** Você não pode banir....`)
+    if (user.id === '717766639260532826') return ctx.send(`:x: ${ctx.message.author.mention} **|** Você não pode banir meu criador....`)
     await global.db.set(`blacklist-${user.id}`, motivo)
     const embed = new global.star.manager.Ebl()
     embed.title(`🛠️ BotBan | ${global.star.user.username}`)

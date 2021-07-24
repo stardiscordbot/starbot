@@ -1,4 +1,9 @@
 {
+  "dicio": {
+    "c": "Class:",
+    "title": "Dictionary",
+    "meanings": "Meanings:"
+  },
   "economy": {
       "carteira": "Wallet:",
       "banco": "Bank:",

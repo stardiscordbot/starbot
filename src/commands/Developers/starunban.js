@@ -26,7 +26,7 @@ module.exports = class EvalCommand {
     const user = ctx.message.mentions[0] || await global.star.getRESTUser(ctx.args[0])
     if (!user) return ctx.send(`:x: ${ctx.message.author.mention} **|** Não encontrei o usuário.`)
 
-    if (user.id === '717766639260532826') return ctx.send(`:x: ${ctx.message.author.mention} **|** Você não pode banir....`)
+    // if (user.id === '717766639260532826') return ctx.send(`:x: ${ctx.message.author.mention} **|** Você não pode banir....`)
     await global.db.del(`blacklist-${user.id}`)
     await global.db.del(`pass-${user.id}`)
     const embed = new global.star.manager.Ebl()
