@@ -89,12 +89,21 @@ module.exports = class rawWS {
 
       const prefix = global.db.get(`prefix-${msg.channel.guild.id}`) ? global.db.get(`prefix-${msg.channel.guild.id}`) : 'lya!'
 
-      await global.star.requestHandler.request('POST', `/interactions/${interaction.id}/${interaction.token}/callback`, false, {
-        type: 4,
-        data: {
-          content: idioma.slash.replace('{user}', msg.member.user.mention)
-        }
-      })
+      // await global.star.requestHandler.request('POST', `/interactions/${interaction.id}/${interaction.token}/callback`, false, {
+      // type: 4,
+      // data: {
+      //   content: idioma.slash.replace('{user}', msg.member.user.mention)
+      // }
+      // })
+
+      msg.channel.createMessage = function (message) {
+        global.star.requestHandler.request('POST', `/interactions/${interaction.id}/${interaction.token}/callback`, false, {
+          type: 4,
+          data: {
+            content: message
+          }
+        })
+      }
 
       this.ctx = {
         id: msg.id,
