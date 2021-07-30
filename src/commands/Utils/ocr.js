@@ -25,13 +25,14 @@ module.exports = class AvatarCommand {
     if (!ctx.args[0] && !ctx.message.attachments.length) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.ocr.n}`)
     const { ocr } = require('../../apikeys')
     const { get } = require('axios')
+
     let imagem
     if (ctx.message.attachments) {
       imagem = ctx.message.attachments[0].url
     } else {
       imagem = ctx.args.join(' ')
     }
-    console.log(imagem)
+
     get(`https://api.ocr.space/parse/imageurl?apikey=${ocr}&url=${imagem}`).then(resp => {
       const embed = new global.star.manager.Ebl()
       embed.title(`📰 OCR | ${global.star.user.username}`)
@@ -40,7 +41,7 @@ module.exports = class AvatarCommand {
       embed.description(`\`\`\`${resp.data.ParsedResults.map(parse => parse.ParsedText.replace(/`/g, ''))}\`\`\``)
       ctx.send(embed.create)
     }).catch((e) => {
-
+      ctx.send(`:x: ${ctx.message.author.mention}`)
     })
   }
 }
