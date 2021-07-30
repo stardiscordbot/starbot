@@ -1,4 +1,4 @@
-module.exports = class ReadyEvent {
+module.exports = class Disconnect {
   constructor () {
     return {
       nome: 'disconnect',

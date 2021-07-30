@@ -4,6 +4,7 @@ const { helpertoken } = require('../../config/config.js')
 
 const client = new Client(helpertoken, {
   restMode: true,
+  autoreconnect: true,
   rest: {
     baseURL: '/api/v9'
   }

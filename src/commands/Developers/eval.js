@@ -27,7 +27,7 @@ module.exports = class EvalCommand {
     if (!args.length) return ctx.send('Da um eval ai meu patrão')
 
     if (args.join(' ').includes('717766639260532826')) return ctx.send(':x: Não execute evals com meu criador.')
-    
+
     try {
       // ! Já que o ADG é estúpido o bastante pra ter um comando de eval, não tem o que fazer
       // eslint-disable-next-line no-eval
