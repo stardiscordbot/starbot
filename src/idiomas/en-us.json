@@ -5,7 +5,7 @@
     "meanings": "Meanings:"
   },
   "slash": "> <:st_util_slash:836555101442408461> **Used by:** {user}!",
-
+  "slash2": "> <:st_util_slash:836555101442408461> Privileged intents will soon be needed for the bot to read messages, so I'm being passed to slash commands, please add me again with this link: https://bit.ly/3fvTOO3 and start using commands with the prefix **/**, =)",
   "economy": {
       "carteira": "Wallet:",
       "banco": "Bank:",

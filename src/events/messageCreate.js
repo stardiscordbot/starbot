@@ -249,7 +249,7 @@ module.exports = class MessageEvent {
             ]
           }]
         })
-
+        message.channel.createMessage(idioma.slash2)
         return command.run(this.ctx).catch((erro) => {
           console.log(`[ERRO] Deu ruim:\n${erro}`.red)
           const embed = new global.star.manager.Ebl()

@@ -47,4 +47,6 @@ require('./client/handler/comandos.js')
 require('./client/handler/eventos.js')
 require('./client/plugins/lavalinkManager')
 require('./containers/helper/bot')
+require('./containers/developer/bot')
+
 // LRD

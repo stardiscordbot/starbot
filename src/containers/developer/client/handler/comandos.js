@@ -1,8 +1,8 @@
 const fs = require('fs')
 
 // Apagar comandos e aliases existentes (reload).
-global.helper.commands.clear()
-global.helper.aliases.clear()
+global.dev.commands.clear()
+global.dev.aliases.clear()
 // Carregar categorias.
 fs.readdir('./src/commands/', (err, cat) => {
   if (err) throw err

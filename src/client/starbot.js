@@ -8,7 +8,7 @@ module.exports = class Bomba {
 
   async iniciar () {
     await this.client.connect()
-    return 'StarEris'
+    return 'starbot'
   }
 
   async reload () {

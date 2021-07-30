@@ -33,7 +33,7 @@ module.exports = class HugCommand {
     embed.description(`🫂 **${ctx.message.author.username}** ${ctx.idioma.hug.acaba} **${user.username}**.`)
     embed.image(res.url)
     embed.color('#dd3af0')
-    embed.footer(ctx.idioma.hug.r)
+    // embed.footer(ctx.idioma.hug.r)
     ctx.message.channel.createMessage(embed.create).then(msg => {
       msg.addReaction('🔁')
       const c = new ReactionCollector(msg, {
