@@ -17,7 +17,7 @@ module.exports = class rawWS {
           data: {
             type: 4,
             data: {
-              content: 'Eu não suporte comandos na dm'
+              content: ':x: **|** I don\'t support dm commands!'
             }
           }
         })
@@ -28,7 +28,7 @@ module.exports = class rawWS {
           data: {
             type: 4,
             data: {
-              content: 'Eu não fui adicionada corretamente!'
+              content: ':x: **|** I was not added correctly!'
             }
           }
         })
