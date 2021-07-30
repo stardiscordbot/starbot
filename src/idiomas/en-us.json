@@ -4,6 +4,8 @@
     "title": "Dictionary",
     "meanings": "Meanings:"
   },
+  "slash": "> <:st_util_slash:836555101442408461> **Used by:** {user}!",
+
   "economy": {
       "carteira": "Wallet:",
       "banco": "Bank:",

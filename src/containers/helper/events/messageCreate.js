@@ -22,7 +22,7 @@ module.exports = class MessageEvent {
         message.addReaction('✅')
         const user = await global.helper.getRESTUser(g)
         const dm = await global.helper.getDMChannel(user.id)
-        dm.createMessage('✅ Sua denúncia foi aprovada pela equipe da starbot, obrigado e parabéns 🥳').then(async msg => {
+        dm.createMessage(`✅ Sua denúncia com id: ||${args[0]}|| foi aprovada pela equipe da starbot, obrigado e parabéns 🥳`).then(async msg => {
           global.db.del(args[0])
           const ch = await global.helper.getRESTChannel(mon)
           ch.createMessage(`__**✅ Denúncia Aprovada!**__\n\n- Autor: **${message.author.username}#${message.author.discriminator} (${message.author.id})**\n- ID do formulário: **${args[0]}**`)
