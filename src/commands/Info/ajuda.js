@@ -87,6 +87,7 @@ module.exports = class Ajuda {
         for (const categoria in categorias) {
           embed.field(categoria, `${categorias[categoria].join(', ')}`)
         }
+        embed.field('<:st_random_ping:829763513571475486> Links', `[Invite Me](https://discord.com/oauth2/authorize?client_id=${global.star.user.id}&scope=bot%20applications.commands&permissions=805432446) • [Support Sever](https://discord.gg/2pFH6Yy) • [Vote for us](https://top.gg/bot/719524114536333342/vote)`)
         embed.footer(ctx.idioma.help.creators + devs.join(', '))
         ctx.send(embed.create)
 

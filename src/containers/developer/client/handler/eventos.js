@@ -2,7 +2,7 @@ const fs = require('fs')
 
 global.dev.events.clear()
 
-fs.readdir('./src/events/', (erro, eventos) => {
+fs.readdir('./src/containers/developer/', (erro, eventos) => {
   eventos.forEach(async evento => {
     delete require.cache[evento]
 

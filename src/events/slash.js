@@ -10,39 +10,12 @@ module.exports = class rawWS {
     // SISTEMA ORIGINAL BY: VERIC | ADAPTAÇÃO BY: LRD | ADAPTAÇÃO PT2 BY: ADG
     if (packet.t === 'INTERACTION_CREATE') {
       const interaction = packet.d
-      const Eris = require('eris')
-
-      if (!interaction.member) {
-        global.star.api.interactions(interaction.id, interaction.token).callback.post({
-          data: {
-            type: 4,
-            data: {
-              content: ':x: **|** I don\'t support dm commands!'
-            }
-          }
-        })
-      }
-
-      if (!global.star.getRESTGuild(interaction.guild_id)) {
-        global.star.api.interactions(interaction.id, interaction.token).callback.post({
-          data: {
-            type: 4,
-            data: {
-              content: ':x: **|** I was not added correctly!'
-            }
-          }
-        })
-        return
-      }
-
-      const comando = global.star.commands.get(interaction.data.name)
-
-      if (!comando) return
-
+      const { Collection, User, Message } = require('eris')
+      const command = global.star.commands.get(interaction.data.name) || global.star.aliases.get(interaction.data.name)
+      if (!command) return
       interaction.mentions = []
       interaction.mention_everyone = false
-
-      interaction.mention_roles = new Eris.Collection()
+      interaction.mention_roles = new Collection()
 
       if (
         interaction.data &&
@@ -76,34 +49,25 @@ module.exports = class rawWS {
 
       interaction.content = (interaction.data.name + ' ' + args.join(' ')).trim()
 
-      interaction.author = new Eris.User(interaction.member.user, global.star)
+      interaction.author = new User(interaction.member.user, global.star)
 
       interaction.mentions[0] = global.star.user
 
-      const msg = new Eris.Message(interaction, global.star)
+      const msg = new Message(interaction, global.star)
 
       let idioma = require('../config/idiomas.js')
       let lang = (await global.db.get(`idioma-${msg.guildID}`)) || 'pt_br'
       lang = lang.replace(/-/g, '_')
       idioma = idioma[lang]
 
-      const prefix = global.db.get(`prefix-${msg.channel.guild.id}`) ? global.db.get(`prefix-${msg.channel.guild.id}`) : 'lya!'
+      const prefix = global.db.get(`prefix-${msg.channel.guild.id}`) ? global.db.get(`prefix-${msg.channel.guild.id}`) : '/'
 
-      // await global.star.requestHandler.request('POST', `/interactions/${interaction.id}/${interaction.token}/callback`, false, {
-      // type: 4,
-      // data: {
-      //   content: idioma.slash.replace('{user}', msg.member.user.mention)
-      // }
-      // })
-
-      msg.channel.createMessage = function (message) {
-        global.star.requestHandler.request('POST', `/interactions/${interaction.id}/${interaction.token}/callback`, false, {
-          type: 4,
-          data: {
-            content: message
-          }
-        })
-      }
+      await global.star.requestHandler.request('POST', `/interactions/${interaction.id}/${interaction.token}/callback`, false, {
+        type: 4,
+        data: {
+          content: idioma.slash.replace('{user}', msg.member.user.mention)
+        }
+      })
 
       this.ctx = {
         id: msg.id,
@@ -133,7 +97,7 @@ module.exports = class rawWS {
         }
       }
 
-      return comando.run(this.ctx)
+      return command.run(this.ctx)
     }
   }
 }

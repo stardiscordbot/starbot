@@ -1,4 +1,9 @@
 {
+  "addemoji": {
+    "args": "Arguments are missing, use `%padeemoji <name | image (or attach an image)>`",
+    "add": "The Emoji has been added successfully!",
+    "err": "There was an error adding the emoji"
+  },
   "dicio": {
     "c": "Class:",
     "title": "Dictionary",

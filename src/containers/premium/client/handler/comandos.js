@@ -1,8 +1,8 @@
 const fs = require('fs')
 
 // Apagar comandos e aliases existentes (reload).
-global.helper.commands.clear()
-global.helper.aliases.clear()
+global.premium.commands.clear()
+global.premium.aliases.clear()
 // Carregar categorias.
 fs.readdir('./src/commands/', (err, cat) => {
   if (err) throw err
@@ -19,12 +19,12 @@ fs.readdir('./src/commands/', (err, cat) => {
           const nome = comando.pt.nome
           const nome2 = comando.en.nome
           // Definir comando no client.
-          global.helper.commands.set(nome, comando)
-          global.helper.commands.set(nome2, comando)
+          global.premium.commands.set(nome, comando)
+          global.premium.commands.set(nome2, comando)
 
           if (comando.aliases) {
             comando.aliases.forEach(alia => {
-              global.helper.aliases.set(alia, comando)
+              global.premium.aliases.set(alia, comando)
             })
           }
 
