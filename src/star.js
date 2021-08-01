@@ -17,10 +17,12 @@ const client = new Client(token, {
   defaultImageSize: 2048,
   defaultImageFormat: 'png',
   autoreconnect: true,
+  maxShards: 'auto',
+  messageLimit: 200,
   rest: {
-    baseURL: '/api/v9'
-  },
-  maxShards: 'auto'
+    baseURL: '/api/v9',
+    domain: 'canary.discord.com'
+  }
 })
 
 client.commands = new Collection()

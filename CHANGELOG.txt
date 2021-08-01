@@ -1,10 +1,10 @@
 <@&815580078150123580> | <@&815580080138485801>
 
 
-**⭐ Star [ v5.1.6 ]**
+**⭐ Star [ v5.1.7a ]**
 
 > ~ **🐛 Bugs solucionados:**
-- Removido o bug do comando `s!mcconquista` que executava o `s!undertalebox`.
+- Removido os erros que a CPU, ficava -0% nos comandos `s!botinfo` & `s!debug`.
 
 > ~ **➖ Foi Removido:**
 - O idioma japônes, já que ainda teremos muito trabalho para integra-lo totalmente ao bot.

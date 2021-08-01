@@ -57,7 +57,7 @@ module.exports = class ReadyEvent {
         file: await read('./data/base.json'),
         name: 'base.json'
       })
-    }, 1000 * 180)
+    }, 604800000)
 
     // Iniciando Música
 
