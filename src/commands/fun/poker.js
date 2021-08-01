@@ -8,12 +8,12 @@ module.exports = class PingCommand {
       },
       pt: {
         nome: 'poker',
-        categoria: '🕰️ • Utilidades',
+        categoria: '😄 • Diversão',
         desc: 'Jogue uma partida de poker no discord'
       },
       en: {
         nome: 'poker',
-        categoria: '🕰️ • Utility',
+        categoria: '😄 • Fun',
         desc: 'Play a game of poker in discord'
       },
       aliases: ['start'],

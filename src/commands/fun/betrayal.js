@@ -8,12 +8,12 @@ module.exports = class PingCommand {
       },
       pt: {
         nome: 'betrayal',
-        categoria: '🕰️ • Utilidades',
+        categoria: '😄 • Diversão',
         desc: 'Jogue uma partida de batalha naval no discord'
       },
       en: {
         nome: 'betrayal',
-        categoria: '🕰️ • Utility',
+        categoria: '😄 • Fun',
         desc: 'Play a game of betrayal in discord'
       },
       aliases: ['batalha', 'batalha-naval', 'battleroyale'],

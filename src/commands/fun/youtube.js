@@ -8,12 +8,12 @@ module.exports = class PingCommand {
       },
       pt: {
         nome: 'youtube',
-        categoria: '🕰️ • Utilidades',
+        categoria: '😄 • Diversão',
         desc: 'Assista youtube no discord'
       },
       en: {
         nome: 'youtube',
-        categoria: '🕰️ • Utility',
+        categoria: '😄 • Fun',
         desc: 'Watch youtube on discord'
       },
       aliases: ['youtubetogether', 'youtube-together'],

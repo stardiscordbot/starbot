@@ -8,7 +8,7 @@ module.exports = class EnfimCommand {
       },
       pt: {
         nome: 'fisheye',
-        categoria: '🤣 • Fun',
+        categoria: '😄 • Diversão',
         desc: 'Enfim a hipocrisia'
       },
       en: {
