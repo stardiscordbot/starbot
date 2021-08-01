@@ -13,6 +13,6 @@ src/botlists.js
 src/apikeys.js
 src/config/config.js
 src/config/player.js
-src/System/webhooks.json
+src/client/plugins/nodes.js
 src/config/system.js
 painel.js

@@ -6,11 +6,7 @@ const {
   Manager
 } = require('erela.js')
 
-const nodes = [{
-  host: 'localhost',
-  port: 2333,
-  password: 'adgpass'
-}]
+const nodes = require('./nodes')
 const Deezer = require('erela.js-deezer')
 const Spotify = require('erela.js-spotify')
 
@@ -33,8 +29,8 @@ global.star.music = new Manager({
     if (guild) guild.shard.sendWS(payload.op, payload.d)
   }
 })
-  .on('nodeConnect', node => console.log(`[LAVALINK] Node ${node.options.identifier} conectado`.green))
-  .on('nodeError', (node, error) => console.log(`[LAVALINK] Node ${node.options.identifier} teve um erro: ${error.message}`.red))
+  .on('nodeConnect', node => console.log(`[LAVALINK] Node ${node.options.name} conectado`.green))
+  .on('nodeError', (node, error) => console.log(`[LAVALINK] Node ${node.options.name} teve um erro: ${error.message}`.red))
   .on('playerCreate', (player) => {
     player.set('rateLimitStatus', { status: false })
     player.set('24h', { status: false })
