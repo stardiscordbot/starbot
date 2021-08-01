@@ -20,21 +20,21 @@ class DiscordTogether {
      * @param {Client} client Discord.Client
      * @param {T} applications
      * @example
-     * const Discord = require('discord.js');
-     * const client = new Discord.Client();
-     * const { DiscordTogether } = require('discord-together');
+     * const { Client } = require('eris');
+     * const client = new Client('token');
+     * const { DiscordTogether } = require('./discord-together');
      *
      * client.discordTogether = new DiscordTogether(client);
      *
-     * client.on('message', async message => {
+     * client.on('messageCreate', async message => {
      *      if (message.content === 'start') {
-     *          client.discordTogether.createTogetherCode(message.member.voice.channelID, 'youtube').then(async invite => {
-     *              return message.channel.send(`${invite.code}`);
+     *          client.discordTogether.createTogetherCode(message.member.voiceState.channelID, 'youtube').then(async invite => {
+     *              return message.channel.createMessage(`${invite.code}`);
      *           });
      *      };
      * });
      *
-     * client.login('your token');
+     * client.connect();
      */
   constructor (client, applications = defaultApplications) {
     if (!client) throw new SyntaxError('Invalid Discord.Client !')
