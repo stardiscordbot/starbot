@@ -7,8 +7,8 @@ const {
 } = require('erela.js')
 
 const nodes = require('./nodes')
-const Deezer = require('erela.js-deezer')
-const Spotify = require('erela.js-spotify')
+const Deezer = require('./erela-plugins/Deezer/index')
+const Spotify = require('./erela-plugins/Spotify/index')
 
 const clientID = spotify.id
 const clientSecret = spotify.secret

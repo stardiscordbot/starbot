@@ -193,13 +193,6 @@ astral-regex@^2.0.0:
   resolved "https://registry.npmjs.org/astral-regex/-/astral-regex-2.0.0.tgz"
   integrity sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==
 
-axios@^0.20.0:
-  version "0.20.0"
-  resolved "https://registry.npmjs.org/axios/-/axios-0.20.0.tgz"
-  integrity sha512-ANA4rr2BDcmmAQLOKft2fufrtuvlqR+cXNNinUmvfeSNCOF98PZL+7M/v1zIdGo7OLjEA9J2gXJL+j4zGsl0bA==
-  dependencies:
-    follow-redirects "^1.10.0"
-
 axios@^0.21.1:
   version "0.21.1"
   resolved "https://registry.npmjs.org/axios/-/axios-0.21.1.tgz"
@@ -466,23 +459,7 @@ entities@^2.0.0:
   resolved "https://registry.npmjs.org/entities/-/entities-2.2.0.tgz"
   integrity sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==
 
-erela.js-deezer@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.npmjs.org/erela.js-deezer/-/erela.js-deezer-1.0.5.tgz"
-  integrity sha512-8BNTufuQalcWM+N093wUSlsA2bgXzfnrh4tfY8SgQEf6XI3b1PP3E3D1q29Dv5/5aZOlzLK3UoOiDwZr4PVC3w==
-  dependencies:
-    axios "^0.21.1"
-    erela.js "^2.3.1"
-
-erela.js-spotify@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/erela.js-spotify/-/erela.js-spotify-1.2.0.tgz"
-  integrity sha512-FbkdVK7OquVzyNVl4aZ3AU6RHRrHzBpORGorK5q+L26y3hB/7ze9mQ7uiOa5PsskskELRWepoluqke3U8edbmQ==
-  dependencies:
-    axios "^0.20.0"
-    erela.js "^2.2.0"
-
-erela.js@^2.2.0, erela.js@^2.3.1, erela.js@^2.3.3:
+erela.js@^2.3.3:
   version "2.3.3"
   resolved "https://registry.npmjs.org/erela.js/-/erela.js-2.3.3.tgz"
   integrity sha512-tzowGHLSodZr2j311csFSqm9lwE6plqeULTAwPwuRX9PQbXg4Ohdy/3MTMWrltiFAMSIG/5r9GQtTUt9Mqzhhw==
