@@ -11,6 +11,7 @@ const {
 const {
   token
 } = require('./config/config.js')
+const DiscordTogether = require('./client/discord-together')
 
 const client = new Client(token, {
   restMode: true,
@@ -25,6 +26,7 @@ const client = new Client(token, {
   }
 })
 
+client.discordTogether = new DiscordTogether(client)
 client.commands = new Collection()
 client.aliases = new Collection()
 client.events = new Collection()
