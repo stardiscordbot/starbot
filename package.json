@@ -22,12 +22,12 @@
     "canvas": "^2.8.0",
     "cheerio": "^1.0.0-rc.10",
     "colors": "^1.4.0",
+    "denky-database": "^1.0.6",
     "erela.js": "^2.3.3",
     "eris": "^0.15.1",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
     "pidusage": "^2.0.21",
-    "star-database-manager": "^3.0.2",
     "star-fetch": "^1.0.4"
   },
   "devDependencies": {

@@ -28,12 +28,12 @@ module.exports = class PlayCommand {
       return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.not}`)
     } else {
       if (player.bassboost === false) {
-        await global.star.music.players.get(ctx.message.channel.guild.id).setBassboost(true)
-        return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.ativado.replace('%f', 'bassboost')}`)
+        player.bassboost = true
+        return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters}`)
       }
       if (player.bassboost === true) {
-        await global.star.music.players.get(ctx.message.channel.guild.id).setBassboost(false)
-        return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.desativado.replace('%f', 'bassboost')}`)
+        player.bassboost = false
+        return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters}`)
       }
     }
   }

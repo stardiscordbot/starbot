@@ -26,12 +26,12 @@ module.exports = class PlayCommand {
     if (!ctx.message.member.voiceState) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.noc2}`)
     if (!player) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.not}`)
     if (player.vaporwave === false) {
-      await global.star.music.players.get(ctx.message.channel.guild.id).setVaporwave(true)
-      return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.ativado.replace('%f', 'vaporwave')}`)
+      player.vaporwave = true
+      return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.ativado}`)
     }
     if (player.vaporwave === true) {
-      await global.star.music.players.get(ctx.message.channel.guild.id).setVaporwave(false)
-      return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.desativado.replace('%f', 'vaporwave')}`)
+      player.vaporwave = false
+      return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.desativado}`)
     }
   }
 }

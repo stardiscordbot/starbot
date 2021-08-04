@@ -27,11 +27,11 @@ module.exports = class DistorCommand {
     if (!player) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.not}`)
     if (player.distortion === false) {
       await global.star.music.players.get(ctx.message.channel.guild.id).setDistortion(true)
-      return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.ativado.replace('%f', 'distortion')}`)
+      return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.ativado}`)
     }
     if (player.distortion === true) {
       await global.star.music.players.get(ctx.message.channel.guild.id).setDistortion(false)
-      return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.desativado.replace('%f', 'distortion')}`)
+      return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.desativado}`)
     }
   }
 }

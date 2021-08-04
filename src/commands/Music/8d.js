@@ -26,12 +26,12 @@ module.exports = class PlayCommand {
     if (!ctx.message.member.voiceState) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.noc2}`)
     if (!player) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.not}`)
     if (player._8d === false) {
-      await global.star.music.players.get(ctx.message.channel.guild.id).set8D(true)
-      return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.ativado.replace('%f', '8D')}`)
+      player.eightD = true
+      return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.ativado}`)
     }
     if (player._8d === true) {
-      await global.star.music.players.get(ctx.message.channel.guild.id).set8D(false)
-      return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.desativado.replace('%f', '8D')}`)
+      player.eightD = false
+      return ctx.send(`✅ ${ctx.message.author.mention} **|** ${ctx.idioma.filters.desativado}`)
     }
   }
 }

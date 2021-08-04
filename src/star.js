@@ -44,7 +44,7 @@ StarBot.iniciar().then((star) => {
 global.star = client
 global.star.manager = StarBot
 
-global.db = require('star-database-manager')
+require('./database')
 
 // Handler.
 require('./client/handler/comandos.js')
