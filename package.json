@@ -22,7 +22,6 @@
     "canvas": "^2.8.0",
     "cheerio": "^1.0.0-rc.10",
     "colors": "^1.4.0",
-    "denky-database": "^1.0.6",
     "erela.js": "^2.3.3",
     "eris": "^0.15.1",
     "moment": "^2.29.1",

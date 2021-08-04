@@ -405,11 +405,6 @@ delegates@^1.0.0:
   resolved "https://registry.npmjs.org/delegates/-/delegates-1.0.0.tgz"
   integrity sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=
 
-denky-database@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/denky-database/-/denky-database-1.0.6.tgz#190fe4b9767854edb5a2ed8814b979b1c19d09ad"
-  integrity sha512-6uofx/FnXkO5jujD38tPishVy4KBFHClpLKa9wJgWkWWdEXG+6gcGWEMYFS7hdCFhlBuYRdh2J2InBgLqTacqA==
-
 detect-libc@^1.0.3:
   version "1.0.3"
   resolved "https://registry.npmjs.org/detect-libc/-/detect-libc-1.0.3.tgz"
