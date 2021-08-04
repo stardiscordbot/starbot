@@ -10,6 +10,7 @@ const nodes = require('./nodes')
 const Deezer = require('./erela-plugins/Deezer/index')
 const Spotify = require('./erela-plugins/Spotify/index')
 const Facebook = require('./erela-plugins/Facebook/index')
+const Filter = require('./erela-plugins/Filters/index')
 
 const clientID = spotify.id
 const clientSecret = spotify.secret
@@ -18,8 +19,13 @@ require('./StarPlayer')
 global.star.music = new Manager({
   nodes: nodes,
   plugins: [
+    // DEEZER PLUGIN
     new Deezer(),
+    // FACEBOOK PLUGIN
     new Facebook(),
+    // FILTERS PLUGIN
+    new Filter(),
+    // SPOTIFY PLUGIN
     new Spotify({
       clientID,
       clientSecret
@@ -34,8 +40,12 @@ global.star.music = new Manager({
   .on('nodeConnect', node => console.log(`[LAVALINK] Node ${node.options.name} conectado`.green))
   .on('nodeError', (node, error) => console.log(`[LAVALINK] Node ${node.options.name} teve um erro: ${error.message}`.red))
   .on('playerCreate', (player) => {
-    player.set('rateLimitStatus', { status: false })
-    player.set('24h', { status: false })
+    player.set('rateLimitStatus', {
+      status: false
+    })
+    player.set('24h', {
+      status: false
+    })
   })
   .on('trackStart', async (player, track) => {
     const ch = await global.star.getRESTChannel(player.textChannel)
