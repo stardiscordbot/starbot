@@ -1,0 +1,20 @@
+<@&815580078150123580> | <@&815580080138485801>
+
+
+**⭐ Star [ v5.1.7a ]**
+
+> ~ **🐛 Bugs solucionados:**
+- Removido os erros que a CPU, ficava -0% nos comandos `s!botinfo` & `s!debug`.
+
+> ~ **➖ Foi Removido:**
+- O idioma japônes, já que ainda teremos muito trabalho para integra-lo totalmente ao bot.
+
+> ~ **➕ Foi Adicionado:**
+- O comando `s!npm`, que mostra informações de um package do node package manager (https://www.npmjs.com);
+- O comando `s!magicball`, que responde suas perguntas (com suporte a multiidioma), ajudando a tomar decisões diferentes e dificieis :);
+- O comando `s!ocr`, que pega o texto de uma imagem;
+- O comando `s!dicio`, que pesquisa uma palavra no dicionário;
+- O comando `s!upvote`, caso você queira doar para a estrela;
+- Agora o status dela altera sozinha, tanto a mensagem, quanto a presença.
+
+*OwO, que a ⭐ brilhe 🙏*

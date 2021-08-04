@@ -1,0 +1,39 @@
+{
+  "name": "star",
+  "version": "5.1.7a",
+  "description": "Helping servers grow exponentially with a simple solution. Make your server active and entertain your community with a simple solution - A unique discord bot, Star!",
+  "main": "src/star.js",
+  "scripts": {
+    "start": "node .",
+    "lint": "eslint --ext .js --ignore-path .gitignore ."
+  },
+  "keywords": [
+    "star",
+    "discord bot",
+    "fun",
+    "bot",
+    "discord",
+    "eris"
+  ],
+  "author": "yADG",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "canvas": "^2.8.0",
+    "colors": "^1.4.0",
+    "erela.js": "^2.3.3",
+    "eris": "^0.15.1",
+    "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
+    "pidusage": "^2.0.21",
+    "star-database-manager": "^3.0.2",
+    "star-fetch": "^1.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0"
+  }
+}
