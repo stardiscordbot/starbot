@@ -9,6 +9,7 @@ const {
 const nodes = require('./nodes')
 const Deezer = require('./erela-plugins/Deezer/index')
 const Spotify = require('./erela-plugins/Spotify/index')
+const Facebook = require('./erela-plugins/Facebook/index')
 
 const clientID = spotify.id
 const clientSecret = spotify.secret
@@ -18,6 +19,7 @@ global.star.music = new Manager({
   nodes: nodes,
   plugins: [
     new Deezer(),
+    new Facebook(),
     new Spotify({
       clientID,
       clientSecret
