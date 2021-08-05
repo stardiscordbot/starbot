@@ -12,42 +12,22 @@ module.exports = class MessageEvent {
 
   async run (message) {
     if (message.channel.type === 1 || message.author.bot) return
-    let xpReward = Math.floor(Math.random() * 29) + 1
-    if (xpReward === 0) xpReward = 10
+    message.guild = message.channel.guild
 
-    // let xp = await global.db.get(`xp-${message.guildID}-${message.author.id}`)
-    // let level = await global.db.get(`level-${message.guildID}-${message.author.id}`) || 0
-    // let level2 = level + 1
-    // let levels = level2 * 1000
+    // Definindo idioma.
+    let idioma = require('../config/idiomas.js')
+    let lang = (await global.db.get(`idioma-${message.guildID}`)) || 'pt_br'
+    lang = lang.replace(/-/g, '_')
+    idioma = idioma[lang]
 
-    // if (!xp) {
-    //   await global.db.set(`xp-${message.guildID}-${message.author.id}`, xpReward)
-    // } else {
-    //    await global.db.set(`xp-${message.guildID}-${message.author.id}`, xp + xpReward)
-    // }
-    /*
-        if (xp > levels) {
-            const cg = await global.db.get(`cargo-${message.guildID}-${level + 1}`)
-            await global.db.set(`level-${message.guildID}-${message.author.id}`, level + 1)
-            let lv = level + 1
-
-            if (cg) {
-                //const role = await message.guild.roles.cache.get(cg)
-                //message.member.roles.add(role, 'XP Role')
-                //message.channel.createMessage(`🥳 ${message.author.mention} **|** Você avançou para o nível **${lv}**!`)
-            } else {
-                //message.channel.createMessage(`🥳 ${message.author.mention} **|** Você avançou para o nível **${lv}**!`)
-            }
-        }
-        */
-    /*
-    const messages = await global.db.get(`messages-${message.guildID}-${message.author.id}`)
-    if (messages) {
-      await global.db.set(`messages-${message.guildID}-${message.author.id}`, messages + 1)
-    } else {
-      await global.db.set(`messages-${message.guildID}-${message.author.id}`, 1)
+    const anitlink = global.db.get(`antiinvite-${message.channel.guild.id}`)
+    const regex = /(https?:\/\/)?(www\.)?(discord\.(gg|io|me|li)|discordapp\.com\/invite)\/.+[a-z]/
+    if (regex.test(message.content) && anitlink) {
+      if (message.member.permissions.has('manageGuild')) return
+      message.channel.createMessage(`:x: ${message.author.mention} **|** Antilink está ativado aqui.`)
+      message.delete()
     }
-    */
+
     let prefix = config.prefix
     const preDb = await global.db.get(`prefix-${message.guildID}`)
     if (preDb) {
@@ -66,12 +46,6 @@ module.exports = class MessageEvent {
     if (message.content.startsWith(`<@${global.star.user.id}>`)) {
       prefix = `<@${global.star.user.id}>`
     }
-
-    // Definindo idioma.
-    let idioma = require('../config/idiomas.js')
-    let lang = (await global.db.get(`idioma-${message.guildID}`)) || 'pt_br'
-    lang = lang.replace(/-/g, '_')
-    idioma = idioma[lang]
 
     // Responder menção.
     if (message.content === `<@!${global.star.user.id}>` || message.content === `<@${global.star.user.id}>`) {
