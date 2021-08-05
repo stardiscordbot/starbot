@@ -23,16 +23,18 @@ module.exports = class AvatarCommand {
 
   async run (ctx) {
     if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.mal.term}`)
-    const fetch = require('star-fetch')
-    const res = fetch(`https://significado.herokuapp.com/meanings/${encodeURIComponent(ctx.args.join(' '))}`)
-    const palavra = res[0]
+    const { get } = require('axios')
+    await get(`https://significado.herokuapp.com/meanings/${encodeURI(ctx.args.join(' '))}`).then(response => {
+      console.log(response)
 
-    const embed = new global.star.manager.Ebl()
-    embed.title(`📚 ${ctx.idioma.dicio.title} | ${global.star.user.username}`)
-    embed.field(`📝 ${ctx.idioma.dicio.c}`, palavra.class)
-    embed.field(`💖 ${ctx.idioma.dicio.meanings}`, palavra.meanings.join('\n'))
-    embed.thumbnail(global.star.user.avatarURL)
-    embed.color('#dd3af0')
-    ctx.send(embed.create)
+      const palavra = response.data[0]
+      const embed = new global.star.manager.Ebl()
+      embed.title(`📚 ${ctx.idioma.dicio.title} | ${global.star.user.username}`)
+      embed.field(`📝 ${ctx.idioma.dicio.c}`, palavra.class)
+      embed.field(`💖 ${ctx.idioma.dicio.meanings}`, palavra.meanings.join('\n'))
+      embed.thumbnail(global.star.user.avatarURL)
+      embed.color('#dd3af0')
+      ctx.send(embed.create)
+    })
   }
 }

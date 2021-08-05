@@ -22,19 +22,19 @@ module.exports = class PingCommand {
   }
 
   async run (ctx) {
-    const fetch = require('star-fetch')
-    const git = fetch(`https://api.github.com/users/${encodeURIComponent(ctx.args.join(' '))}`)
-    const embed = new global.star.manager.Ebl()
-
-    embed.title(`<:st_github:850386245887852545> Github | ${git.login} ${git.site_admin ? '<:st_bots_certified:830834935605624867>' : '<:st_bots_notcertified:830834979726426243>'}`)
-    embed.url(git.html_url)
-    embed.field('📋 Name:', `\`\`\`${git.name || git.login}\`\`\``)
-    embed.field('📚 Bio:', `\`\`\`md\n${git.bio || 'User does not have a biography.'}\`\`\``)
-    embed.field('<:st_membros:845390325638889482> Social:', `\`\`\`md\n# Followers: ${git.followers}\n# Following: ${git.following}\`\`\``)
-    embed.color('#dd3af0')
-    embed.thumbnail(git.avatar_url || global.star.user.avatarURL)
-
-    ctx.send(embed.create)
+    const { get } = require('axios')
+    await get(`https://api.github.com/users/${encodeURI(ctx.args.join(' '))}`).then(response => {
+      const git = response.data
+      const embed = new global.star.manager.Ebl()
+      embed.title(`<:st_github:850386245887852545> Github | ${git.login} ${git.site_admin ? '<:st_bots_certified:830834935605624867>' : '<:st_bots_notcertified:830834979726426243>'}`)
+      embed.url(git.html_url)
+      embed.field('📋 Name:', `\`\`\`${git.name || git.login}\`\`\``)
+      embed.field('📚 Bio:', `\`\`\`md\n${git.bio || 'User does not have a biography.'}\`\`\``)
+      embed.field('<:st_membros:845390325638889482> Social:', `\`\`\`md\n# Followers: ${git.followers}\n# Following: ${git.following}\`\`\``)
+      embed.color('#dd3af0')
+      embed.thumbnail(git.avatar_url || global.star.user.avatarURL)
+      ctx.send(embed.create)
+    })
   }
 }
 

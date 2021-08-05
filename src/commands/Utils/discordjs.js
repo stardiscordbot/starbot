@@ -23,24 +23,25 @@ module.exports = class PingCommand {
 
   async run (ctx) {
     if (!ctx.args[0]) return ctx.send(`❌ ${ctx.message.author.mention} **|** ${ctx.idioma.mal.term}`)
-    const fetch = require('star-fetch')
-    const res = fetch(`https://djsdocs.sorta.moe/v2/embed?src=stable&q=${encodeURIComponent(ctx.args.join(' '))}`)
-    // console.log(res)
-    const embed = new global.star.manager.Ebl()
-    embed.title('<:st_djs:847082239975882752> Discord.js Docs')
-    embed.color('#dd3af0')
-    embed.thumbnail(global.star.user.avatarURL)
-    if (!res.fields) {
-      embed.description(`${res.description}`)
-      ctx.send(embed.create)
-    } else {
-      res.fields.forEach(resu => {
-        if (resu.value.includes('View source')) return
-        embed.description(`>>> 📘 ${res.description}`)
-        embed.field(resu.name, resu.value)
-      })
-      ctx.send(embed.create)
-    }
+    const { get } = require('axios')
+    await get(`https://djsdocs.sorta.moe/v2/embed?src=stable&q=${encodeURI(ctx.args.join(' '))}`).then(response => {
+      const res = response.data
+      const embed = new global.star.manager.Ebl()
+      embed.title('<:st_djs:847082239975882752> Discord.js Docs')
+      embed.color('#dd3af0')
+      embed.thumbnail(global.star.user.avatarURL)
+      if (!res.fields) {
+        embed.description(`${res.description}`)
+        ctx.send(embed.create)
+      } else {
+        res.fields.forEach(resu => {
+          if (resu.value.includes('View source')) return
+          embed.description(`>>> 📘 ${res.description}`)
+          embed.field(resu.name, resu.value)
+        })
+        ctx.send(embed.create)
+      }
+    })
   }
 }
 

@@ -1587,13 +1587,6 @@ sprintf-js@~1.0.2:
   resolved "https://registry.npmjs.org/sprintf-js/-/sprintf-js-1.0.3.tgz"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
-star-fetch@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/star-fetch/-/star-fetch-1.0.4.tgz"
-  integrity sha512-m73XJeQvjKScEgmBJ8bREL9LDJ/BwWDw9m6e2OB+nJsQ8FrdAfdIGL0pHCON409JNhjPsL3bNwBwZ+iP7lvUAA==
-  dependencies:
-    xmlhttprequest "^1.8.0"
-
 string-width@^1.0.1, "string-width@^1.0.2 || 2":
   version "1.0.2"
   resolved "https://registry.npmjs.org/string-width/-/string-width-1.0.2.tgz"
@@ -1808,11 +1801,6 @@ ws@^7.2.1, ws@^7.3.1:
   version "7.5.0"
   resolved "https://registry.npmjs.org/ws/-/ws-7.5.0.tgz"
   integrity sha512-6ezXvzOZupqKj4jUqbQ9tXuJNo+BR2gU8fFRk3XCP3e0G6WT414u5ELe6Y0vtp7kmSJ3F7YWObSNr1ESsgi4vw==
-
-xmlhttprequest@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.npmjs.org/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz"
-  integrity sha1-Z/4HXFwk/vOfnWX197f+dRcZaPw=
 
 yallist@^4.0.0:
   version "4.0.0"

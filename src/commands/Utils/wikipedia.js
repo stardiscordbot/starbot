@@ -27,9 +27,9 @@ module.exports = class WikipediaCommand {
     let url
 
     if (ctx.idioma.pdex.lang !== 'en') {
-      url = `https://pt.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(ctx.args.join(' '))}`
+      url = `https://pt.wikipedia.org/api/rest_v1/page/summary/${encodeURI(ctx.args.join(' '))}`
     } else {
-      url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(ctx.args.join(' '))}`
+      url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURI(ctx.args.join(' '))}`
     }
 
     get(`${url}`, { 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36' }).then(tes => {

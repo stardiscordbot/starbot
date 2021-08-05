@@ -23,15 +23,16 @@ module.exports = class PingCommand {
 
   async run (ctx) {
     if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.say.noarg}`)
-    const fetch = require('star-fetch')
-    const musica = fetch(`https://lyrics-api.powercord.dev/lyrics?input=${ctx.args.join(' ').replace(/ /g, '%20')}`).data[0]
-
-    const embed = new global.star.manager.Ebl()
-    embed.title(`<a:st_disco:830835645232316497> Lyrics | ${global.star.user.username}`)
-    embed.description(`${musica.lyrics}`)
-    embed.color('#dd3af0')
-    embed.thumbnail(global.star.user.avatarURL)
-    ctx.send(embed.create)
+    const { get } = require('axios')
+    await get(`https://lyrics-api.powercord.dev/lyrics?input=${encodeURI(ctx.args.join(' '))}`).then(response => {
+      const musica = response.data.data[0]
+      const embed = new global.star.manager.Ebl()
+      embed.title(`<a:st_disco:830835645232316497> Lyrics | ${global.star.user.username}`)
+      embed.description(`${musica.lyrics}`)
+      embed.color('#dd3af0')
+      embed.thumbnail(global.star.user.avatarURL)
+      ctx.send(embed.create)
+    })
   }
 }
 
