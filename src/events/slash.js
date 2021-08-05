@@ -17,11 +17,7 @@ module.exports = class rawWS {
       interaction.mention_everyone = false
       interaction.mention_roles = new Collection()
 
-      if (
-        interaction.data &&
-              interaction.data.resolved &&
-              interaction.data.resolved.users
-      ) {
+      if (interaction.data && interaction.data.resolved && interaction.data.resolved.users) {
         for (const membro in interaction.data.resolved.users) {
           // Adiciona o objeto do membro no Message.mentions.members
           interaction.data.resolved.users[membro].member =
