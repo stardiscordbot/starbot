@@ -7,6 +7,34 @@ module.exports = class MessageEvent {
   }
 
   async run (message) {
+    if (message.channel.id === '834759477433466951') {
+      const footer = message.embeds[0].footer.text
+
+      if (!footer) return
+
+      const footext = footer.split(' ')
+
+      const user = await global.star.getRESTUser(footext[0])
+      console.log(footer)
+
+      const votech = await global.star.getRESTChannel('817330765410861076')
+
+      const best = new global.star.manager.Ebl()
+      best.title(`<:st_bestlist:851868925109338122> Bestlist.online | ${global.star.user.username}`)
+      best.url('https://bestlist.online/vote/719524114536333342')
+      best.description(`**${user.username}** votou em mim e recebeu **2400 stars**, vote você também!\nhttps://bestlist.online/vote/719524114536333342`)
+      best.color('#3498DB')
+      best.thumbnail(user.avatarURL)
+      return votech.createMessage(best.create).then(b => {
+        b.addReaction('⬆️')
+        const money = global.db.get(`banco-${user.id}`)
+        if (money) {
+          global.db.set(`banco-${user.id}`, Number(money) + 2400)
+        } else {
+          global.db.set(`banco-${user.id}`, 2400)
+        }
+      })
+    }
     const prefix = 's!'
     if (message.author.bot) return
     const argumentos = message.content.slice(prefix.length).trim().split(/ +/)
