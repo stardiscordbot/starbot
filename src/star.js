@@ -11,6 +11,7 @@ const {
 const {
   token
 } = require('./config/config.js')
+const BplHelper = require('bpl-helper')
 const DiscordTogether = require('./client/discord-together')
 
 const client = new Client(token, {
@@ -26,6 +27,7 @@ const client = new Client(token, {
   }
 })
 
+client.bpl = new BplHelper('719524114536333342')
 client.discordTogether = new DiscordTogether(client)
 client.commands = new Collection()
 client.aliases = new Collection()
