@@ -16,7 +16,7 @@ module.exports = class PingCommand {
         categoria: '🕰️ • Utility',
         desc: 'Suggest systems or ideas for the bot'
       },
-      aliases: ['sugerir', 'sugestao', 'sugestão', 'sugest', 'sug'],
+      aliases: ['sugerir', 'sugestao', 'sugestão', 'sugest', 'sug', 'sugerirbot'],
       run: this.run
     }
   }
@@ -25,9 +25,11 @@ module.exports = class PingCommand {
     if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.sugestao.nada}`)
     const channel = await global.star.getRESTChannel('871097501065814086')
     const embed = new global.star.manager.Ebl()
-    embed.title('〈 💡 〉Nova Sugestão')
+    embed.title('💡 Nova Sugestão')
     embed.description(ctx.args.join(' '))
     embed.color('#dd3af0')
+    embed.thumbnail(ctx.message.author.avatarURL || global.star.user.avatarURL)
+    embed.footer(`💡 Sugestão enviada por: ${ctx.message.author.username}#${ctx.message.author.discriminator}`)
     channel.createMessage(embed.create).then(msg => {
       msg.addReaction('👍')
       msg.addReaction('👎')

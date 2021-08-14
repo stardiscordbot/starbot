@@ -24,7 +24,7 @@ module.exports = class Ajuda {
           'help ping'
         ]
       },
-      aliases: ['help', 'cmds', 'commands', 'comandos'],
+      aliases: ['cmds', 'commands', 'comandos'],
       run: this.run
     }
   }

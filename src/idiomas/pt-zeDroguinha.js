@@ -1,4 +1,13 @@
 module.exports = {
+  coinflip: {
+    cara: 'Cara!',
+    coroa: 'Coroa!'
+  },
+  report: {
+    p1: 'Está querendo denunciar algumas pessoas? Vieste ao lugar certo! Para realizar o report basta clicar no formulário!',
+    id: 'ID do Formulário:',
+    dm: 'Veja suas mensagens diretas!'
+  },
   calc: {
     ex: 'Estão faltando argumentos, utilize, `%pcalc <expressão>`',
     inv: 'Expressão invalida.',

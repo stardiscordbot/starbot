@@ -1,4 +1,13 @@
 module.exports = {
+  coinflip: {
+    cara: 'Heads!',
+    coroa: 'Tails!'
+  },
+  report: {
+    p1: 'Are you wanting to report some people? You\'ve come to the right place! To perform the report, just click on the form!',
+    id: 'Form ID:',
+    dm: 'See your direct messages!'
+  },
   calc: {
     ex: 'Ams missing, use, `%pcalc <expression>`',
     inv: 'Invalid expression.',
