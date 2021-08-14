@@ -1,4 +1,9 @@
 module.exports = {
+  calc: {
+    ex: 'Estão faltando argumentos, utilize, `%pcalc <expressão>`',
+    inv: 'Expressão invalida.',
+    res: 'Resultado'
+  },
   dice: {
     p1: 'Você rolou',
     p2: 'e obteve'
@@ -14,7 +19,7 @@ module.exports = {
     meanings: 'Significados:'
   },
   slash: '> <:st_util_slash:836555101442408461> **Utilizado por:** {user}!',
-  slash2: '> <:st_util_slash:836555101442408461> Em breve será necessário intents privilegiadas para que o bot consiga ler mensagens, portanto, estou sendo passada para slash commands, por favor, me adicione novamente com esse link: <https://bit.ly/3fvTOO3> e passe a usar comandos com o prefixo **/**, =)',
+  slash2: '> <:st_util_slash:836555101442408461> Em breve estarei disponível em apenas comandos barra! Me adicione através do link <https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=805432446>, =)',
   economy: {
     carteira: 'Carteira:',
     banco: 'Banco:',

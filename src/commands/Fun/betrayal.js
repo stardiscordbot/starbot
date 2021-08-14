@@ -22,8 +22,8 @@ module.exports = class PingCommand {
   }
 
   async run (ctx) {
-    if (!ctx.message.member.voiceState) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.noc2}`)
-    global.star.discordTogether.createTogetherCode(ctx.message.member.voiceState.channelID, 'betrayal').then(async invite => {
+    if (!ctx.message.member.voiceState.channelID) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.noc2}`)
+    global.star.discordTogether.createTogetherCode(ctx.message.member.voiceState.channelID.channelID, 'betrayal').then(async invite => {
       return ctx.message.channel.createMessage(`♟️ ${ctx.message.author.mention} **|** ${invite.code}`)
     })
   }

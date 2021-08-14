@@ -85,7 +85,7 @@ module.exports = class Ajuda {
         embed.description(`>>> Olá, meu nome é: **${global.star.user.username}**!\nAtualmente possuo: **${global.star.commands.size}** comandos;\nMe [adicione](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=805432446), ou se junte ao meu [suporte](https://discord.gg/2pFH6Yy) caso queira!`)
         embed.thumbnail(global.star.user.avatarURL)
         for (const categoria in categorias) {
-          embed.field(categoria, `${categorias[categoria].join(', ')}`)
+          embed.field(categoria + ` [${categorias[categoria].length}]`, `${categorias[categoria].join(', ')}`)
         }
         embed.field('<:st_random_ping:829763513571475486> Links', `[Invite Me](https://discord.com/oauth2/authorize?client_id=${global.star.user.id}&scope=bot%20applications.commands&permissions=805432446) • [Support Sever](https://discord.gg/2pFH6Yy) • [Vote for us](https://top.gg/bot/719524114536333342/vote)`)
         embed.footer(ctx.idioma.help.creators + devs.join(', '))
@@ -126,7 +126,7 @@ module.exports = class Ajuda {
         embed.description(`>>> Hi, my name is: **${global.star.user.username}**!\nI currently have: **${global.star.commands.size}** commands;\nMe [add](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=805432446), or join my [support](https://discord.gg/2pFH6Yy) if you want!`)
         embed.thumbnail(global.star.user.avatarURL)
         for (const categoria in categorias) {
-          embed.field(categoria, `${categorias[categoria].join(', ')}`)
+          embed.field(categoria + ` [${categorias[categoria].length}]`, `${categorias[categoria].join(', ')}`)
         }
 
         embed.footer(ctx.idioma.help.creators + devs.join(', '))

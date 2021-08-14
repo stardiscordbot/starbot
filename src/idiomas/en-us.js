@@ -1,4 +1,9 @@
 module.exports = {
+  calc: {
+    ex: 'Ams missing, use, `%pcalc <expression>`',
+    inv: 'Invalid expression.',
+    res: 'Result'
+  },
   dice: {
     p1: 'You rolled',
     p2: 'and got'
@@ -14,7 +19,7 @@ module.exports = {
     meanings: 'Meanings:'
   },
   slash: '> <:st_util_slash:836555101442408461> **Used by:** {user}!',
-  slash2: "> <:st_util_slash:836555101442408461> Privileged intents will soon be needed for the bot to read messages, so I'm being passed to slash commands, please add me again with this link: <https://bit.ly/3fvTOO3> and start using commands with the prefix **/**, =)",
+  slash2: '> <:st_util_slash:836555101442408461> I will soon be available in slash commands only! Add me via the link <https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=805432446>, =)',
   economy: {
     carteira: 'Wallet:',
     banco: 'Bank:',

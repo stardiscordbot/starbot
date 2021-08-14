@@ -8,12 +8,12 @@ module.exports = class AvatarCommand {
       },
       pt: {
         nome: 'ocr',
-        categoria: '🪓 • Util',
+        categoria: '🕰️ • Utilidades',
         desc: 'Tire o texto de uma imagem.'
       },
       en: {
         nome: 'ocr',
-        categoria: '🪓 • Util',
+        categoria: '🕰️ • Utility',
         desc: 'Take the text out of an image.'
       },
       aliases: ['ler'],

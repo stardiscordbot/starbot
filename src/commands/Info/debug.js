@@ -13,7 +13,7 @@ module.exports = class EvalCommand {
       },
       en: {
         nome: 'debug',
-        categoria: '📖 • Informação',
+        categoria: '📖 • Information',
         desc: 'Show information in a direct way'
       },
       aliases: ['deb', 'de'],

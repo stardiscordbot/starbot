@@ -28,7 +28,7 @@ class DiscordTogether {
      *
      * client.on('messageCreate', async message => {
      *      if (message.content === 'start') {
-     *          client.discordTogether.createTogetherCode(message.member.voiceState.channelID, 'youtube').then(async invite => {
+     *          client.discordTogether.createTogetherCode(message.member.voiceState.channelID.channelID, 'youtube').then(async invite => {
      *              return message.channel.createMessage(`${invite.code}`);
      *           });
      *      };

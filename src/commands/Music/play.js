@@ -23,13 +23,13 @@ module.exports = class PlayCommand {
 
   async run (ctx) {
     if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.play.nada.replace('%p', ctx.prefix)}`)
-    if (!ctx.message.member.voiceState) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.noc2}`)
+    if (!ctx.message.member.voiceState.channelID) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.noc2}`)
 
     const res = await global.star.music.search(ctx.args.join(' '), ctx.message.author)
 
     const player = global.star.music.create({
       guild: ctx.message.channel.guild.id,
-      voiceChannel: ctx.message.member.voiceState.channelID,
+      voiceChannel: ctx.message.member.voiceState.channelID.channelID,
       textChannel: ctx.message.channel.id,
       selfDeafen: true
     })

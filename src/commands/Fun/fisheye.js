@@ -13,7 +13,7 @@ module.exports = class EnfimCommand {
       },
       en: {
         nome: 'fisheye',
-        categoria: '🤣 • Fun',
+        categoria: '😄 • Fun',
         desc: 'Finally the hypocrisy'
       },
       aliases: ['olhodepeixe', 'feye'],

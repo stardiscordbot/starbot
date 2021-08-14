@@ -8,12 +8,12 @@ module.exports = class PingCommand {
       },
       pt: {
         nome: 'firstwords',
-        categoria: '🤣 • Fun',
+        categoria: '😄 • Diversão',
         desc: 'Ai meu deus... as primeiras palavras do bebê'
       },
       en: {
         nome: 'firstwords',
-        categoria: '🤣 • Fun',
+        categoria: '😄 • Fun',
         desc: 'Oh my god... the baby\'s first words!'
       },
       aliases: ['firstword', 'bebe', 'primeiraspalavras'],

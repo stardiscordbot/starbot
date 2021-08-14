@@ -8,12 +8,12 @@ module.exports = class EnfimCommand {
       },
       pt: {
         nome: 'enfim',
-        categoria: '🤣 • Fun',
+        categoria: '😄 • Diversão',
         desc: 'Enfim a hipocrisia'
       },
       en: {
         nome: 'enfim',
-        categoria: '🤣 • Fun',
+        categoria: '😄 • Fun',
         desc: 'Finally the hypocrisy'
       },
       aliases: ['fim', 'hypocrisy', 'hipocrisia'],

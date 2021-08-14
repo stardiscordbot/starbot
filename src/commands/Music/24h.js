@@ -23,7 +23,7 @@ module.exports = class hCommand {
 
   async run (ctx) {
     const player = await global.star.music.players.get(ctx.message.channel.guild.id)
-    if (!ctx.message.member.voiceState) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.noc2}`)
+    if (!ctx.message.member.voiceState.channelID) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.noc2}`)
     if (player.get('24h').status === false) {
       player.set('24h', {
         status: true
