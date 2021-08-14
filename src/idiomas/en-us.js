@@ -1,4 +1,8 @@
 module.exports = {
+  dice: {
+    p1: 'You rolled',
+    p2: 'and got'
+  },
   addemoji: {
     args: 'Arguments are missing, use `%padeemoji <name | image (or attach an image)>`',
     add: 'The Emoji has been added successfully!',

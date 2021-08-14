@@ -1,4 +1,8 @@
 module.exports = {
+  dice: {
+    p1: 'Você rolou',
+    p2: 'e obteve'
+  },
   addemoji: {
     args: 'Estão faltando argumentos, utilize `%padeemoji <nome | imagem (ou anexe uma imagem)>`',
     add: 'O Emojo foi colocado com sucesso!',
@@ -9,8 +13,8 @@ module.exports = {
     title: 'Dicionário',
     meanings: 'Significados:'
   },
-  slash: '> <:st_util_slash:836555101442408461> **Utilizado por:** {user}!',
-  slash2: '> <:st_util_slash:836555101442408461> Em breve será necessário intents privilegiadas para que o bot consiga ler mensagens, portanto, estou sendo passada para slash commands, por favor, me adicione novamente com esse link: <https://bit.ly/3fvTOO3> e passe a usar comandos com o prefixo **/**, =)',
+  slash: '> <:st_util_slash:836555101442408461> **Usado pelo:** {user}!',
+  slash2: '> <:st_util_slash:836555101442408461> Em breve será necessário privilegios para que eu consiga ler suas mensagens, portanto, estou sendo passada para slash commands, por favor, me adicione novamente com esse link: <https://bit.ly/3fvTOO3> e passe a usar comandos com o prefixo **/**, =)',
   economy: {
     carteira: 'Carteira:',
     banco: 'Banco:',
