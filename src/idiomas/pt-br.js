@@ -1,4 +1,9 @@
 module.exports = {
+  sup: {
+    inf: 'Você pode convidar pessoas para utilizar a star e pedir para ela usar seu codigo de convite, com isso você ganha algumas vantagens:\n\n- Cada vez que essa pessoa ganhar stars, você ganhará 5%',
+    code: 'Seu código apoiador:',
+    use: '✨ Total de usos:'
+  },
   self: {
     des: 'Banindo selfbots de seu servidor, isso pode demorar um tempo...',
     done: 'Bani todos os selfbots que encontrei de seu servidor, caso queira reverter, você pode digitar `%punbanall`'
