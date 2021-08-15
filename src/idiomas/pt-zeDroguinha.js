@@ -1,4 +1,12 @@
 module.exports = {
+  self: {
+    des: 'Banindo selfbots de seu servidor, isso pode demorar um tempo...',
+    done: 'Bani todos os selfbots que encontrei de seu servidor, caso queira reverter, você pode digitar `%punbanall`'
+  },
+  unbanall: {
+    des: 'Desbanindo todos os usuários do seu servidor...',
+    done: 'Todos os usuários foram desbanidos com sucesso!'
+  },
   coinflip: {
     cara: 'Cara!',
     coroa: 'Coroa!'
