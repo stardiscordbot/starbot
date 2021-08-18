@@ -5,15 +5,15 @@ const system = require('../config/system')
 module.exports = class MessageEvent {
   constructor () {
     return {
-      nome: 'messageCreate',
+      nome: 'messageUpdate',
       run: this.run
     }
   }
 
-  async run (message) {
+  async run (message, oldMessage) {
     if (message.channel.type === 1 || message.author.bot) return
     message.guild = message.channel.guild
-
+    if (message.content === oldMessage.content) return
     // Definindo idioma.
     let idioma = require('../config/idiomas.js')
     let lang = (await global.db.get(`idioma-${message.guildID}`)) || 'pt_br'

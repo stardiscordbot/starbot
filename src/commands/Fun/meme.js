@@ -23,7 +23,14 @@ module.exports = class MemeCommand {
 
   async run (ctx) {
     const { get } = require('axios')
-    await get('https://www.reddit.com/r/memes/random/.json').then(response => {
+    let link
+
+    if (ctx.idioma.pdex.lang !== 'en') {
+      link = 'https://www.reddit.com/r/MemesBrasil/random/.json'
+    } else {
+      link = 'https://www.reddit.com/r/memes/random/.json'
+    }
+    await get(link).then(response => {
       const res = response.data[0].data.children[0].data
       const embed = new global.star.manager.Ebl()
       embed.title(res.title)
@@ -31,7 +38,10 @@ module.exports = class MemeCommand {
       embed.image(res.url)
       embed.color('#dd3af0')
       embed.footer(`👍 ${res.ups} | 💬 ${res.num_comments}`)
-      ctx.send(embed.create)
+      ctx.message.channel.createMessage(embed.create).then(msg => {
+        msg.addReaction('👍')
+        msg.addReaction('👎')
+      })
     })
   }
 }

@@ -3,7 +3,8 @@ module.exports = class Idioma {
     return {
       permissoes: {
         membro: ['manageGuild'],
-        bot: []
+        bot: [],
+        dono: true
       },
       pt: {
         nome: 'prefix',
