@@ -22,7 +22,7 @@ module.exports = class EvalCommand {
   }
 
   async run (ctx) {
-    const user = ctx.args[0] ? ctx.message.mentions[0] || await global.star.user.fetch(ctx.args[0]) : ctx.message.author
+    const user = ctx.args[0] ? ctx.message.mentions[0] || await global.star.getRESTUser(ctx.args[0]) : ctx.message.author
 
     const money = await global.db.get(`money-${user.id}`) || Number(0)
     const banco = await global.db.get(`banco-${user.id}`) || Number(0)

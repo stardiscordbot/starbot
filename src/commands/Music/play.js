@@ -29,7 +29,7 @@ module.exports = class PlayCommand {
 
     const player = global.star.music.create({
       guild: ctx.message.channel.guild.id,
-      voiceChannel: ctx.message.member.voiceState.channelID.channelID,
+      voiceChannel: ctx.message.member.voiceState.channelID,
       textChannel: ctx.message.channel.id,
       selfDeafen: true
     })

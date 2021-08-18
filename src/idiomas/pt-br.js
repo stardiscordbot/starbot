@@ -2,7 +2,9 @@ module.exports = {
   sup: {
     inf: 'Você pode convidar pessoas para utilizar a star e pedir para ela usar seu codigo de convite, com isso você ganha algumas vantagens:\n\n- Cada vez que essa pessoa ganhar stars, você ganhará 5%',
     code: 'Seu código apoiador:',
-    use: '✨ Total de usos:'
+    use: '✨ Total de usos:',
+    noarg: 'Estão faltando argumentos, utilize: `%psupport <codigo>`',
+    sus: 'Você apoiou o usuário %m e recebeu **2400** stars'
   },
   self: {
     des: 'Banindo selfbots de seu servidor, isso pode demorar um tempo...',

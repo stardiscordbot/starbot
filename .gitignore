@@ -1,13 +1,16 @@
 # CONFIDENCIAL FOLDERS
+
 /lixeirinha
 /data
 node_modules
 
 # INUTIL FILES
+
 package-lock.json
 *.log
 
 # CONFIDENCIAL FILES
+
 src/containers/helper/config.js
 src/botlists.js
 src/apikeys.js

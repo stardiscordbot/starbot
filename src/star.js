@@ -23,8 +23,7 @@ const client = new Client(token, {
   rest: {
     baseURL: '/api/v9',
     domain: 'canary.discord.com'
-  },
-  intents: 14023
+  }
 })
 
 client.discordTogether = new DiscordTogether(client)
