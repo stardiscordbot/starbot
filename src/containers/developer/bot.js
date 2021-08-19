@@ -16,7 +16,7 @@ client.events = new Collection()
 
 global.dev = client
 
-// require('./client/handler/comandos')
+require('./client/handler/comandos')
 require('./client/handler/eventos')
 
 client.connect()

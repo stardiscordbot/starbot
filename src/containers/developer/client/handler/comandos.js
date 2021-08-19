@@ -4,13 +4,13 @@ const fs = require('fs')
 global.dev.commands.clear()
 global.dev.aliases.clear()
 // Carregar categorias.
-fs.readdir('./src/commands/', (err, cat) => {
+fs.readdir('./src/containers/developer/commands/', (err, cat) => {
   if (err) throw err
   cat.forEach(categoria => {
     console.log(`[CATEGORIAS] Carregando categoria ${categoria}`.brightCyan)
 
     // Carregar comandos de tal categoria.
-    fs.readdir(`./src/commands/${categoria}`, (err, cmds) => {
+    fs.readdir(`./src/containers/developer/commands/${categoria}`, (err, cmds) => {
       if (err) throw err
       cmds.forEach(cmd => {
         try {
