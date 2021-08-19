@@ -29,17 +29,24 @@ module.exports = class DailyCommand {
     registerFont('./assets/Dunkin.otf', { family: 'Dunkin' })
 
     const background = await loadImage('./assets/profile.png')
+    const developer = await global.db.get(`dev-${ctx.message.author.id}`)
+
     const back2 = await loadImage(back)
     const avatar = await loadImage(user.avatarURL)
 
     const canvas = createCanvas(background.width, background.height)
     const foto = canvas.getContext('2d')
 
-    const about = await global.db.get(`about-${ctx.message.author.id}`) || ctx.idioma.perfil.desc.replace('%p', ctx.prefix)
+    const about = await global.db.get(`about-${user.id}`) || ctx.idioma.perfil.desc.replace('%p', ctx.prefix)
 
     foto.drawImage(back2, 0, 0, canvas.width, canvas.height)
-    foto.drawImage(avatar, 75, 10, 160, 150)
+    foto.drawImage(avatar, 75, 10, 160, 160)
     foto.drawImage(background, 0, 0, canvas.width, canvas.height)
+
+    if (developer) {
+      const botdev = await loadImage('./assets/bot-dev.png')
+      foto.drawImage(botdev, 650, 60, 50, 45)
+    }
 
     if (user.username.length > 9) {
       foto.font = '17px Dunkin'
