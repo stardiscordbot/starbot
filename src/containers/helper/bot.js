@@ -7,7 +7,11 @@ const client = new Client(helpertoken, {
   autoreconnect: true,
   rest: {
     baseURL: '/api/v9'
-  }
+  },
+  intents: [
+    'guilds',
+    'guildMessages'
+  ]
 })
 
 client.commands = new Collection()

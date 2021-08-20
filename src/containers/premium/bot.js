@@ -7,7 +7,11 @@ const client = new Client(premiumtoken, {
   autoreconnect: true,
   rest: {
     baseURL: '/api/v9'
-  }
+  },
+  intents: [
+    'guilds',
+    'guildMessages'
+  ]
 })
 
 client.commands = new Collection()

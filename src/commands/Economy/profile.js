@@ -29,7 +29,7 @@ module.exports = class DailyCommand {
     registerFont('./assets/Dunkin.otf', { family: 'Dunkin' })
 
     const background = await loadImage('./assets/profile.png')
-    const developer = await global.db.get(`dev-${ctx.message.author.id}`)
+    const developer = await global.db.get(`dev-${user.id}`)
 
     const back2 = await loadImage(back)
     const avatar = await loadImage(user.avatarURL)
