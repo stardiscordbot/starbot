@@ -1,4 +1,9 @@
 module.exports = {
+  fort: {
+    rar: 'Rarity:',
+    per: 'Value:',
+    im: 'Image:'
+  },
   self: {
     des: 'Banishing selfbots from your server, this could take a while...',
     done: 'Ban all selfbots I found from your server, if you want to revert you can type `%punbanall`'
@@ -290,12 +295,16 @@ module.exports = {
     host: 'Hosted by: {user}',
     win: 'winner(s)',
     wins: 'Congratulations, {winners}! You won **{prize}**!\n{messageURL}',
-    addReaction: 'addReaction with 🎉 to participate!',
+    addReaction: 'addReaction with 🎁 to participate!',
     restante: 'Time remaining:',
     no: 'Giveaway cancelled, no valid participations',
     give: 'GIVEAWAY',
     giveend: 'GIVEAWAY ENDED',
-    start: 'You did not use the command correctly, use: `%pgiveaway [time (10s, 10m)] [winners (1, 1w)] [prize (photos of kittens)]`, do not include **[]** or **()**.'
+    start: 'You did not use the command correctly, use: `%pgiveaway [time (10s, 10m)] [winners (1, 1w)] [prize (photos of kittens)]`, do not include **[]** or **()**.',
+    end: 'You didn\'t use the command correctly, use: `%pgiveaway-end [message id]`',
+    reroll: 'You didn\'t use the command correctly, use: `%pgiveaway-reroll [message id]`',
+    novo: 'New winner(s): {winners}! Congratulations, you won **{prize}**\n{messageURL}',
+    err: 'No valid participations, no new winner(s) can be chosen!'
   },
   marry: {
     deseja: 'want to marry you, do you accept?',

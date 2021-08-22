@@ -22,11 +22,17 @@ module.exports = class DailyCommand {
   }
 
   async run (ctx) {
-    const { createCanvas, loadImage, registerFont } = require('canvas')
+    const {
+      createCanvas,
+      loadImage,
+      registerFont
+    } = require('canvas')
     const user = ctx.args[0] ? ctx.message.mentions[0] || await global.star.getRESTUser(ctx.args[0]) : ctx.message.author
     const back = await global.db.get(`background-${user.id}`) || './assets/default.jpg'
 
-    registerFont('./assets/Dunkin.otf', { family: 'Dunkin' })
+    registerFont('./assets/Dunkin.otf', {
+      family: 'Dunkin'
+    })
 
     const background = await loadImage('./assets/profile.png')
     const developer = await global.db.get(`dev-${user.id}`)

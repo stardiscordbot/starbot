@@ -7,13 +7,16 @@ const {
   Collection
 } = require('eris')
 
+const {
+  GiveawaysManager
+} = require('eris-giveaways')
+
 // Iniciando a star.
 const {
   token
 } = require('./config/config.js')
 const DiscordTogether = require('./client/discord-together')
-
-const client = new Client(token, {
+const client = new Client('Bot ' + token, {
   restMode: true,
   defaultImageSize: 2048,
   defaultImageFormat: 'png',
@@ -26,19 +29,34 @@ const client = new Client(token, {
   },
   intents: [
     'guilds',
-    'guildMessages'
+    'guildMessages',
+    'guildMessageReactions',
+    'guildMembers'
   ]
 })
 
 client.discordTogether = new DiscordTogether(client)
+client.giveawaysManager = new GiveawaysManager(client, {
+  storage: './data/giveaways.json',
+  updateCountdownEvery: 10000,
+  default: {
+    botsCanWin: false,
+    embedColor: 14498544, // -2278672
+    embedColorEnd: 14498544,
+    reaction: '🎁'
+  }
+})
+
 client.commands = new Collection()
 client.aliases = new Collection()
+
+client.slashcommands = new Collection()
+
 client.events = new Collection()
 client.cooldowns = new Collection()
 client.cooldowns2 = new Collection()
 
 const Star = require('./client/starbot.js')
-
 const StarBot = new Star(client)
 
 StarBot.iniciar().then((star) => {
@@ -48,6 +66,7 @@ StarBot.iniciar().then((star) => {
 global.star = client
 global.star.manager = StarBot
 
+// Database.
 require('./database')
 
 // Handler.

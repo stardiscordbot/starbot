@@ -1,4 +1,9 @@
 module.exports = {
+  fort: {
+    rar: 'Raridade:',
+    per: 'Valor:',
+    im: 'Imagem:'
+  },
   self: {
     des: 'Banindo selfbots de seu servidor, isso pode demorar um tempo...',
     done: 'Bani todos os selfbots que encontrei de seu servidor, caso queira reverter, você pode digitar `%punbanall`'
@@ -289,13 +294,17 @@ module.exports = {
     term: 'Terminou ás',
     host: 'Sorteio de: {user} (NITROOOOOOOOO)',
     win: 'ganhador(es)',
-    wins: 'Parabéns, {winners}! Você ganhou {prize}!\n{messageURL}',
-    addReaction: 'Reaja com 🎉 para participar!',
+    wins: 'Parabéns, {winners}! Você ganhou **{prize}**!\n{messageURL}',
+    addReaction: 'Reaja com 🎁 para participar!',
     restante: 'Tempo Restante:',
     no: 'Sorteio cancelado, sem participações válidas',
     give: 'SORTEIO',
     giveend: 'SORTEIO ENCERRADO',
-    start: 'Você não usou o comando corretamente, utilize: `%pgiveaway [tempo(10s, 10m)] [ganhadores(1, 1w)] [prêmio(fotos de gatinhos)]`, não inclua **[]** ou **()**.'
+    start: 'Você não usou o comando corretamente, utilize: `%pgiveaway [tempo(10s, 10m)] [ganhadores(1, 1w)] [prêmio(fotos de gatinhos)]`, não inclua **[]** ou **()**.',
+    end: 'Você não usou o comando corretamente, utilize: `%pgiveaway-end [id da mensagem]`',
+    reroll: 'Você não usou o comando corretamente, utilize: `%pgiveaway-reroll [id da mensagem]`',
+    novo: 'Novo ganhador(es): {winners}! Parabéns, vocês ganharam **{prize}**\n{messageURL}',
+    err: 'Sem participações válidas, nenhum(s) novo(s) vencedor(es) escolhidos!'
   },
   marry: {
     deseja: 'deseja se casar com você, você aceita? (Eu aceitaria slk)',

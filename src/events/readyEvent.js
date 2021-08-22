@@ -2,6 +2,7 @@ module.exports = class ReadyEvent {
   constructor () {
     return {
       nome: 'ready',
+      type: 'once',
       run: this.run
     }
   }
@@ -53,11 +54,17 @@ module.exports = class ReadyEvent {
       const util = require('util')
       const read = util.promisify(readFile)
       const moment = require('moment')
-      backupchannel.createMessage(`<:st_host:830841046153691197> Backup do banco de dados! | ${moment().format('DD/MM/YYYY | h:mm:ss')}`, {
+
+      backupchannel.createMessage(`<:st_host:830841046153691197> Backup do banco de dados (principal)! | ${moment().format('DD/MM/YYYY | h:mm:ss')}`, {
         file: await read('./data/base.json'),
         name: 'base.json'
       })
-    }, 604800000)
+
+      backupchannel.createMessage(`<:st_host:830841046153691197> Backup do banco de dados (sorteios)! | ${moment().format('DD/MM/YYYY | h:mm:ss')}`, {
+        file: await read('./data/giveaways.json'),
+        name: 'giveaways.json'
+      })
+    }, 60000)
 
     // Iniciando Música
 

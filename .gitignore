@@ -1,7 +1,8 @@
 # CONFIDENCIAL FOLDERS
 
 /lixeirinha
-/data
+data/base.json
+data/giveaways.json
 node_modules
 
 # INUTIL FILES
