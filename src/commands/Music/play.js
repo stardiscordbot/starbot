@@ -26,15 +26,20 @@ module.exports = class PlayCommand {
     if (!ctx.message.member.voiceState.channelID) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.player.noc2}`)
 
     const res = await global.star.music.search(ctx.args.join(' '), ctx.message.author)
+    const play = global.star.music.players.get(ctx.message.channel.guild.id)
 
-    const player = global.star.music.create({
-      guild: ctx.message.channel.guild.id,
-      voiceChannel: ctx.message.member.voiceState.channelID,
-      textChannel: ctx.message.channel.id,
-      selfDeafen: true
-    })
+    if (!play) {
+      const player = global.star.music.create({
+        guild: ctx.message.channel.guild.id,
+        voiceChannel: ctx.message.member.voiceState.channelID,
+        textChannel: ctx.message.channel.id,
+        selfDeafen: true
+      })
 
-    player.connect()
+      await player.connect()
+    }
+
+    const player = global.star.music.players.get(ctx.message.channel.guild.id)
     player.queue.add(res.tracks[0])
     const track = res.tracks[0]
 

@@ -31,7 +31,8 @@ const client = new Client('Bot ' + token, {
     'guilds',
     'guildMessages',
     'guildMessageReactions',
-    'guildMembers'
+    'guildMembers',
+    'guildVoiceStates'
   ]
 })
 
