@@ -47,7 +47,7 @@ module.exports = class AnimuCommand {
     if (!player.playing && !player.paused && !player.queue.size) player.play()
     if (player.queue.size >= 1) {
       const embed = new global.star.manager.Ebl()
-      embed.title(`<:st_music_adicionado:830833070252097596> ${ctx.idioma.play.add}`)
+      embed.title(`${ctx.idioma.play.add}`)
       embed.description(`\`Animu: ${ctx.message.author.username}#${ctx.message.author.discriminator}\``)
       embed.thumbnail(global.star.user.avatarURL)
       embed.color('#dd3af0')

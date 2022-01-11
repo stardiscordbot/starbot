@@ -27,7 +27,7 @@ module.exports = class GuildCreate {
       embeds: [{
         color: 14498544,
         title: `<:zu_info:911303533859590144> GuildCreate | ${global.star.user.username}`,
-        description: '<:st_random_pato:830842917790810183> Fui adicionada em um servidor, yeah!',
+        description: '<:st_pato:930531705020874802> Fui adicionada em um servidor, yeah!',
         fields: [
           {
             name: `<:st_website:830841154203025439> GuildInfo | ${guild.name}`,

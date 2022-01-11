@@ -26,7 +26,7 @@ module.exports = class PingCommand {
     const user = ctx.args[0] ? ctx.message.mentions[0] || await global.star.getRESTUser(ctx.args[0]).catch(_ => ctx.message.author) : ctx.message.author
 
     const embed = new global.star.manager.Ebl()
-    embed.title(`<:st_discord:847806904808898600> ${ctx.idioma.userinfo.inf} __${user.username}__`)
+    embed.title(`${ctx.idioma.userinfo.inf} __${user.username}__`)
     embed.color('#dd3af0')
     embed.field(`📘 ${ctx.idioma.userinfo.tag} __${user.username}__`, `\`${user.username}#${user.discriminator}\``)
     embed.field(`📚 ${ctx.idioma.userinfo.id} __${user.username}__`, `\`${user.id}\``)

@@ -182,13 +182,13 @@ module.exports = {
     num: 'Eu só consigo limpar entre 2 a 2000 mensagens.'
   },
   ban: {
-    noarg: '**Mencione** o marginal ou ou dê o **ID** dele pa nós procurar no sistema da puliça. <:st_random_pato:830842917790810183>',
+    noarg: '**Mencione** o marginal ou ou dê o **ID** dele pa nós procurar no sistema da puliça. <:st_pato:930531705020874802>',
     vc: 'Qualé zé, vê se é esse cara mesmo que você quer punir',
-    r: ':st_random_pato:830842917790810183',
-    r2: 'st_random_pato',
+    r: ':st_pato:930531705020874802',
+    r2: 'st_pato',
     mot: 'O ser não deu motivo ok? Só obedeci tabo? Não vem me culpar pq eu não sou culpada de nada aff',
     mot2: 'Puliça que puniu:',
-    mot3: 'Explicação do carrinha:',
+    mot3: 'Explicação do carinha:',
     the: 'O Marginal',
     foi: 'foi punido com sucesso.'
   },

@@ -27,7 +27,7 @@ module.exports = class PingCommand {
     await get(`https://lyrics-api.powercord.dev/lyrics?input=${encodeURI(ctx.args.join(' '))}`).then(response => {
       const musica = response.data.data[0]
       const embed = new global.star.manager.Ebl()
-      embed.title(`<a:st_disco:830835645232316497> Lyrics | ${global.star.user.username}`)
+      embed.title(`Lyrics | ${global.star.user.username}`)
       embed.description(`${musica.lyrics}`)
       embed.color('#dd3af0')
       embed.thumbnail(global.star.user.avatarURL)

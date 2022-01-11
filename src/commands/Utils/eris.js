@@ -27,7 +27,7 @@ module.exports = class PingCommand {
     await get(`https://eris-docs-api.herokuapp.com/?query=${encodeURI(ctx.args.join(' '))}`).then(response => {
       const res = response.data
       const embed = new global.star.manager.Ebl()
-      embed.title('<:st_eris:860555868717842442> Eris Docs')
+      embed.title('Eris Docs')
       embed.color('#dd3af0')
       embed.thumbnail(global.star.user.avatarURL)
       if (!res.embed.fields) {

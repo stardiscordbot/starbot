@@ -27,7 +27,7 @@ module.exports = class NpmCommand {
     await get(`https://api.tovade.xyz/v1/info/npm?package=${encodeURI(ctx.args.join(' '))}`).then(response => {
       const res = response.data
       const embed = new global.star.manager.Ebl()
-      embed.title(`<:st_npm:867798249371992084> ${ctx.args.join(' ').toLowerCase()} [ v${res.version} ]`)
+      embed.title(`${ctx.args.join(' ').toLowerCase()} [ v${res.version} ]`)
       embed.description(res.description)
       embed.field(`📚 ${ctx.idioma.npm.licença}`, res.license)
       embed.field(`👑 ${ctx.idioma.npm.dono}`, res.author)

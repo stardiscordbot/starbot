@@ -27,7 +27,7 @@ module.exports = class PingCommand {
     await get(`https://djsdocs.sorta.moe/v2/embed?src=stable&q=${encodeURI(ctx.args.join(' '))}`).then(response => {
       const res = response.data
       const embed = new global.star.manager.Ebl()
-      embed.title('<:st_djs:847082239975882752> Discord.js Docs')
+      embed.title('Discord.js Docs')
       embed.color('#dd3af0')
       embed.thumbnail(global.star.user.avatarURL)
       if (!res.fields) {

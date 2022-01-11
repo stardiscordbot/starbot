@@ -50,7 +50,7 @@ module.exports = class PlayCommand {
       player.play()
     }
     const embed = new global.star.manager.Ebl()
-    embed.title(`<:st_music_adicionado:830833070252097596> ${ctx.idioma.play.add}`)
+    embed.title(`${ctx.idioma.play.add}`)
     embed.description(`\`${track.title}: ${ctx.message.author.username}#${ctx.message.author.discriminator}\``)
     embed.thumbnail(global.star.user.avatarURL)
     embed.color('#dd3af0')
