@@ -23,7 +23,7 @@ module.exports = class PingCommand {
 
   async run (ctx) {
     if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.sugestao.nada}`)
-    const channel = await global.star.getRESTChannel('871097501065814086')
+    const channel = await global.star.getRESTChannel('930489979409403934')
     const embed = new global.star.manager.Ebl()
     embed.title('💡 Nova Sugestão')
     embed.description(ctx.args.join(' '))

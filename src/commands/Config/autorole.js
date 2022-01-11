@@ -41,20 +41,22 @@ module.exports = class Autorole {
     // FIELD AUTOROLE-USER
     if (autoroleuser) {
       // SE TIVER CARGOS
-      embed.field(`<:st_membros:845390325638889482> ${ctx.idioma.autorole.mem}`, `${autoroleuser.map((id) => `<@&${id}>`).join(', ')}`, true)
+      embed.field(`<:ES_membros:815580090225262632> ${ctx.idioma.autorole.mem}`, `${autoroleuser.map((id) => `<@&${id}>`).join(', ')}`, true)
     } else {
       // SE NÃO TIVER
-      embed.field(`<:st_membros:845390325638889482> ${ctx.idioma.autorole.mem}`, `${ctx.idioma.autorole.noset}`, true)
+      embed.field(`<:ES_membros:815580090225262632> ${ctx.idioma.autorole.mem}`, `${ctx.idioma.autorole.noset}`, true)
     }
     // FIELD PARA DELETAR
     embed.field(`❌ ${ctx.idioma.autorole.del}`, ctx.idioma.autorole.del2)
     // COR DA EMBED
     embed.color('#dd3af0')
     // CRIANDO OS NEGOCIO
-    ctx.message.channel.createMessage(embed.create).then(msg => {
+    ctx.message.channel.createMessage({
+      embeds: [embed.toJSON]
+    }).then(msg => {
       // ADICIONANDO REAÇÕES
       msg.addReaction('🤖')
-      msg.addReaction(':st_membros:845390325638889482')
+      msg.addReaction(':ES_membros:815580090225262632')
       msg.addReaction('❌')
       // CRIANDO COLETOR DE AUTOROLE BOT
       const bot = new ReactionCollector(msg, {
@@ -70,7 +72,7 @@ module.exports = class Autorole {
       const user = new ReactionCollector(msg, {
         user: ctx.message.author,
         ignoreBot: true,
-        emoji: 'st_membros',
+        emoji: 'ES_membros',
         time: 60000,
         max: 1,
         acceptReactionRemove: false,

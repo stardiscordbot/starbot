@@ -57,7 +57,7 @@ module.exports = class Ajuda {
 
           if (!cmd) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** Esse comando não existe`)
           const help = new global.global.star.manager.Ebl()
-          help.title('<:st_util_info:835532528617259068> ' + `Informações do comando: \`${ctx.prefix}${cmd.pt.nome.toLowerCase()}\``) // .split(' ').map(str => str.slice(0, 1).toUpperCase() + str.slice(1)).join(' '))
+          help.title('<:zu_info:911303533859590144> ' + `Informações do comando: \`${ctx.prefix}${cmd.pt.nome.toLowerCase()}\``) // .split(' ').map(str => str.slice(0, 1).toUpperCase() + str.slice(1)).join(' '))
           help.field('📚 Descrição:', `\`${cmd.pt.desc}\``, false)
           help.field(':small_blue_diamond: Permissões do bot:', `\`${cmd.permissoes.bot.join('`, `') || 'Esse comando não necessita de permissões'}\``, false)
           help.field(':small_orange_diamond: Permissões do usuário:', `\`${cmd.permissoes.membro.join('`, `') || 'Esse comando não necessita de permissões especiais para ser executado'}\``, false)
@@ -82,12 +82,12 @@ module.exports = class Ajuda {
                         `\`${comando.pt.nome}\``
           )
         })
-        embed.description(`>>> Olá, meu nome é: **${global.star.user.username}**!\nAtualmente possuo: **${global.star.commands.size}** comandos;\nMe [adicione](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=805432446), ou se junte ao meu [suporte](https://discord.gg/2pFH6Yy) caso queira!`)
+        embed.description(`>>> Olá, meu nome é: **${global.star.user.username}**!\nAtualmente possuo: **${global.star.commands.size}** comandos;\nMe [adicione](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=805432446), ou se junte ao meu [suporte](https://discord.gg/zqUYWTJqXK) caso queira!`)
         embed.thumbnail(global.star.user.avatarURL)
         for (const categoria in categorias) {
           embed.field(categoria + ` [${categorias[categoria].length}]`, `${categorias[categoria].join(', ')}`)
         }
-        embed.field('<:st_random_ping:829763513571475486> Links', `[Invite Me](https://discord.com/oauth2/authorize?client_id=${global.star.user.id}&scope=bot%20applications.commands&permissions=805432446) • [Support Sever](https://discord.gg/2pFH6Yy) • [Vote for us](https://top.gg/bot/719524114536333342/vote)`)
+        embed.field('🔗 Links', `[Invite Me](https://discord.com/oauth2/authorize?client_id=${global.star.user.id}&scope=bot%20applications.commands&permissions=805432446) • [Support Sever](https://discord.gg/zqUYWTJqXK) • [Vote for us](https://top.gg/bot/719524114536333342/vote)`)
         embed.footer(ctx.idioma.help.creators + devs.join(', '))
         ctx.send(embed.create)
 
@@ -99,7 +99,7 @@ module.exports = class Ajuda {
 
           if (!cmd) return ctx.message.channel.createMessage(`:x: ${ctx.message.author.mention} **|** This command does not exist`)
           const help = new global.global.star.manager.Ebl()
-          help.title('<:st_util_info:835532528617259068> ' + `Command information: \`${ctx.prefix}${cmd.pt.nome.toLowerCase()}\``) // .split(' ').map(str => str.slice(0, 1).toUpperCase() + str.slice(1)).join(' '))
+          help.title('<:zu_info:911303533859590144> ' + `Command information: \`${ctx.prefix}${cmd.pt.nome.toLowerCase()}\``) // .split(' ').map(str => str.slice(0, 1).toUpperCase() + str.slice(1)).join(' '))
           help.field('📚 Description:', `\`${cmd.en.desc}\``, false)
           help.field(':small_blue_diamond: Bot permissions:', `\`${cmd.permissoes.bot.join('`, `') || 'This command does not need permissions.'}\``, false)
           help.field(':small_orange_diamond: User permissions:', `\`${cmd.permissoes.membro.join('`, `') || 'This command does not need special permissions to run'}\``, false)
@@ -123,7 +123,7 @@ module.exports = class Ajuda {
           }
           categorias[cmd.en.categoria].push(`\`${cmd.en.nome}\``)
         })
-        embed.description(`>>> Hi, my name is: **${global.star.user.username}**!\nI currently have: **${global.star.commands.size}** commands;\nMe [add](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=805432446), or join my [support](https://discord.gg/2pFH6Yy) if you want!`)
+        embed.description(`>>> Hi, my name is: **${global.star.user.username}**!\nI currently have: **${global.star.commands.size}** commands;\nMe [add](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=805432446), or join my [support](https://discord.gg/zqUYWTJqXK) if you want!`)
         embed.thumbnail(global.star.user.avatarURL)
         for (const categoria in categorias) {
           embed.field(categoria + ` [${categorias[categoria].length}]`, `${categorias[categoria].join(', ')}`)

@@ -30,6 +30,6 @@ module.exports = class CalcCommand {
     } catch (err) {
       return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.calc.inv}`)
     }
-    ctx.send(`<:st_calc:876139110039973959> ${ctx.message.author.mention} **|** ${ctx.idioma.calc.res}: \`${val}\``)
+    ctx.send(`🔢 ${ctx.message.author.mention} **|** ${ctx.idioma.calc.res}: \`${val}\``)
   }
 }

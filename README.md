@@ -32,7 +32,7 @@ No, but I was made to help on your server, developed in the discord.js library u
 
 ## 💁 What if I need help?
 
-You can enter my support server here: [Click Here](https://discord.gg/2pFH6Yy)
+You can enter my support server here: [Click Here](https://discord.gg/zqUYWTJqXK)
 
 ## 🥳 Convinced me, how do I add?
 

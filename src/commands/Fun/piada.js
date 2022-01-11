@@ -23,7 +23,7 @@ module.exports = class JokeCommand {
 
   async run (ctx) {
     const { get } = require('axios')
-    await get('https://www.adgdeveloper.tk/api/jokes').then(response => {
+    await get('https://www.adgdev.me/api/jokes').then(response => {
       const piada = response.data
       ctx.send(`❓ **-** ${ctx.message.author.mention} ${piada.pergunta}\n🤣 **-** ${piada.resposta}`)
     })

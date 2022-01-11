@@ -44,7 +44,7 @@ module.exports = class DailyCommand {
 
         const embed = new global.star.manager.Ebl()
         embed.title(`💸 Daily | ${global.star.user.username}`)
-        embed.description(`<:st_util_info:835532528617259068> **${ctx.message.author.username}** ${ctx.idioma.daily.coletou.replace('%time', tt)}.`)
+        embed.description(`<:zu_info:911303533859590144> **${ctx.message.author.username}** ${ctx.idioma.daily.coletou.replace('%time', tt)}.`)
         embed.color('#dd3af0')
         embed.thumbnail(global.star.user.avatarURL)
 

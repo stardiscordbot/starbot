@@ -47,11 +47,11 @@ module.exports = class RbuserCommand {
             const inf2 = resp2.data
             const inf3 = resp3.data
             const embed = new global.star.manager.Ebl()
-            embed.title(`<:st_roblox:841002260490092544> Roblox | ${res.Username}`)
+            embed.title(`<:st_roblox:930518706046500884> Roblox | ${res.Username}`)
             embed.color('#dd3af0')
             embed.field('💻 User ID:', `\`\`\`${res.Id}\`\`\``)
             embed.field(`${ctx.idioma.roblox.criado}`, `\`\`\`🗓️ ${moment(inf.created).format('DD/MM/YYYY')}\n⏰ ${moment(inf.created).format('HH:mm:ss')}\`\`\``)
-            embed.field('<:st_membros:845390325638889482> Social:', `\`\`\`${inf2.count} Friends\n${inf3.count} Followers\`\`\``)
+            embed.field('<:ES_membros:815580090225262632> Social:', `\`\`\`${inf2.count} Friends\n${inf3.count} Followers\`\`\``)
             embed.thumbnail(avatar)
             ctx.send(embed.create)
           }).catch((err) => {

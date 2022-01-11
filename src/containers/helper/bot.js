@@ -10,7 +10,10 @@ const client = new Client(helpertoken, {
   },
   intents: [
     'guilds',
-    'guildMessages'
+    'guildMessages',
+    'guildMessageReactions',
+    'guildMembers',
+    'guildVoiceStates'
   ]
 })
 

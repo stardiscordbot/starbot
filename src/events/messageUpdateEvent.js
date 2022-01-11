@@ -51,7 +51,7 @@ module.exports = class MessageEvent {
     if (message.content === `<@!${global.star.user.id}>` || message.content === `<@${global.star.user.id}>`) {
       const pr = await global.db.get(`prefix-${message.guildID}`) || 's!'
       const embed = new global.star.manager.Ebl()
-      embed.title(`<:st_wumpus:844541072855662593> ${idioma.message.P}`)
+      embed.title(`<:ES_panda:815580024811814913> ${idioma.message.P}`)
       embed.color('#dd3af0')
       embed.thumbnail(global.star.user.avatarURL)
       embed.description(idioma.mention.response.replace('%u', message.author.username).replace('s!', pr))
@@ -205,11 +205,11 @@ module.exports = class MessageEvent {
             color: 14498544,
             fields: [
               {
-                name: '<:st_membros:845390325638889482> Usuário:',
+                name: '<:ES_membros:815580090225262632> Usuário:',
                 value: `\`\`\`${message.author.username}#${message.author.discriminator} (${message.author.id})\`\`\``
               },
               {
-                name: '<:st_util_info:835532528617259068> Comando:',
+                name: '<:zu_info:911303533859590144> Comando:',
                 value: `\`\`\`${message.content.slice(0, 1010)}\`\`\``
               },
               {

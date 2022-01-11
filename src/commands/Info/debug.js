@@ -26,8 +26,7 @@ module.exports = class EvalCommand {
     const stats = await pidusage(process.pid)
 
     const data = await global.db.all()
-    const cmds = await global.db.get('comandos')
-    ctx.send(`> :white_check_mark: ${ctx.message.author.mention} **|** Minhas Informações:\n\n<:st_db:845647017219850300>  ›  **Database:** \`${data.length} arquivos\`;\n<:st_host:830841046153691197>  ›  **Consumo:** \`${(process.memoryUsage().rss / 1024 / 1024).toFixed(2)} MB | ${stats.cpu.toFixed(2)}% CPU\`;\n<:st_terminal:845647948335284235>  ›  **Comandos Executados:** \`${cmds} comandos\`;\n<:st_util_info:835532528617259068>  ›  **Servidores:** \`${global.star.guilds.size} servidores\`.`)
+    ctx.send(`> :white_check_mark: ${ctx.message.author.mention} **|** Minhas Informações:\n\n<:st_db:930503530215792661>  ›  **Database:** \`${data.length} arquivos\`;\n<:st_host:930503337521070122>  ›  **Consumo:** \`${(process.memoryUsage().rss / 1024 / 1024).toFixed(2)} MB | ${stats.cpu.toFixed(2)}% CPU\`;\n<:zu_info:911303533859590144>  ›  **Servidores:** \`${global.star.guilds.size} servidores\`.`)
   }
 }
 

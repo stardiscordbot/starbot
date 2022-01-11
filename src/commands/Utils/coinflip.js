@@ -23,7 +23,7 @@ module.exports = class CoinflipCommand {
 
   async run (ctx) {
     const number = Math.floor(Math.random() * 2)
-    if (number === 1) return ctx.message.channel.createMessage(`<:st_cara:876155176417890316> ${ctx.message.author.mention} **|** **${ctx.idioma.coinflip.cara}**`)
-    if (number === 0) return ctx.message.channel.createMessage(`<:st_coroa:876155114673545287> ${ctx.message.author.mention} **|** **${ctx.idioma.coinflip.coroa}**`)
+    if (number === 1) return ctx.message.channel.createMessage(`<:st_cara:930504756911292466> ${ctx.message.author.mention} **|** **${ctx.idioma.coinflip.cara}**`)
+    if (number === 0) return ctx.message.channel.createMessage(`<:st_coroa:930504645774815232> ${ctx.message.author.mention} **|** **${ctx.idioma.coinflip.coroa}**`)
   }
 }

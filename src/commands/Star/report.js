@@ -31,16 +31,16 @@ module.exports = class ReportCommand {
       dm.createMessage(`✅ ${ctx.idioma.report.p1}\n\n> 📋 ${ctx.idioma.report.id} ||\`${proto}\`||\n\n🔗 Link: ${link}`).then(async msg => {
         global.db.set(proto, ctx.message.author.id)
         msg.addReaction(':ES_panda:815580024811814913')
-        const ch = await global.star.getRESTChannel('859908674574876715')
-        ch.createMessage(`__**🔔 <@&846818333360914442> Nova Denúncia!**__\n\n- Autor: **${ctx.message.author.username}#${ctx.message.author.discriminator} (${ctx.message.author.id})**\n- ID do formulário: **${proto}**`)
+        const ch = await global.star.getRESTChannel('930489969322098708')
+        ch.createMessage(`__**🔔 <@&930489884483924069> Nova Denúncia!**__\n\n- Autor: **${ctx.message.author.username}#${ctx.message.author.discriminator} (${ctx.message.author.id})**\n- ID do formulário: **${proto}**`)
       })
       ctx.send(`:white_check_mark: ${ctx.message.author.mention} **|** ${ctx.idioma.report.dm}`)
     } catch (err) {
       ctx.message.channel.createMessage(`✅ ${ctx.idioma.report.p1}\n\n> 📋 ID do formulário: ||\`${proto}\`||\n\n🔗 Link: ${link}`).then(async msg => {
         global.db.set(proto, ctx.message.author.id)
         msg.addReaction(':ES_panda:815580024811814913')
-        const ch = await global.star.getRESTChannel('859908674574876715')
-        ch.createMessage(`__**🔔 <@&846818333360914442> Nova Denúncia!**__\n\n- Autor: **${ctx.message.author.username}#${ctx.message.author.discriminator} (${ctx.message.author.id})**\n- ID do formulário: **${proto}**`)
+        const ch = await global.star.getRESTChannel('930489969322098708')
+        ch.createMessage(`__**🔔 <@&930489884483924069> Nova Denúncia!**__\n\n- Autor: **${ctx.message.author.username}#${ctx.message.author.discriminator} (${ctx.message.author.id})**\n- ID do formulário: **${proto}**`)
       })
     }
   }

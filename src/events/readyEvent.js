@@ -24,7 +24,7 @@ module.exports = class ReadyEvent {
       `s!help | ${global.star.user.username} [v${version}]`,
       `s!upvote | ${global.star.user.username} [v${version}]`,
       `s!invite | ${global.star.user.username} [v${version}]`,
-      `Join in my support server discord.gg/2pFH6Yy | ${global.star.user.username} [v${version}]`,
+      `Join in my support server discord.gg/zqUYWTJqXK | ${global.star.user.username} [v${version}]`,
       `I was created by: ${adg.username}#${adg.discriminator}`
     ]
 
@@ -49,18 +49,18 @@ module.exports = class ReadyEvent {
     // Backup da database
 
     setInterval(async () => {
-      const backupchannel = await global.star.getRESTChannel('850788451359522857')
+      const backupchannel = await global.star.getRESTChannel('930492855171051550')
       const { readFile } = require('fs')
       const util = require('util')
       const read = util.promisify(readFile)
       const moment = require('moment')
 
-      backupchannel.createMessage(`<:st_host:830841046153691197> Backup do banco de dados (principal)! | ${moment().format('DD/MM/YYYY | h:mm:ss')}`, {
+      backupchannel.createMessage(`<:ES_cpu:815580080959914065> Backup do banco de dados (principal)! | ${moment().format('DD/MM/YYYY | h:mm:ss')}`, {
         file: await read('./data/base.json'),
         name: 'base.json'
       })
 
-      backupchannel.createMessage(`<:st_host:830841046153691197> Backup do banco de dados (sorteios)! | ${moment().format('DD/MM/YYYY | h:mm:ss')}`, {
+      backupchannel.createMessage(`<:ES_cpu:815580080959914065> Backup do banco de dados (sorteios)! | ${moment().format('DD/MM/YYYY | h:mm:ss')}`, {
         file: await read('./data/giveaways.json'),
         name: 'giveaways.json'
       })

@@ -32,7 +32,7 @@ module.exports = class NpmCommand {
       embed.field(`📚 ${ctx.idioma.npm.licença}`, res.license)
       embed.field(`👑 ${ctx.idioma.npm.dono}`, res.author)
       embed.field(`🙋 ${ctx.idioma.npm.contri}`, res.maintainers)
-      embed.field('<:st_github:850386245887852545> Source', res.repository)
+      embed.field('<:st_github:930501194063945728> Source', res.repository)
       embed.thumbnail(global.star.user.avatarURL)
       embed.color('#dd3af0')
       ctx.send(embed.create)

@@ -32,9 +32,9 @@ module.exports = class PingCommand {
     const owner = await global.star.getRESTUser(guild.ownerID)
     const embed = new global.star.manager.Ebl()
 
-    embed.title(`<:st_discord:847806904808898600> ${guild.name}`)
+    embed.title(`__${guild.name}__`)
     embed.color('#dd3af0')
-    embed.field('❯ General Info:', `🧭 **ID:** \`${guild.id} [${guild.shard.id}]\`\n<:st_owner:847812042467573761> **Owner:** \`${owner.username}#${owner.discriminator} [${owner.id}]\`\n<:st_membros:845390325638889482> **Members:** \`${guild.memberCount} members\`\n<a:st_booster:830837674104979488> **Boosts:** \`${guild.premiumSubscriptionCount} boosts\`\n:calendar: **Created at:** \`${moment(guild.createdAt).format('📆 DD/MM/YY')} | ${moment(guild.createdAt).format('⏰ HH:mm:ss')}\`\n🗺️ **Region:** \`${guild.region}\``, true)
+    embed.field('❯ General Info:', `🧭 **ID:** \`${guild.id} [${guild.shard.id}]\`\n<:ES_owner:815580078233747466> **Owner:** \`${owner.username}#${owner.discriminator} [${owner.id}]\`\n<:ES_membros:815580090225262632> **Members:** \`${guild.memberCount} members\`\n🚀 **Boosts:** \`${guild.premiumSubscriptionCount} boosts\`\n:calendar: **Created at:** \`${moment(guild.createdAt).format('📆 DD/MM/YY')} | ${moment(guild.createdAt).format('⏰ HH:mm:ss')}\`\n🗺️ **Lang:** \`${guild.preferredLocale}\``, true)
     embed.thumbnail(guild.iconURL || 'https://i.imgur.com/2dwGomm.png')
     ctx.send(embed.create)
   }

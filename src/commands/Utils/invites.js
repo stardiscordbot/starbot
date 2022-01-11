@@ -23,7 +23,7 @@ module.exports = class PingCommand {
 
   async run (ctx) {
     const user = ctx.args[0] ? ctx.message.mentions[0] || await ctx.message.guild.members.fetch(ctx.args[0]) : ctx.message.member
-    ctx.message.guild.fetchInvites().then((invites) => {
+    ctx.message.channel.guild.fetchInvites().then((invites) => {
       const inviteCounter = {}
       invites.forEach((invite) => {
         inviteCounter[invite.inviter.id] = (inviteCounter[invite.inviter.id] || 0) + invite.uses

@@ -23,7 +23,7 @@ module.exports = class PingCommand {
 
   async run (ctx) {
     if (!ctx.args[0]) return ctx.send(`:x: ${ctx.message.author.mention} **|** ${ctx.idioma.say.noarg}`)
-    ctx.send(`${ctx.args.join(' ').replace(/@/g, '').replace(/#/g, '').replace(/`/g, '').slice(0, 1000)}\n\n__<:st_wumpus:844541072855662593> ${ctx.idioma.say.enviada} ${ctx.message.author.mention}__`)
+    ctx.send(`${ctx.args.join(' ').replace(/@/g, '').replace(/#/g, '').replace(/`/g, '').slice(0, 1000)}\n\n__<:ES_panda:815580024811814913> ${ctx.idioma.say.enviada} ${ctx.message.author.mention}__`)
   }
 }
 

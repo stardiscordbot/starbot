@@ -6,7 +6,6 @@ const {
   Manager
 } = require('erela.js')
 
-const nodes = require('./nodes')
 const Deezer = require('./erela-plugins/Deezer/index')
 const Spotify = require('./erela-plugins/Spotify/index')
 const Facebook = require('./erela-plugins/Facebook/index')
@@ -17,7 +16,7 @@ const clientSecret = spotify.secret
 
 require('./StarPlayer')
 global.star.music = new Manager({
-  nodes: nodes,
+  nodes: require('./nodes'),
   plugins: [
     // DEEZER PLUGIN
     new Deezer(),
@@ -32,6 +31,7 @@ global.star.music = new Manager({
     })
   ],
   autoPlay: true,
+  clientName: 'Star',
   send (id, payload) {
     const guild = global.star.guilds.get(id)
     if (guild) guild.shard.sendWS(payload.op, payload.d)
@@ -56,9 +56,13 @@ global.star.music = new Manager({
 
     const embed = new global.star.manager.Ebl()
     embed.title(idioma.erela.np)
-    embed.description(`<:st_playing:861592704958201896> \`${track.title}: ${track.requester.username}#${track.requester.discriminator}\``)
     embed.color('#dd3af0')
     embed.thumbnail(global.star.user.avatarURL)
+    if (track.title === 'Animu FM is a Brazilian otaku radio focused on animesongs, vocaloid, Japanese rhythm games, Brazillan fansings, and Brazilian openings and closings') {
+      embed.description('<:st_playing:861592704958201896> `Radio Animu`')
+    } else {
+      embed.description(`<:st_playing:861592704958201896> \`${track.title}: ${track.requester.username}#${track.requester.discriminator}\``)
+    }
     ch.createMessage(embed.create).then(a => {
       setTimeout(() => {
         a.delete()

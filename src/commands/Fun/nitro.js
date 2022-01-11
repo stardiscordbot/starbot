@@ -25,7 +25,7 @@ module.exports = class Nitro {
     const { readFile } = require('fs')
     const util = require('util')
     const read = util.promisify(readFile)
-    ctx.message.channel.createMessage(`<:st_wumpus:844541072855662593> ${ctx.message.author.mention} **|** 𝖽iscord.gift/${Math.random().toString(36).slice(-8)}`, {
+    ctx.message.channel.createMessage(`<:ES_panda:815580024811814913> ${ctx.message.author.mention} **|** 𝖽iscord.gift/${Math.random().toString(36).slice(-8)}`, {
       file: await read('./assets/nitro2.png'),
       name: 'nitro.png'
     })

@@ -118,7 +118,7 @@ module.exports = {
   },
   invite: {
     add: 'Add me to your server!',
-    desc: 'Yay, did you like my commands? Or my features? [Add me](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=805432446)\n\nYou need Help or something? Log into my [support server](https://discord.gg/2pFH6Yy), yay'
+    desc: 'Yay, did you like my commands? Or my features? [Add me](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=805432446)\n\nYou need Help or something? Log into my [support server](https://discord.gg/zqUYWTJqXK), yay'
   },
   message: {
     P: 'Hello, human!',
@@ -131,7 +131,7 @@ module.exports = {
     c: 'Wait %t seconds to use another command.',
     e: 'Oops, an error happened!',
     e2: 'Report this error!',
-    e3: "My team probably already knows about this error, but how about you help? You can open an [issue](https://github.com/stardiscordbot/starbot/issues) in [github](https://github.com/stardiscordbot/starbot) or report it to my [support server](https://discord.gg/2pFH6Yy), let's make the discord a better place, together 🤝"
+    e3: "My team probably already knows about this error, but how about you help? You can open an [issue](https://github.com/stardiscordbot/starbot/issues) in [github](https://github.com/stardiscordbot/starbot) or report it to my [support server](https://discord.gg/zqUYWTJqXK), let's make the discord a better place, together 🤝"
   },
   botinfo: {
     pessoas: 'Important People:',
@@ -139,7 +139,7 @@ module.exports = {
     por: 'for having created me.',
     ded: '• All the people who helped/helped me to develop;\n• All my team;\n• And you: %u for using my commands! :)',
     textt: 'With all permissions: **[click here](https://top.gg/bot/719524114536333342/invite)**;\nWithout any permissions: **[click here](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot%20applications.commands&permissions=0)**.',
-    text: "<:st_wumpus:844541072855662593> Hi, my name is **Star:tm:** I'm **14** years old, I created my account on **06/08/2020**, I know more than **%g** different places and **%u** people and their styles, it's a honor is on your server! :)\n\n<:st_terminal:845647948335284235> I was developed in **[javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** using **[eris](https://abal.moe/Eris/)** in my client and commands, yay",
+    text: "<:ES_panda:815580024811814913> Hi, my name is **Star:tm:** I'm **14** years old, I created my account on **06/08/2020**, I know more than **%g** different places and **%u** people and their styles, it's a honor is on your server! :)\n\n<:st_terminal:930505994704936970> I was developed in **[javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** using **[eris](https://abal.moe/Eris/)** in my client and commands, yay",
     open: 'I am',
     com: 'Consumption:'
   },
@@ -195,7 +195,7 @@ module.exports = {
   help: {
     title: 'Command List • ',
     creators: 'I was developed by ',
-    description: '> My current prefix is: `%p`\n> If you have any questions, please enter my support server: [Click here](https://discord.gg/2pFH6Yy)\n> Add me by clicking [here](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot&permissions=805432446)'
+    description: '> My current prefix is: `%p`\n> If you have any questions, please enter my support server: [Click here](https://discord.gg/zqUYWTJqXK)\n> Add me by clicking [here](https://discord.com/oauth2/authorize?client_id=719524114536333342&scope=bot&permissions=805432446)'
   },
   donate: {
     vip: 'Command only available to donors from basic level.'
@@ -219,7 +219,7 @@ module.exports = {
     link: "here's your link:"
   },
   welmsg: {
-    noargs: '// <:st_util_info:835532528617259068> Você pode customizar ela usando **PlaceHolders:**\n**{guild}** - Mostra o nome do servidor (Exemplo: **%g**)\n**{member}** - Mostra o Username do membro (Exemplo: **%use**)\n**{@member}** - Menciona o Membro (Exemplo: **%author**})\n**{memberCount}** - Mostra a quantidade de Membros do servidor (Exemplo: **%mc**)\n**{member.discrim}** - Mostra a tag do Membro (Exemplo: **%ut**)\n**{member.id}** - Mostra o ID do membro (Exemplo: **%id**)'
+    noargs: '// <:zu_info:911303533859590144> Você pode customizar ela usando **PlaceHolders:**\n**{guild}** - Mostra o nome do servidor (Exemplo: **%g**)\n**{member}** - Mostra o Username do membro (Exemplo: **%use**)\n**{@member}** - Menciona o Membro (Exemplo: **%author**})\n**{memberCount}** - Mostra a quantidade de Membros do servidor (Exemplo: **%mc**)\n**{member.discrim}** - Mostra a tag do Membro (Exemplo: **%ut**)\n**{member.id}** - Mostra o ID do membro (Exemplo: **%id**)'
   },
   fst: {
     arg: 'Use: `%pfst on` to enable and `%pfst off` to disable'

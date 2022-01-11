@@ -16,6 +16,7 @@ const {
   token
 } = require('./config/config.js')
 const DiscordTogether = require('./client/discord-together')
+
 const client = new Client('Bot ' + token, {
   restMode: true,
   defaultImageSize: 2048,

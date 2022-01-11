@@ -39,7 +39,7 @@ module.exports = class PingCommand {
         }
 
         const embed = new global.star.manager.Ebl()
-        embed.title(`<:st_pokedex:845365598141415475> Pokedex | ${res.name.slice(0, 1).toUpperCase() + res.name.slice(1)}`)
+        embed.title(`<:st_pokedex:930513160966926457> Pokedex | ${res.name.slice(0, 1).toUpperCase() + res.name.slice(1)}`)
         embed.color('#dd3af0')
         embed.description(`${pdesc}`)
         embed.thumbnail(res.sprites.animated)

@@ -4,7 +4,7 @@ module.exports = class EvalCommand {
       permissoes: {
         membro: [],
         bot: ['embedLinks'],
-        dono: false
+        dono: true
       },
       pt: {
         nome: 'bestlist',
